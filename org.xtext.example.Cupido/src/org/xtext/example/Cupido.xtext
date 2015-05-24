@@ -1,0 +1,106 @@
+grammar org.xtext.example.Cupido with org.eclipse.xtext.common.Terminals
+
+generate cupido "http://www.xtext.org/example/Cupido"
+
+Cupido:
+	Schemata
+	(commitments += Commitment*);
+
+Schemata:
+	SCHEMA (schemata += EventRelation+);
+
+EventRelation:
+  (event = Event) 
+  LPAREN (params += Param) (COMMA params += Param)* RPAREN
+  KEY (keyParams += Param) (COMMA keyParams += Param)*
+  TIME (timeParam = Param);
+
+Param:
+  name = ID;
+
+Commitment:
+  COMMIT label=ID debtor=ID TO creditor=ID
+  CREATE (trigger = GeneralExpr)
+  (DETACH (antecedent = GeneralExpr))?
+  DISCHARGE (consequent = GeneralExpr);
+
+GeneralExpr:
+  (expr = Expr) ((where = WHERE) (arith = ArithExpr))?;
+
+Expr:
+  (interval = Interval) |
+  (left = Interval) (op = EventOperator) (right = Expr) |
+  LPAREN (expr = Expr) RPAREN;
+
+Interval:
+  (event = Event) |
+  (event = Event) LBRACKET (left = TimeStamp) COMMA (right = TimeStamp) RBRACKET |
+  (event = Event) LBRACKET COMMA (right = TimeStamp) RBRACKET |
+  (event = Event) LBRACKET (left = TimeStamp) COMMA RBRACKET |
+  (event = Event) LBRACKET COMMA RBRACKET; // Equivalent to the first option
+  
+Event:
+  (name = ID) |
+  (lifeState = (CREATED | DETACHED | DISCHARGED | EXPIRED | VIOLATED)) (label = ID);  // Require labels instead of nesting
+
+ArithExpr:
+//  arith = ((name = ID) (comparativeOp = BinaryOperator)  |
+//  LPAREN (arith = ArithExpr) RPAREN
+// We are not parsing arithmetic expressions, so I would like to pick up everything 
+// under ArithExpr and just pass it along
+  (leftAttr = Attribute) (binOp = BinaryOperator) ((rightAttr = Attribute) | (num = INT))
+;
+
+TimeStamp:
+  val = INT |
+  (eventReference = ID) (PLUS (shift = INT))?; 
+
+//TODO: Found INT in common Terminals but not NUMBER 
+//Number: // TODO: I didn't find a way to use the Xtext Number that some examples use
+//  name = ID;
+
+BinaryOperator:
+  op = (LT | LEQ | EQ | GT | GEQ);
+
+Attribute:
+  name = ID;
+
+//LifeCycleState:
+//  lifeState = (CREATED | DETACHED | DISCHARGED | EXPIRED | VIOLATED);
+
+EventOperator:
+  AND | OR | EXCEPT;
+
+terminal SCHEMA: 'schema';
+terminal KEY: 'key';
+terminal TIME: 'time';
+
+terminal COMMIT: 'commitment';
+terminal CREATE: 'create';
+terminal DETACH: 'detach';
+terminal DISCHARGE: 'discharge';
+terminal TO: 'to';
+terminal EXCEPT: 'except';
+terminal AND: 'and';
+terminal OR: 'or';
+terminal WHERE: 'where';
+
+terminal CREATED: 'created';
+terminal DETACHED: 'detached';
+terminal DISCHARGED: 'discharged';
+terminal EXPIRED: 'expired';
+terminal VIOLATED: 'violated';
+
+terminal COMMA: ',';
+terminal LBRACKET: '[';
+terminal RBRACKET: ']';
+terminal LPAREN: '(';
+terminal RPAREN: ')';
+
+terminal PLUS: '+';
+
+terminal LT: '<';
+terminal LEQ: '<=';
+terminal EQ: '=';
+terminal GT: '>';
+terminal GEQ: '>=';

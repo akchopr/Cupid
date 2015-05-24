@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.xtext.example.Cupido/src-gen" editDirectory="/org.xtext.example.Cupido.edit/src"
+    editorDirectory="/org.xtext.example.Cupido.editor/src" modelPluginID="org.xtext.example.Cupido"
+    forceOverwrite="true" modelName="Cupido" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.xtext.example.Cupido.edit"
+    editorPluginID="org.xtext.example.Cupido.editor" runtimeVersion="2.10">
+  <genPackages prefix="Cupido" basePackage="org.xtext.example" disposableProviderFactory="true"
+      fileExtensions="cupid" ecorePackage="Cupido.ecore#/">
+    <genClasses ecoreClass="Cupido.ecore#//Cupido"/>
+    <genClasses ecoreClass="Cupido.ecore#//Schemata">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Schemata/commitments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Schemata/schemata"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//EventRelation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//EventRelation/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//EventRelation/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//EventRelation/keyParams"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//EventRelation/timeParam"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//Param">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Param/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//Commitment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Commitment/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Commitment/debtor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Commitment/creditor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Commitment/trigger"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Commitment/antecedent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Commitment/consequent"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//GeneralExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//GeneralExpr/expr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//GeneralExpr/where"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//GeneralExpr/arith"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//Expr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/interval"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Expr/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/right"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//Interval">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Interval/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Interval/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Interval/right"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Event/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Event/lifeState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Event/label"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//ArithExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//ArithExpr/leftAttr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//ArithExpr/binOp"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//ArithExpr/rightAttr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//ArithExpr/num"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//TimeStamp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//TimeStamp/val"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//TimeStamp/eventReference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//TimeStamp/shift"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//BinaryOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//BinaryOperator/op"/>
+    </genClasses>
+    <genClasses ecoreClass="Cupido.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Attribute/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
