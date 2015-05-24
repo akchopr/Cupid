@@ -1,0 +1,13 @@
+schema
+TakeCharge(tcID, nuID, phID, patID, tcThreshold)
+ key tcID time stamp
+CardiacEvent(ceID, nuID, phID, patID, ceMagnitude)
+ key ceID time stamp
+CPR(cprID, nuID, phID, patID, cprDuration)
+ key cprID time stamp
+
+commitment CardioCare nuID to pID
+create TakeCharge
+detach CardiacEvent [, TakeCharge + 180]
+  where ceMagnitude >= tcThreshold
+discharge CPR [, CardiacEvent + 5]
