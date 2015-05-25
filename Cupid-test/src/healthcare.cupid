@@ -6,8 +6,14 @@ CardiacEvent(ceID, nuID, phID, patID, ceMagnitude)
 CPR(cprID, nuID, phID, patID, cprDuration)
  key cprID time stamp
 
+//commitment CardioCare nuID to pID
+//create TakeCharge
+//detach CardiacEvent [, TakeCharge + 180]
+//  where ceMagnitude >= tcThreshold
+//discharge CPR [, CardiacEvent + 5]
+
 commitment CardioCare nuID to pID
 create TakeCharge
-detach CardiacEvent [, TakeCharge + 180]
+detach CardiacEvent 
   where ceMagnitude >= tcThreshold
 discharge CPR [, CardiacEvent + 5]
