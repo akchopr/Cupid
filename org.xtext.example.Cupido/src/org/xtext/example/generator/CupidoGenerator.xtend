@@ -45,14 +45,31 @@ class CupidoGenerator implements IGenerator {
     return Parser.getParser().toSQL(s)
   }
 
-  def CharSequence compileAll(Commitment c) {
-  	val RelationalExpr cDetached = Parser.getParser().compileDetached(c) 
-    return // RA asks for a terminating semicolon for each query
-    //  "CREATED: " + c.compileCreated + ";\n" +
-      "\nDETACHED: " + cDetached.toRelationalAlgebra + ";" //+
-     // "EXPIRED: " + c.compileExpired + ";\n" +
-      //"VIOLATED: " + c.compileViolated + ";\n" +
-      //"DISCHARGED: " + c.compileDischarged
+  def CharSequence compileAll(Commitment c) { 
+    return compileDetached(c).toString + compileCreated(c).toString  
   }
-
+  
+  def CharSequence compileDetached(Commitment c) {
+  	val RelationalExpr expr = Parser.getParser().compileDetached(c) 
+    return "\nDETACHED: " + expr.toRelationalAlgebra + ";" //+
+  }
+  
+  def CharSequence compileCreated(Commitment c) {
+  	val RelationalExpr expr = Parser.getParser().compileDetached(c) 
+    return "\nCREATED: " + expr.toRelationalAlgebra + ";" //+
+  }
+  
+  def CharSequence compileExpired(Commitment c) {
+  	val RelationalExpr expr = Parser.getParser().compileExpired(c) 
+    return "\nEXPIRED: " + expr.toRelationalAlgebra + ";" //+
+  }
+  def CharSequence compileDischarged(Commitment c) {
+  	val RelationalExpr expr = Parser.getParser().compileDischarged(c) 
+    return "\nDISCHARGED: " + expr.toRelationalAlgebra + ";" //+
+  }
+  def CharSequence compileViolated(Commitment c) {
+  	val RelationalExpr expr = Parser.getParser().compileViolated(c) 
+    return "\nVIOLATED: " + expr.toRelationalAlgebra + ";" //+
+  }
+  
 }
