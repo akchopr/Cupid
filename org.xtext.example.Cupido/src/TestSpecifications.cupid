@@ -1,0 +1,69 @@
+schema
+ Quote(mID, cID, qID, itemID, uPrice)
+  key qID time stamp
+ Order(mID, cID, oID, qID, qty, addr)
+  key oID time stamp
+ Payment(mID, cID, pID, oID, pPrice)
+  key pID time stamp
+ Shipment(mID, cID, sID, oID, addr)
+  key sID time stamp
+ Refund(mID, cID, rID, pID, rAmount)
+  key rID time stamp
+ Coupon(mID, cID, uID, oID, rebate)
+  key uID time stamp
+
+
+commitment DiscountQuoteTrivial mID to cID 
+  create Quote
+  detach Order
+  discharge Shipment
+
+commitment DiscountQuoteAnd mID to cID 
+  create Quote
+  detach Order and Payment
+  discharge Shipment
+
+commitment DiscountQuoteOr mID to cID 
+  create Quote
+  detach Order or Payment
+  discharge Shipment
+
+commitment DiscountQuoteInterval mID to cID 
+  create Quote
+  detach Order [111, 222]
+  discharge Shipment
+
+commitment DiscountQuoteIntervalLeft mID to cID 
+  create Quote
+  detach Order [Quote + 333, 444]
+  discharge Shipment
+
+commitment DiscountQuoteIntervalRight mID to cID 
+  create Quote
+  detach Order [555, Quote+666]
+  discharge Shipment
+
+commitment DiscountQuoteIntervalBoth mID to cID 
+  create Quote
+  detach Order [Quote + 777, Quote+888]
+  discharge Shipment
+
+commitment DiscountQuoteIntervalEventAnd mID to cID 
+  create Quote
+  detach Order [Quote, Quote + 99] and Payment
+  discharge Shipment
+
+commitment DiscountQuoteIntervalNum mID to cID 
+  create Quote
+  detach Order [3, 17] and Payment
+  discharge Shipment
+
+commitment DiscountQuoteWhere mID to cID 
+  create Quote
+  detach Order where pPrice = 23
+  discharge Shipment
+
+commitment Compensation mID to cID
+  create Quote
+  detach detached DiscountQuoteTrivial
+  discharge Refund
