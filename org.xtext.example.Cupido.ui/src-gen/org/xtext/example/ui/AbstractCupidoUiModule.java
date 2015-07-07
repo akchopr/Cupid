@@ -4,14 +4,13 @@
  */
 package org.xtext.example.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 /**
  * Manual modifications go to {org.xtext.example.ui.CupidoUiModule}
  */
 @SuppressWarnings("all")
-public abstract class AbstractCupidoUiModule extends DefaultUiModule {
+public abstract class AbstractCupidoUiModule extends org.eclipse.xtext.common.types.ui.DefaultCommonTypesUiModule {
 	
 	public AbstractCupidoUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
@@ -54,6 +53,11 @@ public abstract class AbstractCupidoUiModule extends DefaultUiModule {
 	}
 
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
+	public Class<? extends org.eclipse.xtext.generator.IContextualOutputConfigurationProvider> bindIContextualOutputConfigurationProvider() {
+		return org.eclipse.xtext.builder.EclipseOutputConfigurationProvider.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
 	public void configureIResourceDescriptionsPersisted(com.google.inject.Binder binder) {
 		binder.bind(org.eclipse.xtext.resource.IResourceDescriptions.class).annotatedWith(com.google.inject.name.Names.named(org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider.PERSISTED_DESCRIPTIONS)).to(org.eclipse.xtext.builder.builderState.IBuilderState.class);
 	}
@@ -61,21 +65,6 @@ public abstract class AbstractCupidoUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.generator.builder.BuilderIntegrationFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.DocumentBasedDirtyResource> bindDocumentBasedDirtyResource() {
 		return org.eclipse.xtext.builder.impl.PersistentDataAwareDirtyResource.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
-	public Class<? extends org.eclipse.xtext.builder.IXtextBuilderParticipant> bindIXtextBuilderParticipant() {
-		return org.eclipse.xtext.builder.BuilderParticipant.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
-	public org.eclipse.core.resources.IWorkspaceRoot bindIWorkspaceRootToInstance() {
-		return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot();
-	}
-
-	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
-	public void configureBuilderPreferenceStoreInitializer(com.google.inject.Binder binder) {
-		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("builderPreferenceInitializer")).to(org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess.Initializer.class);
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.labeling.LabelProviderFragment
@@ -154,58 +143,8 @@ public abstract class AbstractCupidoUiModule extends DefaultUiModule {
 	}
 
 	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public java.lang.ClassLoader bindClassLoaderToInstance() {
-		return getClass().getClassLoader();
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.access.IJvmTypeProvider.Factory> bindIJvmTypeProvider$Factory() {
-		return org.eclipse.xtext.common.types.access.jdt.JdtTypeProviderFactory.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.xtext.AbstractTypeScopeProvider> bindAbstractTypeScopeProvider() {
-		return org.eclipse.xtext.common.types.xtext.ui.JdtBasedSimpleTypeScopeProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.xtext.ui.ITypesProposalProvider> bindITypesProposalProvider() {
-		return org.eclipse.xtext.common.types.xtext.ui.JdtTypesProposalProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.access.jdt.IJavaProjectProvider> bindIJavaProjectProvider() {
-		return org.eclipse.xtext.common.types.xtext.ui.XtextResourceSetBasedProjectProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper> bindIHyperlinkHelper() {
-		return org.eclipse.xtext.common.types.xtext.ui.TypeAwareHyperlinkHelper.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
 	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.PrefixMatcher> bindPrefixMatcher() {
 		return org.eclipse.xtext.ui.editor.contentassist.FQNPrefixMatcher.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.contentassist.AbstractJavaBasedContentProposalProvider.ReferenceProposalCreator> bindAbstractJavaBasedContentProposalProvider$ReferenceProposalCreator() {
-		return org.eclipse.xtext.common.types.xtext.ui.TypeAwareReferenceProposalCreator.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.editor.IValidationJobScheduler> bindIValidationJobScheduler() {
-		return org.eclipse.xtext.common.types.xtext.ui.JdtValidationJobScheduler.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.ui.refactoring.impl.RefactoringResourceSetProvider> bindRefactoringResourceSetProvider() {
-		return org.eclipse.xtext.common.types.ui.refactoring.JvmRefactoringResourceSetProvider.class;
-	}
-
-	// contributed by org.eclipse.xtext.generator.types.TypesGeneratorFragment
-	public Class<? extends org.eclipse.xtext.common.types.ui.query.IJavaSearchParticipation> bindIJavaSearchParticipation() {
-		return org.eclipse.xtext.common.types.ui.query.IJavaSearchParticipation.Yes.class;
 	}
 
 	// contributed by org.eclipse.xtext.ui.generator.templates.CodetemplatesGeneratorFragment
@@ -236,6 +175,21 @@ public abstract class AbstractCupidoUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.ui.generator.compare.CompareFragment
 	public Class<? extends org.eclipse.compare.IViewerCreator> bindIViewerCreator() {
 		return org.eclipse.xtext.ui.compare.DefaultViewerCreator.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
+	public Class<? extends org.eclipse.xtext.builder.IXtextBuilderParticipant> bindIXtextBuilderParticipant() {
+		return org.eclipse.xtext.builder.BuilderParticipant.class;
+	}
+
+	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
+	public org.eclipse.core.resources.IWorkspaceRoot bindIWorkspaceRootToInstance() {
+		return org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot();
+	}
+
+	// contributed by org.eclipse.xtext.generator.generator.GeneratorFragment
+	public void configureBuilderPreferenceStoreInitializer(com.google.inject.Binder binder) {
+		binder.bind(org.eclipse.xtext.ui.editor.preferences.IPreferenceStoreInitializer.class).annotatedWith(com.google.inject.name.Names.named("builderPreferenceInitializer")).to(org.eclipse.xtext.builder.preferences.BuilderPreferenceAccess.Initializer.class);
 	}
 
 

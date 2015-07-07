@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.Commitment#getLabel <em>Label</em>}</li>
  *   <li>{@link org.xtext.example.cupido.Commitment#getDebtor <em>Debtor</em>}</li>
@@ -19,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.cupido.Commitment#getAntecedent <em>Antecedent</em>}</li>
  *   <li>{@link org.xtext.example.cupido.Commitment#getConsequent <em>Consequent</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.example.cupido.CupidoPackage#getCommitment()
  * @model

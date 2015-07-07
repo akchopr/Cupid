@@ -29,13 +29,13 @@ import org.xtext.example.cupido.Param;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.EventRelationImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.EventRelationImpl#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.EventRelationImpl#getKeyParams <em>Key Params</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.EventRelationImpl#getTimeParam <em>Time Param</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

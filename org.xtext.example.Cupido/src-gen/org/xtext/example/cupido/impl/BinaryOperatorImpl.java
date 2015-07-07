@@ -18,10 +18,10 @@ import org.xtext.example.cupido.CupidoPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.BinaryOperatorImpl#getOp <em>Op</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

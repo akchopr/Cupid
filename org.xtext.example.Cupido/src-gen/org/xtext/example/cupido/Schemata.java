@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.Schemata#getCommitments <em>Commitments</em>}</li>
  *   <li>{@link org.xtext.example.cupido.Schemata#getSchemata <em>Schemata</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.example.cupido.CupidoPackage#getSchemata()
  * @model

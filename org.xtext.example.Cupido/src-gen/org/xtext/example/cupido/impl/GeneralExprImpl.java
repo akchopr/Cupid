@@ -22,12 +22,12 @@ import org.xtext.example.cupido.GeneralExpr;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.GeneralExprImpl#getExpr <em>Expr</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.GeneralExprImpl#getWhere <em>Where</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.GeneralExprImpl#getArith <em>Arith</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

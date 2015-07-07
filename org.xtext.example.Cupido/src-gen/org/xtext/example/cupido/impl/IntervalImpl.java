@@ -22,12 +22,12 @@ import org.xtext.example.cupido.TimeStamp;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.IntervalImpl#getEvent <em>Event</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.IntervalImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.IntervalImpl#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -21,6 +21,7 @@ import org.xtext.example.cupido.GeneralExpr;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.CommitmentImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.CommitmentImpl#getDebtor <em>Debtor</em>}</li>
@@ -29,7 +30,6 @@ import org.xtext.example.cupido.GeneralExpr;
  *   <li>{@link org.xtext.example.cupido.impl.CommitmentImpl#getAntecedent <em>Antecedent</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.CommitmentImpl#getConsequent <em>Consequent</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

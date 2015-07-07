@@ -13,8 +13,6 @@ import org.xtext.example.cupido.CupidoPackage;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Cupido</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */

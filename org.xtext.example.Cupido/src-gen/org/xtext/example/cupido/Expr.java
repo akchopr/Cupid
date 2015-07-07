@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.Expr#getInterval <em>Interval</em>}</li>
  *   <li>{@link org.xtext.example.cupido.Expr#getLeft <em>Left</em>}</li>
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.cupido.Expr#getRight <em>Right</em>}</li>
  *   <li>{@link org.xtext.example.cupido.Expr#getExpr <em>Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.example.cupido.CupidoPackage#getExpr()
  * @model

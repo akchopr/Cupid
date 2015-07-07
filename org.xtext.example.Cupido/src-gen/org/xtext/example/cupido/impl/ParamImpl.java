@@ -18,10 +18,10 @@ import org.xtext.example.cupido.Param;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.ParamImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

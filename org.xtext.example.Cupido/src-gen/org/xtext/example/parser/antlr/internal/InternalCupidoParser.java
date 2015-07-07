@@ -23,42 +23,42 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
         "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SCHEMA", "RULE_LPAREN", "RULE_COMMA", "RULE_RPAREN", "RULE_KEY", "RULE_TIME", "RULE_ID", "RULE_COMMIT", "RULE_TO", "RULE_CREATE", "RULE_DETACH", "RULE_DISCHARGE", "RULE_WHERE", "RULE_LBRACKET", "RULE_RBRACKET", "RULE_CREATED", "RULE_DETACHED", "RULE_DISCHARGED", "RULE_EXPIRED", "RULE_VIOLATED", "RULE_INT", "RULE_PLUS", "RULE_LT", "RULE_LEQ", "RULE_EQ", "RULE_GT", "RULE_GEQ", "RULE_AND", "RULE_OR", "RULE_EXCEPT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int RULE_DETACH=14;
-    public static final int RULE_LEQ=27;
-    public static final int RULE_ID=10;
-    public static final int RULE_EXCEPT=33;
-    public static final int RULE_COMMIT=11;
-    public static final int RULE_KEY=8;
-    public static final int RULE_CREATE=13;
-    public static final int RULE_ANY_OTHER=38;
-    public static final int RULE_PLUS=25;
-    public static final int RULE_OR=32;
-    public static final int RULE_CREATED=19;
-    public static final int RULE_COMMA=6;
-    public static final int RULE_AND=31;
-    public static final int RULE_EXPIRED=22;
     public static final int RULE_LBRACKET=17;
-    public static final int RULE_WHERE=16;
-    public static final int RULE_SL_COMMENT=36;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=35;
-    public static final int RULE_LT=26;
     public static final int RULE_TO=12;
-    public static final int RULE_DISCHARGE=15;
-    public static final int RULE_STRING=34;
-    public static final int RULE_GEQ=30;
-    public static final int RULE_LPAREN=5;
+    public static final int RULE_KEY=8;
     public static final int RULE_GT=29;
+    public static final int RULE_GEQ=30;
+    public static final int RULE_STRING=34;
+    public static final int RULE_LPAREN=5;
+    public static final int RULE_SCHEMA=4;
+    public static final int RULE_LEQ=27;
+    public static final int RULE_AND=31;
+    public static final int RULE_SL_COMMENT=36;
+    public static final int RULE_CREATE=13;
     public static final int RULE_EQ=28;
     public static final int RULE_TIME=9;
-    public static final int RULE_INT=24;
-    public static final int RULE_RPAREN=7;
+    public static final int RULE_PLUS=25;
+    public static final int RULE_OR=32;
+    public static final int EOF=-1;
+    public static final int RULE_ID=10;
+    public static final int RULE_DETACH=14;
+    public static final int RULE_COMMA=6;
+    public static final int RULE_EXPIRED=22;
     public static final int RULE_WS=37;
-    public static final int RULE_DISCHARGED=21;
-    public static final int RULE_RBRACKET=18;
     public static final int RULE_DETACHED=20;
+    public static final int RULE_WHERE=16;
+    public static final int RULE_ANY_OTHER=38;
+    public static final int RULE_LT=26;
+    public static final int RULE_RPAREN=7;
+    public static final int RULE_DISCHARGED=21;
+    public static final int RULE_INT=24;
     public static final int RULE_VIOLATED=23;
-    public static final int RULE_SCHEMA=4;
+    public static final int RULE_EXCEPT=33;
+    public static final int RULE_ML_COMMENT=35;
+    public static final int RULE_CREATED=19;
+    public static final int RULE_COMMIT=11;
+    public static final int RULE_DISCHARGE=15;
+    public static final int RULE_RBRACKET=18;
 
     // delegates
     // delegators
@@ -3243,46 +3243,49 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     static final String DFA7_eotS =
         "\36\uffff";
     static final String DFA7_eofS =
-        "\1\uffff\1\12\11\uffff\1\12\5\uffff\1\12\2\uffff\1\12\3\uffff\1\12\2\uffff\1\12\2\uffff";
+        "\1\uffff\1\11\11\uffff\1\11\5\uffff\1\11\2\uffff\1\11\3\uffff\1"+
+        "\11\1\uffff\1\11\3\uffff";
     static final String DFA7_minS =
-        "\1\5\1\7\5\12\2\uffff\1\6\1\uffff\1\7\1\12\2\6\2\22\1\7\1\12\1\30\1\7\1\30\2\22\1\7\1\6\1\22\1\7\1\30\1\22";
+        "\1\5\1\7\5\12\1\uffff\1\6\2\uffff\1\7\2\6\2\12\1\30\1\7\2\22\1"+
+        "\7\2\22\1\6\1\7\1\30\1\7\1\30\2\22";
     static final String DFA7_maxS =
-        "\1\27\1\41\5\12\2\uffff\1\30\1\uffff\1\41\1\30\1\6\1\31\1\22\1\31\1\41\2\30\1\41\1\30\1\22\1\31\1\41\1\6\1\22\1\41\1\30\1\22";
+        "\1\27\1\41\5\12\1\uffff\1\30\2\uffff\1\41\1\6\1\31\3\30\1\41\1"+
+        "\22\1\31\1\41\1\22\1\31\1\6\1\41\1\30\1\41\1\30\2\22";
     static final String DFA7_acceptS =
-        "\7\uffff\1\3\1\2\1\uffff\1\1\23\uffff";
+        "\7\uffff\1\3\1\uffff\1\1\1\2\23\uffff";
     static final String DFA7_specialS =
         "\36\uffff}>";
     static final String[] DFA7_transitionS = {
             "\1\7\4\uffff\1\1\10\uffff\1\2\1\3\1\4\1\5\1\6",
-            "\1\12\3\uffff\1\12\2\uffff\3\12\1\11\15\uffff\3\10",
+            "\1\11\3\uffff\1\11\2\uffff\3\11\1\10\15\uffff\3\12",
             "\1\13",
             "\1\13",
             "\1\13",
             "\1\13",
             "\1\13",
             "",
+            "\1\16\3\uffff\1\15\15\uffff\1\14",
             "",
-            "\1\14\3\uffff\1\16\15\uffff\1\15",
             "",
-            "\1\12\3\uffff\1\12\2\uffff\3\12\1\11\15\uffff\3\10",
-            "\1\20\7\uffff\1\21\5\uffff\1\17",
-            "\1\22",
-            "\1\22\22\uffff\1\23",
-            "\1\24",
-            "\1\24\6\uffff\1\25",
-            "\1\12\3\uffff\1\12\2\uffff\3\12\16\uffff\3\10",
-            "\1\27\7\uffff\1\30\5\uffff\1\26",
-            "\1\31",
-            "\1\12\3\uffff\1\12\2\uffff\3\12\16\uffff\3\10",
+            "\1\11\3\uffff\1\11\2\uffff\3\11\1\10\15\uffff\3\12",
+            "\1\17",
+            "\1\17\22\uffff\1\20",
+            "\1\23\7\uffff\1\21\5\uffff\1\22",
+            "\1\26\7\uffff\1\24\5\uffff\1\25",
+            "\1\27",
+            "\1\11\3\uffff\1\11\2\uffff\3\11\16\uffff\3\12",
+            "\1\30",
+            "\1\30\6\uffff\1\31",
+            "\1\11\3\uffff\1\11\2\uffff\3\11\16\uffff\3\12",
             "\1\32",
-            "\1\33",
-            "\1\33\6\uffff\1\34",
-            "\1\12\3\uffff\1\12\2\uffff\3\12\16\uffff\3\10",
-            "\1\22",
-            "\1\24",
-            "\1\12\3\uffff\1\12\2\uffff\3\12\16\uffff\3\10",
+            "\1\32\6\uffff\1\33",
+            "\1\17",
+            "\1\11\3\uffff\1\11\2\uffff\3\11\16\uffff\3\12",
+            "\1\34",
+            "\1\11\3\uffff\1\11\2\uffff\3\11\16\uffff\3\12",
             "\1\35",
-            "\1\33"
+            "\1\30",
+            "\1\32"
     };
 
     static final short[] DFA7_eot = DFA.unpackEncodedString(DFA7_eotS);
@@ -3323,11 +3326,11 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     static final String DFA8_eofS =
         "\1\uffff\1\10\7\uffff\1\10\12\uffff";
     static final String DFA8_minS =
-        "\1\12\1\7\5\12\1\6\1\uffff\1\7\1\12\2\6\2\uffff\1\12\1\30\2\uffff\1\6";
+        "\1\12\1\7\5\12\1\6\1\uffff\1\7\2\6\2\12\1\30\4\uffff\1\6";
     static final String DFA8_maxS =
-        "\1\27\1\41\5\12\1\30\1\uffff\1\41\1\30\1\6\1\31\2\uffff\2\30\2\uffff\1\6";
+        "\1\27\1\41\5\12\1\30\1\uffff\1\41\1\6\1\31\3\30\4\uffff\1\6";
     static final String DFA8_acceptS =
-        "\10\uffff\1\1\4\uffff\1\3\1\5\2\uffff\1\4\1\2\1\uffff";
+        "\10\uffff\1\1\6\uffff\1\3\1\5\1\4\1\2\1\uffff";
     static final String DFA8_specialS =
         "\24\uffff}>";
     static final String[] DFA8_transitionS = {
@@ -3338,19 +3341,19 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
             "\1\11",
             "\1\11",
             "\1\11",
-            "\1\12\3\uffff\1\14\15\uffff\1\13",
+            "\1\14\3\uffff\1\13\15\uffff\1\12",
             "",
             "\1\10\3\uffff\1\10\2\uffff\3\10\1\7\15\uffff\3\10",
-            "\1\15\7\uffff\1\16\5\uffff\1\15",
-            "\1\17",
-            "\1\17\22\uffff\1\20",
-            "",
-            "",
+            "\1\15",
+            "\1\15\22\uffff\1\16",
+            "\1\17\7\uffff\1\20\5\uffff\1\17",
             "\1\22\7\uffff\1\21\5\uffff\1\22",
             "\1\23",
             "",
             "",
-            "\1\17"
+            "",
+            "",
+            "\1\15"
     };
 
     static final short[] DFA8_eot = DFA.unpackEncodedString(DFA8_eotS);

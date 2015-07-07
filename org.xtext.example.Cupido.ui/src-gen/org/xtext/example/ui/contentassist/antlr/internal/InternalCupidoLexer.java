@@ -12,42 +12,42 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalCupidoLexer extends Lexer {
-    public static final int RULE_DETACH=27;
-    public static final int RULE_LEQ=10;
-    public static final int RULE_ID=31;
-    public static final int RULE_EXCEPT=16;
-    public static final int RULE_COMMIT=23;
-    public static final int RULE_CREATE=25;
-    public static final int RULE_KEY=20;
-    public static final int RULE_ANY_OTHER=38;
-    public static final int RULE_PLUS=30;
-    public static final int RULE_OR=15;
-    public static final int RULE_CREATED=4;
-    public static final int RULE_COMMA=22;
-    public static final int RULE_AND=14;
     public static final int RULE_LBRACKET=28;
-    public static final int RULE_EXPIRED=7;
-    public static final int RULE_WHERE=32;
-    public static final int RULE_SL_COMMENT=36;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=35;
-    public static final int RULE_LT=9;
     public static final int RULE_TO=24;
-    public static final int RULE_DISCHARGE=26;
-    public static final int RULE_STRING=34;
-    public static final int RULE_GEQ=13;
-    public static final int RULE_LPAREN=18;
+    public static final int RULE_KEY=20;
     public static final int RULE_GT=12;
+    public static final int RULE_GEQ=13;
+    public static final int RULE_STRING=34;
+    public static final int RULE_LPAREN=18;
+    public static final int RULE_LEQ=10;
+    public static final int RULE_AND=14;
+    public static final int RULE_SCHEMA=17;
+    public static final int RULE_SL_COMMENT=36;
+    public static final int RULE_CREATE=25;
     public static final int RULE_EQ=11;
     public static final int RULE_TIME=21;
-    public static final int RULE_INT=33;
+    public static final int RULE_PLUS=30;
+    public static final int RULE_OR=15;
+    public static final int EOF=-1;
+    public static final int RULE_DETACH=27;
+    public static final int RULE_ID=31;
+    public static final int RULE_EXPIRED=7;
+    public static final int RULE_COMMA=22;
+    public static final int RULE_WS=37;
+    public static final int RULE_DETACHED=5;
+    public static final int RULE_WHERE=32;
+    public static final int RULE_ANY_OTHER=38;
+    public static final int RULE_LT=9;
     public static final int RULE_RPAREN=19;
     public static final int RULE_DISCHARGED=6;
-    public static final int RULE_WS=37;
-    public static final int RULE_RBRACKET=29;
-    public static final int RULE_DETACHED=5;
+    public static final int RULE_INT=33;
     public static final int RULE_VIOLATED=8;
-    public static final int RULE_SCHEMA=17;
+    public static final int RULE_EXCEPT=16;
+    public static final int RULE_ML_COMMENT=35;
+    public static final int RULE_CREATED=4;
+    public static final int RULE_COMMIT=23;
+    public static final int RULE_DISCHARGE=26;
+    public static final int RULE_RBRACKET=29;
 
     // delegates
     // delegators
@@ -1397,19 +1397,52 @@ public class InternalCupidoLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\12\35\6\uffff\1\61\1\uffff\1\64\1\33\2\uffff\3\33\2\uffff\1\35\1\uffff\2\35\1\75\6\35\1\105\2\35\20\uffff\1\35\1\111\1\35\1\uffff\6\35\1\121\1\uffff\3\35\1\uffff\1\125\6\35\1\uffff\3\35\1\uffff\6\35\1\145\1\35\1\147\1\35\1\152\1\154\1\35\1\156\1\35\1\uffff\1\35\1\uffff\1\35\1\162\1\uffff\1\35\1\uffff\1\35\1\uffff\1\165\2\35\1\uffff\1\170\1\35\1\uffff\1\172\1\35\1\uffff\1\175\1\uffff\1\176\1\177\3\uffff";
+        "\1\uffff\12\35\6\uffff\1\61\1\uffff\1\64\1\33\2\uffff\3\33\2\uffff"+
+        "\1\35\1\uffff\2\35\1\75\6\35\1\105\2\35\20\uffff\1\35\1\111\1\35"+
+        "\1\uffff\6\35\1\121\1\uffff\3\35\1\uffff\1\125\6\35\1\uffff\3\35"+
+        "\1\uffff\6\35\1\145\1\35\1\147\1\35\1\152\1\154\1\35\1\156\1\35"+
+        "\1\uffff\1\35\1\uffff\1\35\1\162\1\uffff\1\35\1\uffff\1\35\1\uffff"+
+        "\1\165\2\35\1\uffff\1\170\1\35\1\uffff\1\172\1\35\1\uffff\1\175"+
+        "\1\uffff\1\176\1\177\3\uffff";
     static final String DFA12_eofS =
         "\u0080\uffff";
     static final String DFA12_minS =
-        "\1\0\1\143\1\145\1\151\1\157\1\145\1\170\1\156\1\162\1\150\1\151\6\uffff\1\75\1\uffff\1\75\1\101\2\uffff\2\0\1\52\2\uffff\1\150\1\uffff\1\171\1\155\1\60\1\155\1\145\1\164\1\163\1\143\1\144\1\60\1\145\1\157\20\uffff\1\145\1\60\1\145\1\uffff\1\155\2\141\1\143\1\145\1\151\1\60\1\uffff\1\162\1\154\1\155\1\uffff\1\60\1\151\1\164\1\143\1\150\1\160\1\162\1\uffff\1\145\2\141\1\uffff\1\164\1\145\1\150\1\141\1\164\1\145\1\60\1\164\1\60\1\155\2\60\1\162\1\60\1\144\1\uffff\1\145\1\uffff\1\145\1\60\1\uffff\1\144\1\uffff\1\147\1\uffff\1\60\1\144\1\156\1\uffff\1\60\1\145\1\uffff\1\60\1\164\1\uffff\1\60\1\uffff\2\60\3\uffff";
+        "\1\0\1\143\1\145\1\151\1\157\1\145\1\170\1\156\1\162\1\150\1\151"+
+        "\6\uffff\1\75\1\uffff\1\75\1\101\2\uffff\2\0\1\52\2\uffff\1\150"+
+        "\1\uffff\1\171\1\155\1\60\1\155\1\145\1\164\1\163\1\143\1\144\1"+
+        "\60\1\145\1\157\20\uffff\1\145\1\60\1\145\1\uffff\1\155\2\141\1"+
+        "\143\1\145\1\151\1\60\1\uffff\1\162\1\154\1\155\1\uffff\1\60\1\151"+
+        "\1\164\1\143\1\150\1\160\1\162\1\uffff\1\145\2\141\1\uffff\1\164"+
+        "\1\145\1\150\1\141\1\164\1\145\1\60\1\164\1\60\1\155\2\60\1\162"+
+        "\1\60\1\144\1\uffff\1\145\1\uffff\1\145\1\60\1\uffff\1\144\1\uffff"+
+        "\1\147\1\uffff\1\60\1\144\1\156\1\uffff\1\60\1\145\1\uffff\1\60"+
+        "\1\164\1\uffff\1\60\1\uffff\2\60\3\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\143\1\145\1\157\1\162\1\151\1\170\1\156\1\162\1\150\1\151\6\uffff\1\75\1\uffff\1\75\1\172\2\uffff\2\uffff\1\57\2\uffff\1\150\1\uffff\1\171\1\155\1\172\1\155\1\145\1\164\1\163\1\160\1\144\1\172\1\145\1\157\20\uffff\1\145\1\172\1\145\1\uffff\1\155\2\141\1\143\1\145\1\151\1\172\1\uffff\1\162\1\154\1\155\1\uffff\1\172\1\151\1\164\1\143\1\150\1\160\1\162\1\uffff\1\145\2\141\1\uffff\1\164\1\145\1\150\1\141\1\164\1\145\1\172\1\164\1\172\1\155\2\172\1\162\1\172\1\144\1\uffff\1\145\1\uffff\1\145\1\172\1\uffff\1\144\1\uffff\1\147\1\uffff\1\172\1\144\1\156\1\uffff\1\172\1\145\1\uffff\1\172\1\164\1\uffff\1\172\1\uffff\2\172\3\uffff";
+        "\1\uffff\1\143\1\145\1\157\1\162\1\151\1\170\1\156\1\162\1\150"+
+        "\1\151\6\uffff\1\75\1\uffff\1\75\1\172\2\uffff\2\uffff\1\57\2\uffff"+
+        "\1\150\1\uffff\1\171\1\155\1\172\1\155\1\145\1\164\1\163\1\160\1"+
+        "\144\1\172\1\145\1\157\20\uffff\1\145\1\172\1\145\1\uffff\1\155"+
+        "\2\141\1\143\1\145\1\151\1\172\1\uffff\1\162\1\154\1\155\1\uffff"+
+        "\1\172\1\151\1\164\1\143\1\150\1\160\1\162\1\uffff\1\145\2\141\1"+
+        "\uffff\1\164\1\145\1\150\1\141\1\164\1\145\1\172\1\164\1\172\1\155"+
+        "\2\172\1\162\1\172\1\144\1\uffff\1\145\1\uffff\1\145\1\172\1\uffff"+
+        "\1\144\1\uffff\1\147\1\uffff\1\172\1\144\1\156\1\uffff\1\172\1\145"+
+        "\1\uffff\1\172\1\164\1\uffff\1\172\1\uffff\2\172\3\uffff";
     static final String DFA12_acceptS =
-        "\13\uffff\1\22\1\23\1\24\1\25\1\26\1\27\1\uffff\1\32\2\uffff\1\35\1\36\3\uffff\1\42\1\43\1\uffff\1\35\14\uffff\1\22\1\23\1\24\1\25\1\26\1\27\1\31\1\30\1\32\1\34\1\33\1\36\1\37\1\40\1\41\1\42\3\uffff\1\10\7\uffff\1\13\3\uffff\1\2\7\uffff\1\12\3\uffff\1\3\17\uffff\1\14\1\uffff\1\1\2\uffff\1\5\1\uffff\1\6\1\uffff\1\11\3\uffff\1\15\2\uffff\1\20\2\uffff\1\16\1\uffff\1\21\2\uffff\1\7\1\4\1\17";
+        "\13\uffff\1\22\1\23\1\24\1\25\1\26\1\27\1\uffff\1\32\2\uffff\1"+
+        "\35\1\36\3\uffff\1\42\1\43\1\uffff\1\35\14\uffff\1\22\1\23\1\24"+
+        "\1\25\1\26\1\27\1\31\1\30\1\32\1\34\1\33\1\36\1\37\1\40\1\41\1\42"+
+        "\3\uffff\1\10\7\uffff\1\13\3\uffff\1\2\7\uffff\1\12\3\uffff\1\3"+
+        "\17\uffff\1\14\1\uffff\1\1\2\uffff\1\5\1\uffff\1\6\1\uffff\1\11"+
+        "\3\uffff\1\15\2\uffff\1\20\2\uffff\1\16\1\uffff\1\21\2\uffff\1\7"+
+        "\1\4\1\17";
     static final String DFA12_specialS =
         "\1\2\26\uffff\1\1\1\0\147\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\27\4\33\1\30\1\16\1\17\1\33\1\20\1\13\2\33\1\31\12\26\2\33\1\21\1\22\1\23\2\33\32\25\1\14\1\33\1\15\1\24\1\25\1\33\1\7\1\25\1\4\1\5\1\6\5\25\1\2\3\25\1\10\3\25\1\1\1\3\1\25\1\12\1\11\3\25\uff85\33",
+            "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\27\4\33\1\30\1\16\1"+
+            "\17\1\33\1\20\1\13\2\33\1\31\12\26\2\33\1\21\1\22\1\23\2\33"+
+            "\32\25\1\14\1\33\1\15\1\24\1\25\1\33\1\7\1\25\1\4\1\5\1\6\5"+
+            "\25\1\2\3\25\1\10\3\25\1\1\1\3\1\25\1\12\1\11\3\25\uff85\33",
             "\1\34",
             "\1\36",
             "\1\37\5\uffff\1\40",

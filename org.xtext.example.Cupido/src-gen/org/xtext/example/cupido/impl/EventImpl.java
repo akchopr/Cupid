@@ -18,12 +18,12 @@ import org.xtext.example.cupido.Event;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.EventImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.EventImpl#getLifeState <em>Life State</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.EventImpl#getLabel <em>Label</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -13,13 +13,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.EventRelation#getEvent <em>Event</em>}</li>
  *   <li>{@link org.xtext.example.cupido.EventRelation#getParams <em>Params</em>}</li>
  *   <li>{@link org.xtext.example.cupido.EventRelation#getKeyParams <em>Key Params</em>}</li>
  *   <li>{@link org.xtext.example.cupido.EventRelation#getTimeParam <em>Time Param</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.example.cupido.CupidoPackage#getEventRelation()
  * @model

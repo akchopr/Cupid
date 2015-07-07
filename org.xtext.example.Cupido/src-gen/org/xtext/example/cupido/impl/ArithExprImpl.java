@@ -22,13 +22,13 @@ import org.xtext.example.cupido.CupidoPackage;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.ArithExprImpl#getLeftAttr <em>Left Attr</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.ArithExprImpl#getBinOp <em>Bin Op</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.ArithExprImpl#getRightAttr <em>Right Attr</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.ArithExprImpl#getNum <em>Num</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

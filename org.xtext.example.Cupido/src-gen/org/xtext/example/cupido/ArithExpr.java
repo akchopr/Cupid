@@ -11,13 +11,13 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.ArithExpr#getLeftAttr <em>Left Attr</em>}</li>
  *   <li>{@link org.xtext.example.cupido.ArithExpr#getBinOp <em>Bin Op</em>}</li>
  *   <li>{@link org.xtext.example.cupido.ArithExpr#getRightAttr <em>Right Attr</em>}</li>
  *   <li>{@link org.xtext.example.cupido.ArithExpr#getNum <em>Num</em>}</li>
  * </ul>
- * </p>
  *
  * @see org.xtext.example.cupido.CupidoPackage#getArithExpr()
  * @model

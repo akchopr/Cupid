@@ -18,12 +18,12 @@ import org.xtext.example.cupido.TimeStamp;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.TimeStampImpl#getVal <em>Val</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.TimeStampImpl#getEventReference <em>Event Reference</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.TimeStampImpl#getShift <em>Shift</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

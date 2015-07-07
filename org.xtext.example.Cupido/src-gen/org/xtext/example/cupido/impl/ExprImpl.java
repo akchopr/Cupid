@@ -21,6 +21,7 @@ import org.xtext.example.cupido.Interval;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getInterval <em>Interval</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getLeft <em>Left</em>}</li>
@@ -28,7 +29,6 @@ import org.xtext.example.cupido.Interval;
  *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getRight <em>Right</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getExpr <em>Expr</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

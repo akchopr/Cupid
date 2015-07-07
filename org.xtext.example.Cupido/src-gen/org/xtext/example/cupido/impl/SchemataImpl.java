@@ -25,11 +25,11 @@ import org.xtext.example.cupido.Schemata;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link org.xtext.example.cupido.impl.SchemataImpl#getCommitments <em>Commitments</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.SchemataImpl#getSchemata <em>Schemata</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
