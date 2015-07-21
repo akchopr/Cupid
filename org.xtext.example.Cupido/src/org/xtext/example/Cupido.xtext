@@ -20,18 +20,26 @@ Param:
 
 Commitment:
   COMMIT label=ID debtor=ID TO creditor=ID
-  CREATE (trigger = GeneralExpr)
-  (DETACH (antecedent = GeneralExpr))?
-  DISCHARGE (consequent = GeneralExpr);
+  CREATE (trigger = EExpr)
+  (DETACH (antecedent = EExpr))?
+  DISCHARGE (consequent = EExpr);
 
-GeneralExpr:
-  (expr = Expr) ((where = WHERE) (arith = ArithExpr))?;
+//GExpr returns Expr:
+ // EExpr ({GExpr.left=current} WHERE (phi = STRING))?;
 
-Expr:
-  (interval = Interval) |
-  (left = Interval) (op = EventOperator) (right = Expr) |
-  LPAREN (expr = Expr) RPAREN;
+EExpr returns Expr:
+  OExpr ({EExpr.left=current} EXCEPT right=OExpr)*;
 
+OExpr returns Expr:
+  AExpr ({OExpr.left=current} OR right=AExpr)*;
+  
+AExpr returns Expr:
+  Primary ({AExpr.left=current} AND right=Primary)*;
+  
+Primary returns Expr:
+	(interval = Interval) (WHERE (phi=STRING))?| 
+	LPAREN EExpr RPAREN ({Primary.left=current} WHERE (phi=STRING))?;
+   
 Interval:
   (event = Event) |
   (event = Event) LBRACKET (left = TimeStamp) COMMA (right = TimeStamp) RBRACKET |
@@ -43,14 +51,6 @@ Event:
   (name = ID) |
   (lifeState = (CREATED | DETACHED | DISCHARGED | EXPIRED | VIOLATED)) (label = ID);  // Require labels instead of nesting
 
-ArithExpr:
-//  arith = ((name = ID) (comparativeOp = BinaryOperator)  |
-//  LPAREN (arith = ArithExpr) RPAREN
-// We are not parsing arithmetic expressions, so I would like to pick up everything 
-// under ArithExpr and just pass it along
-  (leftAttr = Attribute) (binOp = BinaryOperator) ((rightAttr = Attribute) | (num = INT))
-;
-
 TimeStamp:
   val = INT |
   (eventReference = ID) (PLUS (shift = INT))?; 
@@ -58,18 +58,6 @@ TimeStamp:
 //TODO: Found INT in common Terminals but not NUMBER 
 //Number: // TODO: I didn't find a way to use the Xtext Number that some examples use
 //  name = ID;
-
-BinaryOperator:
-  op = (LT | LEQ | EQ | GT | GEQ);
-
-Attribute:
-  name = ID;
-
-//LifeCycleState:
-//  lifeState = (CREATED | DETACHED | DISCHARGED | EXPIRED | VIOLATED);
-
-EventOperator:
-  AND | OR | EXCEPT;
 
 terminal SCHEMA: 'schema';
 terminal KEY: 'key';
@@ -98,9 +86,3 @@ terminal LPAREN: '(';
 terminal RPAREN: ')';
 
 terminal PLUS: '+';
-
-terminal LT: '<';
-terminal LEQ: '<=';
-terminal EQ: '=';
-terminal GT: '>';
-terminal GEQ: '>=';
