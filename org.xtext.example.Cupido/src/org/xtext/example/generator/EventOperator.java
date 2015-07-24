@@ -39,7 +39,7 @@ public static final EventOperator SINGLETON = new EventOperator("singleton");
   }
   
   public String toString() {
-	  return "\\" + opName;
+	  return opName;
   }
   
 }

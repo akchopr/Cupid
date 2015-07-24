@@ -7,52 +7,51 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.xtext.example.cupido.Attribute;
 import org.xtext.example.cupido.CupidoPackage;
+import org.xtext.example.cupido.WExpr;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Attribute</b></em>'.
+ * An implementation of the model object '<em><b>WExpr</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cupido.impl.AttributeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.cupido.impl.WExprImpl#getRight <em>Right</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AttributeImpl extends MinimalEObjectImpl.Container implements Attribute
+public class WExprImpl extends ExprImpl implements WExpr
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getRight() <em>Right</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getRight()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String RIGHT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getRight() <em>Right</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getRight()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String right = RIGHT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AttributeImpl()
+  protected WExprImpl()
   {
     super();
   }
@@ -65,7 +64,7 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   @Override
   protected EClass eStaticClass()
   {
-    return CupidoPackage.Literals.ATTRIBUTE;
+    return CupidoPackage.Literals.WEXPR;
   }
 
   /**
@@ -73,9 +72,9 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getRight()
   {
-    return name;
+    return right;
   }
 
   /**
@@ -83,12 +82,12 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setRight(String newRight)
   {
-    String oldName = name;
-    name = newName;
+    String oldRight = right;
+    right = newRight;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.ATTRIBUTE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.WEXPR__RIGHT, oldRight, right));
   }
 
   /**
@@ -101,8 +100,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case CupidoPackage.ATTRIBUTE__NAME:
-        return getName();
+      case CupidoPackage.WEXPR__RIGHT:
+        return getRight();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +116,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case CupidoPackage.ATTRIBUTE__NAME:
-        setName((String)newValue);
+      case CupidoPackage.WEXPR__RIGHT:
+        setRight((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +133,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case CupidoPackage.ATTRIBUTE__NAME:
-        setName(NAME_EDEFAULT);
+      case CupidoPackage.WEXPR__RIGHT:
+        setRight(RIGHT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +150,8 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
   {
     switch (featureID)
     {
-      case CupidoPackage.ATTRIBUTE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case CupidoPackage.WEXPR__RIGHT:
+        return RIGHT_EDEFAULT == null ? right != null : !RIGHT_EDEFAULT.equals(right);
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +167,10 @@ public class AttributeImpl extends MinimalEObjectImpl.Container implements Attri
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (right: ");
+    result.append(right);
     result.append(')');
     return result.toString();
   }
 
-} //AttributeImpl
+} //WExprImpl

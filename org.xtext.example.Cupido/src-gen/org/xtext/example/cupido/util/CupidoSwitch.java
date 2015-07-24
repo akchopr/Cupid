@@ -108,13 +108,6 @@ public class CupidoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CupidoPackage.GENERAL_EXPR:
-      {
-        GeneralExpr generalExpr = (GeneralExpr)theEObject;
-        T result = caseGeneralExpr(generalExpr);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CupidoPackage.EXPR:
       {
         Expr expr = (Expr)theEObject;
@@ -136,13 +129,6 @@ public class CupidoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CupidoPackage.ARITH_EXPR:
-      {
-        ArithExpr arithExpr = (ArithExpr)theEObject;
-        T result = caseArithExpr(arithExpr);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CupidoPackage.TIME_STAMP:
       {
         TimeStamp timeStamp = (TimeStamp)theEObject;
@@ -150,17 +136,35 @@ public class CupidoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CupidoPackage.BINARY_OPERATOR:
+      case CupidoPackage.EEXPR:
       {
-        BinaryOperator binaryOperator = (BinaryOperator)theEObject;
-        T result = caseBinaryOperator(binaryOperator);
+        EExpr eExpr = (EExpr)theEObject;
+        T result = caseEExpr(eExpr);
+        if (result == null) result = caseExpr(eExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CupidoPackage.ATTRIBUTE:
+      case CupidoPackage.OEXPR:
       {
-        Attribute attribute = (Attribute)theEObject;
-        T result = caseAttribute(attribute);
+        OExpr oExpr = (OExpr)theEObject;
+        T result = caseOExpr(oExpr);
+        if (result == null) result = caseExpr(oExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CupidoPackage.AEXPR:
+      {
+        AExpr aExpr = (AExpr)theEObject;
+        T result = caseAExpr(aExpr);
+        if (result == null) result = caseExpr(aExpr);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CupidoPackage.WEXPR:
+      {
+        WExpr wExpr = (WExpr)theEObject;
+        T result = caseWExpr(wExpr);
+        if (result == null) result = caseExpr(wExpr);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -249,22 +253,6 @@ public class CupidoSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>General Expr</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>General Expr</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseGeneralExpr(GeneralExpr object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Expr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -313,22 +301,6 @@ public class CupidoSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Arith Expr</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Arith Expr</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseArithExpr(ArithExpr object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Time Stamp</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -345,33 +317,65 @@ public class CupidoSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Binary Operator</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>EExpr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Binary Operator</em>'.
+   * @return the result of interpreting the object as an instance of '<em>EExpr</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBinaryOperator(BinaryOperator object)
+  public T caseEExpr(EExpr object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>OExpr</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * @return the result of interpreting the object as an instance of '<em>OExpr</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAttribute(Attribute object)
+  public T caseOExpr(OExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>AExpr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>AExpr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAExpr(AExpr object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>WExpr</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>WExpr</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWExpr(WExpr object)
   {
     return null;
   }

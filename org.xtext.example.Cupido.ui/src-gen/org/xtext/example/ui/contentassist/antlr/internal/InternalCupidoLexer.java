@@ -12,42 +12,37 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalCupidoLexer extends Lexer {
-    public static final int RULE_LBRACKET=28;
-    public static final int RULE_TO=24;
-    public static final int RULE_KEY=20;
-    public static final int RULE_GT=12;
-    public static final int RULE_GEQ=13;
-    public static final int RULE_STRING=34;
-    public static final int RULE_LPAREN=18;
-    public static final int RULE_LEQ=10;
-    public static final int RULE_AND=14;
-    public static final int RULE_SCHEMA=17;
-    public static final int RULE_SL_COMMENT=36;
-    public static final int RULE_CREATE=25;
-    public static final int RULE_EQ=11;
-    public static final int RULE_TIME=21;
-    public static final int RULE_PLUS=30;
-    public static final int RULE_OR=15;
+    public static final int RULE_LBRACKET=24;
+    public static final int RULE_TO=16;
+    public static final int RULE_KEY=12;
+    public static final int RULE_STRING=28;
+    public static final int RULE_LPAREN=10;
+    public static final int RULE_SCHEMA=9;
+    public static final int RULE_AND=22;
+    public static final int RULE_SL_COMMENT=31;
+    public static final int RULE_CREATE=17;
+    public static final int RULE_TIME=13;
+    public static final int RULE_PLUS=26;
+    public static final int RULE_OR=21;
     public static final int EOF=-1;
-    public static final int RULE_DETACH=27;
-    public static final int RULE_ID=31;
+    public static final int RULE_DETACH=19;
+    public static final int RULE_ID=27;
     public static final int RULE_EXPIRED=7;
-    public static final int RULE_COMMA=22;
-    public static final int RULE_WS=37;
+    public static final int RULE_COMMA=14;
+    public static final int RULE_WS=32;
     public static final int RULE_DETACHED=5;
-    public static final int RULE_WHERE=32;
-    public static final int RULE_ANY_OTHER=38;
-    public static final int RULE_LT=9;
-    public static final int RULE_RPAREN=19;
+    public static final int RULE_WHERE=23;
+    public static final int RULE_ANY_OTHER=33;
+    public static final int RULE_RPAREN=11;
     public static final int RULE_DISCHARGED=6;
-    public static final int RULE_INT=33;
+    public static final int RULE_INT=29;
     public static final int RULE_VIOLATED=8;
-    public static final int RULE_EXCEPT=16;
-    public static final int RULE_ML_COMMENT=35;
+    public static final int RULE_EXCEPT=20;
+    public static final int RULE_ML_COMMENT=30;
     public static final int RULE_CREATED=4;
-    public static final int RULE_COMMIT=23;
-    public static final int RULE_DISCHARGE=26;
-    public static final int RULE_RBRACKET=29;
+    public static final int RULE_COMMIT=15;
+    public static final int RULE_DISCHARGE=18;
+    public static final int RULE_RBRACKET=25;
 
     // delegates
     // delegators
@@ -67,8 +62,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_SCHEMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3487:13: ( 'schema' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3487:15: 'schema'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3541:13: ( 'schema' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3541:15: 'schema'
             {
             match("schema"); 
 
@@ -88,8 +83,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_KEY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3489:10: ( 'key' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3489:12: 'key'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3543:10: ( 'key' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3543:12: 'key'
             {
             match("key"); 
 
@@ -109,8 +104,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3491:11: ( 'time' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3491:13: 'time'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3545:11: ( 'time' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3545:13: 'time'
             {
             match("time"); 
 
@@ -130,8 +125,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_COMMIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3493:13: ( 'commitment' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3493:15: 'commitment'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:13: ( 'commitment' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:15: 'commitment'
             {
             match("commitment"); 
 
@@ -151,8 +146,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_CREATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3495:13: ( 'create' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3495:15: 'create'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3549:13: ( 'create' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3549:15: 'create'
             {
             match("create"); 
 
@@ -172,8 +167,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DETACH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3497:13: ( 'detach' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3497:15: 'detach'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:13: ( 'detach' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:15: 'detach'
             {
             match("detach"); 
 
@@ -193,8 +188,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DISCHARGE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3499:16: ( 'discharge' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3499:18: 'discharge'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3553:16: ( 'discharge' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3553:18: 'discharge'
             {
             match("discharge"); 
 
@@ -214,8 +209,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_TO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3501:9: ( 'to' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3501:11: 'to'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3555:9: ( 'to' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3555:11: 'to'
             {
             match("to"); 
 
@@ -235,8 +230,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_EXCEPT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3503:13: ( 'except' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3503:15: 'except'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3557:13: ( 'except' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3557:15: 'except'
             {
             match("except"); 
 
@@ -256,8 +251,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3505:10: ( 'and' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3505:12: 'and'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3559:10: ( 'and' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3559:12: 'and'
             {
             match("and"); 
 
@@ -277,8 +272,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3507:9: ( 'or' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3507:11: 'or'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3561:9: ( 'or' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3561:11: 'or'
             {
             match("or"); 
 
@@ -298,8 +293,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_WHERE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3509:12: ( 'where' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3509:14: 'where'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3563:12: ( 'where' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3563:14: 'where'
             {
             match("where"); 
 
@@ -319,8 +314,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_CREATED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3511:14: ( 'created' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3511:16: 'created'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3565:14: ( 'created' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3565:16: 'created'
             {
             match("created"); 
 
@@ -340,8 +335,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DETACHED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3513:15: ( 'detached' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3513:17: 'detached'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3567:15: ( 'detached' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3567:17: 'detached'
             {
             match("detached"); 
 
@@ -361,8 +356,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DISCHARGED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3515:17: ( 'discharged' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3515:19: 'discharged'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3569:17: ( 'discharged' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3569:19: 'discharged'
             {
             match("discharged"); 
 
@@ -382,8 +377,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_EXPIRED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3517:14: ( 'expired' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3517:16: 'expired'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3571:14: ( 'expired' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3571:16: 'expired'
             {
             match("expired"); 
 
@@ -403,8 +398,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_VIOLATED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3519:15: ( 'violated' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3519:17: 'violated'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3573:15: ( 'violated' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3573:17: 'violated'
             {
             match("violated"); 
 
@@ -424,8 +419,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3521:12: ( ',' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3521:14: ','
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3575:12: ( ',' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3575:14: ','
             {
             match(','); 
 
@@ -444,8 +439,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_LBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3523:15: ( '[' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3523:17: '['
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3577:15: ( '[' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3577:17: '['
             {
             match('['); 
 
@@ -464,8 +459,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_RBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3525:15: ( ']' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3525:17: ']'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3579:15: ( ']' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3579:17: ']'
             {
             match(']'); 
 
@@ -484,8 +479,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3527:13: ( '(' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3527:15: '('
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3581:13: ( '(' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3581:15: '('
             {
             match('('); 
 
@@ -504,8 +499,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3529:13: ( ')' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3529:15: ')'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3583:13: ( ')' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3583:15: ')'
             {
             match(')'); 
 
@@ -524,8 +519,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3531:11: ( '+' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3531:13: '+'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3585:11: ( '+' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3585:13: '+'
             {
             match('+'); 
 
@@ -539,117 +534,15 @@ public class InternalCupidoLexer extends Lexer {
     }
     // $ANTLR end "RULE_PLUS"
 
-    // $ANTLR start "RULE_LT"
-    public final void mRULE_LT() throws RecognitionException {
-        try {
-            int _type = RULE_LT;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3533:9: ( '<' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3533:11: '<'
-            {
-            match('<'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_LT"
-
-    // $ANTLR start "RULE_LEQ"
-    public final void mRULE_LEQ() throws RecognitionException {
-        try {
-            int _type = RULE_LEQ;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3535:10: ( '<=' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3535:12: '<='
-            {
-            match("<="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_LEQ"
-
-    // $ANTLR start "RULE_EQ"
-    public final void mRULE_EQ() throws RecognitionException {
-        try {
-            int _type = RULE_EQ;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3537:9: ( '=' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3537:11: '='
-            {
-            match('='); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_EQ"
-
-    // $ANTLR start "RULE_GT"
-    public final void mRULE_GT() throws RecognitionException {
-        try {
-            int _type = RULE_GT;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3539:9: ( '>' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3539:11: '>'
-            {
-            match('>'); 
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_GT"
-
-    // $ANTLR start "RULE_GEQ"
-    public final void mRULE_GEQ() throws RecognitionException {
-        try {
-            int _type = RULE_GEQ;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3541:10: ( '>=' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3541:12: '>='
-            {
-            match(">="); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "RULE_GEQ"
-
     // $ANTLR start "RULE_ID"
     public final void mRULE_ID() throws RecognitionException {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3543:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3543:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3587:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3587:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3543:11: ( '^' )?
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3587:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -658,7 +551,7 @@ public class InternalCupidoLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3543:11: '^'
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3587:11: '^'
                     {
                     match('^'); 
 
@@ -676,7 +569,7 @@ public class InternalCupidoLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3543:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3587:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -725,10 +618,10 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3545:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3545:12: ( '0' .. '9' )+
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3589:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3589:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3545:12: ( '0' .. '9' )+
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3589:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -742,7 +635,7 @@ public class InternalCupidoLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3545:13: '0' .. '9'
+            	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3589:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -774,10 +667,10 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -795,10 +688,10 @@ public class InternalCupidoLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -814,7 +707,7 @@ public class InternalCupidoLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:21: '\\\\' .
+                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -822,7 +715,7 @@ public class InternalCupidoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -847,10 +740,10 @@ public class InternalCupidoLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -866,7 +759,7 @@ public class InternalCupidoLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:54: '\\\\' .
+                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -874,7 +767,7 @@ public class InternalCupidoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3547:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3591:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -917,12 +810,12 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3549:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3549:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3593:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3593:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3549:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3593:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -947,7 +840,7 @@ public class InternalCupidoLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3549:52: .
+            	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3593:52: .
             	    {
             	    matchAny(); 
 
@@ -977,12 +870,12 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -995,7 +888,7 @@ public class InternalCupidoLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1015,7 +908,7 @@ public class InternalCupidoLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1024,9 +917,9 @@ public class InternalCupidoLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:41: ( '\\r' )?
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1035,7 +928,7 @@ public class InternalCupidoLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3551:41: '\\r'
+                            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3595:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1067,10 +960,10 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3553:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3553:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3597:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3597:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3553:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3597:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1124,8 +1017,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3555:16: ( . )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3555:18: .
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3599:16: ( . )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3599:18: .
             {
             matchAny(); 
 
@@ -1140,8 +1033,8 @@ public class InternalCupidoLexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:8: ( RULE_SCHEMA | RULE_KEY | RULE_TIME | RULE_COMMIT | RULE_CREATE | RULE_DETACH | RULE_DISCHARGE | RULE_TO | RULE_EXCEPT | RULE_AND | RULE_OR | RULE_WHERE | RULE_CREATED | RULE_DETACHED | RULE_DISCHARGED | RULE_EXPIRED | RULE_VIOLATED | RULE_COMMA | RULE_LBRACKET | RULE_RBRACKET | RULE_LPAREN | RULE_RPAREN | RULE_PLUS | RULE_LT | RULE_LEQ | RULE_EQ | RULE_GT | RULE_GEQ | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt12=35;
+        // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:8: ( RULE_SCHEMA | RULE_KEY | RULE_TIME | RULE_COMMIT | RULE_CREATE | RULE_DETACH | RULE_DISCHARGE | RULE_TO | RULE_EXCEPT | RULE_AND | RULE_OR | RULE_WHERE | RULE_CREATED | RULE_DETACHED | RULE_DISCHARGED | RULE_EXPIRED | RULE_VIOLATED | RULE_COMMA | RULE_LBRACKET | RULE_RBRACKET | RULE_LPAREN | RULE_RPAREN | RULE_PLUS | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt12=30;
         alt12 = dfa12.predict(input);
         switch (alt12) {
             case 1 :
@@ -1306,84 +1199,49 @@ public class InternalCupidoLexer extends Lexer {
                 }
                 break;
             case 24 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:283: RULE_LT
-                {
-                mRULE_LT(); 
-
-                }
-                break;
-            case 25 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:291: RULE_LEQ
-                {
-                mRULE_LEQ(); 
-
-                }
-                break;
-            case 26 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:300: RULE_EQ
-                {
-                mRULE_EQ(); 
-
-                }
-                break;
-            case 27 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:308: RULE_GT
-                {
-                mRULE_GT(); 
-
-                }
-                break;
-            case 28 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:316: RULE_GEQ
-                {
-                mRULE_GEQ(); 
-
-                }
-                break;
-            case 29 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:325: RULE_ID
+                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:283: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 30 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:333: RULE_INT
+            case 25 :
+                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:291: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 31 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:342: RULE_STRING
+            case 26 :
+                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:300: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 32 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:354: RULE_ML_COMMENT
+            case 27 :
+                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:312: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 33 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:370: RULE_SL_COMMENT
+            case 28 :
+                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:328: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 34 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:386: RULE_WS
+            case 29 :
+                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:344: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 35 :
-                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:394: RULE_ANY_OTHER
+            case 30 :
+                // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1:352: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1397,176 +1255,167 @@ public class InternalCupidoLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\12\35\6\uffff\1\61\1\uffff\1\64\1\33\2\uffff\3\33\2\uffff"+
-        "\1\35\1\uffff\2\35\1\75\6\35\1\105\2\35\20\uffff\1\35\1\111\1\35"+
-        "\1\uffff\6\35\1\121\1\uffff\3\35\1\uffff\1\125\6\35\1\uffff\3\35"+
-        "\1\uffff\6\35\1\145\1\35\1\147\1\35\1\152\1\154\1\35\1\156\1\35"+
-        "\1\uffff\1\35\1\uffff\1\35\1\162\1\uffff\1\35\1\uffff\1\35\1\uffff"+
-        "\1\165\2\35\1\uffff\1\170\1\35\1\uffff\1\172\1\35\1\uffff\1\175"+
-        "\1\uffff\1\176\1\177\3\uffff";
+        "\1\uffff\12\32\6\uffff\1\30\2\uffff\3\30\2\uffff\1\32\1\uffff\2"+
+        "\32\1\65\6\32\1\75\2\32\13\uffff\1\32\1\101\1\32\1\uffff\6\32\1"+
+        "\111\1\uffff\3\32\1\uffff\1\115\6\32\1\uffff\3\32\1\uffff\6\32\1"+
+        "\135\1\32\1\137\1\32\1\142\1\144\1\32\1\146\1\32\1\uffff\1\32\1"+
+        "\uffff\1\32\1\152\1\uffff\1\32\1\uffff\1\32\1\uffff\1\155\2\32\1"+
+        "\uffff\1\160\1\32\1\uffff\1\162\1\32\1\uffff\1\165\1\uffff\1\166"+
+        "\1\167\3\uffff";
     static final String DFA12_eofS =
-        "\u0080\uffff";
+        "\170\uffff";
     static final String DFA12_minS =
         "\1\0\1\143\1\145\1\151\1\157\1\145\1\170\1\156\1\162\1\150\1\151"+
-        "\6\uffff\1\75\1\uffff\1\75\1\101\2\uffff\2\0\1\52\2\uffff\1\150"+
-        "\1\uffff\1\171\1\155\1\60\1\155\1\145\1\164\1\163\1\143\1\144\1"+
-        "\60\1\145\1\157\20\uffff\1\145\1\60\1\145\1\uffff\1\155\2\141\1"+
-        "\143\1\145\1\151\1\60\1\uffff\1\162\1\154\1\155\1\uffff\1\60\1\151"+
-        "\1\164\1\143\1\150\1\160\1\162\1\uffff\1\145\2\141\1\uffff\1\164"+
-        "\1\145\1\150\1\141\1\164\1\145\1\60\1\164\1\60\1\155\2\60\1\162"+
-        "\1\60\1\144\1\uffff\1\145\1\uffff\1\145\1\60\1\uffff\1\144\1\uffff"+
-        "\1\147\1\uffff\1\60\1\144\1\156\1\uffff\1\60\1\145\1\uffff\1\60"+
-        "\1\164\1\uffff\1\60\1\uffff\2\60\3\uffff";
+        "\6\uffff\1\101\2\uffff\2\0\1\52\2\uffff\1\150\1\uffff\1\171\1\155"+
+        "\1\60\1\155\1\145\1\164\1\163\1\143\1\144\1\60\1\145\1\157\13\uffff"+
+        "\1\145\1\60\1\145\1\uffff\1\155\2\141\1\143\1\145\1\151\1\60\1\uffff"+
+        "\1\162\1\154\1\155\1\uffff\1\60\1\151\1\164\1\143\1\150\1\160\1"+
+        "\162\1\uffff\1\145\2\141\1\uffff\1\164\1\145\1\150\1\141\1\164\1"+
+        "\145\1\60\1\164\1\60\1\155\2\60\1\162\1\60\1\144\1\uffff\1\145\1"+
+        "\uffff\1\145\1\60\1\uffff\1\144\1\uffff\1\147\1\uffff\1\60\1\144"+
+        "\1\156\1\uffff\1\60\1\145\1\uffff\1\60\1\164\1\uffff\1\60\1\uffff"+
+        "\2\60\3\uffff";
     static final String DFA12_maxS =
         "\1\uffff\1\143\1\145\1\157\1\162\1\151\1\170\1\156\1\162\1\150"+
-        "\1\151\6\uffff\1\75\1\uffff\1\75\1\172\2\uffff\2\uffff\1\57\2\uffff"+
-        "\1\150\1\uffff\1\171\1\155\1\172\1\155\1\145\1\164\1\163\1\160\1"+
-        "\144\1\172\1\145\1\157\20\uffff\1\145\1\172\1\145\1\uffff\1\155"+
-        "\2\141\1\143\1\145\1\151\1\172\1\uffff\1\162\1\154\1\155\1\uffff"+
-        "\1\172\1\151\1\164\1\143\1\150\1\160\1\162\1\uffff\1\145\2\141\1"+
-        "\uffff\1\164\1\145\1\150\1\141\1\164\1\145\1\172\1\164\1\172\1\155"+
-        "\2\172\1\162\1\172\1\144\1\uffff\1\145\1\uffff\1\145\1\172\1\uffff"+
-        "\1\144\1\uffff\1\147\1\uffff\1\172\1\144\1\156\1\uffff\1\172\1\145"+
-        "\1\uffff\1\172\1\164\1\uffff\1\172\1\uffff\2\172\3\uffff";
+        "\1\151\6\uffff\1\172\2\uffff\2\uffff\1\57\2\uffff\1\150\1\uffff"+
+        "\1\171\1\155\1\172\1\155\1\145\1\164\1\163\1\160\1\144\1\172\1\145"+
+        "\1\157\13\uffff\1\145\1\172\1\145\1\uffff\1\155\2\141\1\143\1\145"+
+        "\1\151\1\172\1\uffff\1\162\1\154\1\155\1\uffff\1\172\1\151\1\164"+
+        "\1\143\1\150\1\160\1\162\1\uffff\1\145\2\141\1\uffff\1\164\1\145"+
+        "\1\150\1\141\1\164\1\145\1\172\1\164\1\172\1\155\2\172\1\162\1\172"+
+        "\1\144\1\uffff\1\145\1\uffff\1\145\1\172\1\uffff\1\144\1\uffff\1"+
+        "\147\1\uffff\1\172\1\144\1\156\1\uffff\1\172\1\145\1\uffff\1\172"+
+        "\1\164\1\uffff\1\172\1\uffff\2\172\3\uffff";
     static final String DFA12_acceptS =
-        "\13\uffff\1\22\1\23\1\24\1\25\1\26\1\27\1\uffff\1\32\2\uffff\1"+
-        "\35\1\36\3\uffff\1\42\1\43\1\uffff\1\35\14\uffff\1\22\1\23\1\24"+
-        "\1\25\1\26\1\27\1\31\1\30\1\32\1\34\1\33\1\36\1\37\1\40\1\41\1\42"+
-        "\3\uffff\1\10\7\uffff\1\13\3\uffff\1\2\7\uffff\1\12\3\uffff\1\3"+
-        "\17\uffff\1\14\1\uffff\1\1\2\uffff\1\5\1\uffff\1\6\1\uffff\1\11"+
-        "\3\uffff\1\15\2\uffff\1\20\2\uffff\1\16\1\uffff\1\21\2\uffff\1\7"+
-        "\1\4\1\17";
+        "\13\uffff\1\22\1\23\1\24\1\25\1\26\1\27\1\uffff\1\30\1\31\3\uffff"+
+        "\1\35\1\36\1\uffff\1\30\14\uffff\1\22\1\23\1\24\1\25\1\26\1\27\1"+
+        "\31\1\32\1\33\1\34\1\35\3\uffff\1\10\7\uffff\1\13\3\uffff\1\2\7"+
+        "\uffff\1\12\3\uffff\1\3\17\uffff\1\14\1\uffff\1\1\2\uffff\1\5\1"+
+        "\uffff\1\6\1\uffff\1\11\3\uffff\1\15\2\uffff\1\20\2\uffff\1\16\1"+
+        "\uffff\1\21\2\uffff\1\7\1\4\1\17";
     static final String DFA12_specialS =
-        "\1\2\26\uffff\1\1\1\0\147\uffff}>";
+        "\1\2\23\uffff\1\1\1\0\142\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\27\4\33\1\30\1\16\1"+
-            "\17\1\33\1\20\1\13\2\33\1\31\12\26\2\33\1\21\1\22\1\23\2\33"+
-            "\32\25\1\14\1\33\1\15\1\24\1\25\1\33\1\7\1\25\1\4\1\5\1\6\5"+
-            "\25\1\2\3\25\1\10\3\25\1\1\1\3\1\25\1\12\1\11\3\25\uff85\33",
-            "\1\34",
-            "\1\36",
-            "\1\37\5\uffff\1\40",
-            "\1\41\2\uffff\1\42",
-            "\1\43\3\uffff\1\44",
+            "\11\30\2\27\2\30\1\27\22\30\1\27\1\30\1\24\4\30\1\25\1\16\1"+
+            "\17\1\30\1\20\1\13\2\30\1\26\12\23\7\30\32\22\1\14\1\30\1\15"+
+            "\1\21\1\22\1\30\1\7\1\22\1\4\1\5\1\6\5\22\1\2\3\22\1\10\3\22"+
+            "\1\1\1\3\1\22\1\12\1\11\3\22\uff85\30",
+            "\1\31",
+            "\1\33",
+            "\1\34\5\uffff\1\35",
+            "\1\36\2\uffff\1\37",
+            "\1\40\3\uffff\1\41",
+            "\1\42",
+            "\1\43",
+            "\1\44",
             "\1\45",
             "\1\46",
-            "\1\47",
-            "\1\50",
-            "\1\51",
             "",
             "",
             "",
             "",
             "",
             "",
-            "\1\60",
+            "\32\32\4\uffff\1\32\1\uffff\32\32",
+            "",
+            "",
+            "\0\56",
+            "\0\56",
+            "\1\57\4\uffff\1\60",
+            "",
+            "",
+            "\1\62",
             "",
             "\1\63",
-            "\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
-            "",
-            "\0\66",
-            "\0\66",
-            "\1\67\4\uffff\1\70",
-            "",
-            "",
-            "\1\72",
-            "",
-            "\1\73",
+            "\1\64",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\66",
+            "\1\67",
+            "\1\70",
+            "\1\71",
+            "\1\72\14\uffff\1\73",
             "\1\74",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\76",
             "\1\77",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "\1\100",
-            "\1\101",
-            "\1\102\14\uffff\1\103",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\102",
+            "",
+            "\1\103",
             "\1\104",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\105",
             "\1\106",
             "\1\107",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
             "\1\110",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\112",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
+            "\1\112",
             "\1\113",
             "\1\114",
-            "\1\115",
+            "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\116",
             "\1\117",
             "\1\120",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "",
+            "\1\121",
             "\1\122",
             "\1\123",
-            "\1\124",
             "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\124",
+            "\1\125",
             "\1\126",
+            "",
             "\1\127",
             "\1\130",
             "\1\131",
             "\1\132",
             "\1\133",
-            "",
             "\1\134",
-            "\1\135",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\136",
-            "",
-            "\1\137",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\140",
-            "\1\141",
-            "\1\142",
-            "\1\143",
-            "\1\144",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\146",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\3\32\1\141\26\32",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\4\32\1\143\25\32",
+            "\1\145",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\147",
+            "",
             "\1\150",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\3\35\1\151\26\35",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\4\35\1\153\25\35",
-            "\1\155",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "",
+            "\1\151",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "",
+            "\1\153",
+            "",
+            "\1\154",
+            "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\1\156",
             "\1\157",
             "",
-            "\1\160",
-            "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\161",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
             "",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "\1\163",
             "",
-            "\1\164",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\3\32\1\164\26\32",
             "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\166",
-            "\1\167",
-            "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\171",
-            "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\1\173",
-            "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\3\35\1\174\26\35",
-            "",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
-            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
+            "\12\32\7\uffff\32\32\4\uffff\1\32\1\uffff\32\32",
             "",
             "",
             ""
@@ -1602,29 +1451,29 @@ public class InternalCupidoLexer extends Lexer {
             this.transition = DFA12_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( RULE_SCHEMA | RULE_KEY | RULE_TIME | RULE_COMMIT | RULE_CREATE | RULE_DETACH | RULE_DISCHARGE | RULE_TO | RULE_EXCEPT | RULE_AND | RULE_OR | RULE_WHERE | RULE_CREATED | RULE_DETACHED | RULE_DISCHARGED | RULE_EXPIRED | RULE_VIOLATED | RULE_COMMA | RULE_LBRACKET | RULE_RBRACKET | RULE_LPAREN | RULE_RPAREN | RULE_PLUS | RULE_LT | RULE_LEQ | RULE_EQ | RULE_GT | RULE_GEQ | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( RULE_SCHEMA | RULE_KEY | RULE_TIME | RULE_COMMIT | RULE_CREATE | RULE_DETACH | RULE_DISCHARGE | RULE_TO | RULE_EXCEPT | RULE_AND | RULE_OR | RULE_WHERE | RULE_CREATED | RULE_DETACHED | RULE_DISCHARGED | RULE_EXPIRED | RULE_VIOLATED | RULE_COMMA | RULE_LBRACKET | RULE_RBRACKET | RULE_LPAREN | RULE_RPAREN | RULE_PLUS | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_24 = input.LA(1);
+                        int LA12_21 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_24>='\u0000' && LA12_24<='\uFFFF')) ) {s = 54;}
+                        if ( ((LA12_21>='\u0000' && LA12_21<='\uFFFF')) ) {s = 46;}
 
-                        else s = 27;
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA12_23 = input.LA(1);
+                        int LA12_20 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 54;}
+                        if ( ((LA12_20>='\u0000' && LA12_20<='\uFFFF')) ) {s = 46;}
 
-                        else s = 27;
+                        else s = 24;
 
                         if ( s>=0 ) return s;
                         break;
@@ -1664,27 +1513,21 @@ public class InternalCupidoLexer extends Lexer {
 
                         else if ( (LA12_0=='+') ) {s = 16;}
 
-                        else if ( (LA12_0=='<') ) {s = 17;}
+                        else if ( (LA12_0=='^') ) {s = 17;}
 
-                        else if ( (LA12_0=='=') ) {s = 18;}
+                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||(LA12_0>='f' && LA12_0<='j')||(LA12_0>='l' && LA12_0<='n')||(LA12_0>='p' && LA12_0<='r')||LA12_0=='u'||(LA12_0>='x' && LA12_0<='z')) ) {s = 18;}
 
-                        else if ( (LA12_0=='>') ) {s = 19;}
+                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 19;}
 
-                        else if ( (LA12_0=='^') ) {s = 20;}
+                        else if ( (LA12_0=='\"') ) {s = 20;}
 
-                        else if ( ((LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||LA12_0=='b'||(LA12_0>='f' && LA12_0<='j')||(LA12_0>='l' && LA12_0<='n')||(LA12_0>='p' && LA12_0<='r')||LA12_0=='u'||(LA12_0>='x' && LA12_0<='z')) ) {s = 21;}
+                        else if ( (LA12_0=='\'') ) {s = 21;}
 
-                        else if ( ((LA12_0>='0' && LA12_0<='9')) ) {s = 22;}
+                        else if ( (LA12_0=='/') ) {s = 22;}
 
-                        else if ( (LA12_0=='\"') ) {s = 23;}
+                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 23;}
 
-                        else if ( (LA12_0=='\'') ) {s = 24;}
-
-                        else if ( (LA12_0=='/') ) {s = 25;}
-
-                        else if ( ((LA12_0>='\t' && LA12_0<='\n')||LA12_0=='\r'||LA12_0==' ') ) {s = 26;}
-
-                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||LA12_0=='*'||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<=';')||(LA12_0>='?' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 27;}
+                        else if ( ((LA12_0>='\u0000' && LA12_0<='\b')||(LA12_0>='\u000B' && LA12_0<='\f')||(LA12_0>='\u000E' && LA12_0<='\u001F')||LA12_0=='!'||(LA12_0>='#' && LA12_0<='&')||LA12_0=='*'||(LA12_0>='-' && LA12_0<='.')||(LA12_0>=':' && LA12_0<='@')||LA12_0=='\\'||LA12_0=='`'||(LA12_0>='{' && LA12_0<='\uFFFF')) ) {s = 24;}
 
                         if ( s>=0 ) return s;
                         break;

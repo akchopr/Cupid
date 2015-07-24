@@ -37,14 +37,11 @@ public class CupidoParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getExprAccess().getAlternatives(), "rule__Expr__Alternatives");
+					put(grammarAccess.getBExprAccess().getAlternatives(), "rule__BExpr__Alternatives");
 					put(grammarAccess.getIntervalAccess().getAlternatives(), "rule__Interval__Alternatives");
 					put(grammarAccess.getEventAccess().getAlternatives(), "rule__Event__Alternatives");
 					put(grammarAccess.getEventAccess().getLifeStateAlternatives_1_0_0(), "rule__Event__LifeStateAlternatives_1_0_0");
-					put(grammarAccess.getArithExprAccess().getAlternatives_2(), "rule__ArithExpr__Alternatives_2");
 					put(grammarAccess.getTimeStampAccess().getAlternatives(), "rule__TimeStamp__Alternatives");
-					put(grammarAccess.getBinaryOperatorAccess().getOpAlternatives_0(), "rule__BinaryOperator__OpAlternatives_0");
-					put(grammarAccess.getEventOperatorAccess().getAlternatives(), "rule__EventOperator__Alternatives");
 					put(grammarAccess.getCupidoAccess().getGroup(), "rule__Cupido__Group__0");
 					put(grammarAccess.getSchemataAccess().getGroup(), "rule__Schemata__Group__0");
 					put(grammarAccess.getEventRelationAccess().getGroup(), "rule__EventRelation__Group__0");
@@ -52,16 +49,20 @@ public class CupidoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventRelationAccess().getGroup_7(), "rule__EventRelation__Group_7__0");
 					put(grammarAccess.getCommitmentAccess().getGroup(), "rule__Commitment__Group__0");
 					put(grammarAccess.getCommitmentAccess().getGroup_7(), "rule__Commitment__Group_7__0");
-					put(grammarAccess.getGeneralExprAccess().getGroup(), "rule__GeneralExpr__Group__0");
-					put(grammarAccess.getGeneralExprAccess().getGroup_1(), "rule__GeneralExpr__Group_1__0");
-					put(grammarAccess.getExprAccess().getGroup_1(), "rule__Expr__Group_1__0");
-					put(grammarAccess.getExprAccess().getGroup_2(), "rule__Expr__Group_2__0");
+					put(grammarAccess.getEExprAccess().getGroup(), "rule__EExpr__Group__0");
+					put(grammarAccess.getEExprAccess().getGroup_1(), "rule__EExpr__Group_1__0");
+					put(grammarAccess.getOExprAccess().getGroup(), "rule__OExpr__Group__0");
+					put(grammarAccess.getOExprAccess().getGroup_1(), "rule__OExpr__Group_1__0");
+					put(grammarAccess.getAExprAccess().getGroup(), "rule__AExpr__Group__0");
+					put(grammarAccess.getAExprAccess().getGroup_1(), "rule__AExpr__Group_1__0");
+					put(grammarAccess.getWExprAccess().getGroup(), "rule__WExpr__Group__0");
+					put(grammarAccess.getWExprAccess().getGroup_1(), "rule__WExpr__Group_1__0");
+					put(grammarAccess.getBExprAccess().getGroup_1(), "rule__BExpr__Group_1__0");
 					put(grammarAccess.getIntervalAccess().getGroup_1(), "rule__Interval__Group_1__0");
 					put(grammarAccess.getIntervalAccess().getGroup_2(), "rule__Interval__Group_2__0");
 					put(grammarAccess.getIntervalAccess().getGroup_3(), "rule__Interval__Group_3__0");
 					put(grammarAccess.getIntervalAccess().getGroup_4(), "rule__Interval__Group_4__0");
 					put(grammarAccess.getEventAccess().getGroup_1(), "rule__Event__Group_1__0");
-					put(grammarAccess.getArithExprAccess().getGroup(), "rule__ArithExpr__Group__0");
 					put(grammarAccess.getTimeStampAccess().getGroup_1(), "rule__TimeStamp__Group_1__0");
 					put(grammarAccess.getTimeStampAccess().getGroup_1_1(), "rule__TimeStamp__Group_1_1__0");
 					put(grammarAccess.getCupidoAccess().getCommitmentsAssignment_1(), "rule__Cupido__CommitmentsAssignment_1");
@@ -79,14 +80,11 @@ public class CupidoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCommitmentAccess().getTriggerAssignment_6(), "rule__Commitment__TriggerAssignment_6");
 					put(grammarAccess.getCommitmentAccess().getAntecedentAssignment_7_1(), "rule__Commitment__AntecedentAssignment_7_1");
 					put(grammarAccess.getCommitmentAccess().getConsequentAssignment_9(), "rule__Commitment__ConsequentAssignment_9");
-					put(grammarAccess.getGeneralExprAccess().getExprAssignment_0(), "rule__GeneralExpr__ExprAssignment_0");
-					put(grammarAccess.getGeneralExprAccess().getWhereAssignment_1_0(), "rule__GeneralExpr__WhereAssignment_1_0");
-					put(grammarAccess.getGeneralExprAccess().getArithAssignment_1_1(), "rule__GeneralExpr__ArithAssignment_1_1");
-					put(grammarAccess.getExprAccess().getIntervalAssignment_0(), "rule__Expr__IntervalAssignment_0");
-					put(grammarAccess.getExprAccess().getLeftAssignment_1_0(), "rule__Expr__LeftAssignment_1_0");
-					put(grammarAccess.getExprAccess().getOpAssignment_1_1(), "rule__Expr__OpAssignment_1_1");
-					put(grammarAccess.getExprAccess().getRightAssignment_1_2(), "rule__Expr__RightAssignment_1_2");
-					put(grammarAccess.getExprAccess().getExprAssignment_2_1(), "rule__Expr__ExprAssignment_2_1");
+					put(grammarAccess.getEExprAccess().getRightAssignment_1_2(), "rule__EExpr__RightAssignment_1_2");
+					put(grammarAccess.getOExprAccess().getRightAssignment_1_2(), "rule__OExpr__RightAssignment_1_2");
+					put(grammarAccess.getAExprAccess().getRightAssignment_1_2(), "rule__AExpr__RightAssignment_1_2");
+					put(grammarAccess.getWExprAccess().getRightAssignment_1_2(), "rule__WExpr__RightAssignment_1_2");
+					put(grammarAccess.getBExprAccess().getIntervalAssignment_0(), "rule__BExpr__IntervalAssignment_0");
 					put(grammarAccess.getIntervalAccess().getEventAssignment_0(), "rule__Interval__EventAssignment_0");
 					put(grammarAccess.getIntervalAccess().getEventAssignment_1_0(), "rule__Interval__EventAssignment_1_0");
 					put(grammarAccess.getIntervalAccess().getLeftAssignment_1_2(), "rule__Interval__LeftAssignment_1_2");
@@ -99,15 +97,9 @@ public class CupidoParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventAccess().getNameAssignment_0(), "rule__Event__NameAssignment_0");
 					put(grammarAccess.getEventAccess().getLifeStateAssignment_1_0(), "rule__Event__LifeStateAssignment_1_0");
 					put(grammarAccess.getEventAccess().getLabelAssignment_1_1(), "rule__Event__LabelAssignment_1_1");
-					put(grammarAccess.getArithExprAccess().getLeftAttrAssignment_0(), "rule__ArithExpr__LeftAttrAssignment_0");
-					put(grammarAccess.getArithExprAccess().getBinOpAssignment_1(), "rule__ArithExpr__BinOpAssignment_1");
-					put(grammarAccess.getArithExprAccess().getRightAttrAssignment_2_0(), "rule__ArithExpr__RightAttrAssignment_2_0");
-					put(grammarAccess.getArithExprAccess().getNumAssignment_2_1(), "rule__ArithExpr__NumAssignment_2_1");
 					put(grammarAccess.getTimeStampAccess().getValAssignment_0(), "rule__TimeStamp__ValAssignment_0");
 					put(grammarAccess.getTimeStampAccess().getEventReferenceAssignment_1_0(), "rule__TimeStamp__EventReferenceAssignment_1_0");
 					put(grammarAccess.getTimeStampAccess().getShiftAssignment_1_1_1(), "rule__TimeStamp__ShiftAssignment_1_1_1");
-					put(grammarAccess.getBinaryOperatorAccess().getOpAssignment(), "rule__BinaryOperator__OpAssignment");
-					put(grammarAccess.getAttributeAccess().getNameAssignment(), "rule__Attribute__NameAssignment");
 				}
 			};
 		}

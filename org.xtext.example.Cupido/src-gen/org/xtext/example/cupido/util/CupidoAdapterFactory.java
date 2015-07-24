@@ -100,11 +100,6 @@ public class CupidoAdapterFactory extends AdapterFactoryImpl
         return createCommitmentAdapter();
       }
       @Override
-      public Adapter caseGeneralExpr(GeneralExpr object)
-      {
-        return createGeneralExprAdapter();
-      }
-      @Override
       public Adapter caseExpr(Expr object)
       {
         return createExprAdapter();
@@ -120,24 +115,29 @@ public class CupidoAdapterFactory extends AdapterFactoryImpl
         return createEventAdapter();
       }
       @Override
-      public Adapter caseArithExpr(ArithExpr object)
-      {
-        return createArithExprAdapter();
-      }
-      @Override
       public Adapter caseTimeStamp(TimeStamp object)
       {
         return createTimeStampAdapter();
       }
       @Override
-      public Adapter caseBinaryOperator(BinaryOperator object)
+      public Adapter caseEExpr(EExpr object)
       {
-        return createBinaryOperatorAdapter();
+        return createEExprAdapter();
       }
       @Override
-      public Adapter caseAttribute(Attribute object)
+      public Adapter caseOExpr(OExpr object)
       {
-        return createAttributeAdapter();
+        return createOExprAdapter();
+      }
+      @Override
+      public Adapter caseAExpr(AExpr object)
+      {
+        return createAExprAdapter();
+      }
+      @Override
+      public Adapter caseWExpr(WExpr object)
+      {
+        return createWExprAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -237,21 +237,6 @@ public class CupidoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.GeneralExpr <em>General Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cupido.GeneralExpr
-   * @generated
-   */
-  public Adapter createGeneralExprAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.Expr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -297,21 +282,6 @@ public class CupidoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.ArithExpr <em>Arith Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cupido.ArithExpr
-   * @generated
-   */
-  public Adapter createArithExprAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.TimeStamp <em>Time Stamp</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -327,31 +297,61 @@ public class CupidoAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.BinaryOperator <em>Binary Operator</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.EExpr <em>EExpr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.cupido.BinaryOperator
+   * @see org.xtext.example.cupido.EExpr
    * @generated
    */
-  public Adapter createBinaryOperatorAdapter()
+  public Adapter createEExprAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.Attribute <em>Attribute</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.OExpr <em>OExpr</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.cupido.Attribute
+   * @see org.xtext.example.cupido.OExpr
    * @generated
    */
-  public Adapter createAttributeAdapter()
+  public Adapter createOExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.AExpr <em>AExpr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cupido.AExpr
+   * @generated
+   */
+  public Adapter createAExprAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.WExpr <em>WExpr</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.cupido.WExpr
+   * @generated
+   */
+  public Adapter createWExprAdapter()
   {
     return null;
   }

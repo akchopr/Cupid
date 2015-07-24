@@ -63,6 +63,29 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 		return sb.toString();
 	}
 	
+	public String toSQL() {
+		StringBuffer sb = new StringBuffer();
+		sb.append(Parser.LPAREN);
+		
+		if (operator == EventOperator.SELECT) {
+			sb.append("SELECT * FROM " + leftExpr.toSQL() + " WHERE " + subscript) ;			
+		} else if (operator == EventOperator.PROJECT) {
+			sb.append("SELECT " + subscript + " FROM " + leftExpr.toSQL() + " AS TABLE_X");			
+		} else if (operator == EventOperator.RENAME) {
+			sb.append("SELECT " + subscript + " FROM " + leftExpr.toSQL() + " AS TABLE_X");
+		} else if ((operator == EventOperator.THETAJOIN) || (operator == EventOperator.UNION) || (operator == EventOperator.INTERSECTION) || (operator == EventOperator.DIFF)) {
+			sb.append(leftExpr.toSQL() + Parser.SPACE + operator.toString() + Parser.SPACE + rightExpr.toSQL());
+		} else if (event != null) {
+			sb.append("SELECT * FROM " + event.getName() + " AS TABLE_X");
+		}
+		sb.append(Parser.RPAREN);
+		
+
+		return sb.toString();
+	}
+	
+	
+	
 	public String toRelationalAlgebraOLD () {
 		  String leftS = this.getLeft().toRelationalAlgebra();
 		  String rightS = this.getRight().toRelationalAlgebra();
@@ -181,6 +204,7 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 	}
 			
 	RelationalExpr getRenameTime() {
+		String oldTimeName = this.getTimeColumn().getFullName();
 		Column newTime = this.getTimeColumn().generateColumn();
 
 		RelationalExpr renamedExpr = new RelationalExpr(EventOperator.RENAME);
@@ -194,7 +218,8 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			sb.append(p.getFullName());	
 			sb.append(Parser.COMMA);
 		}
-		sb.append(renamedExpr.getTimeColumn().getFullName());
+		
+		sb.append(oldTimeName + " AS " + renamedExpr.getTimeColumn().getFullName());
 
 		renamedExpr.setSubscript(sb.toString());
 		

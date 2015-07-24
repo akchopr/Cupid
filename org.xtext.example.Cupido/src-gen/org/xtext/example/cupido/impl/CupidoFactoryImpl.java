@@ -69,14 +69,14 @@ public class CupidoFactoryImpl extends EFactoryImpl implements CupidoFactory
       case CupidoPackage.EVENT_RELATION: return createEventRelation();
       case CupidoPackage.PARAM: return createParam();
       case CupidoPackage.COMMITMENT: return createCommitment();
-      case CupidoPackage.GENERAL_EXPR: return createGeneralExpr();
       case CupidoPackage.EXPR: return createExpr();
       case CupidoPackage.INTERVAL: return createInterval();
       case CupidoPackage.EVENT: return createEvent();
-      case CupidoPackage.ARITH_EXPR: return createArithExpr();
       case CupidoPackage.TIME_STAMP: return createTimeStamp();
-      case CupidoPackage.BINARY_OPERATOR: return createBinaryOperator();
-      case CupidoPackage.ATTRIBUTE: return createAttribute();
+      case CupidoPackage.EEXPR: return createEExpr();
+      case CupidoPackage.OEXPR: return createOExpr();
+      case CupidoPackage.AEXPR: return createAExpr();
+      case CupidoPackage.WEXPR: return createWExpr();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -142,17 +142,6 @@ public class CupidoFactoryImpl extends EFactoryImpl implements CupidoFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public GeneralExpr createGeneralExpr()
-  {
-    GeneralExprImpl generalExpr = new GeneralExprImpl();
-    return generalExpr;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Expr createExpr()
   {
     ExprImpl expr = new ExprImpl();
@@ -186,17 +175,6 @@ public class CupidoFactoryImpl extends EFactoryImpl implements CupidoFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ArithExpr createArithExpr()
-  {
-    ArithExprImpl arithExpr = new ArithExprImpl();
-    return arithExpr;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public TimeStamp createTimeStamp()
   {
     TimeStampImpl timeStamp = new TimeStampImpl();
@@ -208,10 +186,10 @@ public class CupidoFactoryImpl extends EFactoryImpl implements CupidoFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public BinaryOperator createBinaryOperator()
+  public EExpr createEExpr()
   {
-    BinaryOperatorImpl binaryOperator = new BinaryOperatorImpl();
-    return binaryOperator;
+    EExprImpl eExpr = new EExprImpl();
+    return eExpr;
   }
 
   /**
@@ -219,10 +197,32 @@ public class CupidoFactoryImpl extends EFactoryImpl implements CupidoFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Attribute createAttribute()
+  public OExpr createOExpr()
   {
-    AttributeImpl attribute = new AttributeImpl();
-    return attribute;
+    OExprImpl oExpr = new OExprImpl();
+    return oExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AExpr createAExpr()
+  {
+    AExprImpl aExpr = new AExprImpl();
+    return aExpr;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WExpr createWExpr()
+  {
+    WExprImpl wExpr = new WExprImpl();
+    return wExpr;
   }
 
   /**

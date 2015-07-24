@@ -189,22 +189,20 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCreditorIDTerminalRuleCall_4_0 = (RuleCall)cCreditorAssignment_4.eContents().get(0);
 		private final RuleCall cCREATETerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
 		private final Assignment cTriggerAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cTriggerGeneralExprParserRuleCall_6_0 = (RuleCall)cTriggerAssignment_6.eContents().get(0);
+		private final RuleCall cTriggerEExprParserRuleCall_6_0 = (RuleCall)cTriggerAssignment_6.eContents().get(0);
 		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
 		private final RuleCall cDETACHTerminalRuleCall_7_0 = (RuleCall)cGroup_7.eContents().get(0);
 		private final Assignment cAntecedentAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cAntecedentGeneralExprParserRuleCall_7_1_0 = (RuleCall)cAntecedentAssignment_7_1.eContents().get(0);
+		private final RuleCall cAntecedentEExprParserRuleCall_7_1_0 = (RuleCall)cAntecedentAssignment_7_1.eContents().get(0);
 		private final RuleCall cDISCHARGETerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 		private final Assignment cConsequentAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cConsequentGeneralExprParserRuleCall_9_0 = (RuleCall)cConsequentAssignment_9.eContents().get(0);
+		private final RuleCall cConsequentEExprParserRuleCall_9_0 = (RuleCall)cConsequentAssignment_9.eContents().get(0);
 		
 		//Commitment:
-		//	COMMIT label=ID debtor=ID TO creditor=ID CREATE trigger=GeneralExpr (DETACH antecedent=GeneralExpr)? DISCHARGE
-		//	consequent=GeneralExpr;
+		//	COMMIT label=ID debtor=ID TO creditor=ID CREATE trigger=EExpr (DETACH antecedent=EExpr)? DISCHARGE consequent=EExpr;
 		@Override public ParserRule getRule() { return rule; }
 
-		//COMMIT label=ID debtor=ID TO creditor=ID CREATE trigger=GeneralExpr (DETACH antecedent=GeneralExpr)? DISCHARGE
-		//consequent=GeneralExpr
+		//COMMIT label=ID debtor=ID TO creditor=ID CREATE trigger=EExpr (DETACH antecedent=EExpr)? DISCHARGE consequent=EExpr
 		public Group getGroup() { return cGroup; }
 
 		//COMMIT
@@ -234,97 +232,193 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//CREATE
 		public RuleCall getCREATETerminalRuleCall_5() { return cCREATETerminalRuleCall_5; }
 
-		//trigger=GeneralExpr
+		//trigger=EExpr
 		public Assignment getTriggerAssignment_6() { return cTriggerAssignment_6; }
 
-		//GeneralExpr
-		public RuleCall getTriggerGeneralExprParserRuleCall_6_0() { return cTriggerGeneralExprParserRuleCall_6_0; }
+		//EExpr
+		public RuleCall getTriggerEExprParserRuleCall_6_0() { return cTriggerEExprParserRuleCall_6_0; }
 
-		//(DETACH antecedent=GeneralExpr)?
+		//(DETACH antecedent=EExpr)?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//DETACH
 		public RuleCall getDETACHTerminalRuleCall_7_0() { return cDETACHTerminalRuleCall_7_0; }
 
-		//antecedent=GeneralExpr
+		//antecedent=EExpr
 		public Assignment getAntecedentAssignment_7_1() { return cAntecedentAssignment_7_1; }
 
-		//GeneralExpr
-		public RuleCall getAntecedentGeneralExprParserRuleCall_7_1_0() { return cAntecedentGeneralExprParserRuleCall_7_1_0; }
+		//EExpr
+		public RuleCall getAntecedentEExprParserRuleCall_7_1_0() { return cAntecedentEExprParserRuleCall_7_1_0; }
 
 		//DISCHARGE
 		public RuleCall getDISCHARGETerminalRuleCall_8() { return cDISCHARGETerminalRuleCall_8; }
 
-		//consequent=GeneralExpr
+		//consequent=EExpr
 		public Assignment getConsequentAssignment_9() { return cConsequentAssignment_9; }
 
-		//GeneralExpr
-		public RuleCall getConsequentGeneralExprParserRuleCall_9_0() { return cConsequentGeneralExprParserRuleCall_9_0; }
+		//EExpr
+		public RuleCall getConsequentEExprParserRuleCall_9_0() { return cConsequentEExprParserRuleCall_9_0; }
 	}
 
-	public class GeneralExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GeneralExpr");
+	public class EExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EExpr");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cExprAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cExprExprParserRuleCall_0_0 = (RuleCall)cExprAssignment_0.eContents().get(0);
+		private final RuleCall cOExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Assignment cWhereAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cWhereWHERETerminalRuleCall_1_0_0 = (RuleCall)cWhereAssignment_1_0.eContents().get(0);
-		private final Assignment cArithAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cArithArithExprParserRuleCall_1_1_0 = (RuleCall)cArithAssignment_1_1.eContents().get(0);
+		private final Action cEExprLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final RuleCall cEXCEPTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightOExprParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//GeneralExpr:
-		//	expr=Expr (where=WHERE arith=ArithExpr)?;
+		//EExpr returns Expr:
+		//	OExpr ({EExpr.left=current} EXCEPT right=OExpr)*;
 		@Override public ParserRule getRule() { return rule; }
 
-		//expr=Expr (where=WHERE arith=ArithExpr)?
+		//OExpr ({EExpr.left=current} EXCEPT right=OExpr)*
 		public Group getGroup() { return cGroup; }
 
-		//expr=Expr
-		public Assignment getExprAssignment_0() { return cExprAssignment_0; }
+		//OExpr
+		public RuleCall getOExprParserRuleCall_0() { return cOExprParserRuleCall_0; }
 
-		//Expr
-		public RuleCall getExprExprParserRuleCall_0_0() { return cExprExprParserRuleCall_0_0; }
-
-		//(where=WHERE arith=ArithExpr)?
+		//({EExpr.left=current} EXCEPT right=OExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
-		//where=WHERE
-		public Assignment getWhereAssignment_1_0() { return cWhereAssignment_1_0; }
+		//{EExpr.left=current}
+		public Action getEExprLeftAction_1_0() { return cEExprLeftAction_1_0; }
 
-		//WHERE
-		public RuleCall getWhereWHERETerminalRuleCall_1_0_0() { return cWhereWHERETerminalRuleCall_1_0_0; }
+		//EXCEPT
+		public RuleCall getEXCEPTTerminalRuleCall_1_1() { return cEXCEPTTerminalRuleCall_1_1; }
 
-		//arith=ArithExpr
-		public Assignment getArithAssignment_1_1() { return cArithAssignment_1_1; }
+		//right=OExpr
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
 
-		//ArithExpr
-		public RuleCall getArithArithExprParserRuleCall_1_1_0() { return cArithArithExprParserRuleCall_1_1_0; }
+		//OExpr
+		public RuleCall getRightOExprParserRuleCall_1_2_0() { return cRightOExprParserRuleCall_1_2_0; }
 	}
 
-	public class ExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expr");
+	public class OExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cAExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cOExprLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final RuleCall cORTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightAExprParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		//OExpr returns Expr:
+		//	AExpr ({OExpr.left=current} OR right=AExpr)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//AExpr ({OExpr.left=current} OR right=AExpr)*
+		public Group getGroup() { return cGroup; }
+
+		//AExpr
+		public RuleCall getAExprParserRuleCall_0() { return cAExprParserRuleCall_0; }
+
+		//({OExpr.left=current} OR right=AExpr)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{OExpr.left=current}
+		public Action getOExprLeftAction_1_0() { return cOExprLeftAction_1_0; }
+
+		//OR
+		public RuleCall getORTerminalRuleCall_1_1() { return cORTerminalRuleCall_1_1; }
+
+		//right=AExpr
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+
+		//AExpr
+		public RuleCall getRightAExprParserRuleCall_1_2_0() { return cRightAExprParserRuleCall_1_2_0; }
+	}
+
+	public class AExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cWExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cAExprLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final RuleCall cANDTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightWExprParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		//AExpr returns Expr:
+		//	WExpr ({AExpr.left=current} AND right=WExpr)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//WExpr ({AExpr.left=current} AND right=WExpr)*
+		public Group getGroup() { return cGroup; }
+
+		//WExpr
+		public RuleCall getWExprParserRuleCall_0() { return cWExprParserRuleCall_0; }
+
+		//({AExpr.left=current} AND right=WExpr)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{AExpr.left=current}
+		public Action getAExprLeftAction_1_0() { return cAExprLeftAction_1_0; }
+
+		//AND
+		public RuleCall getANDTerminalRuleCall_1_1() { return cANDTerminalRuleCall_1_1; }
+
+		//right=WExpr
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+
+		//WExpr
+		public RuleCall getRightWExprParserRuleCall_1_2_0() { return cRightWExprParserRuleCall_1_2_0; }
+	}
+
+	public class WExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WExpr");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final RuleCall cBExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Action cWExprLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final RuleCall cWHERETerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cRightSTRINGTerminalRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
+		
+		//WExpr returns Expr:
+		//	BExpr ({WExpr.left=current} WHERE right=STRING)*;
+		@Override public ParserRule getRule() { return rule; }
+
+		//BExpr ({WExpr.left=current} WHERE right=STRING)*
+		public Group getGroup() { return cGroup; }
+
+		//BExpr
+		public RuleCall getBExprParserRuleCall_0() { return cBExprParserRuleCall_0; }
+
+		//({WExpr.left=current} WHERE right=STRING)*
+		public Group getGroup_1() { return cGroup_1; }
+
+		//{WExpr.left=current}
+		public Action getWExprLeftAction_1_0() { return cWExprLeftAction_1_0; }
+
+		//WHERE
+		public RuleCall getWHERETerminalRuleCall_1_1() { return cWHERETerminalRuleCall_1_1; }
+
+		//right=STRING
+		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
+
+		//STRING
+		public RuleCall getRightSTRINGTerminalRuleCall_1_2_0() { return cRightSTRINGTerminalRuleCall_1_2_0; }
+	}
+
+	public class BExprElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cIntervalAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
 		private final RuleCall cIntervalIntervalParserRuleCall_0_0 = (RuleCall)cIntervalAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cLeftAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cLeftIntervalParserRuleCall_1_0_0 = (RuleCall)cLeftAssignment_1_0.eContents().get(0);
-		private final Assignment cOpAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOpEventOperatorParserRuleCall_1_1_0 = (RuleCall)cOpAssignment_1_1.eContents().get(0);
-		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightExprParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final RuleCall cLPARENTerminalRuleCall_2_0 = (RuleCall)cGroup_2.eContents().get(0);
-		private final Assignment cExprAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cExprExprParserRuleCall_2_1_0 = (RuleCall)cExprAssignment_2_1.eContents().get(0);
-		private final RuleCall cRPARENTerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
+		private final RuleCall cLPARENTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
+		private final RuleCall cEExprParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cRPARENTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
 		
-		//Expr:
-		//	interval=Interval | left=Interval op=EventOperator right=Expr | LPAREN expr=Expr RPAREN;
+		//BExpr returns Expr:
+		//	interval=Interval | LPAREN EExpr RPAREN;
 		@Override public ParserRule getRule() { return rule; }
 
-		//interval=Interval | left=Interval op=EventOperator right=Expr | LPAREN expr=Expr RPAREN
+		//interval=Interval | LPAREN EExpr RPAREN
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//interval=Interval
@@ -333,41 +427,17 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//Interval
 		public RuleCall getIntervalIntervalParserRuleCall_0_0() { return cIntervalIntervalParserRuleCall_0_0; }
 
-		//left=Interval op=EventOperator right=Expr
+		//LPAREN EExpr RPAREN
 		public Group getGroup_1() { return cGroup_1; }
 
-		//left=Interval
-		public Assignment getLeftAssignment_1_0() { return cLeftAssignment_1_0; }
-
-		//Interval
-		public RuleCall getLeftIntervalParserRuleCall_1_0_0() { return cLeftIntervalParserRuleCall_1_0_0; }
-
-		//op=EventOperator
-		public Assignment getOpAssignment_1_1() { return cOpAssignment_1_1; }
-
-		//EventOperator
-		public RuleCall getOpEventOperatorParserRuleCall_1_1_0() { return cOpEventOperatorParserRuleCall_1_1_0; }
-
-		//right=Expr
-		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
-		//Expr
-		public RuleCall getRightExprParserRuleCall_1_2_0() { return cRightExprParserRuleCall_1_2_0; }
-
-		//LPAREN expr=Expr RPAREN
-		public Group getGroup_2() { return cGroup_2; }
-
 		//LPAREN
-		public RuleCall getLPARENTerminalRuleCall_2_0() { return cLPARENTerminalRuleCall_2_0; }
+		public RuleCall getLPARENTerminalRuleCall_1_0() { return cLPARENTerminalRuleCall_1_0; }
 
-		//expr=Expr
-		public Assignment getExprAssignment_2_1() { return cExprAssignment_2_1; }
-
-		//Expr
-		public RuleCall getExprExprParserRuleCall_2_1_0() { return cExprExprParserRuleCall_2_1_0; }
+		//EExpr
+		public RuleCall getEExprParserRuleCall_1_1() { return cEExprParserRuleCall_1_1; }
 
 		//RPAREN
-		public RuleCall getRPARENTerminalRuleCall_2_2() { return cRPARENTerminalRuleCall_2_2; }
+		public RuleCall getRPARENTerminalRuleCall_1_2() { return cRPARENTerminalRuleCall_1_2; }
 	}
 
 	public class IntervalElements extends AbstractParserRuleElementFinder {
@@ -582,62 +652,6 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getLabelIDTerminalRuleCall_1_1_0() { return cLabelIDTerminalRuleCall_1_1_0; }
 	}
 
-	public class ArithExprElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ArithExpr");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cLeftAttrAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cLeftAttrAttributeParserRuleCall_0_0 = (RuleCall)cLeftAttrAssignment_0.eContents().get(0);
-		private final Assignment cBinOpAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cBinOpBinaryOperatorParserRuleCall_1_0 = (RuleCall)cBinOpAssignment_1.eContents().get(0);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cRightAttrAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final RuleCall cRightAttrAttributeParserRuleCall_2_0_0 = (RuleCall)cRightAttrAssignment_2_0.eContents().get(0);
-		private final Assignment cNumAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final RuleCall cNumINTTerminalRuleCall_2_1_0 = (RuleCall)cNumAssignment_2_1.eContents().get(0);
-		
-		//ArithExpr:
-		//	leftAttr=Attribute //  arith = ((name = ID) (comparativeOp = BinaryOperator)  |
-		//	//  LPAREN (arith = ArithExpr) RPAREN
-		//	// We are not parsing arithmetic expressions, so I would like to pick up everything 
-		//	// under ArithExpr and just pass it along
-		//	binOp=BinaryOperator (rightAttr=Attribute | num=INT);
-		@Override public ParserRule getRule() { return rule; }
-
-		//leftAttr=Attribute //  arith = ((name = ID) (comparativeOp = BinaryOperator)  |
-		////  LPAREN (arith = ArithExpr) RPAREN
-		//// We are not parsing arithmetic expressions, so I would like to pick up everything 
-		//// under ArithExpr and just pass it along
-		//binOp=BinaryOperator (rightAttr=Attribute | num=INT)
-		public Group getGroup() { return cGroup; }
-
-		//leftAttr=Attribute
-		public Assignment getLeftAttrAssignment_0() { return cLeftAttrAssignment_0; }
-
-		//Attribute
-		public RuleCall getLeftAttrAttributeParserRuleCall_0_0() { return cLeftAttrAttributeParserRuleCall_0_0; }
-
-		//binOp=BinaryOperator
-		public Assignment getBinOpAssignment_1() { return cBinOpAssignment_1; }
-
-		//BinaryOperator
-		public RuleCall getBinOpBinaryOperatorParserRuleCall_1_0() { return cBinOpBinaryOperatorParserRuleCall_1_0; }
-
-		//rightAttr=Attribute | num=INT
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
-
-		//rightAttr=Attribute
-		public Assignment getRightAttrAssignment_2_0() { return cRightAttrAssignment_2_0; }
-
-		//Attribute
-		public RuleCall getRightAttrAttributeParserRuleCall_2_0_0() { return cRightAttrAttributeParserRuleCall_2_0_0; }
-
-		//num=INT
-		public Assignment getNumAssignment_2_1() { return cNumAssignment_2_1; }
-
-		//INT
-		public RuleCall getNumINTTerminalRuleCall_2_1_0() { return cNumINTTerminalRuleCall_2_1_0; }
-	}
-
 	public class TimeStampElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TimeStamp");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -685,87 +699,6 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getShiftINTTerminalRuleCall_1_1_1_0() { return cShiftINTTerminalRuleCall_1_1_1_0; }
 	}
-
-	public class BinaryOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BinaryOperator");
-		private final Assignment cOpAssignment = (Assignment)rule.eContents().get(1);
-		private final Alternatives cOpAlternatives_0 = (Alternatives)cOpAssignment.eContents().get(0);
-		private final RuleCall cOpLTTerminalRuleCall_0_0 = (RuleCall)cOpAlternatives_0.eContents().get(0);
-		private final RuleCall cOpLEQTerminalRuleCall_0_1 = (RuleCall)cOpAlternatives_0.eContents().get(1);
-		private final RuleCall cOpEQTerminalRuleCall_0_2 = (RuleCall)cOpAlternatives_0.eContents().get(2);
-		private final RuleCall cOpGTTerminalRuleCall_0_3 = (RuleCall)cOpAlternatives_0.eContents().get(3);
-		private final RuleCall cOpGEQTerminalRuleCall_0_4 = (RuleCall)cOpAlternatives_0.eContents().get(4);
-		
-		////TODO: Found INT in common Terminals but not NUMBER 
-		////Number: // TODO: I didn't find a way to use the Xtext Number that some examples use
-		////  name = ID;
-		//BinaryOperator:
-		//	op=(LT | LEQ | EQ | GT | GEQ);
-		@Override public ParserRule getRule() { return rule; }
-
-		//op=(LT | LEQ | EQ | GT | GEQ)
-		public Assignment getOpAssignment() { return cOpAssignment; }
-
-		//LT | LEQ | EQ | GT | GEQ
-		public Alternatives getOpAlternatives_0() { return cOpAlternatives_0; }
-
-		//LT
-		public RuleCall getOpLTTerminalRuleCall_0_0() { return cOpLTTerminalRuleCall_0_0; }
-
-		//LEQ
-		public RuleCall getOpLEQTerminalRuleCall_0_1() { return cOpLEQTerminalRuleCall_0_1; }
-
-		//EQ
-		public RuleCall getOpEQTerminalRuleCall_0_2() { return cOpEQTerminalRuleCall_0_2; }
-
-		//GT
-		public RuleCall getOpGTTerminalRuleCall_0_3() { return cOpGTTerminalRuleCall_0_3; }
-
-		//GEQ
-		public RuleCall getOpGEQTerminalRuleCall_0_4() { return cOpGEQTerminalRuleCall_0_4; }
-	}
-
-	public class AttributeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Attribute");
-		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
-		
-		//Attribute:
-		//	name=ID;
-		@Override public ParserRule getRule() { return rule; }
-
-		//name=ID
-		public Assignment getNameAssignment() { return cNameAssignment; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
-	}
-
-	public class EventOperatorElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EventOperator");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cANDTerminalRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cORTerminalRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cEXCEPTTerminalRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		
-		////LifeCycleState:
-		////  lifeState = (CREATED | DETACHED | DISCHARGED | EXPIRED | VIOLATED);
-		//EventOperator:
-		//	AND | OR | EXCEPT;
-		@Override public ParserRule getRule() { return rule; }
-
-		//AND | OR | EXCEPT
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//AND
-		public RuleCall getANDTerminalRuleCall_0() { return cANDTerminalRuleCall_0; }
-
-		//OR
-		public RuleCall getORTerminalRuleCall_1() { return cORTerminalRuleCall_1; }
-
-		//EXCEPT
-		public RuleCall getEXCEPTTerminalRuleCall_2() { return cEXCEPTTerminalRuleCall_2; }
-	}
 	
 	
 	private final CupidoElements pCupido;
@@ -773,15 +706,14 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	private final EventRelationElements pEventRelation;
 	private final ParamElements pParam;
 	private final CommitmentElements pCommitment;
-	private final GeneralExprElements pGeneralExpr;
-	private final ExprElements pExpr;
+	private final EExprElements pEExpr;
+	private final OExprElements pOExpr;
+	private final AExprElements pAExpr;
+	private final WExprElements pWExpr;
+	private final BExprElements pBExpr;
 	private final IntervalElements pInterval;
 	private final EventElements pEvent;
-	private final ArithExprElements pArithExpr;
 	private final TimeStampElements pTimeStamp;
-	private final BinaryOperatorElements pBinaryOperator;
-	private final AttributeElements pAttribute;
-	private final EventOperatorElements pEventOperator;
 	private final TerminalRule tSCHEMA;
 	private final TerminalRule tKEY;
 	private final TerminalRule tTIME;
@@ -805,11 +737,6 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	private final TerminalRule tLPAREN;
 	private final TerminalRule tRPAREN;
 	private final TerminalRule tPLUS;
-	private final TerminalRule tLT;
-	private final TerminalRule tLEQ;
-	private final TerminalRule tEQ;
-	private final TerminalRule tGT;
-	private final TerminalRule tGEQ;
 	
 	private final Grammar grammar;
 
@@ -825,15 +752,14 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		this.pEventRelation = new EventRelationElements();
 		this.pParam = new ParamElements();
 		this.pCommitment = new CommitmentElements();
-		this.pGeneralExpr = new GeneralExprElements();
-		this.pExpr = new ExprElements();
+		this.pEExpr = new EExprElements();
+		this.pOExpr = new OExprElements();
+		this.pAExpr = new AExprElements();
+		this.pWExpr = new WExprElements();
+		this.pBExpr = new BExprElements();
 		this.pInterval = new IntervalElements();
 		this.pEvent = new EventElements();
-		this.pArithExpr = new ArithExprElements();
 		this.pTimeStamp = new TimeStampElements();
-		this.pBinaryOperator = new BinaryOperatorElements();
-		this.pAttribute = new AttributeElements();
-		this.pEventOperator = new EventOperatorElements();
 		this.tSCHEMA = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SCHEMA");
 		this.tKEY = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "KEY");
 		this.tTIME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TIME");
@@ -857,11 +783,6 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		this.tLPAREN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LPAREN");
 		this.tRPAREN = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "RPAREN");
 		this.tPLUS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PLUS");
-		this.tLT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LT");
-		this.tLEQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "LEQ");
-		this.tEQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "EQ");
-		this.tGT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "GT");
-		this.tGEQ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "GEQ");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -933,8 +854,7 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Commitment:
-	//	COMMIT label=ID debtor=ID TO creditor=ID CREATE trigger=GeneralExpr (DETACH antecedent=GeneralExpr)? DISCHARGE
-	//	consequent=GeneralExpr;
+	//	COMMIT label=ID debtor=ID TO creditor=ID CREATE trigger=EExpr (DETACH antecedent=EExpr)? DISCHARGE consequent=EExpr;
 	public CommitmentElements getCommitmentAccess() {
 		return pCommitment;
 	}
@@ -943,24 +863,54 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		return getCommitmentAccess().getRule();
 	}
 
-	//GeneralExpr:
-	//	expr=Expr (where=WHERE arith=ArithExpr)?;
-	public GeneralExprElements getGeneralExprAccess() {
-		return pGeneralExpr;
+	//EExpr returns Expr:
+	//	OExpr ({EExpr.left=current} EXCEPT right=OExpr)*;
+	public EExprElements getEExprAccess() {
+		return pEExpr;
 	}
 	
-	public ParserRule getGeneralExprRule() {
-		return getGeneralExprAccess().getRule();
+	public ParserRule getEExprRule() {
+		return getEExprAccess().getRule();
 	}
 
-	//Expr:
-	//	interval=Interval | left=Interval op=EventOperator right=Expr | LPAREN expr=Expr RPAREN;
-	public ExprElements getExprAccess() {
-		return pExpr;
+	//OExpr returns Expr:
+	//	AExpr ({OExpr.left=current} OR right=AExpr)*;
+	public OExprElements getOExprAccess() {
+		return pOExpr;
 	}
 	
-	public ParserRule getExprRule() {
-		return getExprAccess().getRule();
+	public ParserRule getOExprRule() {
+		return getOExprAccess().getRule();
+	}
+
+	//AExpr returns Expr:
+	//	WExpr ({AExpr.left=current} AND right=WExpr)*;
+	public AExprElements getAExprAccess() {
+		return pAExpr;
+	}
+	
+	public ParserRule getAExprRule() {
+		return getAExprAccess().getRule();
+	}
+
+	//WExpr returns Expr:
+	//	BExpr ({WExpr.left=current} WHERE right=STRING)*;
+	public WExprElements getWExprAccess() {
+		return pWExpr;
+	}
+	
+	public ParserRule getWExprRule() {
+		return getWExprAccess().getRule();
+	}
+
+	//BExpr returns Expr:
+	//	interval=Interval | LPAREN EExpr RPAREN;
+	public BExprElements getBExprAccess() {
+		return pBExpr;
+	}
+	
+	public ParserRule getBExprRule() {
+		return getBExprAccess().getRule();
 	}
 
 	//// Equivalent to the first option
@@ -986,20 +936,6 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		return getEventAccess().getRule();
 	}
 
-	//ArithExpr:
-	//	leftAttr=Attribute //  arith = ((name = ID) (comparativeOp = BinaryOperator)  |
-	//	//  LPAREN (arith = ArithExpr) RPAREN
-	//	// We are not parsing arithmetic expressions, so I would like to pick up everything 
-	//	// under ArithExpr and just pass it along
-	//	binOp=BinaryOperator (rightAttr=Attribute | num=INT);
-	public ArithExprElements getArithExprAccess() {
-		return pArithExpr;
-	}
-	
-	public ParserRule getArithExprRule() {
-		return getArithExprAccess().getRule();
-	}
-
 	//TimeStamp:
 	//	val=INT | eventReference=ID (PLUS shift=INT)?;
 	public TimeStampElements getTimeStampAccess() {
@@ -1013,38 +949,6 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	////TODO: Found INT in common Terminals but not NUMBER 
 	////Number: // TODO: I didn't find a way to use the Xtext Number that some examples use
 	////  name = ID;
-	//BinaryOperator:
-	//	op=(LT | LEQ | EQ | GT | GEQ);
-	public BinaryOperatorElements getBinaryOperatorAccess() {
-		return pBinaryOperator;
-	}
-	
-	public ParserRule getBinaryOperatorRule() {
-		return getBinaryOperatorAccess().getRule();
-	}
-
-	//Attribute:
-	//	name=ID;
-	public AttributeElements getAttributeAccess() {
-		return pAttribute;
-	}
-	
-	public ParserRule getAttributeRule() {
-		return getAttributeAccess().getRule();
-	}
-
-	////LifeCycleState:
-	////  lifeState = (CREATED | DETACHED | DISCHARGED | EXPIRED | VIOLATED);
-	//EventOperator:
-	//	AND | OR | EXCEPT;
-	public EventOperatorElements getEventOperatorAccess() {
-		return pEventOperator;
-	}
-	
-	public ParserRule getEventOperatorRule() {
-		return getEventOperatorAccess().getRule();
-	}
-
 	//terminal SCHEMA:
 	//	"schema";
 	public TerminalRule getSCHEMARule() {
@@ -1181,36 +1085,6 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	//	"+";
 	public TerminalRule getPLUSRule() {
 		return tPLUS;
-	} 
-
-	//terminal LT:
-	//	"<";
-	public TerminalRule getLTRule() {
-		return tLT;
-	} 
-
-	//terminal LEQ:
-	//	"<=";
-	public TerminalRule getLEQRule() {
-		return tLEQ;
-	} 
-
-	//terminal EQ:
-	//	"=";
-	public TerminalRule getEQRule() {
-		return tEQ;
-	} 
-
-	//terminal GT:
-	//	">";
-	public TerminalRule getGTRule() {
-		return tGT;
-	} 
-
-	//terminal GEQ:
-	//	">=";
-	public TerminalRule getGEQRule() {
-		return tGEQ;
 	} 
 
 	//terminal ID:

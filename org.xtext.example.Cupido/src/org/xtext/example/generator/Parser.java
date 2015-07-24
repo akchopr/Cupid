@@ -3,15 +3,18 @@ package org.xtext.example.generator;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import org.xtext.example.cupido.ArithExpr;
+import org.xtext.example.cupido.AExpr;
 import org.xtext.example.cupido.Commitment;
+import org.xtext.example.cupido.EExpr;
 import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.EventRelation;
 import org.xtext.example.cupido.Expr;
-import org.xtext.example.cupido.GeneralExpr;
 import org.xtext.example.cupido.Interval;
+import org.xtext.example.cupido.OExpr;
 import org.xtext.example.cupido.Param;
 import org.xtext.example.cupido.TimeStamp;
+import org.xtext.example.cupido.WExpr;
+import org.xtext.example.generator.CustomExpr;
 
 public class Parser {
 
@@ -125,7 +128,7 @@ public class Parser {
 	}
 
 	public RelationalExpr compileCreated (Commitment c) {
-	  return compileGeneralExpr(c.getTrigger());
+	  return compileExpr(c.getTrigger());
 	}
 
 	public RelationalExpr compileDetached (Commitment c) {
@@ -133,8 +136,8 @@ public class Parser {
 		if (oldDetachExpr != null) {
 			return oldDetachExpr;
 		} else {
-			RelationalExpr triggerExpr = this.compileGeneralExpr(c.getTrigger());
-			RelationalExpr antecedentExpr = this.compileGeneralExpr(c.getAntecedent());
+			RelationalExpr triggerExpr = this.compileExpr(c.getTrigger());
+			RelationalExpr antecedentExpr = this.compileExpr(c.getAntecedent());
 			RelationalExpr detachExpr = this.compileAND(triggerExpr, antecedentExpr);
 			this.storeLifeExpr(Parser.DETACHED, c.getLabel(), detachExpr);
 			return detachExpr;
@@ -142,24 +145,26 @@ public class Parser {
 	}
 
 	public RelationalExpr compileDischarged (Commitment c) {
-		RelationalExpr triggerExpr = this.compileGeneralExpr(c.getTrigger());
-		RelationalExpr antecedentExpr = this.compileGeneralExpr(c.getAntecedent());
-		RelationalExpr consequentExpr = this.compileGeneralExpr(c.getConsequent());
+		RelationalExpr triggerExpr = this.compileExpr(c.getTrigger());
+		RelationalExpr antecedentExpr = this.compileExpr(c.getAntecedent());
+		RelationalExpr consequentExpr = this.compileExpr(c.getConsequent());
 		RelationalExpr dischargeExpr = this.compileOR(this.compileAND(triggerExpr, consequentExpr),
 						     			this.compileAND(antecedentExpr, consequentExpr));
 		return dischargeExpr; 
      }
 			
 	public RelationalExpr compileExpired (Commitment c) {
-		RelationalExpr triggerExpr = this.compileGeneralExpr(c.getTrigger());
-		RelationalExpr antecedentExpr = this.compileGeneralExpr(c.getAntecedent());
-		RelationalExpr expiredExpr = this.compileExcept(triggerExpr, antecedentExpr); 
-		return expiredExpr;
+		
+		RelationalExpr triggerExpr = this.compileExpr(c.getTrigger());
+		RelationalExpr antecedentExpr = this.compileExpr(c.getAntecedent());
+		//RelationalExpr expiredExpr = this.compileExcept(triggerExpr, antecedentExpr);
+		//return expiredExpr;
+		return null;
 	}
 
 	public RelationalExpr compileViolated (Commitment c) {
-		RelationalExpr consequentExpr = this.compileGeneralExpr(c.getAntecedent());
-		RelationalExpr violatedExpr = this.compileExcept(this.compileDetached(c), consequentExpr); 
+		RelationalExpr consequentExpr = this.compileExpr(c.getAntecedent());
+		RelationalExpr violatedExpr =  null;//this.compileExcept(this.compileDetached(c), consequentExpr); 
 		return violatedExpr;
 	  }
 		  
@@ -191,64 +196,143 @@ public class Parser {
 	  	return this.getUnion(lLaterThanR, rLaterThanL);
 	}
 
-	public RelationalExpr compileExcept(RelationalExpr left, RelationalExpr right) {
+	public RelationalExpr compileExcept(Expr expr) {
+		
+		//Expr expr = right.getRight();
+		
+		//if(null != right.getRight())
 		return null; // TODO
 	}
 
-	public RelationalExpr compileGeneralExpr (GeneralExpr e) {
-		// A GeneralExpr is an Expr with an optional WHERE
-		System.out.println("expr= " + e.getExpr() + "; where =" + e.getArith());
-		RelationalExpr mainExpr = this.compileExpr(e.getExpr()); 
-		if (e.getArith() == null) {
-	   	  return mainExpr;
-	    } else {
-	    	StringBuffer sb = new StringBuffer();
-	    	Column first = Column.getColumn(e.getArith().getLeftAttr().getName());
-	    	//TODO: Should test existence of the column; otherwise might as use the attribute name directly
-	    	sb.append(first.getFullName());
-	    	sb.append(Parser.SPACE);
-	    	sb.append(e.getArith().getBinOp().getOp());
-	    	sb.append(Parser.SPACE);
-	    	
-	    	if (e.getArith().getRightAttr() != null) {
-		    	Column second = Column.getColumn(e.getArith().getRightAttr().getName());
-		    	sb.append(second.getFullName());	    		
-	    	} else {
-	    		sb.append(e.getArith().getNum());
-	    	}
-	    	
-	    	String cond = sb.toString();
-	    	
-//	    	if (mainExpr.hasColumn(first)) {
-//	    		
-//	    	} else {
-//	    		System.out.println("Nonexistent column in where clause; should throw an exception");
-//	    		return null;
-//	    	}
-	   	  return this.getSelect(mainExpr, cond); 
-	    }
-	  }
+	public RelationalExpr compileExpr (Expr e) {
+		//
+		if(null != e.getInterval())
+			return compileInterval(e.getInterval());
+		else if(e instanceof WExpr)
+			return compileWHERE(compileExpr(e.getLeft()),((WExpr)e).getRight());
+		else if (e instanceof AExpr)
+			return compileAND(compileExpr(e.getLeft()),compileExpr(((AExpr)e).getRight()));
+		else if (e instanceof OExpr)
+			return compileOR(compileExpr(e.getLeft()),compileExpr(((OExpr)e).getRight()));
+		else //Except
+			return compileExcept(compileExpr(e.getLeft()),compileExpr(((EExpr)e).getRight()));
+			
+	 }
+	
+//	public RelationalExpr compileOExpr(OExpr e) {
+//		if(null == e.getRight())
+//			return compileAExpr((AExpr)e.getLeft());
+//		else
+//			return compileOR(compileAExpr((AExpr)e.getLeft()),compileAExpr((AExpr)e.getRight()));
+//	}
+//	
+//	public RelationalExpr compileAExpr(AExpr e){
+//		if(null == e.getRight())
+//			return compileWExpr((WExpr)e.getLeft());
+//		else
+//			return compileAND(compileWExpr((WExpr)e.getLeft()),compileWExpr((WExpr)e.getRight()));
+//	}
+//	
+//	public RelationalExpr compileWExpr(WExpr e){
+//		if(null == e.getRight()){
+//			if(null == e.getInterval())
+//				return compileEExpr((EExpr)e.getLeft());
+//			else
+//				return compileInterval(e.getInterval());
+//		}
+//		else { 
+//			if(null == e.getInterval())
+//				return compileWHERE(compileEExpr((EExpr)e.getLeft()),e.getRight());
+//			else
+//				return compileWHERE(compileInterval(e.getInterval()),e.getRight());
+//		}
+//	}
+	
+	public RelationalExpr compileWHERE(RelationalExpr left, String cond){
+		return this.getSelect(left, cond);
+	}
 
-	public RelationalExpr compileExpr(Expr expr) {
-		if (expr.getExpr() != null) {
-			return this.compileExpr(expr.getExpr());
-    	} else if (expr.getOp() != null) {
-    		if (expr.getOp().equalsIgnoreCase(Parser.AND)) {
-    			RelationalExpr left = this.compileInterval(expr.getLeft());
-    			RelationalExpr right = this.compileExpr(expr.getRight()); 
-    			return this.compileAND(left, right);
-    		} else if (expr.getOp().equalsIgnoreCase(Parser.OR)) {
-    			RelationalExpr left = this.compileInterval(expr.getLeft());
-    			RelationalExpr right = this.compileExpr(expr.getRight()); 
-    			return this.compileOR(left, right);
-    		} else if (expr.getOp().equalsIgnoreCase(Parser.EXCEPT)) {
-    			RelationalExpr left = this.compileInterval(expr.getLeft());
-    			RelationalExpr right = this.compileExpr(expr.getRight()); 
-    			return this.compileExcept(left, right);
-    		}
-	    } 
-		return this.compileInterval(expr.getInterval());
-    }
+	public RelationalExpr compileExcept(RelationalExpr left, RelationalExpr right){
+		//TODO
+		return null;
+	}
+	
+//	public RelationalExpr compileExpr(Expr expr) {
+//		if (expr.getExpr() != null) {
+//			return this.compileExpr(expr.getExpr());
+//    	} else if (expr.getOp() != null) {
+//    		if (expr.getOp().equalsIgnoreCase(Parser.AND)) {
+//    			RelationalExpr left = this.compileInterval(expr.getLeft());
+//    			RelationalExpr right = this.compileExpr(expr.getRight()); 
+//    			return this.compileAND(left, right);
+//    		} else if (expr.getOp().equalsIgnoreCase(Parser.OR)) {
+//    			RelationalExpr left = this.compileInterval(expr.getLeft());
+//    			RelationalExpr right = this.compileExpr(expr.getRight()); 
+//    			return this.compileOR(left, right);
+//    		} else if (expr.getOp().equalsIgnoreCase(Parser.EXCEPT)) {
+//    			if(null != expr.getRight().getOp())  
+//    				reduceExcept(expr);
+//    			else
+//    				return this.compileExcept(expr);
+//    		}
+//	    } 
+//		return this.compileInterval(expr.getInterval());
+//    }
+//	
+//	private RelationalExpr reduceExcept(Expr expr) {
+//		CustomExpr newLeftExpr;
+//		CustomExpr newRightExpr;
+//		if(expr.getRight().getOp().equalsIgnoreCase(Parser.AND)) {
+//			// A except (B and C) = (A except B) or (A except C)
+//			newLeftExpr = constructExcept(expr.getLeft(),
+//					intervalToExpr(expr.getRight().getLeft()), 
+//					Parser.EXCEPT);
+//			newRightExpr = constructExcept(expr.getLeft(),
+//					expr.getRight().getRight(),
+//					Parser.EXCEPT);
+//			RelationalExpr left = compileExpr(newLeftExpr);
+//			RelationalExpr right = compileExpr(newRightExpr);
+//			
+//			return this.compileOR(left, right);
+//		}
+//		else if(expr.getRight().getOp().equalsIgnoreCase(Parser.OR)) {
+//			// A except (B or C) = (A except B) and (A except C)
+//			newLeftExpr = constructExcept(expr.getLeft(),intervalToExpr(expr.getRight().getLeft()), Parser.EXCEPT);
+//			newRightExpr = constructExcept(expr.getLeft(),expr.getRight().getRight(),Parser.EXCEPT);
+//			RelationalExpr left = compileExpr(newLeftExpr);
+//			RelationalExpr right = compileExpr(newRightExpr);
+//			return this.compileAND(left, right);
+//		}
+//		else if(expr.getRight().getOp().equalsIgnoreCase(Parser.OR)) {
+//			// A except (B except C) = (A except B) or (A and C)
+//			newLeftExpr = constructExcept(expr.getLeft(),intervalToExpr(expr.getRight().getLeft()), Parser.EXCEPT);
+//			newRightExpr = constructExcept(expr.getLeft(),expr.getRight().getRight(),Parser.AND);
+//			RelationalExpr left = compileExpr(newLeftExpr);
+//			RelationalExpr right = compileExpr(newRightExpr);
+//			return this.compileOR(left, right);
+//		}
+//		else return null;
+//	}
+//	
+//	private Expr intervalToExpr(Interval i){
+//		CustomExpr e = new CustomExpr();
+//		e.setInterval(i);
+//		e.setOp(null);
+//		e.setLeft(null);
+//		e.setRight(null);
+//		return e;
+//	}
+//	
+//	private CustomExpr constructExcept(Interval left, Expr right, String op) {
+//		CustomExpr newExpr = new CustomExpr();
+//		newExpr.setLeft(left);
+//		newExpr.setRight(right);
+//		newExpr.setOp(op);
+//		return newExpr;
+//	}
+//	
+//	
+	
 	
 	private RelationalExpr getLeftEarlierThanRight (RelationalExpr left, RelationalExpr right) {
 		Column lTime = left.getTimeColumn();
@@ -489,9 +573,9 @@ public class Parser {
 		return null;
 	}
 
-	private RelationalExpr compileArithmetic(ArithExpr arith) {
+	/*private RelationalExpr compileArithmetic(ArithExpr arith) {
 		return null;
-	}
+	}*/
 
 
 }

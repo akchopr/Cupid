@@ -16,19 +16,19 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticNodeProvider.INodesForEOb
 import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.example.cupido.ArithExpr;
-import org.xtext.example.cupido.Attribute;
-import org.xtext.example.cupido.BinaryOperator;
+import org.xtext.example.cupido.AExpr;
 import org.xtext.example.cupido.Commitment;
 import org.xtext.example.cupido.CupidoPackage;
+import org.xtext.example.cupido.EExpr;
 import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.EventRelation;
 import org.xtext.example.cupido.Expr;
-import org.xtext.example.cupido.GeneralExpr;
 import org.xtext.example.cupido.Interval;
+import org.xtext.example.cupido.OExpr;
 import org.xtext.example.cupido.Param;
 import org.xtext.example.cupido.Schemata;
 import org.xtext.example.cupido.TimeStamp;
+import org.xtext.example.cupido.WExpr;
 import org.xtext.example.services.CupidoGrammarAccess;
 
 @SuppressWarnings("all")
@@ -40,17 +40,14 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	@Override
 	public void createSequence(EObject context, EObject semanticObject) {
 		if(semanticObject.eClass().getEPackage() == CupidoPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
-			case CupidoPackage.ARITH_EXPR:
-				sequence_ArithExpr(context, (ArithExpr) semanticObject); 
-				return; 
-			case CupidoPackage.ATTRIBUTE:
-				sequence_Attribute(context, (Attribute) semanticObject); 
-				return; 
-			case CupidoPackage.BINARY_OPERATOR:
-				sequence_BinaryOperator(context, (BinaryOperator) semanticObject); 
+			case CupidoPackage.AEXPR:
+				sequence_AExpr(context, (AExpr) semanticObject); 
 				return; 
 			case CupidoPackage.COMMITMENT:
 				sequence_Commitment(context, (Commitment) semanticObject); 
+				return; 
+			case CupidoPackage.EEXPR:
+				sequence_EExpr(context, (EExpr) semanticObject); 
 				return; 
 			case CupidoPackage.EVENT:
 				sequence_Event(context, (Event) semanticObject); 
@@ -59,13 +56,13 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				sequence_EventRelation(context, (EventRelation) semanticObject); 
 				return; 
 			case CupidoPackage.EXPR:
-				sequence_Expr(context, (Expr) semanticObject); 
-				return; 
-			case CupidoPackage.GENERAL_EXPR:
-				sequence_GeneralExpr(context, (GeneralExpr) semanticObject); 
+				sequence_BExpr(context, (Expr) semanticObject); 
 				return; 
 			case CupidoPackage.INTERVAL:
 				sequence_Interval(context, (Interval) semanticObject); 
+				return; 
+			case CupidoPackage.OEXPR:
+				sequence_OExpr(context, (OExpr) semanticObject); 
 				return; 
 			case CupidoPackage.PARAM:
 				sequence_Param(context, (Param) semanticObject); 
@@ -83,40 +80,27 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case CupidoPackage.TIME_STAMP:
 				sequence_TimeStamp(context, (TimeStamp) semanticObject); 
 				return; 
+			case CupidoPackage.WEXPR:
+				sequence_WExpr(context, (WExpr) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
 	
 	/**
 	 * Constraint:
-	 *     (leftAttr=Attribute binOp=BinaryOperator (rightAttr=Attribute | num=INT))
+	 *     (left=AExpr_AExpr_1_0 right=WExpr)
 	 */
-	protected void sequence_ArithExpr(EObject context, ArithExpr semanticObject) {
+	protected void sequence_AExpr(EObject context, AExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     interval=Interval
 	 */
-	protected void sequence_Attribute(EObject context, Attribute semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CupidoPackage.Literals.ATTRIBUTE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CupidoPackage.Literals.ATTRIBUTE__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (op=LT | op=LEQ | op=EQ | op=GT | op=GEQ)
-	 */
-	protected void sequence_BinaryOperator(EObject context, BinaryOperator semanticObject) {
+	protected void sequence_BExpr(EObject context, Expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -127,9 +111,9 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         label=ID 
 	 *         debtor=ID 
 	 *         creditor=ID 
-	 *         trigger=GeneralExpr 
-	 *         antecedent=GeneralExpr? 
-	 *         consequent=GeneralExpr
+	 *         trigger=EExpr 
+	 *         antecedent=EExpr? 
+	 *         consequent=EExpr
 	 *     )
 	 */
 	protected void sequence_Commitment(EObject context, Commitment semanticObject) {
@@ -142,6 +126,15 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (schemata+=EventRelation+ commitments+=Commitment*)
 	 */
 	protected void sequence_Cupido_Schemata(EObject context, Schemata semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=EExpr_EExpr_1_0 right=OExpr)
+	 */
+	protected void sequence_EExpr(EObject context, EExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -173,27 +166,18 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (interval=Interval | (left=Interval op=EventOperator right=Expr) | expr=Expr)
-	 */
-	protected void sequence_Expr(EObject context, Expr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (expr=Expr (where=WHERE arith=ArithExpr)?)
-	 */
-	protected void sequence_GeneralExpr(EObject context, GeneralExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (event=Event | (event=Event left=TimeStamp right=TimeStamp) | (event=Event right=TimeStamp) | (event=Event left=TimeStamp) | event=Event)
 	 */
 	protected void sequence_Interval(EObject context, Interval semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=OExpr_OExpr_1_0 right=AExpr)
+	 */
+	protected void sequence_OExpr(EObject context, OExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -228,6 +212,15 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (val=INT | (eventReference=ID shift=INT?))
 	 */
 	protected void sequence_TimeStamp(EObject context, TimeStamp semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (left=WExpr_WExpr_1_0 right=STRING)
+	 */
+	protected void sequence_WExpr(EObject context, WExpr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

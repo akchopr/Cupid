@@ -16,7 +16,7 @@ schema
 commitment DiscountQuoteTrivial mID to cID 
   create Quote
   detach Order
-  discharge Shipment
+  discharge Shipment[200,300]
 
 commitment DiscountQuoteAnd mID to cID 
   create Quote
@@ -65,5 +65,5 @@ commitment DiscountQuoteWhere mID to cID
 
 commitment Compensation mID to cID
   create Quote
-  detach detached DiscountQuoteTrivial
+  detach violated DiscountQuoteTrivial
   discharge Refund

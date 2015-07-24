@@ -24,9 +24,6 @@ Commitment:
   (DETACH (antecedent = EExpr))?
   DISCHARGE (consequent = EExpr);
 
-//GExpr returns Expr:
- // EExpr ({GExpr.left=current} WHERE (phi = STRING))?;
-
 EExpr returns Expr:
   OExpr ({EExpr.left=current} EXCEPT right=OExpr)*;
 
@@ -34,11 +31,14 @@ OExpr returns Expr:
   AExpr ({OExpr.left=current} OR right=AExpr)*;
   
 AExpr returns Expr:
-  Primary ({AExpr.left=current} AND right=Primary)*;
+  WExpr ({AExpr.left=current} AND right=WExpr)*;
   
-Primary returns Expr:
-	(interval = Interval) (WHERE (phi=STRING))?| 
-	LPAREN EExpr RPAREN ({Primary.left=current} WHERE (phi=STRING))?;
+WExpr returns Expr:
+	BExpr ({WExpr.left=current} WHERE (right=STRING))*;
+	
+BExpr returns Expr:
+	(interval = Interval) | 
+	LPAREN EExpr RPAREN;
    
 Interval:
   (event = Event) |

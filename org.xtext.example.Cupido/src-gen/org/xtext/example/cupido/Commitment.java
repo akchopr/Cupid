@@ -114,12 +114,12 @@ public interface Commitment extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Trigger</em>' containment reference.
-   * @see #setTrigger(GeneralExpr)
+   * @see #setTrigger(Expr)
    * @see org.xtext.example.cupido.CupidoPackage#getCommitment_Trigger()
    * @model containment="true"
    * @generated
    */
-  GeneralExpr getTrigger();
+  Expr getTrigger();
 
   /**
    * Sets the value of the '{@link org.xtext.example.cupido.Commitment#getTrigger <em>Trigger</em>}' containment reference.
@@ -129,7 +129,7 @@ public interface Commitment extends EObject
    * @see #getTrigger()
    * @generated
    */
-  void setTrigger(GeneralExpr value);
+  void setTrigger(Expr value);
 
   /**
    * Returns the value of the '<em><b>Antecedent</b></em>' containment reference.
@@ -140,12 +140,12 @@ public interface Commitment extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Antecedent</em>' containment reference.
-   * @see #setAntecedent(GeneralExpr)
+   * @see #setAntecedent(Expr)
    * @see org.xtext.example.cupido.CupidoPackage#getCommitment_Antecedent()
    * @model containment="true"
    * @generated
    */
-  GeneralExpr getAntecedent();
+  Expr getAntecedent();
 
   /**
    * Sets the value of the '{@link org.xtext.example.cupido.Commitment#getAntecedent <em>Antecedent</em>}' containment reference.
@@ -155,7 +155,7 @@ public interface Commitment extends EObject
    * @see #getAntecedent()
    * @generated
    */
-  void setAntecedent(GeneralExpr value);
+  void setAntecedent(Expr value);
 
   /**
    * Returns the value of the '<em><b>Consequent</b></em>' containment reference.
@@ -166,12 +166,12 @@ public interface Commitment extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Consequent</em>' containment reference.
-   * @see #setConsequent(GeneralExpr)
+   * @see #setConsequent(Expr)
    * @see org.xtext.example.cupido.CupidoPackage#getCommitment_Consequent()
    * @model containment="true"
    * @generated
    */
-  GeneralExpr getConsequent();
+  Expr getConsequent();
 
   /**
    * Sets the value of the '{@link org.xtext.example.cupido.Commitment#getConsequent <em>Consequent</em>}' containment reference.
@@ -181,6 +181,6 @@ public interface Commitment extends EObject
    * @see #getConsequent()
    * @generated
    */
-  void setConsequent(GeneralExpr value);
+  void setConsequent(Expr value);
 
 } // Commitment

@@ -46,17 +46,21 @@ class CupidoGenerator implements IGenerator {
   }
 
   def CharSequence compileAll(Commitment c) { 
-    return compileDetached(c).toString + compileCreated(c).toString  
+    return //compileCreated(c).toString
+    //+ compileDetached(c).toString 
+     compileCreated(c).toString 
+   // + compileDischarged(c).toString 
+   // + compileViolated(c).toString
   }
   
   def CharSequence compileDetached(Commitment c) {
   	val RelationalExpr expr = Parser.getParser().compileDetached(c) 
-    return "\nDETACHED: " + expr.toRelationalAlgebra + ";" //+
+    return "\nDETACHED: " + expr.toSQL + ";" //+
   }
   
   def CharSequence compileCreated(Commitment c) {
-  	val RelationalExpr expr = Parser.getParser().compileDetached(c) 
-    return "\nCREATED: " + expr.toRelationalAlgebra + ";" //+
+  	val RelationalExpr expr = Parser.getParser().compileCreated(c) 
+    return "\nCREATED: " + expr.toSQL + ";" //+
   }
   
   def CharSequence compileExpired(Commitment c) {

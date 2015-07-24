@@ -68,15 +68,6 @@ public interface CupidoFactory extends EFactory
   Commitment createCommitment();
 
   /**
-   * Returns a new object of class '<em>General Expr</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>General Expr</em>'.
-   * @generated
-   */
-  GeneralExpr createGeneralExpr();
-
-  /**
    * Returns a new object of class '<em>Expr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -104,15 +95,6 @@ public interface CupidoFactory extends EFactory
   Event createEvent();
 
   /**
-   * Returns a new object of class '<em>Arith Expr</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Arith Expr</em>'.
-   * @generated
-   */
-  ArithExpr createArithExpr();
-
-  /**
    * Returns a new object of class '<em>Time Stamp</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -122,22 +104,40 @@ public interface CupidoFactory extends EFactory
   TimeStamp createTimeStamp();
 
   /**
-   * Returns a new object of class '<em>Binary Operator</em>'.
+   * Returns a new object of class '<em>EExpr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Binary Operator</em>'.
+   * @return a new object of class '<em>EExpr</em>'.
    * @generated
    */
-  BinaryOperator createBinaryOperator();
+  EExpr createEExpr();
 
   /**
-   * Returns a new object of class '<em>Attribute</em>'.
+   * Returns a new object of class '<em>OExpr</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Attribute</em>'.
+   * @return a new object of class '<em>OExpr</em>'.
    * @generated
    */
-  Attribute createAttribute();
+  OExpr createOExpr();
+
+  /**
+   * Returns a new object of class '<em>AExpr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>AExpr</em>'.
+   * @generated
+   */
+  AExpr createAExpr();
+
+  /**
+   * Returns a new object of class '<em>WExpr</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>WExpr</em>'.
+   * @generated
+   */
+  WExpr createWExpr();
 
   /**
    * Returns the package supported by this factory.

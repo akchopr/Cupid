@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.cupido.Commitment;
 import org.xtext.example.cupido.CupidoPackage;
-import org.xtext.example.cupido.GeneralExpr;
+import org.xtext.example.cupido.Expr;
 
 /**
  * <!-- begin-user-doc -->
@@ -103,7 +103,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * @generated
    * @ordered
    */
-  protected GeneralExpr trigger;
+  protected Expr trigger;
 
   /**
    * The cached value of the '{@link #getAntecedent() <em>Antecedent</em>}' containment reference.
@@ -113,7 +113,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * @generated
    * @ordered
    */
-  protected GeneralExpr antecedent;
+  protected Expr antecedent;
 
   /**
    * The cached value of the '{@link #getConsequent() <em>Consequent</em>}' containment reference.
@@ -123,7 +123,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * @generated
    * @ordered
    */
-  protected GeneralExpr consequent;
+  protected Expr consequent;
 
   /**
    * <!-- begin-user-doc -->
@@ -220,7 +220,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public GeneralExpr getTrigger()
+  public Expr getTrigger()
   {
     return trigger;
   }
@@ -230,9 +230,9 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetTrigger(GeneralExpr newTrigger, NotificationChain msgs)
+  public NotificationChain basicSetTrigger(Expr newTrigger, NotificationChain msgs)
   {
-    GeneralExpr oldTrigger = trigger;
+    Expr oldTrigger = trigger;
     trigger = newTrigger;
     if (eNotificationRequired())
     {
@@ -247,7 +247,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTrigger(GeneralExpr newTrigger)
+  public void setTrigger(Expr newTrigger)
   {
     if (newTrigger != trigger)
     {
@@ -268,7 +268,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public GeneralExpr getAntecedent()
+  public Expr getAntecedent()
   {
     return antecedent;
   }
@@ -278,9 +278,9 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetAntecedent(GeneralExpr newAntecedent, NotificationChain msgs)
+  public NotificationChain basicSetAntecedent(Expr newAntecedent, NotificationChain msgs)
   {
-    GeneralExpr oldAntecedent = antecedent;
+    Expr oldAntecedent = antecedent;
     antecedent = newAntecedent;
     if (eNotificationRequired())
     {
@@ -295,7 +295,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAntecedent(GeneralExpr newAntecedent)
+  public void setAntecedent(Expr newAntecedent)
   {
     if (newAntecedent != antecedent)
     {
@@ -316,7 +316,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public GeneralExpr getConsequent()
+  public Expr getConsequent()
   {
     return consequent;
   }
@@ -326,9 +326,9 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetConsequent(GeneralExpr newConsequent, NotificationChain msgs)
+  public NotificationChain basicSetConsequent(Expr newConsequent, NotificationChain msgs)
   {
-    GeneralExpr oldConsequent = consequent;
+    Expr oldConsequent = consequent;
     consequent = newConsequent;
     if (eNotificationRequired())
     {
@@ -343,7 +343,7 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setConsequent(GeneralExpr newConsequent)
+  public void setConsequent(Expr newConsequent)
   {
     if (newConsequent != consequent)
     {
@@ -425,13 +425,13 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
         setCreditor((String)newValue);
         return;
       case CupidoPackage.COMMITMENT__TRIGGER:
-        setTrigger((GeneralExpr)newValue);
+        setTrigger((Expr)newValue);
         return;
       case CupidoPackage.COMMITMENT__ANTECEDENT:
-        setAntecedent((GeneralExpr)newValue);
+        setAntecedent((Expr)newValue);
         return;
       case CupidoPackage.COMMITMENT__CONSEQUENT:
-        setConsequent((GeneralExpr)newValue);
+        setConsequent((Expr)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -457,13 +457,13 @@ public class CommitmentImpl extends MinimalEObjectImpl.Container implements Comm
         setCreditor(CREDITOR_EDEFAULT);
         return;
       case CupidoPackage.COMMITMENT__TRIGGER:
-        setTrigger((GeneralExpr)null);
+        setTrigger((Expr)null);
         return;
       case CupidoPackage.COMMITMENT__ANTECEDENT:
-        setAntecedent((GeneralExpr)null);
+        setAntecedent((Expr)null);
         return;
       case CupidoPackage.COMMITMENT__CONSEQUENT:
-        setConsequent((GeneralExpr)null);
+        setConsequent((Expr)null);
         return;
     }
     super.eUnset(featureID);

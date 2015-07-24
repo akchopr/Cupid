@@ -9,21 +9,21 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.example.cupido.ArithExpr;
-import org.xtext.example.cupido.Attribute;
-import org.xtext.example.cupido.BinaryOperator;
+import org.xtext.example.cupido.AExpr;
 import org.xtext.example.cupido.Commitment;
 import org.xtext.example.cupido.Cupido;
 import org.xtext.example.cupido.CupidoFactory;
 import org.xtext.example.cupido.CupidoPackage;
+import org.xtext.example.cupido.EExpr;
 import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.EventRelation;
 import org.xtext.example.cupido.Expr;
-import org.xtext.example.cupido.GeneralExpr;
 import org.xtext.example.cupido.Interval;
+import org.xtext.example.cupido.OExpr;
 import org.xtext.example.cupido.Param;
 import org.xtext.example.cupido.Schemata;
 import org.xtext.example.cupido.TimeStamp;
+import org.xtext.example.cupido.WExpr;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,13 +73,6 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass generalExprEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass exprEClass = null;
 
   /**
@@ -101,13 +94,6 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass arithExprEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass timeStampEClass = null;
 
   /**
@@ -115,14 +101,28 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass binaryOperatorEClass = null;
+  private EClass eExprEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass attributeEClass = null;
+  private EClass oExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass aExprEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass wExprEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -372,46 +372,6 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGeneralExpr()
-  {
-    return generalExprEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGeneralExpr_Expr()
-  {
-    return (EReference)generalExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getGeneralExpr_Where()
-  {
-    return (EAttribute)generalExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getGeneralExpr_Arith()
-  {
-    return (EReference)generalExprEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getExpr()
   {
     return exprEClass;
@@ -435,36 +395,6 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
   public EReference getExpr_Left()
   {
     return (EReference)exprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExpr_Op()
-  {
-    return (EAttribute)exprEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpr_Right()
-  {
-    return (EReference)exprEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getExpr_Expr()
-  {
-    return (EReference)exprEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -552,56 +482,6 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getArithExpr()
-  {
-    return arithExprEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getArithExpr_LeftAttr()
-  {
-    return (EReference)arithExprEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getArithExpr_BinOp()
-  {
-    return (EReference)arithExprEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getArithExpr_RightAttr()
-  {
-    return (EReference)arithExprEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getArithExpr_Num()
-  {
-    return (EAttribute)arithExprEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTimeStamp()
   {
     return timeStampEClass;
@@ -642,9 +522,9 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBinaryOperator()
+  public EClass getEExpr()
   {
-    return binaryOperatorEClass;
+    return eExprEClass;
   }
 
   /**
@@ -652,9 +532,9 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getBinaryOperator_Op()
+  public EReference getEExpr_Right()
   {
-    return (EAttribute)binaryOperatorEClass.getEStructuralFeatures().get(0);
+    return (EReference)eExprEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -662,9 +542,9 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getAttribute()
+  public EClass getOExpr()
   {
-    return attributeEClass;
+    return oExprEClass;
   }
 
   /**
@@ -672,9 +552,49 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttribute_Name()
+  public EReference getOExpr_Right()
   {
-    return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)oExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAExpr()
+  {
+    return aExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAExpr_Right()
+  {
+    return (EReference)aExprEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getWExpr()
+  {
+    return wExprEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWExpr_Right()
+  {
+    return (EAttribute)wExprEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -730,17 +650,9 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
     createEReference(commitmentEClass, COMMITMENT__ANTECEDENT);
     createEReference(commitmentEClass, COMMITMENT__CONSEQUENT);
 
-    generalExprEClass = createEClass(GENERAL_EXPR);
-    createEReference(generalExprEClass, GENERAL_EXPR__EXPR);
-    createEAttribute(generalExprEClass, GENERAL_EXPR__WHERE);
-    createEReference(generalExprEClass, GENERAL_EXPR__ARITH);
-
     exprEClass = createEClass(EXPR);
     createEReference(exprEClass, EXPR__INTERVAL);
     createEReference(exprEClass, EXPR__LEFT);
-    createEAttribute(exprEClass, EXPR__OP);
-    createEReference(exprEClass, EXPR__RIGHT);
-    createEReference(exprEClass, EXPR__EXPR);
 
     intervalEClass = createEClass(INTERVAL);
     createEReference(intervalEClass, INTERVAL__EVENT);
@@ -752,22 +664,22 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
     createEAttribute(eventEClass, EVENT__LIFE_STATE);
     createEAttribute(eventEClass, EVENT__LABEL);
 
-    arithExprEClass = createEClass(ARITH_EXPR);
-    createEReference(arithExprEClass, ARITH_EXPR__LEFT_ATTR);
-    createEReference(arithExprEClass, ARITH_EXPR__BIN_OP);
-    createEReference(arithExprEClass, ARITH_EXPR__RIGHT_ATTR);
-    createEAttribute(arithExprEClass, ARITH_EXPR__NUM);
-
     timeStampEClass = createEClass(TIME_STAMP);
     createEAttribute(timeStampEClass, TIME_STAMP__VAL);
     createEAttribute(timeStampEClass, TIME_STAMP__EVENT_REFERENCE);
     createEAttribute(timeStampEClass, TIME_STAMP__SHIFT);
 
-    binaryOperatorEClass = createEClass(BINARY_OPERATOR);
-    createEAttribute(binaryOperatorEClass, BINARY_OPERATOR__OP);
+    eExprEClass = createEClass(EEXPR);
+    createEReference(eExprEClass, EEXPR__RIGHT);
 
-    attributeEClass = createEClass(ATTRIBUTE);
-    createEAttribute(attributeEClass, ATTRIBUTE__NAME);
+    oExprEClass = createEClass(OEXPR);
+    createEReference(oExprEClass, OEXPR__RIGHT);
+
+    aExprEClass = createEClass(AEXPR);
+    createEReference(aExprEClass, AEXPR__RIGHT);
+
+    wExprEClass = createEClass(WEXPR);
+    createEAttribute(wExprEClass, WEXPR__RIGHT);
   }
 
   /**
@@ -800,6 +712,10 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
 
     // Add supertypes to classes
     schemataEClass.getESuperTypes().add(this.getCupido());
+    eExprEClass.getESuperTypes().add(this.getExpr());
+    oExprEClass.getESuperTypes().add(this.getExpr());
+    aExprEClass.getESuperTypes().add(this.getExpr());
+    wExprEClass.getESuperTypes().add(this.getExpr());
 
     // Initialize classes and features; add operations and parameters
     initEClass(cupidoEClass, Cupido.class, "Cupido", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -821,21 +737,13 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
     initEAttribute(getCommitment_Label(), ecorePackage.getEString(), "label", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCommitment_Debtor(), ecorePackage.getEString(), "debtor", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCommitment_Creditor(), ecorePackage.getEString(), "creditor", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCommitment_Trigger(), this.getGeneralExpr(), null, "trigger", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCommitment_Antecedent(), this.getGeneralExpr(), null, "antecedent", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCommitment_Consequent(), this.getGeneralExpr(), null, "consequent", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(generalExprEClass, GeneralExpr.class, "GeneralExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGeneralExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, GeneralExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getGeneralExpr_Where(), ecorePackage.getEString(), "where", null, 0, 1, GeneralExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getGeneralExpr_Arith(), this.getArithExpr(), null, "arith", null, 0, 1, GeneralExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommitment_Trigger(), this.getExpr(), null, "trigger", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommitment_Antecedent(), this.getExpr(), null, "antecedent", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getCommitment_Consequent(), this.getExpr(), null, "consequent", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getExpr_Interval(), this.getInterval(), null, "interval", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpr_Left(), this.getInterval(), null, "left", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExpr_Op(), ecorePackage.getEString(), "op", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpr_Right(), this.getExpr(), null, "right", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getExpr_Expr(), this.getExpr(), null, "expr", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpr_Left(), this.getExpr(), null, "left", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(intervalEClass, Interval.class, "Interval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInterval_Event(), this.getEvent(), null, "event", null, 0, 1, Interval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -847,22 +755,22 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
     initEAttribute(getEvent_LifeState(), ecorePackage.getEString(), "lifeState", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEvent_Label(), ecorePackage.getEString(), "label", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(arithExprEClass, ArithExpr.class, "ArithExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getArithExpr_LeftAttr(), this.getAttribute(), null, "leftAttr", null, 0, 1, ArithExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getArithExpr_BinOp(), this.getBinaryOperator(), null, "binOp", null, 0, 1, ArithExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getArithExpr_RightAttr(), this.getAttribute(), null, "rightAttr", null, 0, 1, ArithExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getArithExpr_Num(), ecorePackage.getEInt(), "num", null, 0, 1, ArithExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(timeStampEClass, TimeStamp.class, "TimeStamp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTimeStamp_Val(), ecorePackage.getEInt(), "val", null, 0, 1, TimeStamp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTimeStamp_EventReference(), ecorePackage.getEString(), "eventReference", null, 0, 1, TimeStamp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTimeStamp_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, TimeStamp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(binaryOperatorEClass, BinaryOperator.class, "BinaryOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBinaryOperator_Op(), ecorePackage.getEString(), "op", null, 0, 1, BinaryOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(eExprEClass, EExpr.class, "EExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEExpr_Right(), this.getExpr(), null, "right", null, 0, 1, EExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(oExprEClass, OExpr.class, "OExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOExpr_Right(), this.getExpr(), null, "right", null, 0, 1, OExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(aExprEClass, AExpr.class, "AExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAExpr_Right(), this.getExpr(), null, "right", null, 0, 1, AExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(wExprEClass, WExpr.class, "WExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWExpr_Right(), ecorePackage.getEString(), "right", null, 0, 1, WExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

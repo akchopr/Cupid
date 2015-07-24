@@ -10,6 +10,8 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.example.services.CupidoGrammarAccess;
@@ -18,15 +20,21 @@ import org.xtext.example.services.CupidoGrammarAccess;
 public class CupidoSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CupidoGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_BExpr_LPARENTerminalRuleCall_1_0_a;
+	protected AbstractElementAlias match_BExpr_LPARENTerminalRuleCall_1_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CupidoGrammarAccess) access;
+		match_BExpr_LPARENTerminalRuleCall_1_0_a = new TokenAlias(true, true, grammarAccess.getBExprAccess().getLPARENTerminalRuleCall_1_0());
+		match_BExpr_LPARENTerminalRuleCall_1_0_p = new TokenAlias(true, false, grammarAccess.getBExprAccess().getLPARENTerminalRuleCall_1_0());
 	}
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getCOMMARule())
+		if(ruleCall.getRule() == grammarAccess.getANDRule())
+			return getANDToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getCOMMARule())
 			return getCOMMAToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getCOMMITRule())
 			return getCOMMITToken(semanticObject, ruleCall, node);
@@ -36,12 +44,16 @@ public class CupidoSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getDETACHToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getDISCHARGERule())
 			return getDISCHARGEToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getEXCEPTRule())
+			return getEXCEPTToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getKEYRule())
 			return getKEYToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getLBRACKETRule())
 			return getLBRACKETToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getLPARENRule())
 			return getLPARENToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getORRule())
+			return getORToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getPLUSRule())
 			return getPLUSToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getRBRACKETRule())
@@ -54,7 +66,18 @@ public class CupidoSyntacticSequencer extends AbstractSyntacticSequencer {
 			return getTIMEToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getTORule())
 			return getTOToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getWHERERule())
+			return getWHEREToken(semanticObject, ruleCall, node);
 		return "";
+	}
+	
+	/**
+	 * terminal AND: 'and';
+	 */
+	protected String getANDToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "and";
 	}
 	
 	/**
@@ -103,6 +126,15 @@ public class CupidoSyntacticSequencer extends AbstractSyntacticSequencer {
 	}
 	
 	/**
+	 * terminal EXCEPT: 'except';
+	 */
+	protected String getEXCEPTToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "except";
+	}
+	
+	/**
 	 * terminal KEY: 'key';
 	 */
 	protected String getKEYToken(EObject semanticObject, RuleCall ruleCall, INode node) {
@@ -127,6 +159,15 @@ public class CupidoSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "(";
+	}
+	
+	/**
+	 * terminal OR: 'or';
+	 */
+	protected String getORToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "or";
 	}
 	
 	/**
@@ -183,14 +224,56 @@ public class CupidoSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "to";
 	}
 	
+	/**
+	 * terminal WHERE: 'where';
+	 */
+	protected String getWHEREToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "where";
+	}
+	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if(match_BExpr_LPARENTerminalRuleCall_1_0_a.equals(syntax))
+				emit_BExpr_LPARENTerminalRuleCall_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_BExpr_LPARENTerminalRuleCall_1_0_p.equals(syntax))
+				emit_BExpr_LPARENTerminalRuleCall_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     LPAREN*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) interval=Interval
+	 *     (rule start) (ambiguity) {AExpr.left=}
+	 *     (rule start) (ambiguity) {EExpr.left=}
+	 *     (rule start) (ambiguity) {OExpr.left=}
+	 *     (rule start) (ambiguity) {WExpr.left=}
+	 */
+	protected void emit_BExpr_LPARENTerminalRuleCall_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     LPAREN+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) {AExpr.left=}
+	 *     (rule start) (ambiguity) {EExpr.left=}
+	 *     (rule start) (ambiguity) {OExpr.left=}
+	 *     (rule start) (ambiguity) {WExpr.left=}
+	 */
+	protected void emit_BExpr_LPARENTerminalRuleCall_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

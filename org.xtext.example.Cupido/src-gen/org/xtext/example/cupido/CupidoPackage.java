@@ -269,52 +269,6 @@ public interface CupidoPackage extends EPackage
   int COMMITMENT_FEATURE_COUNT = 6;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cupido.impl.GeneralExprImpl <em>General Expr</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cupido.impl.GeneralExprImpl
-   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getGeneralExpr()
-   * @generated
-   */
-  int GENERAL_EXPR = 5;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_EXPR__EXPR = 0;
-
-  /**
-   * The feature id for the '<em><b>Where</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_EXPR__WHERE = 1;
-
-  /**
-   * The feature id for the '<em><b>Arith</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_EXPR__ARITH = 2;
-
-  /**
-   * The number of structural features of the '<em>General Expr</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GENERAL_EXPR_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.cupido.impl.ExprImpl <em>Expr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -322,7 +276,7 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getExpr()
    * @generated
    */
-  int EXPR = 6;
+  int EXPR = 5;
 
   /**
    * The feature id for the '<em><b>Interval</b></em>' containment reference.
@@ -343,40 +297,13 @@ public interface CupidoPackage extends EPackage
   int EXPR__LEFT = 1;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__OP = 2;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__RIGHT = 3;
-
-  /**
-   * The feature id for the '<em><b>Expr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPR__EXPR = 4;
-
-  /**
    * The number of structural features of the '<em>Expr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR_FEATURE_COUNT = 5;
+  int EXPR_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.cupido.impl.IntervalImpl <em>Interval</em>}' class.
@@ -386,7 +313,7 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getInterval()
    * @generated
    */
-  int INTERVAL = 7;
+  int INTERVAL = 6;
 
   /**
    * The feature id for the '<em><b>Event</b></em>' containment reference.
@@ -432,7 +359,7 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 8;
+  int EVENT = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -471,61 +398,6 @@ public interface CupidoPackage extends EPackage
   int EVENT_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cupido.impl.ArithExprImpl <em>Arith Expr</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cupido.impl.ArithExprImpl
-   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getArithExpr()
-   * @generated
-   */
-  int ARITH_EXPR = 9;
-
-  /**
-   * The feature id for the '<em><b>Left Attr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITH_EXPR__LEFT_ATTR = 0;
-
-  /**
-   * The feature id for the '<em><b>Bin Op</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITH_EXPR__BIN_OP = 1;
-
-  /**
-   * The feature id for the '<em><b>Right Attr</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITH_EXPR__RIGHT_ATTR = 2;
-
-  /**
-   * The feature id for the '<em><b>Num</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITH_EXPR__NUM = 3;
-
-  /**
-   * The number of structural features of the '<em>Arith Expr</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ARITH_EXPR_FEATURE_COUNT = 4;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.cupido.impl.TimeStampImpl <em>Time Stamp</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -533,7 +405,7 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getTimeStamp()
    * @generated
    */
-  int TIME_STAMP = 10;
+  int TIME_STAMP = 8;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -572,60 +444,188 @@ public interface CupidoPackage extends EPackage
   int TIME_STAMP_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cupido.impl.BinaryOperatorImpl <em>Binary Operator</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.cupido.impl.EExprImpl <em>EExpr</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.cupido.impl.BinaryOperatorImpl
-   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getBinaryOperator()
+   * @see org.xtext.example.cupido.impl.EExprImpl
+   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getEExpr()
    * @generated
    */
-  int BINARY_OPERATOR = 11;
+  int EEXPR = 9;
 
   /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * The feature id for the '<em><b>Interval</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY_OPERATOR__OP = 0;
+  int EEXPR__INTERVAL = EXPR__INTERVAL;
 
   /**
-   * The number of structural features of the '<em>Binary Operator</em>' class.
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BINARY_OPERATOR_FEATURE_COUNT = 1;
+  int EEXPR__LEFT = EXPR__LEFT;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.cupido.impl.AttributeImpl <em>Attribute</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cupido.impl.AttributeImpl
-   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getAttribute()
-   * @generated
-   */
-  int ATTRIBUTE = 12;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__NAME = 0;
+  int EEXPR__RIGHT = EXPR_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Attribute</em>' class.
+   * The number of structural features of the '<em>EExpr</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_FEATURE_COUNT = 1;
+  int EEXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cupido.impl.OExprImpl <em>OExpr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cupido.impl.OExprImpl
+   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getOExpr()
+   * @generated
+   */
+  int OEXPR = 10;
+
+  /**
+   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OEXPR__INTERVAL = EXPR__INTERVAL;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OEXPR__LEFT = EXPR__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OEXPR__RIGHT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>OExpr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OEXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cupido.impl.AExprImpl <em>AExpr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cupido.impl.AExprImpl
+   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getAExpr()
+   * @generated
+   */
+  int AEXPR = 11;
+
+  /**
+   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXPR__INTERVAL = EXPR__INTERVAL;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXPR__LEFT = EXPR__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXPR__RIGHT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>AExpr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.cupido.impl.WExprImpl <em>WExpr</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.cupido.impl.WExprImpl
+   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getWExpr()
+   * @generated
+   */
+  int WEXPR = 12;
+
+  /**
+   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEXPR__INTERVAL = EXPR__INTERVAL;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEXPR__LEFT = EXPR__LEFT;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEXPR__RIGHT = EXPR_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>WExpr</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEXPR_FEATURE_COUNT = EXPR_FEATURE_COUNT + 1;
 
 
   /**
@@ -822,49 +822,6 @@ public interface CupidoPackage extends EPackage
   EReference getCommitment_Consequent();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cupido.GeneralExpr <em>General Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>General Expr</em>'.
-   * @see org.xtext.example.cupido.GeneralExpr
-   * @generated
-   */
-  EClass getGeneralExpr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.GeneralExpr#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see org.xtext.example.cupido.GeneralExpr#getExpr()
-   * @see #getGeneralExpr()
-   * @generated
-   */
-  EReference getGeneralExpr_Expr();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cupido.GeneralExpr#getWhere <em>Where</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Where</em>'.
-   * @see org.xtext.example.cupido.GeneralExpr#getWhere()
-   * @see #getGeneralExpr()
-   * @generated
-   */
-  EAttribute getGeneralExpr_Where();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.GeneralExpr#getArith <em>Arith</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Arith</em>'.
-   * @see org.xtext.example.cupido.GeneralExpr#getArith()
-   * @see #getGeneralExpr()
-   * @generated
-   */
-  EReference getGeneralExpr_Arith();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.cupido.Expr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -895,39 +852,6 @@ public interface CupidoPackage extends EPackage
    * @generated
    */
   EReference getExpr_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cupido.Expr#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.xtext.example.cupido.Expr#getOp()
-   * @see #getExpr()
-   * @generated
-   */
-  EAttribute getExpr_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Expr#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.xtext.example.cupido.Expr#getRight()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_Right();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Expr#getExpr <em>Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expr</em>'.
-   * @see org.xtext.example.cupido.Expr#getExpr()
-   * @see #getExpr()
-   * @generated
-   */
-  EReference getExpr_Expr();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cupido.Interval <em>Interval</em>}'.
@@ -1016,60 +940,6 @@ public interface CupidoPackage extends EPackage
   EAttribute getEvent_Label();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cupido.ArithExpr <em>Arith Expr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Arith Expr</em>'.
-   * @see org.xtext.example.cupido.ArithExpr
-   * @generated
-   */
-  EClass getArithExpr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.ArithExpr#getLeftAttr <em>Left Attr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left Attr</em>'.
-   * @see org.xtext.example.cupido.ArithExpr#getLeftAttr()
-   * @see #getArithExpr()
-   * @generated
-   */
-  EReference getArithExpr_LeftAttr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.ArithExpr#getBinOp <em>Bin Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Bin Op</em>'.
-   * @see org.xtext.example.cupido.ArithExpr#getBinOp()
-   * @see #getArithExpr()
-   * @generated
-   */
-  EReference getArithExpr_BinOp();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.ArithExpr#getRightAttr <em>Right Attr</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right Attr</em>'.
-   * @see org.xtext.example.cupido.ArithExpr#getRightAttr()
-   * @see #getArithExpr()
-   * @generated
-   */
-  EReference getArithExpr_RightAttr();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cupido.ArithExpr#getNum <em>Num</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Num</em>'.
-   * @see org.xtext.example.cupido.ArithExpr#getNum()
-   * @see #getArithExpr()
-   * @generated
-   */
-  EAttribute getArithExpr_Num();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.cupido.TimeStamp <em>Time Stamp</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1113,46 +983,88 @@ public interface CupidoPackage extends EPackage
   EAttribute getTimeStamp_Shift();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cupido.BinaryOperator <em>Binary Operator</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.cupido.EExpr <em>EExpr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Binary Operator</em>'.
-   * @see org.xtext.example.cupido.BinaryOperator
+   * @return the meta object for class '<em>EExpr</em>'.
+   * @see org.xtext.example.cupido.EExpr
    * @generated
    */
-  EClass getBinaryOperator();
+  EClass getEExpr();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cupido.BinaryOperator#getOp <em>Op</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.EExpr#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see org.xtext.example.cupido.BinaryOperator#getOp()
-   * @see #getBinaryOperator()
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.cupido.EExpr#getRight()
+   * @see #getEExpr()
    * @generated
    */
-  EAttribute getBinaryOperator_Op();
+  EReference getEExpr_Right();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.cupido.Attribute <em>Attribute</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.cupido.OExpr <em>OExpr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Attribute</em>'.
-   * @see org.xtext.example.cupido.Attribute
+   * @return the meta object for class '<em>OExpr</em>'.
+   * @see org.xtext.example.cupido.OExpr
    * @generated
    */
-  EClass getAttribute();
+  EClass getOExpr();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cupido.Attribute#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.OExpr#getRight <em>Right</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.cupido.Attribute#getName()
-   * @see #getAttribute()
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.cupido.OExpr#getRight()
+   * @see #getOExpr()
    * @generated
    */
-  EAttribute getAttribute_Name();
+  EReference getOExpr_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cupido.AExpr <em>AExpr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>AExpr</em>'.
+   * @see org.xtext.example.cupido.AExpr
+   * @generated
+   */
+  EClass getAExpr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.AExpr#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see org.xtext.example.cupido.AExpr#getRight()
+   * @see #getAExpr()
+   * @generated
+   */
+  EReference getAExpr_Right();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.cupido.WExpr <em>WExpr</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>WExpr</em>'.
+   * @see org.xtext.example.cupido.WExpr
+   * @generated
+   */
+  EClass getWExpr();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.cupido.WExpr#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Right</em>'.
+   * @see org.xtext.example.cupido.WExpr#getRight()
+   * @see #getWExpr()
+   * @generated
+   */
+  EAttribute getWExpr_Right();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1332,40 +1244,6 @@ public interface CupidoPackage extends EPackage
     EReference COMMITMENT__CONSEQUENT = eINSTANCE.getCommitment_Consequent();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.cupido.impl.GeneralExprImpl <em>General Expr</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cupido.impl.GeneralExprImpl
-     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getGeneralExpr()
-     * @generated
-     */
-    EClass GENERAL_EXPR = eINSTANCE.getGeneralExpr();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GENERAL_EXPR__EXPR = eINSTANCE.getGeneralExpr_Expr();
-
-    /**
-     * The meta object literal for the '<em><b>Where</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute GENERAL_EXPR__WHERE = eINSTANCE.getGeneralExpr_Where();
-
-    /**
-     * The meta object literal for the '<em><b>Arith</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GENERAL_EXPR__ARITH = eINSTANCE.getGeneralExpr_Arith();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.cupido.impl.ExprImpl <em>Expr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1390,30 +1268,6 @@ public interface CupidoPackage extends EPackage
      * @generated
      */
     EReference EXPR__LEFT = eINSTANCE.getExpr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXPR__OP = eINSTANCE.getExpr_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__RIGHT = eINSTANCE.getExpr_Right();
-
-    /**
-     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EXPR__EXPR = eINSTANCE.getExpr_Expr();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cupido.impl.IntervalImpl <em>Interval</em>}' class.
@@ -1484,48 +1338,6 @@ public interface CupidoPackage extends EPackage
     EAttribute EVENT__LABEL = eINSTANCE.getEvent_Label();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.cupido.impl.ArithExprImpl <em>Arith Expr</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cupido.impl.ArithExprImpl
-     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getArithExpr()
-     * @generated
-     */
-    EClass ARITH_EXPR = eINSTANCE.getArithExpr();
-
-    /**
-     * The meta object literal for the '<em><b>Left Attr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARITH_EXPR__LEFT_ATTR = eINSTANCE.getArithExpr_LeftAttr();
-
-    /**
-     * The meta object literal for the '<em><b>Bin Op</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARITH_EXPR__BIN_OP = eINSTANCE.getArithExpr_BinOp();
-
-    /**
-     * The meta object literal for the '<em><b>Right Attr</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ARITH_EXPR__RIGHT_ATTR = eINSTANCE.getArithExpr_RightAttr();
-
-    /**
-     * The meta object literal for the '<em><b>Num</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ARITH_EXPR__NUM = eINSTANCE.getArithExpr_Num();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.cupido.impl.TimeStampImpl <em>Time Stamp</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1560,40 +1372,76 @@ public interface CupidoPackage extends EPackage
     EAttribute TIME_STAMP__SHIFT = eINSTANCE.getTimeStamp_Shift();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.cupido.impl.BinaryOperatorImpl <em>Binary Operator</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.cupido.impl.EExprImpl <em>EExpr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.cupido.impl.BinaryOperatorImpl
-     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getBinaryOperator()
+     * @see org.xtext.example.cupido.impl.EExprImpl
+     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getEExpr()
      * @generated
      */
-    EClass BINARY_OPERATOR = eINSTANCE.getBinaryOperator();
+    EClass EEXPR = eINSTANCE.getEExpr();
 
     /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BINARY_OPERATOR__OP = eINSTANCE.getBinaryOperator_Op();
+    EReference EEXPR__RIGHT = eINSTANCE.getEExpr_Right();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.cupido.impl.AttributeImpl <em>Attribute</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.cupido.impl.OExprImpl <em>OExpr</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.cupido.impl.AttributeImpl
-     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getAttribute()
+     * @see org.xtext.example.cupido.impl.OExprImpl
+     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getOExpr()
      * @generated
      */
-    EClass ATTRIBUTE = eINSTANCE.getAttribute();
+    EClass OEXPR = eINSTANCE.getOExpr();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ATTRIBUTE__NAME = eINSTANCE.getAttribute_Name();
+    EReference OEXPR__RIGHT = eINSTANCE.getOExpr_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cupido.impl.AExprImpl <em>AExpr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cupido.impl.AExprImpl
+     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getAExpr()
+     * @generated
+     */
+    EClass AEXPR = eINSTANCE.getAExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AEXPR__RIGHT = eINSTANCE.getAExpr_Right();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.cupido.impl.WExprImpl <em>WExpr</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.cupido.impl.WExprImpl
+     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getWExpr()
+     * @generated
+     */
+    EClass WEXPR = eINSTANCE.getWExpr();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEXPR__RIGHT = eINSTANCE.getWExpr_Right();
 
   }
 
