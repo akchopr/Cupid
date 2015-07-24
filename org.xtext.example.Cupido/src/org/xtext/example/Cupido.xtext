@@ -37,14 +37,14 @@ WExpr returns Expr:
 	BExpr ({WExpr.left=current} WHERE (right=STRING))*;
 	
 BExpr returns Expr:
-	(interval = Interval) | 
+	Interval | 
 	LPAREN EExpr RPAREN;
    
-Interval:
+Interval returns Expr:
   (event = Event) |
-  (event = Event) LBRACKET (left = TimeStamp) COMMA (right = TimeStamp) RBRACKET |
-  (event = Event) LBRACKET COMMA (right = TimeStamp) RBRACKET |
-  (event = Event) LBRACKET (left = TimeStamp) COMMA RBRACKET |
+  (event = Event) LBRACKET (lTime = TimeStamp) COMMA (rTime = TimeStamp) RBRACKET |
+  (event = Event) LBRACKET COMMA (rTime = TimeStamp) RBRACKET |
+  (event = Event) LBRACKET (lTime = TimeStamp) COMMA RBRACKET |
   (event = Event) LBRACKET COMMA RBRACKET; // Equivalent to the first option
   
 Event:

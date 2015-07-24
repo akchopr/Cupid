@@ -18,7 +18,6 @@ import org.xtext.example.cupido.EExpr;
 import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.EventRelation;
 import org.xtext.example.cupido.Expr;
-import org.xtext.example.cupido.Interval;
 import org.xtext.example.cupido.OExpr;
 import org.xtext.example.cupido.Param;
 import org.xtext.example.cupido.Schemata;
@@ -74,13 +73,6 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * @generated
    */
   private EClass exprEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass intervalEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -382,7 +374,7 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpr_Interval()
+  public EReference getExpr_Event()
   {
     return (EReference)exprEClass.getEStructuralFeatures().get(0);
   }
@@ -392,7 +384,7 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getExpr_Left()
+  public EReference getExpr_LTime()
   {
     return (EReference)exprEClass.getEStructuralFeatures().get(1);
   }
@@ -402,9 +394,9 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getInterval()
+  public EReference getExpr_RTime()
   {
-    return intervalEClass;
+    return (EReference)exprEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -412,29 +404,9 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInterval_Event()
+  public EReference getExpr_Left()
   {
-    return (EReference)intervalEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getInterval_Left()
-  {
-    return (EReference)intervalEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getInterval_Right()
-  {
-    return (EReference)intervalEClass.getEStructuralFeatures().get(2);
+    return (EReference)exprEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -651,13 +623,10 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
     createEReference(commitmentEClass, COMMITMENT__CONSEQUENT);
 
     exprEClass = createEClass(EXPR);
-    createEReference(exprEClass, EXPR__INTERVAL);
+    createEReference(exprEClass, EXPR__EVENT);
+    createEReference(exprEClass, EXPR__LTIME);
+    createEReference(exprEClass, EXPR__RTIME);
     createEReference(exprEClass, EXPR__LEFT);
-
-    intervalEClass = createEClass(INTERVAL);
-    createEReference(intervalEClass, INTERVAL__EVENT);
-    createEReference(intervalEClass, INTERVAL__LEFT);
-    createEReference(intervalEClass, INTERVAL__RIGHT);
 
     eventEClass = createEClass(EVENT);
     createEAttribute(eventEClass, EVENT__NAME);
@@ -742,13 +711,10 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
     initEReference(getCommitment_Consequent(), this.getExpr(), null, "consequent", null, 0, 1, Commitment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exprEClass, Expr.class, "Expr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getExpr_Interval(), this.getInterval(), null, "interval", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpr_Event(), this.getEvent(), null, "event", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpr_LTime(), this.getTimeStamp(), null, "lTime", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpr_RTime(), this.getTimeStamp(), null, "rTime", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getExpr_Left(), this.getExpr(), null, "left", null, 0, 1, Expr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(intervalEClass, Interval.class, "Interval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInterval_Event(), this.getEvent(), null, "event", null, 0, 1, Interval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInterval_Left(), this.getTimeStamp(), null, "left", null, 0, 1, Interval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getInterval_Right(), this.getTimeStamp(), null, "right", null, 0, 1, Interval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEvent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

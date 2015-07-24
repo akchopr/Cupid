@@ -77,15 +77,6 @@ public interface CupidoFactory extends EFactory
   Expr createExpr();
 
   /**
-   * Returns a new object of class '<em>Interval</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Interval</em>'.
-   * @generated
-   */
-  Interval createInterval();
-
-  /**
    * Returns a new object of class '<em>Event</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

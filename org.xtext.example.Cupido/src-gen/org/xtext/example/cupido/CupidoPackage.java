@@ -279,13 +279,31 @@ public interface CupidoPackage extends EPackage
   int EXPR = 5;
 
   /**
-   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPR__INTERVAL = 0;
+  int EXPR__EVENT = 0;
+
+  /**
+   * The feature id for the '<em><b>LTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__LTIME = 1;
+
+  /**
+   * The feature id for the '<em><b>RTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPR__RTIME = 2;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -294,7 +312,7 @@ public interface CupidoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR__LEFT = 1;
+  int EXPR__LEFT = 3;
 
   /**
    * The number of structural features of the '<em>Expr</em>' class.
@@ -303,53 +321,7 @@ public interface CupidoPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXPR_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.cupido.impl.IntervalImpl <em>Interval</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.cupido.impl.IntervalImpl
-   * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getInterval()
-   * @generated
-   */
-  int INTERVAL = 6;
-
-  /**
-   * The feature id for the '<em><b>Event</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERVAL__EVENT = 0;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERVAL__LEFT = 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERVAL__RIGHT = 2;
-
-  /**
-   * The number of structural features of the '<em>Interval</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERVAL_FEATURE_COUNT = 3;
+  int EXPR_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.xtext.example.cupido.impl.EventImpl <em>Event</em>}' class.
@@ -359,7 +331,7 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 7;
+  int EVENT = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -405,7 +377,7 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getTimeStamp()
    * @generated
    */
-  int TIME_STAMP = 8;
+  int TIME_STAMP = 7;
 
   /**
    * The feature id for the '<em><b>Val</b></em>' attribute.
@@ -451,16 +423,34 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getEExpr()
    * @generated
    */
-  int EEXPR = 9;
+  int EEXPR = 8;
 
   /**
-   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EEXPR__INTERVAL = EXPR__INTERVAL;
+  int EEXPR__EVENT = EXPR__EVENT;
+
+  /**
+   * The feature id for the '<em><b>LTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EEXPR__LTIME = EXPR__LTIME;
+
+  /**
+   * The feature id for the '<em><b>RTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EEXPR__RTIME = EXPR__RTIME;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -497,16 +487,34 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getOExpr()
    * @generated
    */
-  int OEXPR = 10;
+  int OEXPR = 9;
 
   /**
-   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int OEXPR__INTERVAL = EXPR__INTERVAL;
+  int OEXPR__EVENT = EXPR__EVENT;
+
+  /**
+   * The feature id for the '<em><b>LTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OEXPR__LTIME = EXPR__LTIME;
+
+  /**
+   * The feature id for the '<em><b>RTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OEXPR__RTIME = EXPR__RTIME;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -543,16 +551,34 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getAExpr()
    * @generated
    */
-  int AEXPR = 11;
+  int AEXPR = 10;
 
   /**
-   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AEXPR__INTERVAL = EXPR__INTERVAL;
+  int AEXPR__EVENT = EXPR__EVENT;
+
+  /**
+   * The feature id for the '<em><b>LTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXPR__LTIME = EXPR__LTIME;
+
+  /**
+   * The feature id for the '<em><b>RTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AEXPR__RTIME = EXPR__RTIME;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -589,16 +615,34 @@ public interface CupidoPackage extends EPackage
    * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getWExpr()
    * @generated
    */
-  int WEXPR = 12;
+  int WEXPR = 11;
 
   /**
-   * The feature id for the '<em><b>Interval</b></em>' containment reference.
+   * The feature id for the '<em><b>Event</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WEXPR__INTERVAL = EXPR__INTERVAL;
+  int WEXPR__EVENT = EXPR__EVENT;
+
+  /**
+   * The feature id for the '<em><b>LTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEXPR__LTIME = EXPR__LTIME;
+
+  /**
+   * The feature id for the '<em><b>RTime</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEXPR__RTIME = EXPR__RTIME;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -832,15 +876,37 @@ public interface CupidoPackage extends EPackage
   EClass getExpr();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Expr#getInterval <em>Interval</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Expr#getEvent <em>Event</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Interval</em>'.
-   * @see org.xtext.example.cupido.Expr#getInterval()
+   * @return the meta object for the containment reference '<em>Event</em>'.
+   * @see org.xtext.example.cupido.Expr#getEvent()
    * @see #getExpr()
    * @generated
    */
-  EReference getExpr_Interval();
+  EReference getExpr_Event();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Expr#getLTime <em>LTime</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>LTime</em>'.
+   * @see org.xtext.example.cupido.Expr#getLTime()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_LTime();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Expr#getRTime <em>RTime</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>RTime</em>'.
+   * @see org.xtext.example.cupido.Expr#getRTime()
+   * @see #getExpr()
+   * @generated
+   */
+  EReference getExpr_RTime();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Expr#getLeft <em>Left</em>}'.
@@ -852,49 +918,6 @@ public interface CupidoPackage extends EPackage
    * @generated
    */
   EReference getExpr_Left();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.cupido.Interval <em>Interval</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Interval</em>'.
-   * @see org.xtext.example.cupido.Interval
-   * @generated
-   */
-  EClass getInterval();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Interval#getEvent <em>Event</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Event</em>'.
-   * @see org.xtext.example.cupido.Interval#getEvent()
-   * @see #getInterval()
-   * @generated
-   */
-  EReference getInterval_Event();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Interval#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see org.xtext.example.cupido.Interval#getLeft()
-   * @see #getInterval()
-   * @generated
-   */
-  EReference getInterval_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.Interval#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see org.xtext.example.cupido.Interval#getRight()
-   * @see #getInterval()
-   * @generated
-   */
-  EReference getInterval_Right();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.cupido.Event <em>Event</em>}'.
@@ -1254,12 +1277,28 @@ public interface CupidoPackage extends EPackage
     EClass EXPR = eINSTANCE.getExpr();
 
     /**
-     * The meta object literal for the '<em><b>Interval</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference EXPR__INTERVAL = eINSTANCE.getExpr_Interval();
+    EReference EXPR__EVENT = eINSTANCE.getExpr_Event();
+
+    /**
+     * The meta object literal for the '<em><b>LTime</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__LTIME = eINSTANCE.getExpr_LTime();
+
+    /**
+     * The meta object literal for the '<em><b>RTime</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPR__RTIME = eINSTANCE.getExpr_RTime();
 
     /**
      * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -1268,40 +1307,6 @@ public interface CupidoPackage extends EPackage
      * @generated
      */
     EReference EXPR__LEFT = eINSTANCE.getExpr_Left();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.cupido.impl.IntervalImpl <em>Interval</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.cupido.impl.IntervalImpl
-     * @see org.xtext.example.cupido.impl.CupidoPackageImpl#getInterval()
-     * @generated
-     */
-    EClass INTERVAL = eINSTANCE.getInterval();
-
-    /**
-     * The meta object literal for the '<em><b>Event</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERVAL__EVENT = eINSTANCE.getInterval_Event();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERVAL__LEFT = eINSTANCE.getInterval_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference INTERVAL__RIGHT = eINSTANCE.getInterval_Right();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.cupido.impl.EventImpl <em>Event</em>}' class.

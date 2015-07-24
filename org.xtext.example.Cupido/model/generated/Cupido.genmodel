@@ -30,13 +30,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Commitment/consequent"/>
     </genClasses>
     <genClasses ecoreClass="Cupido.ecore#//Expr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/interval"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/event"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/lTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/rTime"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Expr/left"/>
-    </genClasses>
-    <genClasses ecoreClass="Cupido.ecore#//Interval">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Interval/event"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Interval/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//Interval/right"/>
     </genClasses>
     <genClasses ecoreClass="Cupido.ecore#//Event">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//Event/name"/>

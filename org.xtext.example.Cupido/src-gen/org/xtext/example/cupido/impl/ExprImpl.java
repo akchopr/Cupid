@@ -12,8 +12,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.cupido.CupidoPackage;
+import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.Expr;
-import org.xtext.example.cupido.Interval;
+import org.xtext.example.cupido.TimeStamp;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,7 +24,9 @@ import org.xtext.example.cupido.Interval;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getInterval <em>Interval</em>}</li>
+ *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getEvent <em>Event</em>}</li>
+ *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getLTime <em>LTime</em>}</li>
+ *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getRTime <em>RTime</em>}</li>
  *   <li>{@link org.xtext.example.cupido.impl.ExprImpl#getLeft <em>Left</em>}</li>
  * </ul>
  *
@@ -32,14 +35,34 @@ import org.xtext.example.cupido.Interval;
 public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
 {
   /**
-   * The cached value of the '{@link #getInterval() <em>Interval</em>}' containment reference.
+   * The cached value of the '{@link #getEvent() <em>Event</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getInterval()
+   * @see #getEvent()
    * @generated
    * @ordered
    */
-  protected Interval interval;
+  protected Event event;
+
+  /**
+   * The cached value of the '{@link #getLTime() <em>LTime</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getLTime()
+   * @generated
+   * @ordered
+   */
+  protected TimeStamp lTime;
+
+  /**
+   * The cached value of the '{@link #getRTime() <em>RTime</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRTime()
+   * @generated
+   * @ordered
+   */
+  protected TimeStamp rTime;
 
   /**
    * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
@@ -77,9 +100,9 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public Interval getInterval()
+  public Event getEvent()
   {
-    return interval;
+    return event;
   }
 
   /**
@@ -87,13 +110,13 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetInterval(Interval newInterval, NotificationChain msgs)
+  public NotificationChain basicSetEvent(Event newEvent, NotificationChain msgs)
   {
-    Interval oldInterval = interval;
-    interval = newInterval;
+    Event oldEvent = event;
+    event = newEvent;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__INTERVAL, oldInterval, newInterval);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__EVENT, oldEvent, newEvent);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -104,20 +127,116 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setInterval(Interval newInterval)
+  public void setEvent(Event newEvent)
   {
-    if (newInterval != interval)
+    if (newEvent != event)
     {
       NotificationChain msgs = null;
-      if (interval != null)
-        msgs = ((InternalEObject)interval).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__INTERVAL, null, msgs);
-      if (newInterval != null)
-        msgs = ((InternalEObject)newInterval).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__INTERVAL, null, msgs);
-      msgs = basicSetInterval(newInterval, msgs);
+      if (event != null)
+        msgs = ((InternalEObject)event).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__EVENT, null, msgs);
+      if (newEvent != null)
+        msgs = ((InternalEObject)newEvent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__EVENT, null, msgs);
+      msgs = basicSetEvent(newEvent, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__INTERVAL, newInterval, newInterval));
+      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__EVENT, newEvent, newEvent));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimeStamp getLTime()
+  {
+    return lTime;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetLTime(TimeStamp newLTime, NotificationChain msgs)
+  {
+    TimeStamp oldLTime = lTime;
+    lTime = newLTime;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__LTIME, oldLTime, newLTime);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLTime(TimeStamp newLTime)
+  {
+    if (newLTime != lTime)
+    {
+      NotificationChain msgs = null;
+      if (lTime != null)
+        msgs = ((InternalEObject)lTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__LTIME, null, msgs);
+      if (newLTime != null)
+        msgs = ((InternalEObject)newLTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__LTIME, null, msgs);
+      msgs = basicSetLTime(newLTime, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__LTIME, newLTime, newLTime));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimeStamp getRTime()
+  {
+    return rTime;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRTime(TimeStamp newRTime, NotificationChain msgs)
+  {
+    TimeStamp oldRTime = rTime;
+    rTime = newRTime;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__RTIME, oldRTime, newRTime);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRTime(TimeStamp newRTime)
+  {
+    if (newRTime != rTime)
+    {
+      NotificationChain msgs = null;
+      if (rTime != null)
+        msgs = ((InternalEObject)rTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__RTIME, null, msgs);
+      if (newRTime != null)
+        msgs = ((InternalEObject)newRTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.EXPR__RTIME, null, msgs);
+      msgs = basicSetRTime(newRTime, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.EXPR__RTIME, newRTime, newRTime));
   }
 
   /**
@@ -178,8 +297,12 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case CupidoPackage.EXPR__INTERVAL:
-        return basicSetInterval(null, msgs);
+      case CupidoPackage.EXPR__EVENT:
+        return basicSetEvent(null, msgs);
+      case CupidoPackage.EXPR__LTIME:
+        return basicSetLTime(null, msgs);
+      case CupidoPackage.EXPR__RTIME:
+        return basicSetRTime(null, msgs);
       case CupidoPackage.EXPR__LEFT:
         return basicSetLeft(null, msgs);
     }
@@ -196,8 +319,12 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case CupidoPackage.EXPR__INTERVAL:
-        return getInterval();
+      case CupidoPackage.EXPR__EVENT:
+        return getEvent();
+      case CupidoPackage.EXPR__LTIME:
+        return getLTime();
+      case CupidoPackage.EXPR__RTIME:
+        return getRTime();
       case CupidoPackage.EXPR__LEFT:
         return getLeft();
     }
@@ -214,8 +341,14 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case CupidoPackage.EXPR__INTERVAL:
-        setInterval((Interval)newValue);
+      case CupidoPackage.EXPR__EVENT:
+        setEvent((Event)newValue);
+        return;
+      case CupidoPackage.EXPR__LTIME:
+        setLTime((TimeStamp)newValue);
+        return;
+      case CupidoPackage.EXPR__RTIME:
+        setRTime((TimeStamp)newValue);
         return;
       case CupidoPackage.EXPR__LEFT:
         setLeft((Expr)newValue);
@@ -234,8 +367,14 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case CupidoPackage.EXPR__INTERVAL:
-        setInterval((Interval)null);
+      case CupidoPackage.EXPR__EVENT:
+        setEvent((Event)null);
+        return;
+      case CupidoPackage.EXPR__LTIME:
+        setLTime((TimeStamp)null);
+        return;
+      case CupidoPackage.EXPR__RTIME:
+        setRTime((TimeStamp)null);
         return;
       case CupidoPackage.EXPR__LEFT:
         setLeft((Expr)null);
@@ -254,8 +393,12 @@ public class ExprImpl extends MinimalEObjectImpl.Container implements Expr
   {
     switch (featureID)
     {
-      case CupidoPackage.EXPR__INTERVAL:
-        return interval != null;
+      case CupidoPackage.EXPR__EVENT:
+        return event != null;
+      case CupidoPackage.EXPR__LTIME:
+        return lTime != null;
+      case CupidoPackage.EXPR__RTIME:
+        return rTime != null;
       case CupidoPackage.EXPR__LEFT:
         return left != null;
     }

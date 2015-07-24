@@ -1095,13 +1095,13 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BExpr__Alternatives"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:424:1: rule__BExpr__Alternatives : ( ( ( rule__BExpr__IntervalAssignment_0 ) ) | ( ( rule__BExpr__Group_1__0 ) ) );
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:424:1: rule__BExpr__Alternatives : ( ( ruleInterval ) | ( ( rule__BExpr__Group_1__0 ) ) );
     public final void rule__BExpr__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:428:1: ( ( ( rule__BExpr__IntervalAssignment_0 ) ) | ( ( rule__BExpr__Group_1__0 ) ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:428:1: ( ( ruleInterval ) | ( ( rule__BExpr__Group_1__0 ) ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1119,24 +1119,18 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:429:1: ( ( rule__BExpr__IntervalAssignment_0 ) )
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:429:1: ( ruleInterval )
                     {
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:429:1: ( ( rule__BExpr__IntervalAssignment_0 ) )
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:430:1: ( rule__BExpr__IntervalAssignment_0 )
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:429:1: ( ruleInterval )
+                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:430:1: ruleInterval
                     {
-                     before(grammarAccess.getBExprAccess().getIntervalAssignment_0()); 
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:431:1: ( rule__BExpr__IntervalAssignment_0 )
-                    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:431:2: rule__BExpr__IntervalAssignment_0
-                    {
-                    pushFollow(FOLLOW_rule__BExpr__IntervalAssignment_0_in_rule__BExpr__Alternatives850);
-                    rule__BExpr__IntervalAssignment_0();
+                     before(grammarAccess.getBExprAccess().getIntervalParserRuleCall_0()); 
+                    pushFollow(FOLLOW_ruleInterval_in_rule__BExpr__Alternatives850);
+                    ruleInterval();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getBExprAccess().getIntervalAssignment_0()); 
+                     after(grammarAccess.getBExprAccess().getIntervalParserRuleCall_0()); 
 
                     }
 
@@ -1153,7 +1147,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:437:1: ( rule__BExpr__Group_1__0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:437:2: rule__BExpr__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__BExpr__Group_1__0_in_rule__BExpr__Alternatives868);
+                    pushFollow(FOLLOW_rule__BExpr__Group_1__0_in_rule__BExpr__Alternatives867);
                     rule__BExpr__Group_1__0();
 
                     state._fsp--;
@@ -1206,7 +1200,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:453:1: ( rule__Interval__EventAssignment_0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:453:2: rule__Interval__EventAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Interval__EventAssignment_0_in_rule__Interval__Alternatives901);
+                    pushFollow(FOLLOW_rule__Interval__EventAssignment_0_in_rule__Interval__Alternatives900);
                     rule__Interval__EventAssignment_0();
 
                     state._fsp--;
@@ -1231,7 +1225,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:459:1: ( rule__Interval__Group_1__0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:459:2: rule__Interval__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Interval__Group_1__0_in_rule__Interval__Alternatives919);
+                    pushFollow(FOLLOW_rule__Interval__Group_1__0_in_rule__Interval__Alternatives918);
                     rule__Interval__Group_1__0();
 
                     state._fsp--;
@@ -1256,7 +1250,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:465:1: ( rule__Interval__Group_2__0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:465:2: rule__Interval__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__Interval__Group_2__0_in_rule__Interval__Alternatives937);
+                    pushFollow(FOLLOW_rule__Interval__Group_2__0_in_rule__Interval__Alternatives936);
                     rule__Interval__Group_2__0();
 
                     state._fsp--;
@@ -1281,7 +1275,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:471:1: ( rule__Interval__Group_3__0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:471:2: rule__Interval__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Interval__Group_3__0_in_rule__Interval__Alternatives955);
+                    pushFollow(FOLLOW_rule__Interval__Group_3__0_in_rule__Interval__Alternatives954);
                     rule__Interval__Group_3__0();
 
                     state._fsp--;
@@ -1306,7 +1300,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:477:1: ( rule__Interval__Group_4__0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:477:2: rule__Interval__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Interval__Group_4__0_in_rule__Interval__Alternatives973);
+                    pushFollow(FOLLOW_rule__Interval__Group_4__0_in_rule__Interval__Alternatives972);
                     rule__Interval__Group_4__0();
 
                     state._fsp--;
@@ -1372,7 +1366,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:493:1: ( rule__Event__NameAssignment_0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:493:2: rule__Event__NameAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Event__NameAssignment_0_in_rule__Event__Alternatives1006);
+                    pushFollow(FOLLOW_rule__Event__NameAssignment_0_in_rule__Event__Alternatives1005);
                     rule__Event__NameAssignment_0();
 
                     state._fsp--;
@@ -1397,7 +1391,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:499:1: ( rule__Event__Group_1__0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:499:2: rule__Event__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__Event__Group_1__0_in_rule__Event__Alternatives1024);
+                    pushFollow(FOLLOW_rule__Event__Group_1__0_in_rule__Event__Alternatives1023);
                     rule__Event__Group_1__0();
 
                     state._fsp--;
@@ -1479,7 +1473,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:514:1: RULE_CREATED
                     {
                      before(grammarAccess.getEventAccess().getLifeStateCREATEDTerminalRuleCall_1_0_0_0()); 
-                    match(input,RULE_CREATED,FOLLOW_RULE_CREATED_in_rule__Event__LifeStateAlternatives_1_0_01057); 
+                    match(input,RULE_CREATED,FOLLOW_RULE_CREATED_in_rule__Event__LifeStateAlternatives_1_0_01056); 
                      after(grammarAccess.getEventAccess().getLifeStateCREATEDTerminalRuleCall_1_0_0_0()); 
 
                     }
@@ -1494,7 +1488,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:520:1: RULE_DETACHED
                     {
                      before(grammarAccess.getEventAccess().getLifeStateDETACHEDTerminalRuleCall_1_0_0_1()); 
-                    match(input,RULE_DETACHED,FOLLOW_RULE_DETACHED_in_rule__Event__LifeStateAlternatives_1_0_01074); 
+                    match(input,RULE_DETACHED,FOLLOW_RULE_DETACHED_in_rule__Event__LifeStateAlternatives_1_0_01073); 
                      after(grammarAccess.getEventAccess().getLifeStateDETACHEDTerminalRuleCall_1_0_0_1()); 
 
                     }
@@ -1509,7 +1503,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:526:1: RULE_DISCHARGED
                     {
                      before(grammarAccess.getEventAccess().getLifeStateDISCHARGEDTerminalRuleCall_1_0_0_2()); 
-                    match(input,RULE_DISCHARGED,FOLLOW_RULE_DISCHARGED_in_rule__Event__LifeStateAlternatives_1_0_01091); 
+                    match(input,RULE_DISCHARGED,FOLLOW_RULE_DISCHARGED_in_rule__Event__LifeStateAlternatives_1_0_01090); 
                      after(grammarAccess.getEventAccess().getLifeStateDISCHARGEDTerminalRuleCall_1_0_0_2()); 
 
                     }
@@ -1524,7 +1518,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:532:1: RULE_EXPIRED
                     {
                      before(grammarAccess.getEventAccess().getLifeStateEXPIREDTerminalRuleCall_1_0_0_3()); 
-                    match(input,RULE_EXPIRED,FOLLOW_RULE_EXPIRED_in_rule__Event__LifeStateAlternatives_1_0_01108); 
+                    match(input,RULE_EXPIRED,FOLLOW_RULE_EXPIRED_in_rule__Event__LifeStateAlternatives_1_0_01107); 
                      after(grammarAccess.getEventAccess().getLifeStateEXPIREDTerminalRuleCall_1_0_0_3()); 
 
                     }
@@ -1539,7 +1533,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:538:1: RULE_VIOLATED
                     {
                      before(grammarAccess.getEventAccess().getLifeStateVIOLATEDTerminalRuleCall_1_0_0_4()); 
-                    match(input,RULE_VIOLATED,FOLLOW_RULE_VIOLATED_in_rule__Event__LifeStateAlternatives_1_0_01125); 
+                    match(input,RULE_VIOLATED,FOLLOW_RULE_VIOLATED_in_rule__Event__LifeStateAlternatives_1_0_01124); 
                      after(grammarAccess.getEventAccess().getLifeStateVIOLATEDTerminalRuleCall_1_0_0_4()); 
 
                     }
@@ -1598,7 +1592,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:555:1: ( rule__TimeStamp__ValAssignment_0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:555:2: rule__TimeStamp__ValAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__TimeStamp__ValAssignment_0_in_rule__TimeStamp__Alternatives1157);
+                    pushFollow(FOLLOW_rule__TimeStamp__ValAssignment_0_in_rule__TimeStamp__Alternatives1156);
                     rule__TimeStamp__ValAssignment_0();
 
                     state._fsp--;
@@ -1623,7 +1617,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:561:1: ( rule__TimeStamp__Group_1__0 )
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:561:2: rule__TimeStamp__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__TimeStamp__Group_1__0_in_rule__TimeStamp__Alternatives1175);
+                    pushFollow(FOLLOW_rule__TimeStamp__Group_1__0_in_rule__TimeStamp__Alternatives1174);
                     rule__TimeStamp__Group_1__0();
 
                     state._fsp--;
@@ -1665,12 +1659,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:576:1: ( rule__Cupido__Group__0__Impl rule__Cupido__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:577:2: rule__Cupido__Group__0__Impl rule__Cupido__Group__1
             {
-            pushFollow(FOLLOW_rule__Cupido__Group__0__Impl_in_rule__Cupido__Group__01206);
+            pushFollow(FOLLOW_rule__Cupido__Group__0__Impl_in_rule__Cupido__Group__01205);
             rule__Cupido__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Cupido__Group__1_in_rule__Cupido__Group__01209);
+            pushFollow(FOLLOW_rule__Cupido__Group__1_in_rule__Cupido__Group__01208);
             rule__Cupido__Group__1();
 
             state._fsp--;
@@ -1707,7 +1701,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:590:1: ruleSchemata
             {
              before(grammarAccess.getCupidoAccess().getSchemataParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleSchemata_in_rule__Cupido__Group__0__Impl1236);
+            pushFollow(FOLLOW_ruleSchemata_in_rule__Cupido__Group__0__Impl1235);
             ruleSchemata();
 
             state._fsp--;
@@ -1744,7 +1738,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:605:1: ( rule__Cupido__Group__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:606:2: rule__Cupido__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Cupido__Group__1__Impl_in_rule__Cupido__Group__11265);
+            pushFollow(FOLLOW_rule__Cupido__Group__1__Impl_in_rule__Cupido__Group__11264);
             rule__Cupido__Group__1__Impl();
 
             state._fsp--;
@@ -1796,7 +1790,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:619:2: rule__Cupido__CommitmentsAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Cupido__CommitmentsAssignment_1_in_rule__Cupido__Group__1__Impl1292);
+            	    pushFollow(FOLLOW_rule__Cupido__CommitmentsAssignment_1_in_rule__Cupido__Group__1__Impl1291);
             	    rule__Cupido__CommitmentsAssignment_1();
 
             	    state._fsp--;
@@ -1842,12 +1836,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:637:1: ( rule__Schemata__Group__0__Impl rule__Schemata__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:638:2: rule__Schemata__Group__0__Impl rule__Schemata__Group__1
             {
-            pushFollow(FOLLOW_rule__Schemata__Group__0__Impl_in_rule__Schemata__Group__01327);
+            pushFollow(FOLLOW_rule__Schemata__Group__0__Impl_in_rule__Schemata__Group__01326);
             rule__Schemata__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Schemata__Group__1_in_rule__Schemata__Group__01330);
+            pushFollow(FOLLOW_rule__Schemata__Group__1_in_rule__Schemata__Group__01329);
             rule__Schemata__Group__1();
 
             state._fsp--;
@@ -1884,7 +1878,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:651:1: RULE_SCHEMA
             {
              before(grammarAccess.getSchemataAccess().getSCHEMATerminalRuleCall_0()); 
-            match(input,RULE_SCHEMA,FOLLOW_RULE_SCHEMA_in_rule__Schemata__Group__0__Impl1357); 
+            match(input,RULE_SCHEMA,FOLLOW_RULE_SCHEMA_in_rule__Schemata__Group__0__Impl1356); 
              after(grammarAccess.getSchemataAccess().getSCHEMATerminalRuleCall_0()); 
 
             }
@@ -1917,7 +1911,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:666:1: ( rule__Schemata__Group__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:667:2: rule__Schemata__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Schemata__Group__1__Impl_in_rule__Schemata__Group__11386);
+            pushFollow(FOLLOW_rule__Schemata__Group__1__Impl_in_rule__Schemata__Group__11385);
             rule__Schemata__Group__1__Impl();
 
             state._fsp--;
@@ -1960,7 +1954,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:681:1: ( rule__Schemata__SchemataAssignment_1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:681:2: rule__Schemata__SchemataAssignment_1
             {
-            pushFollow(FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1415);
+            pushFollow(FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1414);
             rule__Schemata__SchemataAssignment_1();
 
             state._fsp--;
@@ -1991,7 +1985,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:686:2: rule__Schemata__SchemataAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1427);
+            	    pushFollow(FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1426);
             	    rule__Schemata__SchemataAssignment_1();
 
             	    state._fsp--;
@@ -2040,12 +2034,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:705:1: ( rule__EventRelation__Group__0__Impl rule__EventRelation__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:706:2: rule__EventRelation__Group__0__Impl rule__EventRelation__Group__1
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__0__Impl_in_rule__EventRelation__Group__01464);
+            pushFollow(FOLLOW_rule__EventRelation__Group__0__Impl_in_rule__EventRelation__Group__01463);
             rule__EventRelation__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__1_in_rule__EventRelation__Group__01467);
+            pushFollow(FOLLOW_rule__EventRelation__Group__1_in_rule__EventRelation__Group__01466);
             rule__EventRelation__Group__1();
 
             state._fsp--;
@@ -2085,7 +2079,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:720:1: ( rule__EventRelation__EventAssignment_0 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:720:2: rule__EventRelation__EventAssignment_0
             {
-            pushFollow(FOLLOW_rule__EventRelation__EventAssignment_0_in_rule__EventRelation__Group__0__Impl1494);
+            pushFollow(FOLLOW_rule__EventRelation__EventAssignment_0_in_rule__EventRelation__Group__0__Impl1493);
             rule__EventRelation__EventAssignment_0();
 
             state._fsp--;
@@ -2125,12 +2119,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:734:1: ( rule__EventRelation__Group__1__Impl rule__EventRelation__Group__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:735:2: rule__EventRelation__Group__1__Impl rule__EventRelation__Group__2
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__1__Impl_in_rule__EventRelation__Group__11524);
+            pushFollow(FOLLOW_rule__EventRelation__Group__1__Impl_in_rule__EventRelation__Group__11523);
             rule__EventRelation__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__2_in_rule__EventRelation__Group__11527);
+            pushFollow(FOLLOW_rule__EventRelation__Group__2_in_rule__EventRelation__Group__11526);
             rule__EventRelation__Group__2();
 
             state._fsp--;
@@ -2167,7 +2161,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:748:1: RULE_LPAREN
             {
              before(grammarAccess.getEventRelationAccess().getLPARENTerminalRuleCall_1()); 
-            match(input,RULE_LPAREN,FOLLOW_RULE_LPAREN_in_rule__EventRelation__Group__1__Impl1554); 
+            match(input,RULE_LPAREN,FOLLOW_RULE_LPAREN_in_rule__EventRelation__Group__1__Impl1553); 
              after(grammarAccess.getEventRelationAccess().getLPARENTerminalRuleCall_1()); 
 
             }
@@ -2200,12 +2194,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:763:1: ( rule__EventRelation__Group__2__Impl rule__EventRelation__Group__3 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:764:2: rule__EventRelation__Group__2__Impl rule__EventRelation__Group__3
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__2__Impl_in_rule__EventRelation__Group__21583);
+            pushFollow(FOLLOW_rule__EventRelation__Group__2__Impl_in_rule__EventRelation__Group__21582);
             rule__EventRelation__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__3_in_rule__EventRelation__Group__21586);
+            pushFollow(FOLLOW_rule__EventRelation__Group__3_in_rule__EventRelation__Group__21585);
             rule__EventRelation__Group__3();
 
             state._fsp--;
@@ -2245,7 +2239,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:778:1: ( rule__EventRelation__ParamsAssignment_2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:778:2: rule__EventRelation__ParamsAssignment_2
             {
-            pushFollow(FOLLOW_rule__EventRelation__ParamsAssignment_2_in_rule__EventRelation__Group__2__Impl1613);
+            pushFollow(FOLLOW_rule__EventRelation__ParamsAssignment_2_in_rule__EventRelation__Group__2__Impl1612);
             rule__EventRelation__ParamsAssignment_2();
 
             state._fsp--;
@@ -2285,12 +2279,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:792:1: ( rule__EventRelation__Group__3__Impl rule__EventRelation__Group__4 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:793:2: rule__EventRelation__Group__3__Impl rule__EventRelation__Group__4
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__3__Impl_in_rule__EventRelation__Group__31643);
+            pushFollow(FOLLOW_rule__EventRelation__Group__3__Impl_in_rule__EventRelation__Group__31642);
             rule__EventRelation__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__4_in_rule__EventRelation__Group__31646);
+            pushFollow(FOLLOW_rule__EventRelation__Group__4_in_rule__EventRelation__Group__31645);
             rule__EventRelation__Group__4();
 
             state._fsp--;
@@ -2342,7 +2336,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:807:2: rule__EventRelation__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__EventRelation__Group_3__0_in_rule__EventRelation__Group__3__Impl1673);
+            	    pushFollow(FOLLOW_rule__EventRelation__Group_3__0_in_rule__EventRelation__Group__3__Impl1672);
             	    rule__EventRelation__Group_3__0();
 
             	    state._fsp--;
@@ -2388,12 +2382,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:821:1: ( rule__EventRelation__Group__4__Impl rule__EventRelation__Group__5 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:822:2: rule__EventRelation__Group__4__Impl rule__EventRelation__Group__5
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__4__Impl_in_rule__EventRelation__Group__41704);
+            pushFollow(FOLLOW_rule__EventRelation__Group__4__Impl_in_rule__EventRelation__Group__41703);
             rule__EventRelation__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__5_in_rule__EventRelation__Group__41707);
+            pushFollow(FOLLOW_rule__EventRelation__Group__5_in_rule__EventRelation__Group__41706);
             rule__EventRelation__Group__5();
 
             state._fsp--;
@@ -2430,7 +2424,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:835:1: RULE_RPAREN
             {
              before(grammarAccess.getEventRelationAccess().getRPARENTerminalRuleCall_4()); 
-            match(input,RULE_RPAREN,FOLLOW_RULE_RPAREN_in_rule__EventRelation__Group__4__Impl1734); 
+            match(input,RULE_RPAREN,FOLLOW_RULE_RPAREN_in_rule__EventRelation__Group__4__Impl1733); 
              after(grammarAccess.getEventRelationAccess().getRPARENTerminalRuleCall_4()); 
 
             }
@@ -2463,12 +2457,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:850:1: ( rule__EventRelation__Group__5__Impl rule__EventRelation__Group__6 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:851:2: rule__EventRelation__Group__5__Impl rule__EventRelation__Group__6
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__5__Impl_in_rule__EventRelation__Group__51763);
+            pushFollow(FOLLOW_rule__EventRelation__Group__5__Impl_in_rule__EventRelation__Group__51762);
             rule__EventRelation__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__6_in_rule__EventRelation__Group__51766);
+            pushFollow(FOLLOW_rule__EventRelation__Group__6_in_rule__EventRelation__Group__51765);
             rule__EventRelation__Group__6();
 
             state._fsp--;
@@ -2505,7 +2499,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:864:1: RULE_KEY
             {
              before(grammarAccess.getEventRelationAccess().getKEYTerminalRuleCall_5()); 
-            match(input,RULE_KEY,FOLLOW_RULE_KEY_in_rule__EventRelation__Group__5__Impl1793); 
+            match(input,RULE_KEY,FOLLOW_RULE_KEY_in_rule__EventRelation__Group__5__Impl1792); 
              after(grammarAccess.getEventRelationAccess().getKEYTerminalRuleCall_5()); 
 
             }
@@ -2538,12 +2532,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:879:1: ( rule__EventRelation__Group__6__Impl rule__EventRelation__Group__7 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:880:2: rule__EventRelation__Group__6__Impl rule__EventRelation__Group__7
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__6__Impl_in_rule__EventRelation__Group__61822);
+            pushFollow(FOLLOW_rule__EventRelation__Group__6__Impl_in_rule__EventRelation__Group__61821);
             rule__EventRelation__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__7_in_rule__EventRelation__Group__61825);
+            pushFollow(FOLLOW_rule__EventRelation__Group__7_in_rule__EventRelation__Group__61824);
             rule__EventRelation__Group__7();
 
             state._fsp--;
@@ -2583,7 +2577,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:894:1: ( rule__EventRelation__KeyParamsAssignment_6 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:894:2: rule__EventRelation__KeyParamsAssignment_6
             {
-            pushFollow(FOLLOW_rule__EventRelation__KeyParamsAssignment_6_in_rule__EventRelation__Group__6__Impl1852);
+            pushFollow(FOLLOW_rule__EventRelation__KeyParamsAssignment_6_in_rule__EventRelation__Group__6__Impl1851);
             rule__EventRelation__KeyParamsAssignment_6();
 
             state._fsp--;
@@ -2623,12 +2617,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:908:1: ( rule__EventRelation__Group__7__Impl rule__EventRelation__Group__8 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:909:2: rule__EventRelation__Group__7__Impl rule__EventRelation__Group__8
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__7__Impl_in_rule__EventRelation__Group__71882);
+            pushFollow(FOLLOW_rule__EventRelation__Group__7__Impl_in_rule__EventRelation__Group__71881);
             rule__EventRelation__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__8_in_rule__EventRelation__Group__71885);
+            pushFollow(FOLLOW_rule__EventRelation__Group__8_in_rule__EventRelation__Group__71884);
             rule__EventRelation__Group__8();
 
             state._fsp--;
@@ -2680,7 +2674,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:923:2: rule__EventRelation__Group_7__0
             	    {
-            	    pushFollow(FOLLOW_rule__EventRelation__Group_7__0_in_rule__EventRelation__Group__7__Impl1912);
+            	    pushFollow(FOLLOW_rule__EventRelation__Group_7__0_in_rule__EventRelation__Group__7__Impl1911);
             	    rule__EventRelation__Group_7__0();
 
             	    state._fsp--;
@@ -2726,12 +2720,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:937:1: ( rule__EventRelation__Group__8__Impl rule__EventRelation__Group__9 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:938:2: rule__EventRelation__Group__8__Impl rule__EventRelation__Group__9
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__8__Impl_in_rule__EventRelation__Group__81943);
+            pushFollow(FOLLOW_rule__EventRelation__Group__8__Impl_in_rule__EventRelation__Group__81942);
             rule__EventRelation__Group__8__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group__9_in_rule__EventRelation__Group__81946);
+            pushFollow(FOLLOW_rule__EventRelation__Group__9_in_rule__EventRelation__Group__81945);
             rule__EventRelation__Group__9();
 
             state._fsp--;
@@ -2768,7 +2762,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:951:1: RULE_TIME
             {
              before(grammarAccess.getEventRelationAccess().getTIMETerminalRuleCall_8()); 
-            match(input,RULE_TIME,FOLLOW_RULE_TIME_in_rule__EventRelation__Group__8__Impl1973); 
+            match(input,RULE_TIME,FOLLOW_RULE_TIME_in_rule__EventRelation__Group__8__Impl1972); 
              after(grammarAccess.getEventRelationAccess().getTIMETerminalRuleCall_8()); 
 
             }
@@ -2801,7 +2795,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:966:1: ( rule__EventRelation__Group__9__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:967:2: rule__EventRelation__Group__9__Impl
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group__9__Impl_in_rule__EventRelation__Group__92002);
+            pushFollow(FOLLOW_rule__EventRelation__Group__9__Impl_in_rule__EventRelation__Group__92001);
             rule__EventRelation__Group__9__Impl();
 
             state._fsp--;
@@ -2841,7 +2835,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:980:1: ( rule__EventRelation__TimeParamAssignment_9 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:980:2: rule__EventRelation__TimeParamAssignment_9
             {
-            pushFollow(FOLLOW_rule__EventRelation__TimeParamAssignment_9_in_rule__EventRelation__Group__9__Impl2029);
+            pushFollow(FOLLOW_rule__EventRelation__TimeParamAssignment_9_in_rule__EventRelation__Group__9__Impl2028);
             rule__EventRelation__TimeParamAssignment_9();
 
             state._fsp--;
@@ -2881,12 +2875,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1014:1: ( rule__EventRelation__Group_3__0__Impl rule__EventRelation__Group_3__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1015:2: rule__EventRelation__Group_3__0__Impl rule__EventRelation__Group_3__1
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group_3__0__Impl_in_rule__EventRelation__Group_3__02079);
+            pushFollow(FOLLOW_rule__EventRelation__Group_3__0__Impl_in_rule__EventRelation__Group_3__02078);
             rule__EventRelation__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group_3__1_in_rule__EventRelation__Group_3__02082);
+            pushFollow(FOLLOW_rule__EventRelation__Group_3__1_in_rule__EventRelation__Group_3__02081);
             rule__EventRelation__Group_3__1();
 
             state._fsp--;
@@ -2923,7 +2917,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1028:1: RULE_COMMA
             {
              before(grammarAccess.getEventRelationAccess().getCOMMATerminalRuleCall_3_0()); 
-            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_3__0__Impl2109); 
+            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_3__0__Impl2108); 
              after(grammarAccess.getEventRelationAccess().getCOMMATerminalRuleCall_3_0()); 
 
             }
@@ -2956,7 +2950,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1043:1: ( rule__EventRelation__Group_3__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1044:2: rule__EventRelation__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group_3__1__Impl_in_rule__EventRelation__Group_3__12138);
+            pushFollow(FOLLOW_rule__EventRelation__Group_3__1__Impl_in_rule__EventRelation__Group_3__12137);
             rule__EventRelation__Group_3__1__Impl();
 
             state._fsp--;
@@ -2996,7 +2990,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1057:1: ( rule__EventRelation__ParamsAssignment_3_1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1057:2: rule__EventRelation__ParamsAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__EventRelation__ParamsAssignment_3_1_in_rule__EventRelation__Group_3__1__Impl2165);
+            pushFollow(FOLLOW_rule__EventRelation__ParamsAssignment_3_1_in_rule__EventRelation__Group_3__1__Impl2164);
             rule__EventRelation__ParamsAssignment_3_1();
 
             state._fsp--;
@@ -3036,12 +3030,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1075:1: ( rule__EventRelation__Group_7__0__Impl rule__EventRelation__Group_7__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1076:2: rule__EventRelation__Group_7__0__Impl rule__EventRelation__Group_7__1
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group_7__0__Impl_in_rule__EventRelation__Group_7__02199);
+            pushFollow(FOLLOW_rule__EventRelation__Group_7__0__Impl_in_rule__EventRelation__Group_7__02198);
             rule__EventRelation__Group_7__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EventRelation__Group_7__1_in_rule__EventRelation__Group_7__02202);
+            pushFollow(FOLLOW_rule__EventRelation__Group_7__1_in_rule__EventRelation__Group_7__02201);
             rule__EventRelation__Group_7__1();
 
             state._fsp--;
@@ -3078,7 +3072,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1089:1: RULE_COMMA
             {
              before(grammarAccess.getEventRelationAccess().getCOMMATerminalRuleCall_7_0()); 
-            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_7__0__Impl2229); 
+            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_7__0__Impl2228); 
              after(grammarAccess.getEventRelationAccess().getCOMMATerminalRuleCall_7_0()); 
 
             }
@@ -3111,7 +3105,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1104:1: ( rule__EventRelation__Group_7__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1105:2: rule__EventRelation__Group_7__1__Impl
             {
-            pushFollow(FOLLOW_rule__EventRelation__Group_7__1__Impl_in_rule__EventRelation__Group_7__12258);
+            pushFollow(FOLLOW_rule__EventRelation__Group_7__1__Impl_in_rule__EventRelation__Group_7__12257);
             rule__EventRelation__Group_7__1__Impl();
 
             state._fsp--;
@@ -3151,7 +3145,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1118:1: ( rule__EventRelation__KeyParamsAssignment_7_1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1118:2: rule__EventRelation__KeyParamsAssignment_7_1
             {
-            pushFollow(FOLLOW_rule__EventRelation__KeyParamsAssignment_7_1_in_rule__EventRelation__Group_7__1__Impl2285);
+            pushFollow(FOLLOW_rule__EventRelation__KeyParamsAssignment_7_1_in_rule__EventRelation__Group_7__1__Impl2284);
             rule__EventRelation__KeyParamsAssignment_7_1();
 
             state._fsp--;
@@ -3191,12 +3185,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1136:1: ( rule__Commitment__Group__0__Impl rule__Commitment__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1137:2: rule__Commitment__Group__0__Impl rule__Commitment__Group__1
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__0__Impl_in_rule__Commitment__Group__02319);
+            pushFollow(FOLLOW_rule__Commitment__Group__0__Impl_in_rule__Commitment__Group__02318);
             rule__Commitment__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__1_in_rule__Commitment__Group__02322);
+            pushFollow(FOLLOW_rule__Commitment__Group__1_in_rule__Commitment__Group__02321);
             rule__Commitment__Group__1();
 
             state._fsp--;
@@ -3233,7 +3227,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1150:1: RULE_COMMIT
             {
              before(grammarAccess.getCommitmentAccess().getCOMMITTerminalRuleCall_0()); 
-            match(input,RULE_COMMIT,FOLLOW_RULE_COMMIT_in_rule__Commitment__Group__0__Impl2349); 
+            match(input,RULE_COMMIT,FOLLOW_RULE_COMMIT_in_rule__Commitment__Group__0__Impl2348); 
              after(grammarAccess.getCommitmentAccess().getCOMMITTerminalRuleCall_0()); 
 
             }
@@ -3266,12 +3260,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1165:1: ( rule__Commitment__Group__1__Impl rule__Commitment__Group__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1166:2: rule__Commitment__Group__1__Impl rule__Commitment__Group__2
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__1__Impl_in_rule__Commitment__Group__12378);
+            pushFollow(FOLLOW_rule__Commitment__Group__1__Impl_in_rule__Commitment__Group__12377);
             rule__Commitment__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__2_in_rule__Commitment__Group__12381);
+            pushFollow(FOLLOW_rule__Commitment__Group__2_in_rule__Commitment__Group__12380);
             rule__Commitment__Group__2();
 
             state._fsp--;
@@ -3311,7 +3305,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1180:1: ( rule__Commitment__LabelAssignment_1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1180:2: rule__Commitment__LabelAssignment_1
             {
-            pushFollow(FOLLOW_rule__Commitment__LabelAssignment_1_in_rule__Commitment__Group__1__Impl2408);
+            pushFollow(FOLLOW_rule__Commitment__LabelAssignment_1_in_rule__Commitment__Group__1__Impl2407);
             rule__Commitment__LabelAssignment_1();
 
             state._fsp--;
@@ -3351,12 +3345,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1194:1: ( rule__Commitment__Group__2__Impl rule__Commitment__Group__3 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1195:2: rule__Commitment__Group__2__Impl rule__Commitment__Group__3
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__2__Impl_in_rule__Commitment__Group__22438);
+            pushFollow(FOLLOW_rule__Commitment__Group__2__Impl_in_rule__Commitment__Group__22437);
             rule__Commitment__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__3_in_rule__Commitment__Group__22441);
+            pushFollow(FOLLOW_rule__Commitment__Group__3_in_rule__Commitment__Group__22440);
             rule__Commitment__Group__3();
 
             state._fsp--;
@@ -3396,7 +3390,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1209:1: ( rule__Commitment__DebtorAssignment_2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1209:2: rule__Commitment__DebtorAssignment_2
             {
-            pushFollow(FOLLOW_rule__Commitment__DebtorAssignment_2_in_rule__Commitment__Group__2__Impl2468);
+            pushFollow(FOLLOW_rule__Commitment__DebtorAssignment_2_in_rule__Commitment__Group__2__Impl2467);
             rule__Commitment__DebtorAssignment_2();
 
             state._fsp--;
@@ -3436,12 +3430,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1223:1: ( rule__Commitment__Group__3__Impl rule__Commitment__Group__4 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1224:2: rule__Commitment__Group__3__Impl rule__Commitment__Group__4
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__3__Impl_in_rule__Commitment__Group__32498);
+            pushFollow(FOLLOW_rule__Commitment__Group__3__Impl_in_rule__Commitment__Group__32497);
             rule__Commitment__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__4_in_rule__Commitment__Group__32501);
+            pushFollow(FOLLOW_rule__Commitment__Group__4_in_rule__Commitment__Group__32500);
             rule__Commitment__Group__4();
 
             state._fsp--;
@@ -3478,7 +3472,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1237:1: RULE_TO
             {
              before(grammarAccess.getCommitmentAccess().getTOTerminalRuleCall_3()); 
-            match(input,RULE_TO,FOLLOW_RULE_TO_in_rule__Commitment__Group__3__Impl2528); 
+            match(input,RULE_TO,FOLLOW_RULE_TO_in_rule__Commitment__Group__3__Impl2527); 
              after(grammarAccess.getCommitmentAccess().getTOTerminalRuleCall_3()); 
 
             }
@@ -3511,12 +3505,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1252:1: ( rule__Commitment__Group__4__Impl rule__Commitment__Group__5 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1253:2: rule__Commitment__Group__4__Impl rule__Commitment__Group__5
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__4__Impl_in_rule__Commitment__Group__42557);
+            pushFollow(FOLLOW_rule__Commitment__Group__4__Impl_in_rule__Commitment__Group__42556);
             rule__Commitment__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__5_in_rule__Commitment__Group__42560);
+            pushFollow(FOLLOW_rule__Commitment__Group__5_in_rule__Commitment__Group__42559);
             rule__Commitment__Group__5();
 
             state._fsp--;
@@ -3556,7 +3550,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1267:1: ( rule__Commitment__CreditorAssignment_4 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1267:2: rule__Commitment__CreditorAssignment_4
             {
-            pushFollow(FOLLOW_rule__Commitment__CreditorAssignment_4_in_rule__Commitment__Group__4__Impl2587);
+            pushFollow(FOLLOW_rule__Commitment__CreditorAssignment_4_in_rule__Commitment__Group__4__Impl2586);
             rule__Commitment__CreditorAssignment_4();
 
             state._fsp--;
@@ -3596,12 +3590,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1281:1: ( rule__Commitment__Group__5__Impl rule__Commitment__Group__6 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1282:2: rule__Commitment__Group__5__Impl rule__Commitment__Group__6
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__5__Impl_in_rule__Commitment__Group__52617);
+            pushFollow(FOLLOW_rule__Commitment__Group__5__Impl_in_rule__Commitment__Group__52616);
             rule__Commitment__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__6_in_rule__Commitment__Group__52620);
+            pushFollow(FOLLOW_rule__Commitment__Group__6_in_rule__Commitment__Group__52619);
             rule__Commitment__Group__6();
 
             state._fsp--;
@@ -3638,7 +3632,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1295:1: RULE_CREATE
             {
              before(grammarAccess.getCommitmentAccess().getCREATETerminalRuleCall_5()); 
-            match(input,RULE_CREATE,FOLLOW_RULE_CREATE_in_rule__Commitment__Group__5__Impl2647); 
+            match(input,RULE_CREATE,FOLLOW_RULE_CREATE_in_rule__Commitment__Group__5__Impl2646); 
              after(grammarAccess.getCommitmentAccess().getCREATETerminalRuleCall_5()); 
 
             }
@@ -3671,12 +3665,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1310:1: ( rule__Commitment__Group__6__Impl rule__Commitment__Group__7 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1311:2: rule__Commitment__Group__6__Impl rule__Commitment__Group__7
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__6__Impl_in_rule__Commitment__Group__62676);
+            pushFollow(FOLLOW_rule__Commitment__Group__6__Impl_in_rule__Commitment__Group__62675);
             rule__Commitment__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__7_in_rule__Commitment__Group__62679);
+            pushFollow(FOLLOW_rule__Commitment__Group__7_in_rule__Commitment__Group__62678);
             rule__Commitment__Group__7();
 
             state._fsp--;
@@ -3716,7 +3710,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1325:1: ( rule__Commitment__TriggerAssignment_6 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1325:2: rule__Commitment__TriggerAssignment_6
             {
-            pushFollow(FOLLOW_rule__Commitment__TriggerAssignment_6_in_rule__Commitment__Group__6__Impl2706);
+            pushFollow(FOLLOW_rule__Commitment__TriggerAssignment_6_in_rule__Commitment__Group__6__Impl2705);
             rule__Commitment__TriggerAssignment_6();
 
             state._fsp--;
@@ -3756,12 +3750,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1339:1: ( rule__Commitment__Group__7__Impl rule__Commitment__Group__8 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1340:2: rule__Commitment__Group__7__Impl rule__Commitment__Group__8
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__7__Impl_in_rule__Commitment__Group__72736);
+            pushFollow(FOLLOW_rule__Commitment__Group__7__Impl_in_rule__Commitment__Group__72735);
             rule__Commitment__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__8_in_rule__Commitment__Group__72739);
+            pushFollow(FOLLOW_rule__Commitment__Group__8_in_rule__Commitment__Group__72738);
             rule__Commitment__Group__8();
 
             state._fsp--;
@@ -3809,7 +3803,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                 case 1 :
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1354:2: rule__Commitment__Group_7__0
                     {
-                    pushFollow(FOLLOW_rule__Commitment__Group_7__0_in_rule__Commitment__Group__7__Impl2766);
+                    pushFollow(FOLLOW_rule__Commitment__Group_7__0_in_rule__Commitment__Group__7__Impl2765);
                     rule__Commitment__Group_7__0();
 
                     state._fsp--;
@@ -3852,12 +3846,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1368:1: ( rule__Commitment__Group__8__Impl rule__Commitment__Group__9 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1369:2: rule__Commitment__Group__8__Impl rule__Commitment__Group__9
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__8__Impl_in_rule__Commitment__Group__82797);
+            pushFollow(FOLLOW_rule__Commitment__Group__8__Impl_in_rule__Commitment__Group__82796);
             rule__Commitment__Group__8__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group__9_in_rule__Commitment__Group__82800);
+            pushFollow(FOLLOW_rule__Commitment__Group__9_in_rule__Commitment__Group__82799);
             rule__Commitment__Group__9();
 
             state._fsp--;
@@ -3894,7 +3888,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1382:1: RULE_DISCHARGE
             {
              before(grammarAccess.getCommitmentAccess().getDISCHARGETerminalRuleCall_8()); 
-            match(input,RULE_DISCHARGE,FOLLOW_RULE_DISCHARGE_in_rule__Commitment__Group__8__Impl2827); 
+            match(input,RULE_DISCHARGE,FOLLOW_RULE_DISCHARGE_in_rule__Commitment__Group__8__Impl2826); 
              after(grammarAccess.getCommitmentAccess().getDISCHARGETerminalRuleCall_8()); 
 
             }
@@ -3927,7 +3921,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1397:1: ( rule__Commitment__Group__9__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1398:2: rule__Commitment__Group__9__Impl
             {
-            pushFollow(FOLLOW_rule__Commitment__Group__9__Impl_in_rule__Commitment__Group__92856);
+            pushFollow(FOLLOW_rule__Commitment__Group__9__Impl_in_rule__Commitment__Group__92855);
             rule__Commitment__Group__9__Impl();
 
             state._fsp--;
@@ -3967,7 +3961,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1411:1: ( rule__Commitment__ConsequentAssignment_9 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1411:2: rule__Commitment__ConsequentAssignment_9
             {
-            pushFollow(FOLLOW_rule__Commitment__ConsequentAssignment_9_in_rule__Commitment__Group__9__Impl2883);
+            pushFollow(FOLLOW_rule__Commitment__ConsequentAssignment_9_in_rule__Commitment__Group__9__Impl2882);
             rule__Commitment__ConsequentAssignment_9();
 
             state._fsp--;
@@ -4007,12 +4001,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1445:1: ( rule__Commitment__Group_7__0__Impl rule__Commitment__Group_7__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1446:2: rule__Commitment__Group_7__0__Impl rule__Commitment__Group_7__1
             {
-            pushFollow(FOLLOW_rule__Commitment__Group_7__0__Impl_in_rule__Commitment__Group_7__02933);
+            pushFollow(FOLLOW_rule__Commitment__Group_7__0__Impl_in_rule__Commitment__Group_7__02932);
             rule__Commitment__Group_7__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Commitment__Group_7__1_in_rule__Commitment__Group_7__02936);
+            pushFollow(FOLLOW_rule__Commitment__Group_7__1_in_rule__Commitment__Group_7__02935);
             rule__Commitment__Group_7__1();
 
             state._fsp--;
@@ -4049,7 +4043,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1459:1: RULE_DETACH
             {
              before(grammarAccess.getCommitmentAccess().getDETACHTerminalRuleCall_7_0()); 
-            match(input,RULE_DETACH,FOLLOW_RULE_DETACH_in_rule__Commitment__Group_7__0__Impl2963); 
+            match(input,RULE_DETACH,FOLLOW_RULE_DETACH_in_rule__Commitment__Group_7__0__Impl2962); 
              after(grammarAccess.getCommitmentAccess().getDETACHTerminalRuleCall_7_0()); 
 
             }
@@ -4082,7 +4076,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1474:1: ( rule__Commitment__Group_7__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1475:2: rule__Commitment__Group_7__1__Impl
             {
-            pushFollow(FOLLOW_rule__Commitment__Group_7__1__Impl_in_rule__Commitment__Group_7__12992);
+            pushFollow(FOLLOW_rule__Commitment__Group_7__1__Impl_in_rule__Commitment__Group_7__12991);
             rule__Commitment__Group_7__1__Impl();
 
             state._fsp--;
@@ -4122,7 +4116,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1488:1: ( rule__Commitment__AntecedentAssignment_7_1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1488:2: rule__Commitment__AntecedentAssignment_7_1
             {
-            pushFollow(FOLLOW_rule__Commitment__AntecedentAssignment_7_1_in_rule__Commitment__Group_7__1__Impl3019);
+            pushFollow(FOLLOW_rule__Commitment__AntecedentAssignment_7_1_in_rule__Commitment__Group_7__1__Impl3018);
             rule__Commitment__AntecedentAssignment_7_1();
 
             state._fsp--;
@@ -4162,12 +4156,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1506:1: ( rule__EExpr__Group__0__Impl rule__EExpr__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1507:2: rule__EExpr__Group__0__Impl rule__EExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__EExpr__Group__0__Impl_in_rule__EExpr__Group__03053);
+            pushFollow(FOLLOW_rule__EExpr__Group__0__Impl_in_rule__EExpr__Group__03052);
             rule__EExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EExpr__Group__1_in_rule__EExpr__Group__03056);
+            pushFollow(FOLLOW_rule__EExpr__Group__1_in_rule__EExpr__Group__03055);
             rule__EExpr__Group__1();
 
             state._fsp--;
@@ -4204,7 +4198,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1520:1: ruleOExpr
             {
              before(grammarAccess.getEExprAccess().getOExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleOExpr_in_rule__EExpr__Group__0__Impl3083);
+            pushFollow(FOLLOW_ruleOExpr_in_rule__EExpr__Group__0__Impl3082);
             ruleOExpr();
 
             state._fsp--;
@@ -4241,7 +4235,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1535:1: ( rule__EExpr__Group__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1536:2: rule__EExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__EExpr__Group__1__Impl_in_rule__EExpr__Group__13112);
+            pushFollow(FOLLOW_rule__EExpr__Group__1__Impl_in_rule__EExpr__Group__13111);
             rule__EExpr__Group__1__Impl();
 
             state._fsp--;
@@ -4293,7 +4287,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1549:2: rule__EExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__EExpr__Group_1__0_in_rule__EExpr__Group__1__Impl3139);
+            	    pushFollow(FOLLOW_rule__EExpr__Group_1__0_in_rule__EExpr__Group__1__Impl3138);
             	    rule__EExpr__Group_1__0();
 
             	    state._fsp--;
@@ -4339,12 +4333,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1567:1: ( rule__EExpr__Group_1__0__Impl rule__EExpr__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1568:2: rule__EExpr__Group_1__0__Impl rule__EExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__EExpr__Group_1__0__Impl_in_rule__EExpr__Group_1__03174);
+            pushFollow(FOLLOW_rule__EExpr__Group_1__0__Impl_in_rule__EExpr__Group_1__03173);
             rule__EExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EExpr__Group_1__1_in_rule__EExpr__Group_1__03177);
+            pushFollow(FOLLOW_rule__EExpr__Group_1__1_in_rule__EExpr__Group_1__03176);
             rule__EExpr__Group_1__1();
 
             state._fsp--;
@@ -4414,12 +4408,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1598:1: ( rule__EExpr__Group_1__1__Impl rule__EExpr__Group_1__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1599:2: rule__EExpr__Group_1__1__Impl rule__EExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__EExpr__Group_1__1__Impl_in_rule__EExpr__Group_1__13235);
+            pushFollow(FOLLOW_rule__EExpr__Group_1__1__Impl_in_rule__EExpr__Group_1__13234);
             rule__EExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__EExpr__Group_1__2_in_rule__EExpr__Group_1__13238);
+            pushFollow(FOLLOW_rule__EExpr__Group_1__2_in_rule__EExpr__Group_1__13237);
             rule__EExpr__Group_1__2();
 
             state._fsp--;
@@ -4456,7 +4450,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1612:1: RULE_EXCEPT
             {
              before(grammarAccess.getEExprAccess().getEXCEPTTerminalRuleCall_1_1()); 
-            match(input,RULE_EXCEPT,FOLLOW_RULE_EXCEPT_in_rule__EExpr__Group_1__1__Impl3265); 
+            match(input,RULE_EXCEPT,FOLLOW_RULE_EXCEPT_in_rule__EExpr__Group_1__1__Impl3264); 
              after(grammarAccess.getEExprAccess().getEXCEPTTerminalRuleCall_1_1()); 
 
             }
@@ -4489,7 +4483,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1627:1: ( rule__EExpr__Group_1__2__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1628:2: rule__EExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__EExpr__Group_1__2__Impl_in_rule__EExpr__Group_1__23294);
+            pushFollow(FOLLOW_rule__EExpr__Group_1__2__Impl_in_rule__EExpr__Group_1__23293);
             rule__EExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -4529,7 +4523,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1641:1: ( rule__EExpr__RightAssignment_1_2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1641:2: rule__EExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__EExpr__RightAssignment_1_2_in_rule__EExpr__Group_1__2__Impl3321);
+            pushFollow(FOLLOW_rule__EExpr__RightAssignment_1_2_in_rule__EExpr__Group_1__2__Impl3320);
             rule__EExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -4569,12 +4563,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1661:1: ( rule__OExpr__Group__0__Impl rule__OExpr__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1662:2: rule__OExpr__Group__0__Impl rule__OExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__OExpr__Group__0__Impl_in_rule__OExpr__Group__03357);
+            pushFollow(FOLLOW_rule__OExpr__Group__0__Impl_in_rule__OExpr__Group__03356);
             rule__OExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OExpr__Group__1_in_rule__OExpr__Group__03360);
+            pushFollow(FOLLOW_rule__OExpr__Group__1_in_rule__OExpr__Group__03359);
             rule__OExpr__Group__1();
 
             state._fsp--;
@@ -4611,7 +4605,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1675:1: ruleAExpr
             {
              before(grammarAccess.getOExprAccess().getAExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAExpr_in_rule__OExpr__Group__0__Impl3387);
+            pushFollow(FOLLOW_ruleAExpr_in_rule__OExpr__Group__0__Impl3386);
             ruleAExpr();
 
             state._fsp--;
@@ -4648,7 +4642,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1690:1: ( rule__OExpr__Group__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1691:2: rule__OExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__OExpr__Group__1__Impl_in_rule__OExpr__Group__13416);
+            pushFollow(FOLLOW_rule__OExpr__Group__1__Impl_in_rule__OExpr__Group__13415);
             rule__OExpr__Group__1__Impl();
 
             state._fsp--;
@@ -4700,7 +4694,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1704:2: rule__OExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__OExpr__Group_1__0_in_rule__OExpr__Group__1__Impl3443);
+            	    pushFollow(FOLLOW_rule__OExpr__Group_1__0_in_rule__OExpr__Group__1__Impl3442);
             	    rule__OExpr__Group_1__0();
 
             	    state._fsp--;
@@ -4746,12 +4740,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1722:1: ( rule__OExpr__Group_1__0__Impl rule__OExpr__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1723:2: rule__OExpr__Group_1__0__Impl rule__OExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__OExpr__Group_1__0__Impl_in_rule__OExpr__Group_1__03478);
+            pushFollow(FOLLOW_rule__OExpr__Group_1__0__Impl_in_rule__OExpr__Group_1__03477);
             rule__OExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OExpr__Group_1__1_in_rule__OExpr__Group_1__03481);
+            pushFollow(FOLLOW_rule__OExpr__Group_1__1_in_rule__OExpr__Group_1__03480);
             rule__OExpr__Group_1__1();
 
             state._fsp--;
@@ -4821,12 +4815,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1753:1: ( rule__OExpr__Group_1__1__Impl rule__OExpr__Group_1__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1754:2: rule__OExpr__Group_1__1__Impl rule__OExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__OExpr__Group_1__1__Impl_in_rule__OExpr__Group_1__13539);
+            pushFollow(FOLLOW_rule__OExpr__Group_1__1__Impl_in_rule__OExpr__Group_1__13538);
             rule__OExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OExpr__Group_1__2_in_rule__OExpr__Group_1__13542);
+            pushFollow(FOLLOW_rule__OExpr__Group_1__2_in_rule__OExpr__Group_1__13541);
             rule__OExpr__Group_1__2();
 
             state._fsp--;
@@ -4863,7 +4857,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1767:1: RULE_OR
             {
              before(grammarAccess.getOExprAccess().getORTerminalRuleCall_1_1()); 
-            match(input,RULE_OR,FOLLOW_RULE_OR_in_rule__OExpr__Group_1__1__Impl3569); 
+            match(input,RULE_OR,FOLLOW_RULE_OR_in_rule__OExpr__Group_1__1__Impl3568); 
              after(grammarAccess.getOExprAccess().getORTerminalRuleCall_1_1()); 
 
             }
@@ -4896,7 +4890,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1782:1: ( rule__OExpr__Group_1__2__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1783:2: rule__OExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__OExpr__Group_1__2__Impl_in_rule__OExpr__Group_1__23598);
+            pushFollow(FOLLOW_rule__OExpr__Group_1__2__Impl_in_rule__OExpr__Group_1__23597);
             rule__OExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -4936,7 +4930,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1796:1: ( rule__OExpr__RightAssignment_1_2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1796:2: rule__OExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__OExpr__RightAssignment_1_2_in_rule__OExpr__Group_1__2__Impl3625);
+            pushFollow(FOLLOW_rule__OExpr__RightAssignment_1_2_in_rule__OExpr__Group_1__2__Impl3624);
             rule__OExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -4976,12 +4970,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1816:1: ( rule__AExpr__Group__0__Impl rule__AExpr__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1817:2: rule__AExpr__Group__0__Impl rule__AExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__AExpr__Group__0__Impl_in_rule__AExpr__Group__03661);
+            pushFollow(FOLLOW_rule__AExpr__Group__0__Impl_in_rule__AExpr__Group__03660);
             rule__AExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AExpr__Group__1_in_rule__AExpr__Group__03664);
+            pushFollow(FOLLOW_rule__AExpr__Group__1_in_rule__AExpr__Group__03663);
             rule__AExpr__Group__1();
 
             state._fsp--;
@@ -5018,7 +5012,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1830:1: ruleWExpr
             {
              before(grammarAccess.getAExprAccess().getWExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleWExpr_in_rule__AExpr__Group__0__Impl3691);
+            pushFollow(FOLLOW_ruleWExpr_in_rule__AExpr__Group__0__Impl3690);
             ruleWExpr();
 
             state._fsp--;
@@ -5055,7 +5049,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1845:1: ( rule__AExpr__Group__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1846:2: rule__AExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__AExpr__Group__1__Impl_in_rule__AExpr__Group__13720);
+            pushFollow(FOLLOW_rule__AExpr__Group__1__Impl_in_rule__AExpr__Group__13719);
             rule__AExpr__Group__1__Impl();
 
             state._fsp--;
@@ -5107,7 +5101,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1859:2: rule__AExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__AExpr__Group_1__0_in_rule__AExpr__Group__1__Impl3747);
+            	    pushFollow(FOLLOW_rule__AExpr__Group_1__0_in_rule__AExpr__Group__1__Impl3746);
             	    rule__AExpr__Group_1__0();
 
             	    state._fsp--;
@@ -5153,12 +5147,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1877:1: ( rule__AExpr__Group_1__0__Impl rule__AExpr__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1878:2: rule__AExpr__Group_1__0__Impl rule__AExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__AExpr__Group_1__0__Impl_in_rule__AExpr__Group_1__03782);
+            pushFollow(FOLLOW_rule__AExpr__Group_1__0__Impl_in_rule__AExpr__Group_1__03781);
             rule__AExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AExpr__Group_1__1_in_rule__AExpr__Group_1__03785);
+            pushFollow(FOLLOW_rule__AExpr__Group_1__1_in_rule__AExpr__Group_1__03784);
             rule__AExpr__Group_1__1();
 
             state._fsp--;
@@ -5228,12 +5222,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1908:1: ( rule__AExpr__Group_1__1__Impl rule__AExpr__Group_1__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1909:2: rule__AExpr__Group_1__1__Impl rule__AExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__AExpr__Group_1__1__Impl_in_rule__AExpr__Group_1__13843);
+            pushFollow(FOLLOW_rule__AExpr__Group_1__1__Impl_in_rule__AExpr__Group_1__13842);
             rule__AExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AExpr__Group_1__2_in_rule__AExpr__Group_1__13846);
+            pushFollow(FOLLOW_rule__AExpr__Group_1__2_in_rule__AExpr__Group_1__13845);
             rule__AExpr__Group_1__2();
 
             state._fsp--;
@@ -5270,7 +5264,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1922:1: RULE_AND
             {
              before(grammarAccess.getAExprAccess().getANDTerminalRuleCall_1_1()); 
-            match(input,RULE_AND,FOLLOW_RULE_AND_in_rule__AExpr__Group_1__1__Impl3873); 
+            match(input,RULE_AND,FOLLOW_RULE_AND_in_rule__AExpr__Group_1__1__Impl3872); 
              after(grammarAccess.getAExprAccess().getANDTerminalRuleCall_1_1()); 
 
             }
@@ -5303,7 +5297,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1937:1: ( rule__AExpr__Group_1__2__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1938:2: rule__AExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__AExpr__Group_1__2__Impl_in_rule__AExpr__Group_1__23902);
+            pushFollow(FOLLOW_rule__AExpr__Group_1__2__Impl_in_rule__AExpr__Group_1__23901);
             rule__AExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -5343,7 +5337,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1951:1: ( rule__AExpr__RightAssignment_1_2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1951:2: rule__AExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__AExpr__RightAssignment_1_2_in_rule__AExpr__Group_1__2__Impl3929);
+            pushFollow(FOLLOW_rule__AExpr__RightAssignment_1_2_in_rule__AExpr__Group_1__2__Impl3928);
             rule__AExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -5383,12 +5377,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1971:1: ( rule__WExpr__Group__0__Impl rule__WExpr__Group__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1972:2: rule__WExpr__Group__0__Impl rule__WExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__WExpr__Group__0__Impl_in_rule__WExpr__Group__03965);
+            pushFollow(FOLLOW_rule__WExpr__Group__0__Impl_in_rule__WExpr__Group__03964);
             rule__WExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WExpr__Group__1_in_rule__WExpr__Group__03968);
+            pushFollow(FOLLOW_rule__WExpr__Group__1_in_rule__WExpr__Group__03967);
             rule__WExpr__Group__1();
 
             state._fsp--;
@@ -5425,7 +5419,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:1985:1: ruleBExpr
             {
              before(grammarAccess.getWExprAccess().getBExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleBExpr_in_rule__WExpr__Group__0__Impl3995);
+            pushFollow(FOLLOW_ruleBExpr_in_rule__WExpr__Group__0__Impl3994);
             ruleBExpr();
 
             state._fsp--;
@@ -5462,7 +5456,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2000:1: ( rule__WExpr__Group__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2001:2: rule__WExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__WExpr__Group__1__Impl_in_rule__WExpr__Group__14024);
+            pushFollow(FOLLOW_rule__WExpr__Group__1__Impl_in_rule__WExpr__Group__14023);
             rule__WExpr__Group__1__Impl();
 
             state._fsp--;
@@ -5514,7 +5508,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             	case 1 :
             	    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2014:2: rule__WExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__WExpr__Group_1__0_in_rule__WExpr__Group__1__Impl4051);
+            	    pushFollow(FOLLOW_rule__WExpr__Group_1__0_in_rule__WExpr__Group__1__Impl4050);
             	    rule__WExpr__Group_1__0();
 
             	    state._fsp--;
@@ -5560,12 +5554,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2032:1: ( rule__WExpr__Group_1__0__Impl rule__WExpr__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2033:2: rule__WExpr__Group_1__0__Impl rule__WExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__WExpr__Group_1__0__Impl_in_rule__WExpr__Group_1__04086);
+            pushFollow(FOLLOW_rule__WExpr__Group_1__0__Impl_in_rule__WExpr__Group_1__04085);
             rule__WExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WExpr__Group_1__1_in_rule__WExpr__Group_1__04089);
+            pushFollow(FOLLOW_rule__WExpr__Group_1__1_in_rule__WExpr__Group_1__04088);
             rule__WExpr__Group_1__1();
 
             state._fsp--;
@@ -5635,12 +5629,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2063:1: ( rule__WExpr__Group_1__1__Impl rule__WExpr__Group_1__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2064:2: rule__WExpr__Group_1__1__Impl rule__WExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__WExpr__Group_1__1__Impl_in_rule__WExpr__Group_1__14147);
+            pushFollow(FOLLOW_rule__WExpr__Group_1__1__Impl_in_rule__WExpr__Group_1__14146);
             rule__WExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__WExpr__Group_1__2_in_rule__WExpr__Group_1__14150);
+            pushFollow(FOLLOW_rule__WExpr__Group_1__2_in_rule__WExpr__Group_1__14149);
             rule__WExpr__Group_1__2();
 
             state._fsp--;
@@ -5677,7 +5671,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2077:1: RULE_WHERE
             {
              before(grammarAccess.getWExprAccess().getWHERETerminalRuleCall_1_1()); 
-            match(input,RULE_WHERE,FOLLOW_RULE_WHERE_in_rule__WExpr__Group_1__1__Impl4177); 
+            match(input,RULE_WHERE,FOLLOW_RULE_WHERE_in_rule__WExpr__Group_1__1__Impl4176); 
              after(grammarAccess.getWExprAccess().getWHERETerminalRuleCall_1_1()); 
 
             }
@@ -5710,7 +5704,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2092:1: ( rule__WExpr__Group_1__2__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2093:2: rule__WExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__WExpr__Group_1__2__Impl_in_rule__WExpr__Group_1__24206);
+            pushFollow(FOLLOW_rule__WExpr__Group_1__2__Impl_in_rule__WExpr__Group_1__24205);
             rule__WExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -5750,7 +5744,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2106:1: ( rule__WExpr__RightAssignment_1_2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2106:2: rule__WExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__WExpr__RightAssignment_1_2_in_rule__WExpr__Group_1__2__Impl4233);
+            pushFollow(FOLLOW_rule__WExpr__RightAssignment_1_2_in_rule__WExpr__Group_1__2__Impl4232);
             rule__WExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -5790,12 +5784,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2126:1: ( rule__BExpr__Group_1__0__Impl rule__BExpr__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2127:2: rule__BExpr__Group_1__0__Impl rule__BExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__BExpr__Group_1__0__Impl_in_rule__BExpr__Group_1__04269);
+            pushFollow(FOLLOW_rule__BExpr__Group_1__0__Impl_in_rule__BExpr__Group_1__04268);
             rule__BExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__BExpr__Group_1__1_in_rule__BExpr__Group_1__04272);
+            pushFollow(FOLLOW_rule__BExpr__Group_1__1_in_rule__BExpr__Group_1__04271);
             rule__BExpr__Group_1__1();
 
             state._fsp--;
@@ -5832,7 +5826,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2140:1: RULE_LPAREN
             {
              before(grammarAccess.getBExprAccess().getLPARENTerminalRuleCall_1_0()); 
-            match(input,RULE_LPAREN,FOLLOW_RULE_LPAREN_in_rule__BExpr__Group_1__0__Impl4299); 
+            match(input,RULE_LPAREN,FOLLOW_RULE_LPAREN_in_rule__BExpr__Group_1__0__Impl4298); 
              after(grammarAccess.getBExprAccess().getLPARENTerminalRuleCall_1_0()); 
 
             }
@@ -5865,12 +5859,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2155:1: ( rule__BExpr__Group_1__1__Impl rule__BExpr__Group_1__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2156:2: rule__BExpr__Group_1__1__Impl rule__BExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__BExpr__Group_1__1__Impl_in_rule__BExpr__Group_1__14328);
+            pushFollow(FOLLOW_rule__BExpr__Group_1__1__Impl_in_rule__BExpr__Group_1__14327);
             rule__BExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__BExpr__Group_1__2_in_rule__BExpr__Group_1__14331);
+            pushFollow(FOLLOW_rule__BExpr__Group_1__2_in_rule__BExpr__Group_1__14330);
             rule__BExpr__Group_1__2();
 
             state._fsp--;
@@ -5907,7 +5901,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2169:1: ruleEExpr
             {
              before(grammarAccess.getBExprAccess().getEExprParserRuleCall_1_1()); 
-            pushFollow(FOLLOW_ruleEExpr_in_rule__BExpr__Group_1__1__Impl4358);
+            pushFollow(FOLLOW_ruleEExpr_in_rule__BExpr__Group_1__1__Impl4357);
             ruleEExpr();
 
             state._fsp--;
@@ -5944,7 +5938,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2184:1: ( rule__BExpr__Group_1__2__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2185:2: rule__BExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__BExpr__Group_1__2__Impl_in_rule__BExpr__Group_1__24387);
+            pushFollow(FOLLOW_rule__BExpr__Group_1__2__Impl_in_rule__BExpr__Group_1__24386);
             rule__BExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -5981,7 +5975,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2197:1: RULE_RPAREN
             {
              before(grammarAccess.getBExprAccess().getRPARENTerminalRuleCall_1_2()); 
-            match(input,RULE_RPAREN,FOLLOW_RULE_RPAREN_in_rule__BExpr__Group_1__2__Impl4414); 
+            match(input,RULE_RPAREN,FOLLOW_RULE_RPAREN_in_rule__BExpr__Group_1__2__Impl4413); 
              after(grammarAccess.getBExprAccess().getRPARENTerminalRuleCall_1_2()); 
 
             }
@@ -6014,12 +6008,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2218:1: ( rule__Interval__Group_1__0__Impl rule__Interval__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2219:2: rule__Interval__Group_1__0__Impl rule__Interval__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Interval__Group_1__0__Impl_in_rule__Interval__Group_1__04449);
+            pushFollow(FOLLOW_rule__Interval__Group_1__0__Impl_in_rule__Interval__Group_1__04448);
             rule__Interval__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_1__1_in_rule__Interval__Group_1__04452);
+            pushFollow(FOLLOW_rule__Interval__Group_1__1_in_rule__Interval__Group_1__04451);
             rule__Interval__Group_1__1();
 
             state._fsp--;
@@ -6059,7 +6053,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2233:1: ( rule__Interval__EventAssignment_1_0 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2233:2: rule__Interval__EventAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__Interval__EventAssignment_1_0_in_rule__Interval__Group_1__0__Impl4479);
+            pushFollow(FOLLOW_rule__Interval__EventAssignment_1_0_in_rule__Interval__Group_1__0__Impl4478);
             rule__Interval__EventAssignment_1_0();
 
             state._fsp--;
@@ -6099,12 +6093,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2247:1: ( rule__Interval__Group_1__1__Impl rule__Interval__Group_1__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2248:2: rule__Interval__Group_1__1__Impl rule__Interval__Group_1__2
             {
-            pushFollow(FOLLOW_rule__Interval__Group_1__1__Impl_in_rule__Interval__Group_1__14509);
+            pushFollow(FOLLOW_rule__Interval__Group_1__1__Impl_in_rule__Interval__Group_1__14508);
             rule__Interval__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_1__2_in_rule__Interval__Group_1__14512);
+            pushFollow(FOLLOW_rule__Interval__Group_1__2_in_rule__Interval__Group_1__14511);
             rule__Interval__Group_1__2();
 
             state._fsp--;
@@ -6141,7 +6135,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2261:1: RULE_LBRACKET
             {
              before(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_1_1()); 
-            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_1__1__Impl4539); 
+            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_1__1__Impl4538); 
              after(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_1_1()); 
 
             }
@@ -6174,12 +6168,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2276:1: ( rule__Interval__Group_1__2__Impl rule__Interval__Group_1__3 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2277:2: rule__Interval__Group_1__2__Impl rule__Interval__Group_1__3
             {
-            pushFollow(FOLLOW_rule__Interval__Group_1__2__Impl_in_rule__Interval__Group_1__24568);
+            pushFollow(FOLLOW_rule__Interval__Group_1__2__Impl_in_rule__Interval__Group_1__24567);
             rule__Interval__Group_1__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_1__3_in_rule__Interval__Group_1__24571);
+            pushFollow(FOLLOW_rule__Interval__Group_1__3_in_rule__Interval__Group_1__24570);
             rule__Interval__Group_1__3();
 
             state._fsp--;
@@ -6203,31 +6197,31 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interval__Group_1__2__Impl"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2284:1: rule__Interval__Group_1__2__Impl : ( ( rule__Interval__LeftAssignment_1_2 ) ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2284:1: rule__Interval__Group_1__2__Impl : ( ( rule__Interval__LTimeAssignment_1_2 ) ) ;
     public final void rule__Interval__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2288:1: ( ( ( rule__Interval__LeftAssignment_1_2 ) ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2289:1: ( ( rule__Interval__LeftAssignment_1_2 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2288:1: ( ( ( rule__Interval__LTimeAssignment_1_2 ) ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2289:1: ( ( rule__Interval__LTimeAssignment_1_2 ) )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2289:1: ( ( rule__Interval__LeftAssignment_1_2 ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2290:1: ( rule__Interval__LeftAssignment_1_2 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2289:1: ( ( rule__Interval__LTimeAssignment_1_2 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2290:1: ( rule__Interval__LTimeAssignment_1_2 )
             {
-             before(grammarAccess.getIntervalAccess().getLeftAssignment_1_2()); 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2291:1: ( rule__Interval__LeftAssignment_1_2 )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2291:2: rule__Interval__LeftAssignment_1_2
+             before(grammarAccess.getIntervalAccess().getLTimeAssignment_1_2()); 
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2291:1: ( rule__Interval__LTimeAssignment_1_2 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2291:2: rule__Interval__LTimeAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__Interval__LeftAssignment_1_2_in_rule__Interval__Group_1__2__Impl4598);
-            rule__Interval__LeftAssignment_1_2();
+            pushFollow(FOLLOW_rule__Interval__LTimeAssignment_1_2_in_rule__Interval__Group_1__2__Impl4597);
+            rule__Interval__LTimeAssignment_1_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIntervalAccess().getLeftAssignment_1_2()); 
+             after(grammarAccess.getIntervalAccess().getLTimeAssignment_1_2()); 
 
             }
 
@@ -6259,12 +6253,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2305:1: ( rule__Interval__Group_1__3__Impl rule__Interval__Group_1__4 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2306:2: rule__Interval__Group_1__3__Impl rule__Interval__Group_1__4
             {
-            pushFollow(FOLLOW_rule__Interval__Group_1__3__Impl_in_rule__Interval__Group_1__34628);
+            pushFollow(FOLLOW_rule__Interval__Group_1__3__Impl_in_rule__Interval__Group_1__34627);
             rule__Interval__Group_1__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_1__4_in_rule__Interval__Group_1__34631);
+            pushFollow(FOLLOW_rule__Interval__Group_1__4_in_rule__Interval__Group_1__34630);
             rule__Interval__Group_1__4();
 
             state._fsp--;
@@ -6301,7 +6295,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2319:1: RULE_COMMA
             {
              before(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_1_3()); 
-            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_1__3__Impl4658); 
+            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_1__3__Impl4657); 
              after(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_1_3()); 
 
             }
@@ -6334,12 +6328,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2334:1: ( rule__Interval__Group_1__4__Impl rule__Interval__Group_1__5 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2335:2: rule__Interval__Group_1__4__Impl rule__Interval__Group_1__5
             {
-            pushFollow(FOLLOW_rule__Interval__Group_1__4__Impl_in_rule__Interval__Group_1__44687);
+            pushFollow(FOLLOW_rule__Interval__Group_1__4__Impl_in_rule__Interval__Group_1__44686);
             rule__Interval__Group_1__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_1__5_in_rule__Interval__Group_1__44690);
+            pushFollow(FOLLOW_rule__Interval__Group_1__5_in_rule__Interval__Group_1__44689);
             rule__Interval__Group_1__5();
 
             state._fsp--;
@@ -6363,31 +6357,31 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interval__Group_1__4__Impl"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2342:1: rule__Interval__Group_1__4__Impl : ( ( rule__Interval__RightAssignment_1_4 ) ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2342:1: rule__Interval__Group_1__4__Impl : ( ( rule__Interval__RTimeAssignment_1_4 ) ) ;
     public final void rule__Interval__Group_1__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2346:1: ( ( ( rule__Interval__RightAssignment_1_4 ) ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2347:1: ( ( rule__Interval__RightAssignment_1_4 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2346:1: ( ( ( rule__Interval__RTimeAssignment_1_4 ) ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2347:1: ( ( rule__Interval__RTimeAssignment_1_4 ) )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2347:1: ( ( rule__Interval__RightAssignment_1_4 ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2348:1: ( rule__Interval__RightAssignment_1_4 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2347:1: ( ( rule__Interval__RTimeAssignment_1_4 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2348:1: ( rule__Interval__RTimeAssignment_1_4 )
             {
-             before(grammarAccess.getIntervalAccess().getRightAssignment_1_4()); 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2349:1: ( rule__Interval__RightAssignment_1_4 )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2349:2: rule__Interval__RightAssignment_1_4
+             before(grammarAccess.getIntervalAccess().getRTimeAssignment_1_4()); 
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2349:1: ( rule__Interval__RTimeAssignment_1_4 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2349:2: rule__Interval__RTimeAssignment_1_4
             {
-            pushFollow(FOLLOW_rule__Interval__RightAssignment_1_4_in_rule__Interval__Group_1__4__Impl4717);
-            rule__Interval__RightAssignment_1_4();
+            pushFollow(FOLLOW_rule__Interval__RTimeAssignment_1_4_in_rule__Interval__Group_1__4__Impl4716);
+            rule__Interval__RTimeAssignment_1_4();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIntervalAccess().getRightAssignment_1_4()); 
+             after(grammarAccess.getIntervalAccess().getRTimeAssignment_1_4()); 
 
             }
 
@@ -6419,7 +6413,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2363:1: ( rule__Interval__Group_1__5__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2364:2: rule__Interval__Group_1__5__Impl
             {
-            pushFollow(FOLLOW_rule__Interval__Group_1__5__Impl_in_rule__Interval__Group_1__54747);
+            pushFollow(FOLLOW_rule__Interval__Group_1__5__Impl_in_rule__Interval__Group_1__54746);
             rule__Interval__Group_1__5__Impl();
 
             state._fsp--;
@@ -6456,7 +6450,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2376:1: RULE_RBRACKET
             {
              before(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_1_5()); 
-            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_1__5__Impl4774); 
+            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_1__5__Impl4773); 
              after(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_1_5()); 
 
             }
@@ -6489,12 +6483,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2403:1: ( rule__Interval__Group_2__0__Impl rule__Interval__Group_2__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2404:2: rule__Interval__Group_2__0__Impl rule__Interval__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Interval__Group_2__0__Impl_in_rule__Interval__Group_2__04815);
+            pushFollow(FOLLOW_rule__Interval__Group_2__0__Impl_in_rule__Interval__Group_2__04814);
             rule__Interval__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_2__1_in_rule__Interval__Group_2__04818);
+            pushFollow(FOLLOW_rule__Interval__Group_2__1_in_rule__Interval__Group_2__04817);
             rule__Interval__Group_2__1();
 
             state._fsp--;
@@ -6534,7 +6528,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2418:1: ( rule__Interval__EventAssignment_2_0 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2418:2: rule__Interval__EventAssignment_2_0
             {
-            pushFollow(FOLLOW_rule__Interval__EventAssignment_2_0_in_rule__Interval__Group_2__0__Impl4845);
+            pushFollow(FOLLOW_rule__Interval__EventAssignment_2_0_in_rule__Interval__Group_2__0__Impl4844);
             rule__Interval__EventAssignment_2_0();
 
             state._fsp--;
@@ -6574,12 +6568,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2432:1: ( rule__Interval__Group_2__1__Impl rule__Interval__Group_2__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2433:2: rule__Interval__Group_2__1__Impl rule__Interval__Group_2__2
             {
-            pushFollow(FOLLOW_rule__Interval__Group_2__1__Impl_in_rule__Interval__Group_2__14875);
+            pushFollow(FOLLOW_rule__Interval__Group_2__1__Impl_in_rule__Interval__Group_2__14874);
             rule__Interval__Group_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_2__2_in_rule__Interval__Group_2__14878);
+            pushFollow(FOLLOW_rule__Interval__Group_2__2_in_rule__Interval__Group_2__14877);
             rule__Interval__Group_2__2();
 
             state._fsp--;
@@ -6616,7 +6610,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2446:1: RULE_LBRACKET
             {
              before(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_2_1()); 
-            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_2__1__Impl4905); 
+            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_2__1__Impl4904); 
              after(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_2_1()); 
 
             }
@@ -6649,12 +6643,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2461:1: ( rule__Interval__Group_2__2__Impl rule__Interval__Group_2__3 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2462:2: rule__Interval__Group_2__2__Impl rule__Interval__Group_2__3
             {
-            pushFollow(FOLLOW_rule__Interval__Group_2__2__Impl_in_rule__Interval__Group_2__24934);
+            pushFollow(FOLLOW_rule__Interval__Group_2__2__Impl_in_rule__Interval__Group_2__24933);
             rule__Interval__Group_2__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_2__3_in_rule__Interval__Group_2__24937);
+            pushFollow(FOLLOW_rule__Interval__Group_2__3_in_rule__Interval__Group_2__24936);
             rule__Interval__Group_2__3();
 
             state._fsp--;
@@ -6691,7 +6685,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2475:1: RULE_COMMA
             {
              before(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_2_2()); 
-            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_2__2__Impl4964); 
+            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_2__2__Impl4963); 
              after(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_2_2()); 
 
             }
@@ -6724,12 +6718,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2490:1: ( rule__Interval__Group_2__3__Impl rule__Interval__Group_2__4 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2491:2: rule__Interval__Group_2__3__Impl rule__Interval__Group_2__4
             {
-            pushFollow(FOLLOW_rule__Interval__Group_2__3__Impl_in_rule__Interval__Group_2__34993);
+            pushFollow(FOLLOW_rule__Interval__Group_2__3__Impl_in_rule__Interval__Group_2__34992);
             rule__Interval__Group_2__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_2__4_in_rule__Interval__Group_2__34996);
+            pushFollow(FOLLOW_rule__Interval__Group_2__4_in_rule__Interval__Group_2__34995);
             rule__Interval__Group_2__4();
 
             state._fsp--;
@@ -6753,31 +6747,31 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interval__Group_2__3__Impl"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2498:1: rule__Interval__Group_2__3__Impl : ( ( rule__Interval__RightAssignment_2_3 ) ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2498:1: rule__Interval__Group_2__3__Impl : ( ( rule__Interval__RTimeAssignment_2_3 ) ) ;
     public final void rule__Interval__Group_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2502:1: ( ( ( rule__Interval__RightAssignment_2_3 ) ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2503:1: ( ( rule__Interval__RightAssignment_2_3 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2502:1: ( ( ( rule__Interval__RTimeAssignment_2_3 ) ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2503:1: ( ( rule__Interval__RTimeAssignment_2_3 ) )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2503:1: ( ( rule__Interval__RightAssignment_2_3 ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2504:1: ( rule__Interval__RightAssignment_2_3 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2503:1: ( ( rule__Interval__RTimeAssignment_2_3 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2504:1: ( rule__Interval__RTimeAssignment_2_3 )
             {
-             before(grammarAccess.getIntervalAccess().getRightAssignment_2_3()); 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2505:1: ( rule__Interval__RightAssignment_2_3 )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2505:2: rule__Interval__RightAssignment_2_3
+             before(grammarAccess.getIntervalAccess().getRTimeAssignment_2_3()); 
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2505:1: ( rule__Interval__RTimeAssignment_2_3 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2505:2: rule__Interval__RTimeAssignment_2_3
             {
-            pushFollow(FOLLOW_rule__Interval__RightAssignment_2_3_in_rule__Interval__Group_2__3__Impl5023);
-            rule__Interval__RightAssignment_2_3();
+            pushFollow(FOLLOW_rule__Interval__RTimeAssignment_2_3_in_rule__Interval__Group_2__3__Impl5022);
+            rule__Interval__RTimeAssignment_2_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIntervalAccess().getRightAssignment_2_3()); 
+             after(grammarAccess.getIntervalAccess().getRTimeAssignment_2_3()); 
 
             }
 
@@ -6809,7 +6803,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2519:1: ( rule__Interval__Group_2__4__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2520:2: rule__Interval__Group_2__4__Impl
             {
-            pushFollow(FOLLOW_rule__Interval__Group_2__4__Impl_in_rule__Interval__Group_2__45053);
+            pushFollow(FOLLOW_rule__Interval__Group_2__4__Impl_in_rule__Interval__Group_2__45052);
             rule__Interval__Group_2__4__Impl();
 
             state._fsp--;
@@ -6846,7 +6840,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2532:1: RULE_RBRACKET
             {
              before(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_2_4()); 
-            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_2__4__Impl5080); 
+            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_2__4__Impl5079); 
              after(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_2_4()); 
 
             }
@@ -6879,12 +6873,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2557:1: ( rule__Interval__Group_3__0__Impl rule__Interval__Group_3__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2558:2: rule__Interval__Group_3__0__Impl rule__Interval__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Interval__Group_3__0__Impl_in_rule__Interval__Group_3__05119);
+            pushFollow(FOLLOW_rule__Interval__Group_3__0__Impl_in_rule__Interval__Group_3__05118);
             rule__Interval__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_3__1_in_rule__Interval__Group_3__05122);
+            pushFollow(FOLLOW_rule__Interval__Group_3__1_in_rule__Interval__Group_3__05121);
             rule__Interval__Group_3__1();
 
             state._fsp--;
@@ -6924,7 +6918,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2572:1: ( rule__Interval__EventAssignment_3_0 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2572:2: rule__Interval__EventAssignment_3_0
             {
-            pushFollow(FOLLOW_rule__Interval__EventAssignment_3_0_in_rule__Interval__Group_3__0__Impl5149);
+            pushFollow(FOLLOW_rule__Interval__EventAssignment_3_0_in_rule__Interval__Group_3__0__Impl5148);
             rule__Interval__EventAssignment_3_0();
 
             state._fsp--;
@@ -6964,12 +6958,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2586:1: ( rule__Interval__Group_3__1__Impl rule__Interval__Group_3__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2587:2: rule__Interval__Group_3__1__Impl rule__Interval__Group_3__2
             {
-            pushFollow(FOLLOW_rule__Interval__Group_3__1__Impl_in_rule__Interval__Group_3__15179);
+            pushFollow(FOLLOW_rule__Interval__Group_3__1__Impl_in_rule__Interval__Group_3__15178);
             rule__Interval__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_3__2_in_rule__Interval__Group_3__15182);
+            pushFollow(FOLLOW_rule__Interval__Group_3__2_in_rule__Interval__Group_3__15181);
             rule__Interval__Group_3__2();
 
             state._fsp--;
@@ -7006,7 +7000,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2600:1: RULE_LBRACKET
             {
              before(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_3_1()); 
-            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_3__1__Impl5209); 
+            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_3__1__Impl5208); 
              after(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_3_1()); 
 
             }
@@ -7039,12 +7033,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2615:1: ( rule__Interval__Group_3__2__Impl rule__Interval__Group_3__3 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2616:2: rule__Interval__Group_3__2__Impl rule__Interval__Group_3__3
             {
-            pushFollow(FOLLOW_rule__Interval__Group_3__2__Impl_in_rule__Interval__Group_3__25238);
+            pushFollow(FOLLOW_rule__Interval__Group_3__2__Impl_in_rule__Interval__Group_3__25237);
             rule__Interval__Group_3__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_3__3_in_rule__Interval__Group_3__25241);
+            pushFollow(FOLLOW_rule__Interval__Group_3__3_in_rule__Interval__Group_3__25240);
             rule__Interval__Group_3__3();
 
             state._fsp--;
@@ -7068,31 +7062,31 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interval__Group_3__2__Impl"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2623:1: rule__Interval__Group_3__2__Impl : ( ( rule__Interval__LeftAssignment_3_2 ) ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2623:1: rule__Interval__Group_3__2__Impl : ( ( rule__Interval__LTimeAssignment_3_2 ) ) ;
     public final void rule__Interval__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2627:1: ( ( ( rule__Interval__LeftAssignment_3_2 ) ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2628:1: ( ( rule__Interval__LeftAssignment_3_2 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2627:1: ( ( ( rule__Interval__LTimeAssignment_3_2 ) ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2628:1: ( ( rule__Interval__LTimeAssignment_3_2 ) )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2628:1: ( ( rule__Interval__LeftAssignment_3_2 ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2629:1: ( rule__Interval__LeftAssignment_3_2 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2628:1: ( ( rule__Interval__LTimeAssignment_3_2 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2629:1: ( rule__Interval__LTimeAssignment_3_2 )
             {
-             before(grammarAccess.getIntervalAccess().getLeftAssignment_3_2()); 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2630:1: ( rule__Interval__LeftAssignment_3_2 )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2630:2: rule__Interval__LeftAssignment_3_2
+             before(grammarAccess.getIntervalAccess().getLTimeAssignment_3_2()); 
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2630:1: ( rule__Interval__LTimeAssignment_3_2 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2630:2: rule__Interval__LTimeAssignment_3_2
             {
-            pushFollow(FOLLOW_rule__Interval__LeftAssignment_3_2_in_rule__Interval__Group_3__2__Impl5268);
-            rule__Interval__LeftAssignment_3_2();
+            pushFollow(FOLLOW_rule__Interval__LTimeAssignment_3_2_in_rule__Interval__Group_3__2__Impl5267);
+            rule__Interval__LTimeAssignment_3_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIntervalAccess().getLeftAssignment_3_2()); 
+             after(grammarAccess.getIntervalAccess().getLTimeAssignment_3_2()); 
 
             }
 
@@ -7124,12 +7118,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2644:1: ( rule__Interval__Group_3__3__Impl rule__Interval__Group_3__4 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2645:2: rule__Interval__Group_3__3__Impl rule__Interval__Group_3__4
             {
-            pushFollow(FOLLOW_rule__Interval__Group_3__3__Impl_in_rule__Interval__Group_3__35298);
+            pushFollow(FOLLOW_rule__Interval__Group_3__3__Impl_in_rule__Interval__Group_3__35297);
             rule__Interval__Group_3__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_3__4_in_rule__Interval__Group_3__35301);
+            pushFollow(FOLLOW_rule__Interval__Group_3__4_in_rule__Interval__Group_3__35300);
             rule__Interval__Group_3__4();
 
             state._fsp--;
@@ -7166,7 +7160,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2658:1: RULE_COMMA
             {
              before(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_3_3()); 
-            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_3__3__Impl5328); 
+            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_3__3__Impl5327); 
              after(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_3_3()); 
 
             }
@@ -7199,7 +7193,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2673:1: ( rule__Interval__Group_3__4__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2674:2: rule__Interval__Group_3__4__Impl
             {
-            pushFollow(FOLLOW_rule__Interval__Group_3__4__Impl_in_rule__Interval__Group_3__45357);
+            pushFollow(FOLLOW_rule__Interval__Group_3__4__Impl_in_rule__Interval__Group_3__45356);
             rule__Interval__Group_3__4__Impl();
 
             state._fsp--;
@@ -7236,7 +7230,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2686:1: RULE_RBRACKET
             {
              before(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_3_4()); 
-            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_3__4__Impl5384); 
+            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_3__4__Impl5383); 
              after(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_3_4()); 
 
             }
@@ -7269,12 +7263,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2711:1: ( rule__Interval__Group_4__0__Impl rule__Interval__Group_4__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2712:2: rule__Interval__Group_4__0__Impl rule__Interval__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Interval__Group_4__0__Impl_in_rule__Interval__Group_4__05423);
+            pushFollow(FOLLOW_rule__Interval__Group_4__0__Impl_in_rule__Interval__Group_4__05422);
             rule__Interval__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_4__1_in_rule__Interval__Group_4__05426);
+            pushFollow(FOLLOW_rule__Interval__Group_4__1_in_rule__Interval__Group_4__05425);
             rule__Interval__Group_4__1();
 
             state._fsp--;
@@ -7314,7 +7308,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2726:1: ( rule__Interval__EventAssignment_4_0 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2726:2: rule__Interval__EventAssignment_4_0
             {
-            pushFollow(FOLLOW_rule__Interval__EventAssignment_4_0_in_rule__Interval__Group_4__0__Impl5453);
+            pushFollow(FOLLOW_rule__Interval__EventAssignment_4_0_in_rule__Interval__Group_4__0__Impl5452);
             rule__Interval__EventAssignment_4_0();
 
             state._fsp--;
@@ -7354,12 +7348,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2740:1: ( rule__Interval__Group_4__1__Impl rule__Interval__Group_4__2 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2741:2: rule__Interval__Group_4__1__Impl rule__Interval__Group_4__2
             {
-            pushFollow(FOLLOW_rule__Interval__Group_4__1__Impl_in_rule__Interval__Group_4__15483);
+            pushFollow(FOLLOW_rule__Interval__Group_4__1__Impl_in_rule__Interval__Group_4__15482);
             rule__Interval__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_4__2_in_rule__Interval__Group_4__15486);
+            pushFollow(FOLLOW_rule__Interval__Group_4__2_in_rule__Interval__Group_4__15485);
             rule__Interval__Group_4__2();
 
             state._fsp--;
@@ -7396,7 +7390,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2754:1: RULE_LBRACKET
             {
              before(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_4_1()); 
-            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_4__1__Impl5513); 
+            match(input,RULE_LBRACKET,FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_4__1__Impl5512); 
              after(grammarAccess.getIntervalAccess().getLBRACKETTerminalRuleCall_4_1()); 
 
             }
@@ -7429,12 +7423,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2769:1: ( rule__Interval__Group_4__2__Impl rule__Interval__Group_4__3 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2770:2: rule__Interval__Group_4__2__Impl rule__Interval__Group_4__3
             {
-            pushFollow(FOLLOW_rule__Interval__Group_4__2__Impl_in_rule__Interval__Group_4__25542);
+            pushFollow(FOLLOW_rule__Interval__Group_4__2__Impl_in_rule__Interval__Group_4__25541);
             rule__Interval__Group_4__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Interval__Group_4__3_in_rule__Interval__Group_4__25545);
+            pushFollow(FOLLOW_rule__Interval__Group_4__3_in_rule__Interval__Group_4__25544);
             rule__Interval__Group_4__3();
 
             state._fsp--;
@@ -7471,7 +7465,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2783:1: RULE_COMMA
             {
              before(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_4_2()); 
-            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_4__2__Impl5572); 
+            match(input,RULE_COMMA,FOLLOW_RULE_COMMA_in_rule__Interval__Group_4__2__Impl5571); 
              after(grammarAccess.getIntervalAccess().getCOMMATerminalRuleCall_4_2()); 
 
             }
@@ -7504,7 +7498,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2798:1: ( rule__Interval__Group_4__3__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2799:2: rule__Interval__Group_4__3__Impl
             {
-            pushFollow(FOLLOW_rule__Interval__Group_4__3__Impl_in_rule__Interval__Group_4__35601);
+            pushFollow(FOLLOW_rule__Interval__Group_4__3__Impl_in_rule__Interval__Group_4__35600);
             rule__Interval__Group_4__3__Impl();
 
             state._fsp--;
@@ -7541,7 +7535,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2811:1: RULE_RBRACKET
             {
              before(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_4_3()); 
-            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_4__3__Impl5628); 
+            match(input,RULE_RBRACKET,FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_4__3__Impl5627); 
              after(grammarAccess.getIntervalAccess().getRBRACKETTerminalRuleCall_4_3()); 
 
             }
@@ -7574,12 +7568,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2834:1: ( rule__Event__Group_1__0__Impl rule__Event__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2835:2: rule__Event__Group_1__0__Impl rule__Event__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__05665);
+            pushFollow(FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__05664);
             rule__Event__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__05668);
+            pushFollow(FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__05667);
             rule__Event__Group_1__1();
 
             state._fsp--;
@@ -7619,7 +7613,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2849:1: ( rule__Event__LifeStateAssignment_1_0 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2849:2: rule__Event__LifeStateAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__Event__LifeStateAssignment_1_0_in_rule__Event__Group_1__0__Impl5695);
+            pushFollow(FOLLOW_rule__Event__LifeStateAssignment_1_0_in_rule__Event__Group_1__0__Impl5694);
             rule__Event__LifeStateAssignment_1_0();
 
             state._fsp--;
@@ -7659,7 +7653,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2863:1: ( rule__Event__Group_1__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2864:2: rule__Event__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__15725);
+            pushFollow(FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__15724);
             rule__Event__Group_1__1__Impl();
 
             state._fsp--;
@@ -7699,7 +7693,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2877:1: ( rule__Event__LabelAssignment_1_1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2877:2: rule__Event__LabelAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Event__LabelAssignment_1_1_in_rule__Event__Group_1__1__Impl5752);
+            pushFollow(FOLLOW_rule__Event__LabelAssignment_1_1_in_rule__Event__Group_1__1__Impl5751);
             rule__Event__LabelAssignment_1_1();
 
             state._fsp--;
@@ -7739,12 +7733,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2895:1: ( rule__TimeStamp__Group_1__0__Impl rule__TimeStamp__Group_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2896:2: rule__TimeStamp__Group_1__0__Impl rule__TimeStamp__Group_1__1
             {
-            pushFollow(FOLLOW_rule__TimeStamp__Group_1__0__Impl_in_rule__TimeStamp__Group_1__05786);
+            pushFollow(FOLLOW_rule__TimeStamp__Group_1__0__Impl_in_rule__TimeStamp__Group_1__05785);
             rule__TimeStamp__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeStamp__Group_1__1_in_rule__TimeStamp__Group_1__05789);
+            pushFollow(FOLLOW_rule__TimeStamp__Group_1__1_in_rule__TimeStamp__Group_1__05788);
             rule__TimeStamp__Group_1__1();
 
             state._fsp--;
@@ -7784,7 +7778,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2910:1: ( rule__TimeStamp__EventReferenceAssignment_1_0 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2910:2: rule__TimeStamp__EventReferenceAssignment_1_0
             {
-            pushFollow(FOLLOW_rule__TimeStamp__EventReferenceAssignment_1_0_in_rule__TimeStamp__Group_1__0__Impl5816);
+            pushFollow(FOLLOW_rule__TimeStamp__EventReferenceAssignment_1_0_in_rule__TimeStamp__Group_1__0__Impl5815);
             rule__TimeStamp__EventReferenceAssignment_1_0();
 
             state._fsp--;
@@ -7824,7 +7818,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2924:1: ( rule__TimeStamp__Group_1__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2925:2: rule__TimeStamp__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__TimeStamp__Group_1__1__Impl_in_rule__TimeStamp__Group_1__15846);
+            pushFollow(FOLLOW_rule__TimeStamp__Group_1__1__Impl_in_rule__TimeStamp__Group_1__15845);
             rule__TimeStamp__Group_1__1__Impl();
 
             state._fsp--;
@@ -7872,7 +7866,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
                 case 1 :
                     // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2938:2: rule__TimeStamp__Group_1_1__0
                     {
-                    pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__0_in_rule__TimeStamp__Group_1__1__Impl5873);
+                    pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__0_in_rule__TimeStamp__Group_1__1__Impl5872);
                     rule__TimeStamp__Group_1_1__0();
 
                     state._fsp--;
@@ -7915,12 +7909,12 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2956:1: ( rule__TimeStamp__Group_1_1__0__Impl rule__TimeStamp__Group_1_1__1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2957:2: rule__TimeStamp__Group_1_1__0__Impl rule__TimeStamp__Group_1_1__1
             {
-            pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__0__Impl_in_rule__TimeStamp__Group_1_1__05908);
+            pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__0__Impl_in_rule__TimeStamp__Group_1_1__05907);
             rule__TimeStamp__Group_1_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__1_in_rule__TimeStamp__Group_1_1__05911);
+            pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__1_in_rule__TimeStamp__Group_1_1__05910);
             rule__TimeStamp__Group_1_1__1();
 
             state._fsp--;
@@ -7957,7 +7951,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2970:1: RULE_PLUS
             {
              before(grammarAccess.getTimeStampAccess().getPLUSTerminalRuleCall_1_1_0()); 
-            match(input,RULE_PLUS,FOLLOW_RULE_PLUS_in_rule__TimeStamp__Group_1_1__0__Impl5938); 
+            match(input,RULE_PLUS,FOLLOW_RULE_PLUS_in_rule__TimeStamp__Group_1_1__0__Impl5937); 
              after(grammarAccess.getTimeStampAccess().getPLUSTerminalRuleCall_1_1_0()); 
 
             }
@@ -7990,7 +7984,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2985:1: ( rule__TimeStamp__Group_1_1__1__Impl )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2986:2: rule__TimeStamp__Group_1_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__1__Impl_in_rule__TimeStamp__Group_1_1__15967);
+            pushFollow(FOLLOW_rule__TimeStamp__Group_1_1__1__Impl_in_rule__TimeStamp__Group_1_1__15966);
             rule__TimeStamp__Group_1_1__1__Impl();
 
             state._fsp--;
@@ -8030,7 +8024,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2999:1: ( rule__TimeStamp__ShiftAssignment_1_1_1 )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:2999:2: rule__TimeStamp__ShiftAssignment_1_1_1
             {
-            pushFollow(FOLLOW_rule__TimeStamp__ShiftAssignment_1_1_1_in_rule__TimeStamp__Group_1_1__1__Impl5994);
+            pushFollow(FOLLOW_rule__TimeStamp__ShiftAssignment_1_1_1_in_rule__TimeStamp__Group_1_1__1__Impl5993);
             rule__TimeStamp__ShiftAssignment_1_1_1();
 
             state._fsp--;
@@ -8074,7 +8068,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3020:1: ruleCommitment
             {
              before(grammarAccess.getCupidoAccess().getCommitmentsCommitmentParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleCommitment_in_rule__Cupido__CommitmentsAssignment_16033);
+            pushFollow(FOLLOW_ruleCommitment_in_rule__Cupido__CommitmentsAssignment_16032);
             ruleCommitment();
 
             state._fsp--;
@@ -8115,7 +8109,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3035:1: ruleEventRelation
             {
              before(grammarAccess.getSchemataAccess().getSchemataEventRelationParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleEventRelation_in_rule__Schemata__SchemataAssignment_16064);
+            pushFollow(FOLLOW_ruleEventRelation_in_rule__Schemata__SchemataAssignment_16063);
             ruleEventRelation();
 
             state._fsp--;
@@ -8156,7 +8150,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3050:1: ruleEvent
             {
              before(grammarAccess.getEventRelationAccess().getEventEventParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__EventRelation__EventAssignment_06095);
+            pushFollow(FOLLOW_ruleEvent_in_rule__EventRelation__EventAssignment_06094);
             ruleEvent();
 
             state._fsp--;
@@ -8197,7 +8191,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3065:1: ruleParam
             {
              before(grammarAccess.getEventRelationAccess().getParamsParamParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_26126);
+            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_26125);
             ruleParam();
 
             state._fsp--;
@@ -8238,7 +8232,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3080:1: ruleParam
             {
              before(grammarAccess.getEventRelationAccess().getParamsParamParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_3_16157);
+            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_3_16156);
             ruleParam();
 
             state._fsp--;
@@ -8279,7 +8273,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3095:1: ruleParam
             {
              before(grammarAccess.getEventRelationAccess().getKeyParamsParamParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_66188);
+            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_66187);
             ruleParam();
 
             state._fsp--;
@@ -8320,7 +8314,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3110:1: ruleParam
             {
              before(grammarAccess.getEventRelationAccess().getKeyParamsParamParserRuleCall_7_1_0()); 
-            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_7_16219);
+            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_7_16218);
             ruleParam();
 
             state._fsp--;
@@ -8361,7 +8355,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3125:1: ruleParam
             {
              before(grammarAccess.getEventRelationAccess().getTimeParamParamParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__TimeParamAssignment_96250);
+            pushFollow(FOLLOW_ruleParam_in_rule__EventRelation__TimeParamAssignment_96249);
             ruleParam();
 
             state._fsp--;
@@ -8402,7 +8396,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3140:1: RULE_ID
             {
              before(grammarAccess.getParamAccess().getNameIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Param__NameAssignment6281); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Param__NameAssignment6280); 
              after(grammarAccess.getParamAccess().getNameIDTerminalRuleCall_0()); 
 
             }
@@ -8439,7 +8433,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3155:1: RULE_ID
             {
              before(grammarAccess.getCommitmentAccess().getLabelIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Commitment__LabelAssignment_16312); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Commitment__LabelAssignment_16311); 
              after(grammarAccess.getCommitmentAccess().getLabelIDTerminalRuleCall_1_0()); 
 
             }
@@ -8476,7 +8470,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3170:1: RULE_ID
             {
              before(grammarAccess.getCommitmentAccess().getDebtorIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Commitment__DebtorAssignment_26343); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Commitment__DebtorAssignment_26342); 
              after(grammarAccess.getCommitmentAccess().getDebtorIDTerminalRuleCall_2_0()); 
 
             }
@@ -8513,7 +8507,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3185:1: RULE_ID
             {
              before(grammarAccess.getCommitmentAccess().getCreditorIDTerminalRuleCall_4_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Commitment__CreditorAssignment_46374); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Commitment__CreditorAssignment_46373); 
              after(grammarAccess.getCommitmentAccess().getCreditorIDTerminalRuleCall_4_0()); 
 
             }
@@ -8550,7 +8544,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3200:1: ruleEExpr
             {
              before(grammarAccess.getCommitmentAccess().getTriggerEExprParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleEExpr_in_rule__Commitment__TriggerAssignment_66405);
+            pushFollow(FOLLOW_ruleEExpr_in_rule__Commitment__TriggerAssignment_66404);
             ruleEExpr();
 
             state._fsp--;
@@ -8591,7 +8585,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3215:1: ruleEExpr
             {
              before(grammarAccess.getCommitmentAccess().getAntecedentEExprParserRuleCall_7_1_0()); 
-            pushFollow(FOLLOW_ruleEExpr_in_rule__Commitment__AntecedentAssignment_7_16436);
+            pushFollow(FOLLOW_ruleEExpr_in_rule__Commitment__AntecedentAssignment_7_16435);
             ruleEExpr();
 
             state._fsp--;
@@ -8632,7 +8626,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3230:1: ruleEExpr
             {
              before(grammarAccess.getCommitmentAccess().getConsequentEExprParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleEExpr_in_rule__Commitment__ConsequentAssignment_96467);
+            pushFollow(FOLLOW_ruleEExpr_in_rule__Commitment__ConsequentAssignment_96466);
             ruleEExpr();
 
             state._fsp--;
@@ -8673,7 +8667,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3245:1: ruleOExpr
             {
              before(grammarAccess.getEExprAccess().getRightOExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleOExpr_in_rule__EExpr__RightAssignment_1_26498);
+            pushFollow(FOLLOW_ruleOExpr_in_rule__EExpr__RightAssignment_1_26497);
             ruleOExpr();
 
             state._fsp--;
@@ -8714,7 +8708,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3260:1: ruleAExpr
             {
              before(grammarAccess.getOExprAccess().getRightAExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleAExpr_in_rule__OExpr__RightAssignment_1_26529);
+            pushFollow(FOLLOW_ruleAExpr_in_rule__OExpr__RightAssignment_1_26528);
             ruleAExpr();
 
             state._fsp--;
@@ -8755,7 +8749,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3275:1: ruleWExpr
             {
              before(grammarAccess.getAExprAccess().getRightWExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleWExpr_in_rule__AExpr__RightAssignment_1_26560);
+            pushFollow(FOLLOW_ruleWExpr_in_rule__AExpr__RightAssignment_1_26559);
             ruleWExpr();
 
             state._fsp--;
@@ -8796,7 +8790,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3290:1: RULE_STRING
             {
              before(grammarAccess.getWExprAccess().getRightSTRINGTerminalRuleCall_1_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__WExpr__RightAssignment_1_26591); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__WExpr__RightAssignment_1_26590); 
              after(grammarAccess.getWExprAccess().getRightSTRINGTerminalRuleCall_1_2_0()); 
 
             }
@@ -8819,62 +8813,21 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__WExpr__RightAssignment_1_2"
 
 
-    // $ANTLR start "rule__BExpr__IntervalAssignment_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3299:1: rule__BExpr__IntervalAssignment_0 : ( ruleInterval ) ;
-    public final void rule__BExpr__IntervalAssignment_0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3303:1: ( ( ruleInterval ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3304:1: ( ruleInterval )
-            {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3304:1: ( ruleInterval )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3305:1: ruleInterval
-            {
-             before(grammarAccess.getBExprAccess().getIntervalIntervalParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleInterval_in_rule__BExpr__IntervalAssignment_06622);
-            ruleInterval();
-
-            state._fsp--;
-
-             after(grammarAccess.getBExprAccess().getIntervalIntervalParserRuleCall_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BExpr__IntervalAssignment_0"
-
-
     // $ANTLR start "rule__Interval__EventAssignment_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3314:1: rule__Interval__EventAssignment_0 : ( ruleEvent ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3299:1: rule__Interval__EventAssignment_0 : ( ruleEvent ) ;
     public final void rule__Interval__EventAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3318:1: ( ( ruleEvent ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3319:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3303:1: ( ( ruleEvent ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3304:1: ( ruleEvent )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3319:1: ( ruleEvent )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3320:1: ruleEvent
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3304:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3305:1: ruleEvent
             {
              before(grammarAccess.getIntervalAccess().getEventEventParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_06653);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_06621);
             ruleEvent();
 
             state._fsp--;
@@ -8902,20 +8855,20 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Interval__EventAssignment_1_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3329:1: rule__Interval__EventAssignment_1_0 : ( ruleEvent ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3314:1: rule__Interval__EventAssignment_1_0 : ( ruleEvent ) ;
     public final void rule__Interval__EventAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3333:1: ( ( ruleEvent ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3334:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3318:1: ( ( ruleEvent ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3319:1: ( ruleEvent )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3334:1: ( ruleEvent )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3335:1: ruleEvent
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3319:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3320:1: ruleEvent
             {
              before(grammarAccess.getIntervalAccess().getEventEventParserRuleCall_1_0_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_1_06684);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_1_06652);
             ruleEvent();
 
             state._fsp--;
@@ -8942,9 +8895,50 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Interval__EventAssignment_1_0"
 
 
-    // $ANTLR start "rule__Interval__LeftAssignment_1_2"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3344:1: rule__Interval__LeftAssignment_1_2 : ( ruleTimeStamp ) ;
-    public final void rule__Interval__LeftAssignment_1_2() throws RecognitionException {
+    // $ANTLR start "rule__Interval__LTimeAssignment_1_2"
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3329:1: rule__Interval__LTimeAssignment_1_2 : ( ruleTimeStamp ) ;
+    public final void rule__Interval__LTimeAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3333:1: ( ( ruleTimeStamp ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3334:1: ( ruleTimeStamp )
+            {
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3334:1: ( ruleTimeStamp )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3335:1: ruleTimeStamp
+            {
+             before(grammarAccess.getIntervalAccess().getLTimeTimeStampParserRuleCall_1_2_0()); 
+            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__LTimeAssignment_1_26683);
+            ruleTimeStamp();
+
+            state._fsp--;
+
+             after(grammarAccess.getIntervalAccess().getLTimeTimeStampParserRuleCall_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Interval__LTimeAssignment_1_2"
+
+
+    // $ANTLR start "rule__Interval__RTimeAssignment_1_4"
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3344:1: rule__Interval__RTimeAssignment_1_4 : ( ruleTimeStamp ) ;
+    public final void rule__Interval__RTimeAssignment_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -8955,13 +8949,13 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3349:1: ( ruleTimeStamp )
             // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3350:1: ruleTimeStamp
             {
-             before(grammarAccess.getIntervalAccess().getLeftTimeStampParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__LeftAssignment_1_26715);
+             before(grammarAccess.getIntervalAccess().getRTimeTimeStampParserRuleCall_1_4_0()); 
+            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__RTimeAssignment_1_46714);
             ruleTimeStamp();
 
             state._fsp--;
 
-             after(grammarAccess.getIntervalAccess().getLeftTimeStampParserRuleCall_1_2_0()); 
+             after(grammarAccess.getIntervalAccess().getRTimeTimeStampParserRuleCall_1_4_0()); 
 
             }
 
@@ -8980,65 +8974,24 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Interval__LeftAssignment_1_2"
-
-
-    // $ANTLR start "rule__Interval__RightAssignment_1_4"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3359:1: rule__Interval__RightAssignment_1_4 : ( ruleTimeStamp ) ;
-    public final void rule__Interval__RightAssignment_1_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3363:1: ( ( ruleTimeStamp ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3364:1: ( ruleTimeStamp )
-            {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3364:1: ( ruleTimeStamp )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3365:1: ruleTimeStamp
-            {
-             before(grammarAccess.getIntervalAccess().getRightTimeStampParserRuleCall_1_4_0()); 
-            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__RightAssignment_1_46746);
-            ruleTimeStamp();
-
-            state._fsp--;
-
-             after(grammarAccess.getIntervalAccess().getRightTimeStampParserRuleCall_1_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Interval__RightAssignment_1_4"
+    // $ANTLR end "rule__Interval__RTimeAssignment_1_4"
 
 
     // $ANTLR start "rule__Interval__EventAssignment_2_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3374:1: rule__Interval__EventAssignment_2_0 : ( ruleEvent ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3359:1: rule__Interval__EventAssignment_2_0 : ( ruleEvent ) ;
     public final void rule__Interval__EventAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3378:1: ( ( ruleEvent ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3379:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3363:1: ( ( ruleEvent ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3364:1: ( ruleEvent )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3379:1: ( ruleEvent )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3380:1: ruleEvent
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3364:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3365:1: ruleEvent
             {
              before(grammarAccess.getIntervalAccess().getEventEventParserRuleCall_2_0_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_2_06777);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_2_06745);
             ruleEvent();
 
             state._fsp--;
@@ -9065,26 +9018,26 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Interval__EventAssignment_2_0"
 
 
-    // $ANTLR start "rule__Interval__RightAssignment_2_3"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3389:1: rule__Interval__RightAssignment_2_3 : ( ruleTimeStamp ) ;
-    public final void rule__Interval__RightAssignment_2_3() throws RecognitionException {
+    // $ANTLR start "rule__Interval__RTimeAssignment_2_3"
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3374:1: rule__Interval__RTimeAssignment_2_3 : ( ruleTimeStamp ) ;
+    public final void rule__Interval__RTimeAssignment_2_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3393:1: ( ( ruleTimeStamp ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3394:1: ( ruleTimeStamp )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3378:1: ( ( ruleTimeStamp ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3379:1: ( ruleTimeStamp )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3394:1: ( ruleTimeStamp )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3395:1: ruleTimeStamp
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3379:1: ( ruleTimeStamp )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3380:1: ruleTimeStamp
             {
-             before(grammarAccess.getIntervalAccess().getRightTimeStampParserRuleCall_2_3_0()); 
-            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__RightAssignment_2_36808);
+             before(grammarAccess.getIntervalAccess().getRTimeTimeStampParserRuleCall_2_3_0()); 
+            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__RTimeAssignment_2_36776);
             ruleTimeStamp();
 
             state._fsp--;
 
-             after(grammarAccess.getIntervalAccess().getRightTimeStampParserRuleCall_2_3_0()); 
+             after(grammarAccess.getIntervalAccess().getRTimeTimeStampParserRuleCall_2_3_0()); 
 
             }
 
@@ -9103,24 +9056,24 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Interval__RightAssignment_2_3"
+    // $ANTLR end "rule__Interval__RTimeAssignment_2_3"
 
 
     // $ANTLR start "rule__Interval__EventAssignment_3_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3404:1: rule__Interval__EventAssignment_3_0 : ( ruleEvent ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3389:1: rule__Interval__EventAssignment_3_0 : ( ruleEvent ) ;
     public final void rule__Interval__EventAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3408:1: ( ( ruleEvent ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3409:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3393:1: ( ( ruleEvent ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3394:1: ( ruleEvent )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3409:1: ( ruleEvent )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3410:1: ruleEvent
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3394:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3395:1: ruleEvent
             {
              before(grammarAccess.getIntervalAccess().getEventEventParserRuleCall_3_0_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_3_06839);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_3_06807);
             ruleEvent();
 
             state._fsp--;
@@ -9147,26 +9100,26 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Interval__EventAssignment_3_0"
 
 
-    // $ANTLR start "rule__Interval__LeftAssignment_3_2"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3419:1: rule__Interval__LeftAssignment_3_2 : ( ruleTimeStamp ) ;
-    public final void rule__Interval__LeftAssignment_3_2() throws RecognitionException {
+    // $ANTLR start "rule__Interval__LTimeAssignment_3_2"
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3404:1: rule__Interval__LTimeAssignment_3_2 : ( ruleTimeStamp ) ;
+    public final void rule__Interval__LTimeAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3423:1: ( ( ruleTimeStamp ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3424:1: ( ruleTimeStamp )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3408:1: ( ( ruleTimeStamp ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3409:1: ( ruleTimeStamp )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3424:1: ( ruleTimeStamp )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3425:1: ruleTimeStamp
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3409:1: ( ruleTimeStamp )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3410:1: ruleTimeStamp
             {
-             before(grammarAccess.getIntervalAccess().getLeftTimeStampParserRuleCall_3_2_0()); 
-            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__LeftAssignment_3_26870);
+             before(grammarAccess.getIntervalAccess().getLTimeTimeStampParserRuleCall_3_2_0()); 
+            pushFollow(FOLLOW_ruleTimeStamp_in_rule__Interval__LTimeAssignment_3_26838);
             ruleTimeStamp();
 
             state._fsp--;
 
-             after(grammarAccess.getIntervalAccess().getLeftTimeStampParserRuleCall_3_2_0()); 
+             after(grammarAccess.getIntervalAccess().getLTimeTimeStampParserRuleCall_3_2_0()); 
 
             }
 
@@ -9185,24 +9138,24 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Interval__LeftAssignment_3_2"
+    // $ANTLR end "rule__Interval__LTimeAssignment_3_2"
 
 
     // $ANTLR start "rule__Interval__EventAssignment_4_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3434:1: rule__Interval__EventAssignment_4_0 : ( ruleEvent ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3419:1: rule__Interval__EventAssignment_4_0 : ( ruleEvent ) ;
     public final void rule__Interval__EventAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3438:1: ( ( ruleEvent ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3439:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3423:1: ( ( ruleEvent ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3424:1: ( ruleEvent )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3439:1: ( ruleEvent )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3440:1: ruleEvent
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3424:1: ( ruleEvent )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3425:1: ruleEvent
             {
              before(grammarAccess.getIntervalAccess().getEventEventParserRuleCall_4_0_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_4_06901);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_4_06869);
             ruleEvent();
 
             state._fsp--;
@@ -9230,20 +9183,20 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__NameAssignment_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3449:1: rule__Event__NameAssignment_0 : ( RULE_ID ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3434:1: rule__Event__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Event__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3453:1: ( ( RULE_ID ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3454:1: ( RULE_ID )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3438:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3439:1: ( RULE_ID )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3454:1: ( RULE_ID )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3455:1: RULE_ID
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3439:1: ( RULE_ID )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3440:1: RULE_ID
             {
              before(grammarAccess.getEventAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__NameAssignment_06932); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__NameAssignment_06900); 
              after(grammarAccess.getEventAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
@@ -9267,23 +9220,23 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__LifeStateAssignment_1_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3464:1: rule__Event__LifeStateAssignment_1_0 : ( ( rule__Event__LifeStateAlternatives_1_0_0 ) ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3449:1: rule__Event__LifeStateAssignment_1_0 : ( ( rule__Event__LifeStateAlternatives_1_0_0 ) ) ;
     public final void rule__Event__LifeStateAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3468:1: ( ( ( rule__Event__LifeStateAlternatives_1_0_0 ) ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3469:1: ( ( rule__Event__LifeStateAlternatives_1_0_0 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3453:1: ( ( ( rule__Event__LifeStateAlternatives_1_0_0 ) ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3454:1: ( ( rule__Event__LifeStateAlternatives_1_0_0 ) )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3469:1: ( ( rule__Event__LifeStateAlternatives_1_0_0 ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3470:1: ( rule__Event__LifeStateAlternatives_1_0_0 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3454:1: ( ( rule__Event__LifeStateAlternatives_1_0_0 ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3455:1: ( rule__Event__LifeStateAlternatives_1_0_0 )
             {
              before(grammarAccess.getEventAccess().getLifeStateAlternatives_1_0_0()); 
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3471:1: ( rule__Event__LifeStateAlternatives_1_0_0 )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3471:2: rule__Event__LifeStateAlternatives_1_0_0
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3456:1: ( rule__Event__LifeStateAlternatives_1_0_0 )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3456:2: rule__Event__LifeStateAlternatives_1_0_0
             {
-            pushFollow(FOLLOW_rule__Event__LifeStateAlternatives_1_0_0_in_rule__Event__LifeStateAssignment_1_06963);
+            pushFollow(FOLLOW_rule__Event__LifeStateAlternatives_1_0_0_in_rule__Event__LifeStateAssignment_1_06931);
             rule__Event__LifeStateAlternatives_1_0_0();
 
             state._fsp--;
@@ -9314,20 +9267,20 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Event__LabelAssignment_1_1"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3480:1: rule__Event__LabelAssignment_1_1 : ( RULE_ID ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3465:1: rule__Event__LabelAssignment_1_1 : ( RULE_ID ) ;
     public final void rule__Event__LabelAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3484:1: ( ( RULE_ID ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_ID )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3469:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3470:1: ( RULE_ID )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_ID )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3486:1: RULE_ID
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3470:1: ( RULE_ID )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3471:1: RULE_ID
             {
              before(grammarAccess.getEventAccess().getLabelIDTerminalRuleCall_1_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__LabelAssignment_1_16996); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__LabelAssignment_1_16964); 
              after(grammarAccess.getEventAccess().getLabelIDTerminalRuleCall_1_1_0()); 
 
             }
@@ -9351,20 +9304,20 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeStamp__ValAssignment_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3495:1: rule__TimeStamp__ValAssignment_0 : ( RULE_INT ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3480:1: rule__TimeStamp__ValAssignment_0 : ( RULE_INT ) ;
     public final void rule__TimeStamp__ValAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3499:1: ( ( RULE_INT ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3500:1: ( RULE_INT )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3484:1: ( ( RULE_INT ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_INT )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3500:1: ( RULE_INT )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3501:1: RULE_INT
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_INT )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3486:1: RULE_INT
             {
              before(grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TimeStamp__ValAssignment_07027); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TimeStamp__ValAssignment_06995); 
              after(grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); 
 
             }
@@ -9388,20 +9341,20 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeStamp__EventReferenceAssignment_1_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3510:1: rule__TimeStamp__EventReferenceAssignment_1_0 : ( RULE_ID ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3495:1: rule__TimeStamp__EventReferenceAssignment_1_0 : ( RULE_ID ) ;
     public final void rule__TimeStamp__EventReferenceAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3514:1: ( ( RULE_ID ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3515:1: ( RULE_ID )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3499:1: ( ( RULE_ID ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3500:1: ( RULE_ID )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3515:1: ( RULE_ID )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3516:1: RULE_ID
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3500:1: ( RULE_ID )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3501:1: RULE_ID
             {
              before(grammarAccess.getTimeStampAccess().getEventReferenceIDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TimeStamp__EventReferenceAssignment_1_07058); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TimeStamp__EventReferenceAssignment_1_07026); 
              after(grammarAccess.getTimeStampAccess().getEventReferenceIDTerminalRuleCall_1_0_0()); 
 
             }
@@ -9425,20 +9378,20 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeStamp__ShiftAssignment_1_1_1"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3525:1: rule__TimeStamp__ShiftAssignment_1_1_1 : ( RULE_INT ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3510:1: rule__TimeStamp__ShiftAssignment_1_1_1 : ( RULE_INT ) ;
     public final void rule__TimeStamp__ShiftAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3529:1: ( ( RULE_INT ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3530:1: ( RULE_INT )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3514:1: ( ( RULE_INT ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3515:1: ( RULE_INT )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3530:1: ( RULE_INT )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3531:1: RULE_INT
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3515:1: ( RULE_INT )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3516:1: RULE_INT
             {
              before(grammarAccess.getTimeStampAccess().getShiftINTTerminalRuleCall_1_1_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TimeStamp__ShiftAssignment_1_1_17089); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TimeStamp__ShiftAssignment_1_1_17057); 
              after(grammarAccess.getTimeStampAccess().getShiftINTTerminalRuleCall_1_1_1_0()); 
 
             }
@@ -9475,7 +9428,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
         "\1\33\1\30\5\33\1\35\1\uffff\1\30\1\35\1\16\1\32\2\uffff\2\35\2"+
         "\uffff\1\16";
     static final String DFA2_acceptS =
-        "\10\uffff\1\1\4\uffff\1\3\1\5\2\uffff\1\2\1\4\1\uffff";
+        "\10\uffff\1\1\4\uffff\1\5\1\3\2\uffff\1\2\1\4\1\uffff";
     static final String DFA2_specialS =
         "\24\uffff}>";
     static final String[] DFA2_transitionS = {
@@ -9489,7 +9442,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             "\1\12\14\uffff\1\14\1\uffff\1\13",
             "",
             "\1\10\3\uffff\1\10\2\uffff\6\10\1\7",
-            "\1\16\1\uffff\1\15\1\uffff\1\15",
+            "\1\15\1\uffff\1\16\1\uffff\1\16",
             "\1\17",
             "\1\17\13\uffff\1\20",
             "",
@@ -9575,267 +9528,266 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleTimeStamp_in_entryRuleTimeStamp781 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTimeStamp788 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TimeStamp__Alternatives_in_ruleTimeStamp814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BExpr__IntervalAssignment_0_in_rule__BExpr__Alternatives850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BExpr__Group_1__0_in_rule__BExpr__Alternatives868 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__EventAssignment_0_in_rule__Interval__Alternatives901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__0_in_rule__Interval__Alternatives919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__0_in_rule__Interval__Alternatives937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__0_in_rule__Interval__Alternatives955 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__0_in_rule__Interval__Alternatives973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__NameAssignment_0_in_rule__Event__Alternatives1006 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__0_in_rule__Event__Alternatives1024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CREATED_in_rule__Event__LifeStateAlternatives_1_0_01057 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DETACHED_in_rule__Event__LifeStateAlternatives_1_0_01074 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DISCHARGED_in_rule__Event__LifeStateAlternatives_1_0_01091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EXPIRED_in_rule__Event__LifeStateAlternatives_1_0_01108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_VIOLATED_in_rule__Event__LifeStateAlternatives_1_0_01125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__ValAssignment_0_in_rule__TimeStamp__Alternatives1157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__0_in_rule__TimeStamp__Alternatives1175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cupido__Group__0__Impl_in_rule__Cupido__Group__01206 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_rule__Cupido__Group__1_in_rule__Cupido__Group__01209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSchemata_in_rule__Cupido__Group__0__Impl1236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cupido__Group__1__Impl_in_rule__Cupido__Group__11265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Cupido__CommitmentsAssignment_1_in_rule__Cupido__Group__1__Impl1292 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_rule__Schemata__Group__0__Impl_in_rule__Schemata__Group__01327 = new BitSet(new long[]{0x00000000080001F0L});
-    public static final BitSet FOLLOW_rule__Schemata__Group__1_in_rule__Schemata__Group__01330 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SCHEMA_in_rule__Schemata__Group__0__Impl1357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Schemata__Group__1__Impl_in_rule__Schemata__Group__11386 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1415 = new BitSet(new long[]{0x00000000080001F2L});
-    public static final BitSet FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1427 = new BitSet(new long[]{0x00000000080001F2L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__0__Impl_in_rule__EventRelation__Group__01464 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__1_in_rule__EventRelation__Group__01467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__EventAssignment_0_in_rule__EventRelation__Group__0__Impl1494 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__1__Impl_in_rule__EventRelation__Group__11524 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__2_in_rule__EventRelation__Group__11527 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LPAREN_in_rule__EventRelation__Group__1__Impl1554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__2__Impl_in_rule__EventRelation__Group__21583 = new BitSet(new long[]{0x0000000000004800L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__3_in_rule__EventRelation__Group__21586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__ParamsAssignment_2_in_rule__EventRelation__Group__2__Impl1613 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__3__Impl_in_rule__EventRelation__Group__31643 = new BitSet(new long[]{0x0000000000004800L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__4_in_rule__EventRelation__Group__31646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_3__0_in_rule__EventRelation__Group__3__Impl1673 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__4__Impl_in_rule__EventRelation__Group__41704 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__5_in_rule__EventRelation__Group__41707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RPAREN_in_rule__EventRelation__Group__4__Impl1734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__5__Impl_in_rule__EventRelation__Group__51763 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__6_in_rule__EventRelation__Group__51766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_KEY_in_rule__EventRelation__Group__5__Impl1793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__6__Impl_in_rule__EventRelation__Group__61822 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__7_in_rule__EventRelation__Group__61825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__KeyParamsAssignment_6_in_rule__EventRelation__Group__6__Impl1852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__7__Impl_in_rule__EventRelation__Group__71882 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__8_in_rule__EventRelation__Group__71885 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_7__0_in_rule__EventRelation__Group__7__Impl1912 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__8__Impl_in_rule__EventRelation__Group__81943 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__9_in_rule__EventRelation__Group__81946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TIME_in_rule__EventRelation__Group__8__Impl1973 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group__9__Impl_in_rule__EventRelation__Group__92002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__TimeParamAssignment_9_in_rule__EventRelation__Group__9__Impl2029 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_3__0__Impl_in_rule__EventRelation__Group_3__02079 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_3__1_in_rule__EventRelation__Group_3__02082 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_3__0__Impl2109 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_3__1__Impl_in_rule__EventRelation__Group_3__12138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__ParamsAssignment_3_1_in_rule__EventRelation__Group_3__1__Impl2165 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_7__0__Impl_in_rule__EventRelation__Group_7__02199 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_7__1_in_rule__EventRelation__Group_7__02202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_7__0__Impl2229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__Group_7__1__Impl_in_rule__EventRelation__Group_7__12258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EventRelation__KeyParamsAssignment_7_1_in_rule__EventRelation__Group_7__1__Impl2285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__0__Impl_in_rule__Commitment__Group__02319 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__1_in_rule__Commitment__Group__02322 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMIT_in_rule__Commitment__Group__0__Impl2349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__1__Impl_in_rule__Commitment__Group__12378 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__2_in_rule__Commitment__Group__12381 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__LabelAssignment_1_in_rule__Commitment__Group__1__Impl2408 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__2__Impl_in_rule__Commitment__Group__22438 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__3_in_rule__Commitment__Group__22441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__DebtorAssignment_2_in_rule__Commitment__Group__2__Impl2468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__3__Impl_in_rule__Commitment__Group__32498 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__4_in_rule__Commitment__Group__32501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_TO_in_rule__Commitment__Group__3__Impl2528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__4__Impl_in_rule__Commitment__Group__42557 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__5_in_rule__Commitment__Group__42560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__CreditorAssignment_4_in_rule__Commitment__Group__4__Impl2587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__5__Impl_in_rule__Commitment__Group__52617 = new BitSet(new long[]{0x00000000080005F0L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__6_in_rule__Commitment__Group__52620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_CREATE_in_rule__Commitment__Group__5__Impl2647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__6__Impl_in_rule__Commitment__Group__62676 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__7_in_rule__Commitment__Group__62679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__TriggerAssignment_6_in_rule__Commitment__Group__6__Impl2706 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__7__Impl_in_rule__Commitment__Group__72736 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__8_in_rule__Commitment__Group__72739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group_7__0_in_rule__Commitment__Group__7__Impl2766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__8__Impl_in_rule__Commitment__Group__82797 = new BitSet(new long[]{0x00000000080005F0L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__9_in_rule__Commitment__Group__82800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DISCHARGE_in_rule__Commitment__Group__8__Impl2827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group__9__Impl_in_rule__Commitment__Group__92856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__ConsequentAssignment_9_in_rule__Commitment__Group__9__Impl2883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group_7__0__Impl_in_rule__Commitment__Group_7__02933 = new BitSet(new long[]{0x00000000080005F0L});
-    public static final BitSet FOLLOW_rule__Commitment__Group_7__1_in_rule__Commitment__Group_7__02936 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DETACH_in_rule__Commitment__Group_7__0__Impl2963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__Group_7__1__Impl_in_rule__Commitment__Group_7__12992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Commitment__AntecedentAssignment_7_1_in_rule__Commitment__Group_7__1__Impl3019 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EExpr__Group__0__Impl_in_rule__EExpr__Group__03053 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__EExpr__Group__1_in_rule__EExpr__Group__03056 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOExpr_in_rule__EExpr__Group__0__Impl3083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EExpr__Group__1__Impl_in_rule__EExpr__Group__13112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EExpr__Group_1__0_in_rule__EExpr__Group__1__Impl3139 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_rule__EExpr__Group_1__0__Impl_in_rule__EExpr__Group_1__03174 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_rule__EExpr__Group_1__1_in_rule__EExpr__Group_1__03177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EExpr__Group_1__1__Impl_in_rule__EExpr__Group_1__13235 = new BitSet(new long[]{0x00000000080005F0L});
-    public static final BitSet FOLLOW_rule__EExpr__Group_1__2_in_rule__EExpr__Group_1__13238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_EXCEPT_in_rule__EExpr__Group_1__1__Impl3265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EExpr__Group_1__2__Impl_in_rule__EExpr__Group_1__23294 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__EExpr__RightAssignment_1_2_in_rule__EExpr__Group_1__2__Impl3321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OExpr__Group__0__Impl_in_rule__OExpr__Group__03357 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__OExpr__Group__1_in_rule__OExpr__Group__03360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAExpr_in_rule__OExpr__Group__0__Impl3387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OExpr__Group__1__Impl_in_rule__OExpr__Group__13416 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OExpr__Group_1__0_in_rule__OExpr__Group__1__Impl3443 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_rule__OExpr__Group_1__0__Impl_in_rule__OExpr__Group_1__03478 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__OExpr__Group_1__1_in_rule__OExpr__Group_1__03481 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OExpr__Group_1__1__Impl_in_rule__OExpr__Group_1__13539 = new BitSet(new long[]{0x00000000080005F0L});
-    public static final BitSet FOLLOW_rule__OExpr__Group_1__2_in_rule__OExpr__Group_1__13542 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_OR_in_rule__OExpr__Group_1__1__Impl3569 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OExpr__Group_1__2__Impl_in_rule__OExpr__Group_1__23598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OExpr__RightAssignment_1_2_in_rule__OExpr__Group_1__2__Impl3625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AExpr__Group__0__Impl_in_rule__AExpr__Group__03661 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__AExpr__Group__1_in_rule__AExpr__Group__03664 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWExpr_in_rule__AExpr__Group__0__Impl3691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AExpr__Group__1__Impl_in_rule__AExpr__Group__13720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AExpr__Group_1__0_in_rule__AExpr__Group__1__Impl3747 = new BitSet(new long[]{0x0000000000400002L});
-    public static final BitSet FOLLOW_rule__AExpr__Group_1__0__Impl_in_rule__AExpr__Group_1__03782 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__AExpr__Group_1__1_in_rule__AExpr__Group_1__03785 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AExpr__Group_1__1__Impl_in_rule__AExpr__Group_1__13843 = new BitSet(new long[]{0x00000000080005F0L});
-    public static final BitSet FOLLOW_rule__AExpr__Group_1__2_in_rule__AExpr__Group_1__13846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_AND_in_rule__AExpr__Group_1__1__Impl3873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AExpr__Group_1__2__Impl_in_rule__AExpr__Group_1__23902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AExpr__RightAssignment_1_2_in_rule__AExpr__Group_1__2__Impl3929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WExpr__Group__0__Impl_in_rule__WExpr__Group__03965 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__WExpr__Group__1_in_rule__WExpr__Group__03968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBExpr_in_rule__WExpr__Group__0__Impl3995 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WExpr__Group__1__Impl_in_rule__WExpr__Group__14024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WExpr__Group_1__0_in_rule__WExpr__Group__1__Impl4051 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_rule__WExpr__Group_1__0__Impl_in_rule__WExpr__Group_1__04086 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__WExpr__Group_1__1_in_rule__WExpr__Group_1__04089 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WExpr__Group_1__1__Impl_in_rule__WExpr__Group_1__14147 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__WExpr__Group_1__2_in_rule__WExpr__Group_1__14150 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WHERE_in_rule__WExpr__Group_1__1__Impl4177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WExpr__Group_1__2__Impl_in_rule__WExpr__Group_1__24206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__WExpr__RightAssignment_1_2_in_rule__WExpr__Group_1__2__Impl4233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BExpr__Group_1__0__Impl_in_rule__BExpr__Group_1__04269 = new BitSet(new long[]{0x00000000080005F0L});
-    public static final BitSet FOLLOW_rule__BExpr__Group_1__1_in_rule__BExpr__Group_1__04272 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LPAREN_in_rule__BExpr__Group_1__0__Impl4299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BExpr__Group_1__1__Impl_in_rule__BExpr__Group_1__14328 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_rule__BExpr__Group_1__2_in_rule__BExpr__Group_1__14331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEExpr_in_rule__BExpr__Group_1__1__Impl4358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BExpr__Group_1__2__Impl_in_rule__BExpr__Group_1__24387 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RPAREN_in_rule__BExpr__Group_1__2__Impl4414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__0__Impl_in_rule__Interval__Group_1__04449 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__1_in_rule__Interval__Group_1__04452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__EventAssignment_1_0_in_rule__Interval__Group_1__0__Impl4479 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__1__Impl_in_rule__Interval__Group_1__14509 = new BitSet(new long[]{0x0000000028000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__2_in_rule__Interval__Group_1__14512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_1__1__Impl4539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__2__Impl_in_rule__Interval__Group_1__24568 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__3_in_rule__Interval__Group_1__24571 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__LeftAssignment_1_2_in_rule__Interval__Group_1__2__Impl4598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__3__Impl_in_rule__Interval__Group_1__34628 = new BitSet(new long[]{0x0000000028000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__4_in_rule__Interval__Group_1__34631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_1__3__Impl4658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__4__Impl_in_rule__Interval__Group_1__44687 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__5_in_rule__Interval__Group_1__44690 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__RightAssignment_1_4_in_rule__Interval__Group_1__4__Impl4717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__5__Impl_in_rule__Interval__Group_1__54747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_1__5__Impl4774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__0__Impl_in_rule__Interval__Group_2__04815 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__1_in_rule__Interval__Group_2__04818 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__EventAssignment_2_0_in_rule__Interval__Group_2__0__Impl4845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__1__Impl_in_rule__Interval__Group_2__14875 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__2_in_rule__Interval__Group_2__14878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_2__1__Impl4905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__2__Impl_in_rule__Interval__Group_2__24934 = new BitSet(new long[]{0x0000000028000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__3_in_rule__Interval__Group_2__24937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_2__2__Impl4964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__3__Impl_in_rule__Interval__Group_2__34993 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__4_in_rule__Interval__Group_2__34996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__RightAssignment_2_3_in_rule__Interval__Group_2__3__Impl5023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__4__Impl_in_rule__Interval__Group_2__45053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_2__4__Impl5080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__0__Impl_in_rule__Interval__Group_3__05119 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__1_in_rule__Interval__Group_3__05122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__EventAssignment_3_0_in_rule__Interval__Group_3__0__Impl5149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__1__Impl_in_rule__Interval__Group_3__15179 = new BitSet(new long[]{0x0000000028000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__2_in_rule__Interval__Group_3__15182 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_3__1__Impl5209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__2__Impl_in_rule__Interval__Group_3__25238 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__3_in_rule__Interval__Group_3__25241 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__LeftAssignment_3_2_in_rule__Interval__Group_3__2__Impl5268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__3__Impl_in_rule__Interval__Group_3__35298 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__4_in_rule__Interval__Group_3__35301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_3__3__Impl5328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__4__Impl_in_rule__Interval__Group_3__45357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_3__4__Impl5384 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__0__Impl_in_rule__Interval__Group_4__05423 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__1_in_rule__Interval__Group_4__05426 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__EventAssignment_4_0_in_rule__Interval__Group_4__0__Impl5453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__1__Impl_in_rule__Interval__Group_4__15483 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__2_in_rule__Interval__Group_4__15486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_4__1__Impl5513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__2__Impl_in_rule__Interval__Group_4__25542 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__3_in_rule__Interval__Group_4__25545 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_4__2__Impl5572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_4__3__Impl_in_rule__Interval__Group_4__35601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_4__3__Impl5628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__05665 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__05668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__LifeStateAssignment_1_0_in_rule__Event__Group_1__0__Impl5695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__15725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__LabelAssignment_1_1_in_rule__Event__Group_1__1__Impl5752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__0__Impl_in_rule__TimeStamp__Group_1__05786 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__1_in_rule__TimeStamp__Group_1__05789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__EventReferenceAssignment_1_0_in_rule__TimeStamp__Group_1__0__Impl5816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__1__Impl_in_rule__TimeStamp__Group_1__15846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__0_in_rule__TimeStamp__Group_1__1__Impl5873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__0__Impl_in_rule__TimeStamp__Group_1_1__05908 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__1_in_rule__TimeStamp__Group_1_1__05911 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_PLUS_in_rule__TimeStamp__Group_1_1__0__Impl5938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__1__Impl_in_rule__TimeStamp__Group_1_1__15967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TimeStamp__ShiftAssignment_1_1_1_in_rule__TimeStamp__Group_1_1__1__Impl5994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCommitment_in_rule__Cupido__CommitmentsAssignment_16033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEventRelation_in_rule__Schemata__SchemataAssignment_16064 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__EventRelation__EventAssignment_06095 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_26126 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_3_16157 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_66188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_7_16219 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__TimeParamAssignment_96250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Param__NameAssignment6281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Commitment__LabelAssignment_16312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Commitment__DebtorAssignment_26343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Commitment__CreditorAssignment_46374 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEExpr_in_rule__Commitment__TriggerAssignment_66405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEExpr_in_rule__Commitment__AntecedentAssignment_7_16436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEExpr_in_rule__Commitment__ConsequentAssignment_96467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOExpr_in_rule__EExpr__RightAssignment_1_26498 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAExpr_in_rule__OExpr__RightAssignment_1_26529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWExpr_in_rule__AExpr__RightAssignment_1_26560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__WExpr__RightAssignment_1_26591 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInterval_in_rule__BExpr__IntervalAssignment_06622 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_06653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_1_06684 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__LeftAssignment_1_26715 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__RightAssignment_1_46746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_2_06777 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__RightAssignment_2_36808 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_3_06839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__LeftAssignment_3_26870 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_4_06901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__NameAssignment_06932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Event__LifeStateAlternatives_1_0_0_in_rule__Event__LifeStateAssignment_1_06963 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__LabelAssignment_1_16996 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__TimeStamp__ValAssignment_07027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__TimeStamp__EventReferenceAssignment_1_07058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__TimeStamp__ShiftAssignment_1_1_17089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInterval_in_rule__BExpr__Alternatives850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BExpr__Group_1__0_in_rule__BExpr__Alternatives867 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__EventAssignment_0_in_rule__Interval__Alternatives900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__0_in_rule__Interval__Alternatives918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__0_in_rule__Interval__Alternatives936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__0_in_rule__Interval__Alternatives954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__0_in_rule__Interval__Alternatives972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__NameAssignment_0_in_rule__Event__Alternatives1005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__0_in_rule__Event__Alternatives1023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CREATED_in_rule__Event__LifeStateAlternatives_1_0_01056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DETACHED_in_rule__Event__LifeStateAlternatives_1_0_01073 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DISCHARGED_in_rule__Event__LifeStateAlternatives_1_0_01090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EXPIRED_in_rule__Event__LifeStateAlternatives_1_0_01107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_VIOLATED_in_rule__Event__LifeStateAlternatives_1_0_01124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__ValAssignment_0_in_rule__TimeStamp__Alternatives1156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__0_in_rule__TimeStamp__Alternatives1174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cupido__Group__0__Impl_in_rule__Cupido__Group__01205 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_rule__Cupido__Group__1_in_rule__Cupido__Group__01208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSchemata_in_rule__Cupido__Group__0__Impl1235 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cupido__Group__1__Impl_in_rule__Cupido__Group__11264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Cupido__CommitmentsAssignment_1_in_rule__Cupido__Group__1__Impl1291 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_rule__Schemata__Group__0__Impl_in_rule__Schemata__Group__01326 = new BitSet(new long[]{0x00000000080001F0L});
+    public static final BitSet FOLLOW_rule__Schemata__Group__1_in_rule__Schemata__Group__01329 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_SCHEMA_in_rule__Schemata__Group__0__Impl1356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Schemata__Group__1__Impl_in_rule__Schemata__Group__11385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1414 = new BitSet(new long[]{0x00000000080001F2L});
+    public static final BitSet FOLLOW_rule__Schemata__SchemataAssignment_1_in_rule__Schemata__Group__1__Impl1426 = new BitSet(new long[]{0x00000000080001F2L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__0__Impl_in_rule__EventRelation__Group__01463 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__1_in_rule__EventRelation__Group__01466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__EventAssignment_0_in_rule__EventRelation__Group__0__Impl1493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__1__Impl_in_rule__EventRelation__Group__11523 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__2_in_rule__EventRelation__Group__11526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LPAREN_in_rule__EventRelation__Group__1__Impl1553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__2__Impl_in_rule__EventRelation__Group__21582 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__3_in_rule__EventRelation__Group__21585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__ParamsAssignment_2_in_rule__EventRelation__Group__2__Impl1612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__3__Impl_in_rule__EventRelation__Group__31642 = new BitSet(new long[]{0x0000000000004800L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__4_in_rule__EventRelation__Group__31645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_3__0_in_rule__EventRelation__Group__3__Impl1672 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__4__Impl_in_rule__EventRelation__Group__41703 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__5_in_rule__EventRelation__Group__41706 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RPAREN_in_rule__EventRelation__Group__4__Impl1733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__5__Impl_in_rule__EventRelation__Group__51762 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__6_in_rule__EventRelation__Group__51765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_KEY_in_rule__EventRelation__Group__5__Impl1792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__6__Impl_in_rule__EventRelation__Group__61821 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__7_in_rule__EventRelation__Group__61824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__KeyParamsAssignment_6_in_rule__EventRelation__Group__6__Impl1851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__7__Impl_in_rule__EventRelation__Group__71881 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__8_in_rule__EventRelation__Group__71884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_7__0_in_rule__EventRelation__Group__7__Impl1911 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__8__Impl_in_rule__EventRelation__Group__81942 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__9_in_rule__EventRelation__Group__81945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TIME_in_rule__EventRelation__Group__8__Impl1972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group__9__Impl_in_rule__EventRelation__Group__92001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__TimeParamAssignment_9_in_rule__EventRelation__Group__9__Impl2028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_3__0__Impl_in_rule__EventRelation__Group_3__02078 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_3__1_in_rule__EventRelation__Group_3__02081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_3__0__Impl2108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_3__1__Impl_in_rule__EventRelation__Group_3__12137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__ParamsAssignment_3_1_in_rule__EventRelation__Group_3__1__Impl2164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_7__0__Impl_in_rule__EventRelation__Group_7__02198 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_7__1_in_rule__EventRelation__Group_7__02201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_rule__EventRelation__Group_7__0__Impl2228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__Group_7__1__Impl_in_rule__EventRelation__Group_7__12257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EventRelation__KeyParamsAssignment_7_1_in_rule__EventRelation__Group_7__1__Impl2284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__0__Impl_in_rule__Commitment__Group__02318 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__1_in_rule__Commitment__Group__02321 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMIT_in_rule__Commitment__Group__0__Impl2348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__1__Impl_in_rule__Commitment__Group__12377 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__2_in_rule__Commitment__Group__12380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__LabelAssignment_1_in_rule__Commitment__Group__1__Impl2407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__2__Impl_in_rule__Commitment__Group__22437 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__3_in_rule__Commitment__Group__22440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__DebtorAssignment_2_in_rule__Commitment__Group__2__Impl2467 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__3__Impl_in_rule__Commitment__Group__32497 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__4_in_rule__Commitment__Group__32500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_TO_in_rule__Commitment__Group__3__Impl2527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__4__Impl_in_rule__Commitment__Group__42556 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__5_in_rule__Commitment__Group__42559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__CreditorAssignment_4_in_rule__Commitment__Group__4__Impl2586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__5__Impl_in_rule__Commitment__Group__52616 = new BitSet(new long[]{0x00000000080005F0L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__6_in_rule__Commitment__Group__52619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_CREATE_in_rule__Commitment__Group__5__Impl2646 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__6__Impl_in_rule__Commitment__Group__62675 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__7_in_rule__Commitment__Group__62678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__TriggerAssignment_6_in_rule__Commitment__Group__6__Impl2705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__7__Impl_in_rule__Commitment__Group__72735 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__8_in_rule__Commitment__Group__72738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group_7__0_in_rule__Commitment__Group__7__Impl2765 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__8__Impl_in_rule__Commitment__Group__82796 = new BitSet(new long[]{0x00000000080005F0L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__9_in_rule__Commitment__Group__82799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DISCHARGE_in_rule__Commitment__Group__8__Impl2826 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group__9__Impl_in_rule__Commitment__Group__92855 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__ConsequentAssignment_9_in_rule__Commitment__Group__9__Impl2882 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group_7__0__Impl_in_rule__Commitment__Group_7__02932 = new BitSet(new long[]{0x00000000080005F0L});
+    public static final BitSet FOLLOW_rule__Commitment__Group_7__1_in_rule__Commitment__Group_7__02935 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DETACH_in_rule__Commitment__Group_7__0__Impl2962 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__Group_7__1__Impl_in_rule__Commitment__Group_7__12991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Commitment__AntecedentAssignment_7_1_in_rule__Commitment__Group_7__1__Impl3018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EExpr__Group__0__Impl_in_rule__EExpr__Group__03052 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__EExpr__Group__1_in_rule__EExpr__Group__03055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOExpr_in_rule__EExpr__Group__0__Impl3082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EExpr__Group__1__Impl_in_rule__EExpr__Group__13111 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EExpr__Group_1__0_in_rule__EExpr__Group__1__Impl3138 = new BitSet(new long[]{0x0000000000100002L});
+    public static final BitSet FOLLOW_rule__EExpr__Group_1__0__Impl_in_rule__EExpr__Group_1__03173 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_rule__EExpr__Group_1__1_in_rule__EExpr__Group_1__03176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EExpr__Group_1__1__Impl_in_rule__EExpr__Group_1__13234 = new BitSet(new long[]{0x00000000080005F0L});
+    public static final BitSet FOLLOW_rule__EExpr__Group_1__2_in_rule__EExpr__Group_1__13237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_EXCEPT_in_rule__EExpr__Group_1__1__Impl3264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EExpr__Group_1__2__Impl_in_rule__EExpr__Group_1__23293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__EExpr__RightAssignment_1_2_in_rule__EExpr__Group_1__2__Impl3320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OExpr__Group__0__Impl_in_rule__OExpr__Group__03356 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__OExpr__Group__1_in_rule__OExpr__Group__03359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAExpr_in_rule__OExpr__Group__0__Impl3386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OExpr__Group__1__Impl_in_rule__OExpr__Group__13415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OExpr__Group_1__0_in_rule__OExpr__Group__1__Impl3442 = new BitSet(new long[]{0x0000000000200002L});
+    public static final BitSet FOLLOW_rule__OExpr__Group_1__0__Impl_in_rule__OExpr__Group_1__03477 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__OExpr__Group_1__1_in_rule__OExpr__Group_1__03480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OExpr__Group_1__1__Impl_in_rule__OExpr__Group_1__13538 = new BitSet(new long[]{0x00000000080005F0L});
+    public static final BitSet FOLLOW_rule__OExpr__Group_1__2_in_rule__OExpr__Group_1__13541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_OR_in_rule__OExpr__Group_1__1__Impl3568 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OExpr__Group_1__2__Impl_in_rule__OExpr__Group_1__23597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OExpr__RightAssignment_1_2_in_rule__OExpr__Group_1__2__Impl3624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AExpr__Group__0__Impl_in_rule__AExpr__Group__03660 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_rule__AExpr__Group__1_in_rule__AExpr__Group__03663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWExpr_in_rule__AExpr__Group__0__Impl3690 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AExpr__Group__1__Impl_in_rule__AExpr__Group__13719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AExpr__Group_1__0_in_rule__AExpr__Group__1__Impl3746 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_rule__AExpr__Group_1__0__Impl_in_rule__AExpr__Group_1__03781 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_rule__AExpr__Group_1__1_in_rule__AExpr__Group_1__03784 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AExpr__Group_1__1__Impl_in_rule__AExpr__Group_1__13842 = new BitSet(new long[]{0x00000000080005F0L});
+    public static final BitSet FOLLOW_rule__AExpr__Group_1__2_in_rule__AExpr__Group_1__13845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_AND_in_rule__AExpr__Group_1__1__Impl3872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AExpr__Group_1__2__Impl_in_rule__AExpr__Group_1__23901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AExpr__RightAssignment_1_2_in_rule__AExpr__Group_1__2__Impl3928 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WExpr__Group__0__Impl_in_rule__WExpr__Group__03964 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__WExpr__Group__1_in_rule__WExpr__Group__03967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBExpr_in_rule__WExpr__Group__0__Impl3994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WExpr__Group__1__Impl_in_rule__WExpr__Group__14023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WExpr__Group_1__0_in_rule__WExpr__Group__1__Impl4050 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_rule__WExpr__Group_1__0__Impl_in_rule__WExpr__Group_1__04085 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__WExpr__Group_1__1_in_rule__WExpr__Group_1__04088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WExpr__Group_1__1__Impl_in_rule__WExpr__Group_1__14146 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__WExpr__Group_1__2_in_rule__WExpr__Group_1__14149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WHERE_in_rule__WExpr__Group_1__1__Impl4176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WExpr__Group_1__2__Impl_in_rule__WExpr__Group_1__24205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__WExpr__RightAssignment_1_2_in_rule__WExpr__Group_1__2__Impl4232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BExpr__Group_1__0__Impl_in_rule__BExpr__Group_1__04268 = new BitSet(new long[]{0x00000000080005F0L});
+    public static final BitSet FOLLOW_rule__BExpr__Group_1__1_in_rule__BExpr__Group_1__04271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LPAREN_in_rule__BExpr__Group_1__0__Impl4298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BExpr__Group_1__1__Impl_in_rule__BExpr__Group_1__14327 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_rule__BExpr__Group_1__2_in_rule__BExpr__Group_1__14330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEExpr_in_rule__BExpr__Group_1__1__Impl4357 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BExpr__Group_1__2__Impl_in_rule__BExpr__Group_1__24386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RPAREN_in_rule__BExpr__Group_1__2__Impl4413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__0__Impl_in_rule__Interval__Group_1__04448 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__1_in_rule__Interval__Group_1__04451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__EventAssignment_1_0_in_rule__Interval__Group_1__0__Impl4478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__1__Impl_in_rule__Interval__Group_1__14508 = new BitSet(new long[]{0x0000000028000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__2_in_rule__Interval__Group_1__14511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_1__1__Impl4538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__2__Impl_in_rule__Interval__Group_1__24567 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__3_in_rule__Interval__Group_1__24570 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__LTimeAssignment_1_2_in_rule__Interval__Group_1__2__Impl4597 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__3__Impl_in_rule__Interval__Group_1__34627 = new BitSet(new long[]{0x0000000028000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__4_in_rule__Interval__Group_1__34630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_1__3__Impl4657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__4__Impl_in_rule__Interval__Group_1__44686 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__5_in_rule__Interval__Group_1__44689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__RTimeAssignment_1_4_in_rule__Interval__Group_1__4__Impl4716 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__5__Impl_in_rule__Interval__Group_1__54746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_1__5__Impl4773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__0__Impl_in_rule__Interval__Group_2__04814 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__1_in_rule__Interval__Group_2__04817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__EventAssignment_2_0_in_rule__Interval__Group_2__0__Impl4844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__1__Impl_in_rule__Interval__Group_2__14874 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__2_in_rule__Interval__Group_2__14877 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_2__1__Impl4904 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__2__Impl_in_rule__Interval__Group_2__24933 = new BitSet(new long[]{0x0000000028000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__3_in_rule__Interval__Group_2__24936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_2__2__Impl4963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__3__Impl_in_rule__Interval__Group_2__34992 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__4_in_rule__Interval__Group_2__34995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__RTimeAssignment_2_3_in_rule__Interval__Group_2__3__Impl5022 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__4__Impl_in_rule__Interval__Group_2__45052 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_2__4__Impl5079 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__0__Impl_in_rule__Interval__Group_3__05118 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__1_in_rule__Interval__Group_3__05121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__EventAssignment_3_0_in_rule__Interval__Group_3__0__Impl5148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__1__Impl_in_rule__Interval__Group_3__15178 = new BitSet(new long[]{0x0000000028000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__2_in_rule__Interval__Group_3__15181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_3__1__Impl5208 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__2__Impl_in_rule__Interval__Group_3__25237 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__3_in_rule__Interval__Group_3__25240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__LTimeAssignment_3_2_in_rule__Interval__Group_3__2__Impl5267 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__3__Impl_in_rule__Interval__Group_3__35297 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__4_in_rule__Interval__Group_3__35300 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_3__3__Impl5327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__4__Impl_in_rule__Interval__Group_3__45356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_3__4__Impl5383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__0__Impl_in_rule__Interval__Group_4__05422 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__1_in_rule__Interval__Group_4__05425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__EventAssignment_4_0_in_rule__Interval__Group_4__0__Impl5452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__1__Impl_in_rule__Interval__Group_4__15482 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__2_in_rule__Interval__Group_4__15485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_4__1__Impl5512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__2__Impl_in_rule__Interval__Group_4__25541 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__3_in_rule__Interval__Group_4__25544 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_4__2__Impl5571 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Interval__Group_4__3__Impl_in_rule__Interval__Group_4__35600 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_RBRACKET_in_rule__Interval__Group_4__3__Impl5627 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__0__Impl_in_rule__Event__Group_1__05664 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__1_in_rule__Event__Group_1__05667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__LifeStateAssignment_1_0_in_rule__Event__Group_1__0__Impl5694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__Group_1__1__Impl_in_rule__Event__Group_1__15724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__LabelAssignment_1_1_in_rule__Event__Group_1__1__Impl5751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__0__Impl_in_rule__TimeStamp__Group_1__05785 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__1_in_rule__TimeStamp__Group_1__05788 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__EventReferenceAssignment_1_0_in_rule__TimeStamp__Group_1__0__Impl5815 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1__1__Impl_in_rule__TimeStamp__Group_1__15845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__0_in_rule__TimeStamp__Group_1__1__Impl5872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__0__Impl_in_rule__TimeStamp__Group_1_1__05907 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__1_in_rule__TimeStamp__Group_1_1__05910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_PLUS_in_rule__TimeStamp__Group_1_1__0__Impl5937 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__Group_1_1__1__Impl_in_rule__TimeStamp__Group_1_1__15966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TimeStamp__ShiftAssignment_1_1_1_in_rule__TimeStamp__Group_1_1__1__Impl5993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCommitment_in_rule__Cupido__CommitmentsAssignment_16032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEventRelation_in_rule__Schemata__SchemataAssignment_16063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__EventRelation__EventAssignment_06094 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_26125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__ParamsAssignment_3_16156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_66187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__KeyParamsAssignment_7_16218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParam_in_rule__EventRelation__TimeParamAssignment_96249 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Param__NameAssignment6280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Commitment__LabelAssignment_16311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Commitment__DebtorAssignment_26342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Commitment__CreditorAssignment_46373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEExpr_in_rule__Commitment__TriggerAssignment_66404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEExpr_in_rule__Commitment__AntecedentAssignment_7_16435 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEExpr_in_rule__Commitment__ConsequentAssignment_96466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOExpr_in_rule__EExpr__RightAssignment_1_26497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAExpr_in_rule__OExpr__RightAssignment_1_26528 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWExpr_in_rule__AExpr__RightAssignment_1_26559 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__WExpr__RightAssignment_1_26590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_06621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_1_06652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__LTimeAssignment_1_26683 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__RTimeAssignment_1_46714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_2_06745 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__RTimeAssignment_2_36776 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_3_06807 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTimeStamp_in_rule__Interval__LTimeAssignment_3_26838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Interval__EventAssignment_4_06869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__NameAssignment_06900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Event__LifeStateAlternatives_1_0_0_in_rule__Event__LifeStateAssignment_1_06931 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__LabelAssignment_1_16964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__TimeStamp__ValAssignment_06995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__TimeStamp__EventReferenceAssignment_1_07026 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__TimeStamp__ShiftAssignment_1_1_17057 = new BitSet(new long[]{0x0000000000000002L});
 
 }

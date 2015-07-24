@@ -741,25 +741,16 @@ ruleBExpr returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
 (
-		{ 
-	        newCompositeNode(grammarAccess.getBExprAccess().getIntervalIntervalParserRuleCall_0_0()); 
-	    }
-		lv_interval_0_0=ruleInterval		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getBExprRule());
-	        }
-       		set(
-       			$current, 
-       			"interval",
-        		lv_interval_0_0, 
-        		"Interval");
-	        afterParserOrEnumRuleCall();
-	    }
+    { 
+        newCompositeNode(grammarAccess.getBExprAccess().getIntervalParserRuleCall_0()); 
+    }
+    this_Interval_0=ruleInterval
+    { 
+        $current = $this_Interval_0.current; 
+        afterParserOrEnumRuleCall();
+    }
 
-)
-)
     |(this_LPAREN_1=RULE_LPAREN
     { 
     newLeafNode(this_LPAREN_1, grammarAccess.getBExprAccess().getLPARENTerminalRuleCall_1_0()); 
@@ -842,16 +833,16 @@ ruleInterval returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntervalAccess().getLeftTimeStampParserRuleCall_1_2_0()); 
+	        newCompositeNode(grammarAccess.getIntervalAccess().getLTimeTimeStampParserRuleCall_1_2_0()); 
 	    }
-		lv_left_3_0=ruleTimeStamp		{
+		lv_lTime_3_0=ruleTimeStamp		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getIntervalRule());
 	        }
        		set(
        			$current, 
-       			"left",
-        		lv_left_3_0, 
+       			"lTime",
+        		lv_lTime_3_0, 
         		"TimeStamp");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -864,16 +855,16 @@ ruleInterval returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntervalAccess().getRightTimeStampParserRuleCall_1_4_0()); 
+	        newCompositeNode(grammarAccess.getIntervalAccess().getRTimeTimeStampParserRuleCall_1_4_0()); 
 	    }
-		lv_right_5_0=ruleTimeStamp		{
+		lv_rTime_5_0=ruleTimeStamp		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getIntervalRule());
 	        }
        		set(
        			$current, 
-       			"right",
-        		lv_right_5_0, 
+       			"rTime",
+        		lv_rTime_5_0, 
         		"TimeStamp");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -913,16 +904,16 @@ this_COMMA_9=RULE_COMMA
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntervalAccess().getRightTimeStampParserRuleCall_2_3_0()); 
+	        newCompositeNode(grammarAccess.getIntervalAccess().getRTimeTimeStampParserRuleCall_2_3_0()); 
 	    }
-		lv_right_10_0=ruleTimeStamp		{
+		lv_rTime_10_0=ruleTimeStamp		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getIntervalRule());
 	        }
        		set(
        			$current, 
-       			"right",
-        		lv_right_10_0, 
+       			"rTime",
+        		lv_rTime_10_0, 
         		"TimeStamp");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -958,16 +949,16 @@ this_COMMA_9=RULE_COMMA
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getIntervalAccess().getLeftTimeStampParserRuleCall_3_2_0()); 
+	        newCompositeNode(grammarAccess.getIntervalAccess().getLTimeTimeStampParserRuleCall_3_2_0()); 
 	    }
-		lv_left_14_0=ruleTimeStamp		{
+		lv_lTime_14_0=ruleTimeStamp		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getIntervalRule());
 	        }
        		set(
        			$current, 
-       			"left",
-        		lv_left_14_0, 
+       			"lTime",
+        		lv_lTime_14_0, 
         		"TimeStamp");
 	        afterParserOrEnumRuleCall();
 	    }

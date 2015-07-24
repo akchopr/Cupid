@@ -115,13 +115,6 @@ public class CupidoSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CupidoPackage.INTERVAL:
-      {
-        Interval interval = (Interval)theEObject;
-        T result = caseInterval(interval);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CupidoPackage.EVENT:
       {
         Event event = (Event)theEObject;
@@ -264,22 +257,6 @@ public class CupidoSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExpr(Expr object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Interval</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Interval</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInterval(Interval object)
   {
     return null;
   }

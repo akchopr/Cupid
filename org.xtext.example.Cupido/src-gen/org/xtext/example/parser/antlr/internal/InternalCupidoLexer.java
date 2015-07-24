@@ -62,8 +62,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_SCHEMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1241:13: ( 'schema' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1241:15: 'schema'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1232:13: ( 'schema' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1232:15: 'schema'
             {
             match("schema"); 
 
@@ -83,8 +83,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_KEY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1243:10: ( 'key' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1243:12: 'key'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1234:10: ( 'key' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1234:12: 'key'
             {
             match("key"); 
 
@@ -104,8 +104,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_TIME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1245:11: ( 'time' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1245:13: 'time'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1236:11: ( 'time' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1236:13: 'time'
             {
             match("time"); 
 
@@ -125,8 +125,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_COMMIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1247:13: ( 'commitment' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1247:15: 'commitment'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1238:13: ( 'commitment' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1238:15: 'commitment'
             {
             match("commitment"); 
 
@@ -146,8 +146,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_CREATE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1249:13: ( 'create' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1249:15: 'create'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1240:13: ( 'create' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1240:15: 'create'
             {
             match("create"); 
 
@@ -167,8 +167,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DETACH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1251:13: ( 'detach' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1251:15: 'detach'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1242:13: ( 'detach' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1242:15: 'detach'
             {
             match("detach"); 
 
@@ -188,8 +188,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DISCHARGE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1253:16: ( 'discharge' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1253:18: 'discharge'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1244:16: ( 'discharge' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1244:18: 'discharge'
             {
             match("discharge"); 
 
@@ -209,8 +209,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_TO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1255:9: ( 'to' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1255:11: 'to'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1246:9: ( 'to' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1246:11: 'to'
             {
             match("to"); 
 
@@ -230,8 +230,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_EXCEPT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1257:13: ( 'except' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1257:15: 'except'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1248:13: ( 'except' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1248:15: 'except'
             {
             match("except"); 
 
@@ -251,8 +251,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1259:10: ( 'and' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1259:12: 'and'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1250:10: ( 'and' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1250:12: 'and'
             {
             match("and"); 
 
@@ -272,8 +272,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1261:9: ( 'or' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1261:11: 'or'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1252:9: ( 'or' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1252:11: 'or'
             {
             match("or"); 
 
@@ -293,8 +293,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_WHERE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1263:12: ( 'where' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1263:14: 'where'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1254:12: ( 'where' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1254:14: 'where'
             {
             match("where"); 
 
@@ -314,8 +314,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_CREATED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1265:14: ( 'created' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1265:16: 'created'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1256:14: ( 'created' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1256:16: 'created'
             {
             match("created"); 
 
@@ -335,8 +335,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DETACHED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1267:15: ( 'detached' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1267:17: 'detached'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1258:15: ( 'detached' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1258:17: 'detached'
             {
             match("detached"); 
 
@@ -356,8 +356,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_DISCHARGED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1269:17: ( 'discharged' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1269:19: 'discharged'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1260:17: ( 'discharged' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1260:19: 'discharged'
             {
             match("discharged"); 
 
@@ -377,8 +377,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_EXPIRED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1271:14: ( 'expired' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1271:16: 'expired'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1262:14: ( 'expired' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1262:16: 'expired'
             {
             match("expired"); 
 
@@ -398,8 +398,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_VIOLATED;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1273:15: ( 'violated' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1273:17: 'violated'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1264:15: ( 'violated' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1264:17: 'violated'
             {
             match("violated"); 
 
@@ -419,8 +419,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1275:12: ( ',' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1275:14: ','
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1266:12: ( ',' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1266:14: ','
             {
             match(','); 
 
@@ -439,8 +439,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_LBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1277:15: ( '[' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1277:17: '['
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1268:15: ( '[' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1268:17: '['
             {
             match('['); 
 
@@ -459,8 +459,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_RBRACKET;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1279:15: ( ']' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1279:17: ']'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1270:15: ( ']' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1270:17: ']'
             {
             match(']'); 
 
@@ -479,8 +479,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1281:13: ( '(' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1281:15: '('
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1272:13: ( '(' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1272:15: '('
             {
             match('('); 
 
@@ -499,8 +499,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1283:13: ( ')' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1283:15: ')'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1274:13: ( ')' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1274:15: ')'
             {
             match(')'); 
 
@@ -519,8 +519,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1285:11: ( '+' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1285:13: '+'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1276:11: ( '+' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1276:13: '+'
             {
             match('+'); 
 
@@ -539,10 +539,10 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1287:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1287:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1278:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1278:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1287:11: ( '^' )?
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1278:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -551,7 +551,7 @@ public class InternalCupidoLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1287:11: '^'
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1278:11: '^'
                     {
                     match('^'); 
 
@@ -569,7 +569,7 @@ public class InternalCupidoLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1287:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1278:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -618,10 +618,10 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1289:10: ( ( '0' .. '9' )+ )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1289:12: ( '0' .. '9' )+
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1280:10: ( ( '0' .. '9' )+ )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1280:12: ( '0' .. '9' )+
             {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1289:12: ( '0' .. '9' )+
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1280:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -635,7 +635,7 @@ public class InternalCupidoLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1289:13: '0' .. '9'
+            	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1280:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -667,10 +667,10 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -688,10 +688,10 @@ public class InternalCupidoLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -707,7 +707,7 @@ public class InternalCupidoLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:21: '\\\\' .
+                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -715,7 +715,7 @@ public class InternalCupidoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -740,10 +740,10 @@ public class InternalCupidoLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -759,7 +759,7 @@ public class InternalCupidoLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:54: '\\\\' .
+                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -767,7 +767,7 @@ public class InternalCupidoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1291:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1282:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -810,12 +810,12 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1293:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1293:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1284:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1284:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1293:24: ( options {greedy=false; } : . )*
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1284:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -840,7 +840,7 @@ public class InternalCupidoLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1293:52: .
+            	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1284:52: .
             	    {
             	    matchAny(); 
 
@@ -870,12 +870,12 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -888,7 +888,7 @@ public class InternalCupidoLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -908,7 +908,7 @@ public class InternalCupidoLexer extends Lexer {
                 }
             } while (true);
 
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:40: ( ( '\\r' )? '\\n' )?
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -917,9 +917,9 @@ public class InternalCupidoLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:41: ( '\\r' )? '\\n'
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:41: ( '\\r' )? '\\n'
                     {
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:41: ( '\\r' )?
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -928,7 +928,7 @@ public class InternalCupidoLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1295:41: '\\r'
+                            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1286:41: '\\r'
                             {
                             match('\r'); 
 
@@ -960,10 +960,10 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1297:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1297:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1288:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1288:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1297:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1288:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1017,8 +1017,8 @@ public class InternalCupidoLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1299:16: ( . )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1299:18: .
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1290:16: ( . )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1290:18: .
             {
             matchAny(); 
 

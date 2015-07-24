@@ -407,25 +407,21 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	public class BExprElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BExpr");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cIntervalAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cIntervalIntervalParserRuleCall_0_0 = (RuleCall)cIntervalAssignment_0.eContents().get(0);
+		private final RuleCall cIntervalParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final RuleCall cLPARENTerminalRuleCall_1_0 = (RuleCall)cGroup_1.eContents().get(0);
 		private final RuleCall cEExprParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
 		private final RuleCall cRPARENTerminalRuleCall_1_2 = (RuleCall)cGroup_1.eContents().get(2);
 		
 		//BExpr returns Expr:
-		//	interval=Interval | LPAREN EExpr RPAREN;
+		//	Interval | LPAREN EExpr RPAREN;
 		@Override public ParserRule getRule() { return rule; }
 
-		//interval=Interval | LPAREN EExpr RPAREN
+		//Interval | LPAREN EExpr RPAREN
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//interval=Interval
-		public Assignment getIntervalAssignment_0() { return cIntervalAssignment_0; }
-
 		//Interval
-		public RuleCall getIntervalIntervalParserRuleCall_0_0() { return cIntervalIntervalParserRuleCall_0_0; }
+		public RuleCall getIntervalParserRuleCall_0() { return cIntervalParserRuleCall_0; }
 
 		//LPAREN EExpr RPAREN
 		public Group getGroup_1() { return cGroup_1; }
@@ -449,26 +445,26 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cEventAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cEventEventParserRuleCall_1_0_0 = (RuleCall)cEventAssignment_1_0.eContents().get(0);
 		private final RuleCall cLBRACKETTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Assignment cLeftAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cLeftTimeStampParserRuleCall_1_2_0 = (RuleCall)cLeftAssignment_1_2.eContents().get(0);
+		private final Assignment cLTimeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cLTimeTimeStampParserRuleCall_1_2_0 = (RuleCall)cLTimeAssignment_1_2.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_1_3 = (RuleCall)cGroup_1.eContents().get(3);
-		private final Assignment cRightAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
-		private final RuleCall cRightTimeStampParserRuleCall_1_4_0 = (RuleCall)cRightAssignment_1_4.eContents().get(0);
+		private final Assignment cRTimeAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final RuleCall cRTimeTimeStampParserRuleCall_1_4_0 = (RuleCall)cRTimeAssignment_1_4.eContents().get(0);
 		private final RuleCall cRBRACKETTerminalRuleCall_1_5 = (RuleCall)cGroup_1.eContents().get(5);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Assignment cEventAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
 		private final RuleCall cEventEventParserRuleCall_2_0_0 = (RuleCall)cEventAssignment_2_0.eContents().get(0);
 		private final RuleCall cLBRACKETTerminalRuleCall_2_1 = (RuleCall)cGroup_2.eContents().get(1);
 		private final RuleCall cCOMMATerminalRuleCall_2_2 = (RuleCall)cGroup_2.eContents().get(2);
-		private final Assignment cRightAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
-		private final RuleCall cRightTimeStampParserRuleCall_2_3_0 = (RuleCall)cRightAssignment_2_3.eContents().get(0);
+		private final Assignment cRTimeAssignment_2_3 = (Assignment)cGroup_2.eContents().get(3);
+		private final RuleCall cRTimeTimeStampParserRuleCall_2_3_0 = (RuleCall)cRTimeAssignment_2_3.eContents().get(0);
 		private final RuleCall cRBRACKETTerminalRuleCall_2_4 = (RuleCall)cGroup_2.eContents().get(4);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
 		private final Assignment cEventAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
 		private final RuleCall cEventEventParserRuleCall_3_0_0 = (RuleCall)cEventAssignment_3_0.eContents().get(0);
 		private final RuleCall cLBRACKETTerminalRuleCall_3_1 = (RuleCall)cGroup_3.eContents().get(1);
-		private final Assignment cLeftAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
-		private final RuleCall cLeftTimeStampParserRuleCall_3_2_0 = (RuleCall)cLeftAssignment_3_2.eContents().get(0);
+		private final Assignment cLTimeAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
+		private final RuleCall cLTimeTimeStampParserRuleCall_3_2_0 = (RuleCall)cLTimeAssignment_3_2.eContents().get(0);
 		private final RuleCall cCOMMATerminalRuleCall_3_3 = (RuleCall)cGroup_3.eContents().get(3);
 		private final RuleCall cRBRACKETTerminalRuleCall_3_4 = (RuleCall)cGroup_3.eContents().get(4);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
@@ -479,13 +475,13 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRBRACKETTerminalRuleCall_4_3 = (RuleCall)cGroup_4.eContents().get(3);
 		
 		//// Equivalent to the first option
-		//Interval:
-		//	event=Event | event=Event LBRACKET left=TimeStamp COMMA right=TimeStamp RBRACKET | event=Event LBRACKET COMMA
-		//	right=TimeStamp RBRACKET | event=Event LBRACKET left=TimeStamp COMMA RBRACKET | event=Event LBRACKET COMMA RBRACKET;
+		//Interval returns Expr:
+		//	event=Event | event=Event LBRACKET lTime=TimeStamp COMMA rTime=TimeStamp RBRACKET | event=Event LBRACKET COMMA
+		//	rTime=TimeStamp RBRACKET | event=Event LBRACKET lTime=TimeStamp COMMA RBRACKET | event=Event LBRACKET COMMA RBRACKET;
 		@Override public ParserRule getRule() { return rule; }
 
-		//event=Event | event=Event LBRACKET left=TimeStamp COMMA right=TimeStamp RBRACKET | event=Event LBRACKET COMMA
-		//right=TimeStamp RBRACKET | event=Event LBRACKET left=TimeStamp COMMA RBRACKET | event=Event LBRACKET COMMA RBRACKET
+		//event=Event | event=Event LBRACKET lTime=TimeStamp COMMA rTime=TimeStamp RBRACKET | event=Event LBRACKET COMMA
+		//rTime=TimeStamp RBRACKET | event=Event LBRACKET lTime=TimeStamp COMMA RBRACKET | event=Event LBRACKET COMMA RBRACKET
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//event=Event
@@ -494,7 +490,7 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//Event
 		public RuleCall getEventEventParserRuleCall_0_0() { return cEventEventParserRuleCall_0_0; }
 
-		//event=Event LBRACKET left=TimeStamp COMMA right=TimeStamp RBRACKET
+		//event=Event LBRACKET lTime=TimeStamp COMMA rTime=TimeStamp RBRACKET
 		public Group getGroup_1() { return cGroup_1; }
 
 		//event=Event
@@ -506,25 +502,25 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//LBRACKET
 		public RuleCall getLBRACKETTerminalRuleCall_1_1() { return cLBRACKETTerminalRuleCall_1_1; }
 
-		//left=TimeStamp
-		public Assignment getLeftAssignment_1_2() { return cLeftAssignment_1_2; }
+		//lTime=TimeStamp
+		public Assignment getLTimeAssignment_1_2() { return cLTimeAssignment_1_2; }
 
 		//TimeStamp
-		public RuleCall getLeftTimeStampParserRuleCall_1_2_0() { return cLeftTimeStampParserRuleCall_1_2_0; }
+		public RuleCall getLTimeTimeStampParserRuleCall_1_2_0() { return cLTimeTimeStampParserRuleCall_1_2_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_1_3() { return cCOMMATerminalRuleCall_1_3; }
 
-		//right=TimeStamp
-		public Assignment getRightAssignment_1_4() { return cRightAssignment_1_4; }
+		//rTime=TimeStamp
+		public Assignment getRTimeAssignment_1_4() { return cRTimeAssignment_1_4; }
 
 		//TimeStamp
-		public RuleCall getRightTimeStampParserRuleCall_1_4_0() { return cRightTimeStampParserRuleCall_1_4_0; }
+		public RuleCall getRTimeTimeStampParserRuleCall_1_4_0() { return cRTimeTimeStampParserRuleCall_1_4_0; }
 
 		//RBRACKET
 		public RuleCall getRBRACKETTerminalRuleCall_1_5() { return cRBRACKETTerminalRuleCall_1_5; }
 
-		//event=Event LBRACKET COMMA right=TimeStamp RBRACKET
+		//event=Event LBRACKET COMMA rTime=TimeStamp RBRACKET
 		public Group getGroup_2() { return cGroup_2; }
 
 		//event=Event
@@ -539,16 +535,16 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_2_2() { return cCOMMATerminalRuleCall_2_2; }
 
-		//right=TimeStamp
-		public Assignment getRightAssignment_2_3() { return cRightAssignment_2_3; }
+		//rTime=TimeStamp
+		public Assignment getRTimeAssignment_2_3() { return cRTimeAssignment_2_3; }
 
 		//TimeStamp
-		public RuleCall getRightTimeStampParserRuleCall_2_3_0() { return cRightTimeStampParserRuleCall_2_3_0; }
+		public RuleCall getRTimeTimeStampParserRuleCall_2_3_0() { return cRTimeTimeStampParserRuleCall_2_3_0; }
 
 		//RBRACKET
 		public RuleCall getRBRACKETTerminalRuleCall_2_4() { return cRBRACKETTerminalRuleCall_2_4; }
 
-		//event=Event LBRACKET left=TimeStamp COMMA RBRACKET
+		//event=Event LBRACKET lTime=TimeStamp COMMA RBRACKET
 		public Group getGroup_3() { return cGroup_3; }
 
 		//event=Event
@@ -560,11 +556,11 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//LBRACKET
 		public RuleCall getLBRACKETTerminalRuleCall_3_1() { return cLBRACKETTerminalRuleCall_3_1; }
 
-		//left=TimeStamp
-		public Assignment getLeftAssignment_3_2() { return cLeftAssignment_3_2; }
+		//lTime=TimeStamp
+		public Assignment getLTimeAssignment_3_2() { return cLTimeAssignment_3_2; }
 
 		//TimeStamp
-		public RuleCall getLeftTimeStampParserRuleCall_3_2_0() { return cLeftTimeStampParserRuleCall_3_2_0; }
+		public RuleCall getLTimeTimeStampParserRuleCall_3_2_0() { return cLTimeTimeStampParserRuleCall_3_2_0; }
 
 		//COMMA
 		public RuleCall getCOMMATerminalRuleCall_3_3() { return cCOMMATerminalRuleCall_3_3; }
@@ -904,7 +900,7 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//BExpr returns Expr:
-	//	interval=Interval | LPAREN EExpr RPAREN;
+	//	Interval | LPAREN EExpr RPAREN;
 	public BExprElements getBExprAccess() {
 		return pBExpr;
 	}
@@ -914,9 +910,9 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// Equivalent to the first option
-	//Interval:
-	//	event=Event | event=Event LBRACKET left=TimeStamp COMMA right=TimeStamp RBRACKET | event=Event LBRACKET COMMA
-	//	right=TimeStamp RBRACKET | event=Event LBRACKET left=TimeStamp COMMA RBRACKET | event=Event LBRACKET COMMA RBRACKET;
+	//Interval returns Expr:
+	//	event=Event | event=Event LBRACKET lTime=TimeStamp COMMA rTime=TimeStamp RBRACKET | event=Event LBRACKET COMMA
+	//	rTime=TimeStamp RBRACKET | event=Event LBRACKET lTime=TimeStamp COMMA RBRACKET | event=Event LBRACKET COMMA RBRACKET;
 	public IntervalElements getIntervalAccess() {
 		return pInterval;
 	}

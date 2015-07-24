@@ -105,11 +105,6 @@ public class CupidoAdapterFactory extends AdapterFactoryImpl
         return createExprAdapter();
       }
       @Override
-      public Adapter caseInterval(Interval object)
-      {
-        return createIntervalAdapter();
-      }
-      @Override
       public Adapter caseEvent(Event object)
       {
         return createEventAdapter();
@@ -247,21 +242,6 @@ public class CupidoAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExprAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.cupido.Interval <em>Interval</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.cupido.Interval
-   * @generated
-   */
-  public Adapter createIntervalAdapter()
   {
     return null;
   }

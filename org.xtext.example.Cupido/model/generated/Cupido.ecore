@@ -33,17 +33,13 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expr">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interval" eType="#//Interval"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Interval">
     <eStructuralFeatures xsi:type="ecore:EReference" name="event" eType="#//Event"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//TimeStamp"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lTime" eType="#//TimeStamp"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//TimeStamp"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rTime" eType="#//TimeStamp"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expr" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Event">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

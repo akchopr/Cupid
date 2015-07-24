@@ -23,7 +23,6 @@ import org.xtext.example.cupido.EExpr;
 import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.EventRelation;
 import org.xtext.example.cupido.Expr;
-import org.xtext.example.cupido.Interval;
 import org.xtext.example.cupido.OExpr;
 import org.xtext.example.cupido.Param;
 import org.xtext.example.cupido.Schemata;
@@ -56,10 +55,7 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				sequence_EventRelation(context, (EventRelation) semanticObject); 
 				return; 
 			case CupidoPackage.EXPR:
-				sequence_BExpr(context, (Expr) semanticObject); 
-				return; 
-			case CupidoPackage.INTERVAL:
-				sequence_Interval(context, (Interval) semanticObject); 
+				sequence_Interval(context, (Expr) semanticObject); 
 				return; 
 			case CupidoPackage.OEXPR:
 				sequence_OExpr(context, (OExpr) semanticObject); 
@@ -92,15 +88,6 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (left=AExpr_AExpr_1_0 right=WExpr)
 	 */
 	protected void sequence_AExpr(EObject context, AExpr semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     interval=Interval
-	 */
-	protected void sequence_BExpr(EObject context, Expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -166,9 +153,9 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (event=Event | (event=Event left=TimeStamp right=TimeStamp) | (event=Event right=TimeStamp) | (event=Event left=TimeStamp) | event=Event)
+	 *     (event=Event | (event=Event lTime=TimeStamp rTime=TimeStamp) | (event=Event rTime=TimeStamp) | (event=Event lTime=TimeStamp) | event=Event)
 	 */
-	protected void sequence_Interval(EObject context, Interval semanticObject) {
+	protected void sequence_Interval(EObject context, Expr semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

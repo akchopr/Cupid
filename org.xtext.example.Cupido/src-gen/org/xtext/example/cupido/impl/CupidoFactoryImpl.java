@@ -70,7 +70,6 @@ public class CupidoFactoryImpl extends EFactoryImpl implements CupidoFactory
       case CupidoPackage.PARAM: return createParam();
       case CupidoPackage.COMMITMENT: return createCommitment();
       case CupidoPackage.EXPR: return createExpr();
-      case CupidoPackage.INTERVAL: return createInterval();
       case CupidoPackage.EVENT: return createEvent();
       case CupidoPackage.TIME_STAMP: return createTimeStamp();
       case CupidoPackage.EEXPR: return createEExpr();
@@ -146,17 +145,6 @@ public class CupidoFactoryImpl extends EFactoryImpl implements CupidoFactory
   {
     ExprImpl expr = new ExprImpl();
     return expr;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Interval createInterval()
-  {
-    IntervalImpl interval = new IntervalImpl();
-    return interval;
   }
 
   /**

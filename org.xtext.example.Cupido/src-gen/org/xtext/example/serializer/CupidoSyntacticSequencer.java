@@ -252,7 +252,7 @@ public class CupidoSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     LPAREN*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) interval=Interval
+	 *     (rule start) (ambiguity) event=Event
 	 *     (rule start) (ambiguity) {AExpr.left=}
 	 *     (rule start) (ambiguity) {EExpr.left=}
 	 *     (rule start) (ambiguity) {OExpr.left=}
