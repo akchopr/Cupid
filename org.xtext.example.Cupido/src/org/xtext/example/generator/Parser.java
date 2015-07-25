@@ -33,6 +33,7 @@ public class Parser {
 	private static final String AND = "and";
 	private static final String OR = "or";
 	private static final String EXCEPT = "except";
+	private static final String WHERE = "where";
 
 	private static final String CREATED = "created";
 	private static final String DETACHED = "detached";
@@ -127,7 +128,14 @@ public class Parser {
 	}
 
 	public RelationalExpr compileCreated (Commitment c) {
-	  return compileExpr(c.getTrigger());
+		RelationalExpr oldCreateExpr = this.getLifeExpr(Parser.CREATED, c.getLabel());
+		if (oldCreateExpr != null) {
+			return oldCreateExpr;
+		} else {
+			RelationalExpr createExpr = compileExpr(c.getTrigger());
+			this.storeLifeExpr(Parser.CREATED, c.getLabel(), createExpr);
+			return createExpr;
+		}
 	}
 
 	public RelationalExpr compileDetached (Commitment c) {
@@ -144,34 +152,55 @@ public class Parser {
 	}
 
 	public RelationalExpr compileDischarged (Commitment c) {
-		RelationalExpr triggerExpr = this.compileExpr(c.getTrigger());
-		RelationalExpr antecedentExpr = this.compileExpr(c.getAntecedent());
-		RelationalExpr consequentExpr = this.compileExpr(c.getConsequent());
-		RelationalExpr dischargeExpr = this.compileOR(this.compileAND(triggerExpr, consequentExpr),
+		RelationalExpr oldDischargeExpr = this.getLifeExpr(Parser.DISCHARGED, c.getLabel());
+		if (oldDischargeExpr != null) {
+			return oldDischargeExpr;
+		} else {
+			RelationalExpr triggerExpr = this.compileExpr(c.getTrigger());
+			RelationalExpr antecedentExpr = this.compileExpr(c.getAntecedent());
+			RelationalExpr consequentExpr = this.compileExpr(c.getConsequent());
+			RelationalExpr dischargeExpr = this.compileOR(this.compileAND(triggerExpr, consequentExpr),
 						     			this.compileAND(antecedentExpr, consequentExpr));
-		return dischargeExpr; 
+			this.storeLifeExpr(Parser.DISCHARGED, c.getLabel(), dischargeExpr);
+			return dischargeExpr; 
+		}
      }
-			
-	public RelationalExpr compileExpired (Commitment c) {
 		
-		RelationalExpr triggerExpr = this.compileExpr(c.getTrigger());
-		RelationalExpr antecedentExpr = this.compileExpr(c.getAntecedent());
-		//RelationalExpr expiredExpr = this.compileExcept(triggerExpr, antecedentExpr);
-		//return expiredExpr;
-		return null;
+	/*
+	 * Expired and Violated have to be treated in a special manner as they involve constructing
+	 * a suitable EXCEPT expression and compiling it as a whole -- getting relationalExprs 
+	 * separately for each component, as for created, detached, and discharged, won't help.
+	 */
+	public RelationalExpr compileExpired (Commitment c) {
+		RelationalExpr oldExpireExpr = this.getLifeExpr(Parser.EXPIRED, c.getLabel());
+		if (oldExpireExpr != null) {
+			return oldExpireExpr;
+		} else {
+			//Construct the expression 'trigger except antecedent' and compile it
+			Expr e = constructEExpr(c.getTrigger(),c.getAntecedent());
+			System.out.println(exprToString(e));
+			RelationalExpr expireExpr = compileExpr(e);
+			this.storeLifeExpr(Parser.EXPIRED, c.getLabel(), expireExpr);
+			return expireExpr;
+		}
 	}
 
 	public RelationalExpr compileViolated (Commitment c) {
-		RelationalExpr consequentExpr = this.compileExpr(c.getAntecedent());
-		RelationalExpr violatedExpr =  null;//this.compileExcept(this.compileDetached(c), consequentExpr); 
-		return violatedExpr;
+		RelationalExpr oldViolateExpr = this.getLifeExpr(Parser.VIOLATED, c.getLabel());
+		if (oldViolateExpr != null) {
+			return oldViolateExpr;
+		} else {
+			//Construct (trigger and antecedent) except consequent
+			Expr aExpr = constructAExpr(c.getTrigger(),c.getAntecedent());
+			Expr eExpr = constructEExpr(aExpr,c.getConsequent());
+			System.out.println(exprToString(eExpr));
+			RelationalExpr violateExpr = this.compileExpr(eExpr);
+			this.storeLifeExpr(Parser.VIOLATED, c.getLabel(), violateExpr);
+			return violateExpr;
+		}
 	  }
 		  
-	public RelationalExpr compileAND(RelationalExpr left, RelationalExpr right) {
-		System.out.println("In compileAND");
-		System.out.println("  left= " + left.toString());
-		System.out.println("  right= " + right.toString());
-		
+	public RelationalExpr compileAND(RelationalExpr left, RelationalExpr right) {	
 		RelationalExpr lRename = left.getRenameTime();
 		RelationalExpr rLaterThanL = this.getLeftLaterThanRight(right, lRename);
 
@@ -181,11 +210,7 @@ public class Parser {
 	  	return this.getUnion(lLaterThanR, rLaterThanL);
 	}
 
-	public RelationalExpr compileOR(RelationalExpr left, RelationalExpr right) {
-		System.out.println("In compileOR");
-		System.out.println("  left= " + left.toString());
-		System.out.println("  right= " + right.toString());
-		
+	public RelationalExpr compileOR(RelationalExpr left, RelationalExpr right) {		
 		RelationalExpr lRename = left.getRenameTime();
 		RelationalExpr rLaterThanL = this.getLeftEarlierThanRight(right, lRename);
 
@@ -196,8 +221,8 @@ public class Parser {
 	}
 
 	public RelationalExpr compileExcept(EExpr e) {
-		System.out.println("In CompileExcept: " + e.toString());
-		return null; // TODO
+		//System.out.println("In CompileExcept: " + e.toString());
+		return new RelationalExpr(); // TODO
 	}
 	
 	public RelationalExpr compileWHERE(RelationalExpr left, String cond){
@@ -216,44 +241,48 @@ public class Parser {
 			return compileOR(compileExpr(e.getLeft()),compileExpr(((OExpr)e).getRight()));
 		else {//Except
 			Event ev = ((EExpr)e).getRight().getEvent();
-			if(null != ev)
+			if(null != ev) //Not a complex expression on the right
 				return compileExcept((EExpr)e);
-			else  // reduce
-				return reduceExcept((EExpr)e);
+			else { 
+				// Complex expression on the right, so reduce
+				System.out.println("Reduced: " + exprToString(e));
+				Expr reduced = reduceExcept((EExpr)e);
+				System.out.println("To: " + exprToString(reduced));
+				return compileExpr(reduced);
+			}
+				
 		}
 			
 	 }
 	
-	private RelationalExpr reduceExcept(EExpr e) {
-		
-		if(e.getRight() instanceof AExpr) {
-			// A except (B and C) = (A except B) or (A except C)
-			Expr l = e.getLeft();
-			Expr rl = e.getRight().getLeft();
-			Expr rr = ((AExpr)e.getRight()).getRight();
-			EExpr newLeft = constructEExpr(l,rl);
-			EExpr newRight = constructEExpr(l, rr);
-			RelationalExpr left = compileExpr(newLeft);
-			RelationalExpr right = compileExpr(newRight);			
-			return this.compileOR(left, right);
+	private Expr reduceExcept(EExpr e) {
+		if(null != e.getRight().getEvent()) //Nothing to reduce
+			return e;
+		else {
+			if(e.getRight() instanceof AExpr) {
+				// A except (B and C) = (A except B) or (A except C)
+				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
+				EExpr newRight = constructEExpr(e.getLeft(), ((AExpr)e.getRight()).getRight());
+				OExpr combined = constructOExpr(reduceExcept(newLeft),reduceExcept(newRight));
+				//RelationalExpr left = compileExpr(newLeft);
+				//RelationalExpr right = compileExpr(newRight);			
+				return combined;
+			}
+			else if(e.getRight() instanceof OExpr) {
+				// A except (B or C) = (A except B) and (A except C)
+				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
+				EExpr newRight = constructEExpr(e.getLeft(),((OExpr)e.getRight()).getRight());
+				AExpr combined = constructAExpr(reduceExcept(newLeft),reduceExcept(newRight));			
+				return combined;
+			}
+			else {
+				// A except (B except C) = (A except B) or (A and C)
+				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
+				AExpr newRight = constructAExpr(e.getLeft(),((EExpr)e.getRight()).getRight());
+				OExpr combined = constructOExpr(reduceExcept(newLeft),newRight);			
+				return combined;
+			}
 		}
-		else if(e.getRight() instanceof OExpr) {
-			// A except (B or C) = (A except B) and (A except C)
-			EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
-			EExpr newRight = constructEExpr(e.getLeft(),((OExpr)e.getRight()).getRight());
-			RelationalExpr left = compileExpr(newLeft);
-			RelationalExpr right = compileExpr(newRight);			
-			return this.compileAND(left, right);
-		}
-		else if(e.getRight() instanceof EExpr) {
-			// A except (B except C) = (A except B) or (A and C)
-			EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
-			AExpr newRight = constructAExpr(e.getLeft(),((EExpr)e.getRight()).getRight());
-			RelationalExpr left = compileExpr(newLeft);
-			RelationalExpr right = compileExpr(newRight);			
-			return this.compileOR(left, right);
-		}
-		else return null; //Error if here?
 	}
 	
 	private EExpr constructEExpr(Expr left, Expr right) {
@@ -269,6 +298,17 @@ public class Parser {
 	
 	private AExpr constructAExpr(Expr left, Expr right) {
 		CustomAExpr e = new CustomAExpr();
+		e.setLeft(left);
+		e.setRight(right);
+		//Set everything else to null
+		e.setEvent(null);
+		e.setLTime(null);
+		e.setRTime(null);
+		return e;
+	}
+	
+	private OExpr constructOExpr(Expr left, Expr right) {
+		CustomOExpr e = new CustomOExpr();
 		e.setLeft(left);
 		e.setRight(right);
 		//Set everything else to null
@@ -505,18 +545,42 @@ public class Parser {
 		
 		return unionExpr;
 	}
-
-
-//TODO: All the unused private methods, especially those below, need to go
 	
-	private RelationalExpr compileArithmetic(String where) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Can be used to test generated expressions and for checking precedence and associativity
+	 * as it inserts explicit parentheses. 
+	 * @param e
+	 * @return
+	 */
+	public static String exprToString(Expr e){
+		StringBuffer b = new StringBuffer();
+		b.append(Parser.LPAREN);
+		if(null != e.getEvent()){
+			b.append(e.getEvent().getName());//Ignoring timestamps
+		}
+		else if(e instanceof WExpr) {
+			b.append(exprToString(e.getLeft()));
+			b.append(Parser.SPACE + Parser.WHERE + Parser.SPACE);
+			b.append(((WExpr)e).getRight());
+		}
+		else if (e instanceof AExpr) {
+			b.append(exprToString(e.getLeft()));
+			b.append(Parser.SPACE + Parser.AND + Parser.SPACE);
+			b.append(exprToString(((AExpr)e).getRight()));
+		}
+		else if (e instanceof OExpr) {
+			b.append(exprToString(e.getLeft()));
+			b.append(Parser.SPACE + Parser.OR + Parser.SPACE);
+			b.append(exprToString(((OExpr)e).getRight()));
+		}
+		else {//Except
+			b.append(exprToString(e.getLeft()));
+			b.append(Parser.SPACE + Parser.EXCEPT + Parser.SPACE);
+			b.append(exprToString(((EExpr)e).getRight()));
+		}
+		
+		b.append(Parser.RPAREN);
+		return b.toString();
 	}
-
-	/*private RelationalExpr compileArithmetic(ArithExpr arith) {
-		return null;
-	}*/
-
 
 }

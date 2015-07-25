@@ -46,11 +46,10 @@ class CupidoGenerator implements IGenerator {
   }
 
   def CharSequence compileAll(Commitment c) { 
-    return //compileCreated(c).toString
-    //+ compileDetached(c).toString 
-     compileCreated(c).toString 
-   // + compileDischarged(c).toString 
-   // + compileViolated(c).toString
+    return compileViolated(c).toString; 
+//     + compileExpired(c).toString 
+//     + compileDischarged(c).toString 
+//     + compileViolated(c).toString
   }
   
   def CharSequence compileDetached(Commitment c) {
