@@ -655,17 +655,17 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValINTTerminalRuleCall_0_0 = (RuleCall)cValAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cEventReferenceAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cEventReferenceIDTerminalRuleCall_1_0_0 = (RuleCall)cEventReferenceAssignment_1_0.eContents().get(0);
+		private final RuleCall cEventReferenceEventParserRuleCall_1_0_0 = (RuleCall)cEventReferenceAssignment_1_0.eContents().get(0);
 		private final Group cGroup_1_1 = (Group)cGroup_1.eContents().get(1);
 		private final RuleCall cPLUSTerminalRuleCall_1_1_0 = (RuleCall)cGroup_1_1.eContents().get(0);
 		private final Assignment cShiftAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
 		private final RuleCall cShiftINTTerminalRuleCall_1_1_1_0 = (RuleCall)cShiftAssignment_1_1_1.eContents().get(0);
 		
 		//TimeStamp:
-		//	val=INT | eventReference=ID (PLUS shift=INT)?;
+		//	val=INT | eventReference=Event (PLUS shift=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//val=INT | eventReference=ID (PLUS shift=INT)?
+		//val=INT | eventReference=Event (PLUS shift=INT)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//val=INT
@@ -674,14 +674,14 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getValINTTerminalRuleCall_0_0() { return cValINTTerminalRuleCall_0_0; }
 
-		//eventReference=ID (PLUS shift=INT)?
+		//eventReference=Event (PLUS shift=INT)?
 		public Group getGroup_1() { return cGroup_1; }
 
-		//eventReference=ID
+		//eventReference=Event
 		public Assignment getEventReferenceAssignment_1_0() { return cEventReferenceAssignment_1_0; }
 
-		//ID
-		public RuleCall getEventReferenceIDTerminalRuleCall_1_0_0() { return cEventReferenceIDTerminalRuleCall_1_0_0; }
+		//Event
+		public RuleCall getEventReferenceEventParserRuleCall_1_0_0() { return cEventReferenceEventParserRuleCall_1_0_0; }
 
 		//(PLUS shift=INT)?
 		public Group getGroup_1_1() { return cGroup_1_1; }
@@ -933,7 +933,7 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TimeStamp:
-	//	val=INT | eventReference=ID (PLUS shift=INT)?;
+	//	val=INT | eventReference=Event (PLUS shift=INT)?;
 	public TimeStampElements getTimeStampAccess() {
 		return pTimeStamp;
 	}

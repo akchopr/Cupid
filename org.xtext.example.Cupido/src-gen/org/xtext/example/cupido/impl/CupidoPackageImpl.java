@@ -474,9 +474,9 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTimeStamp_EventReference()
+  public EReference getTimeStamp_EventReference()
   {
-    return (EAttribute)timeStampEClass.getEStructuralFeatures().get(1);
+    return (EReference)timeStampEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -635,7 +635,7 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
 
     timeStampEClass = createEClass(TIME_STAMP);
     createEAttribute(timeStampEClass, TIME_STAMP__VAL);
-    createEAttribute(timeStampEClass, TIME_STAMP__EVENT_REFERENCE);
+    createEReference(timeStampEClass, TIME_STAMP__EVENT_REFERENCE);
     createEAttribute(timeStampEClass, TIME_STAMP__SHIFT);
 
     eExprEClass = createEClass(EEXPR);
@@ -723,7 +723,7 @@ public class CupidoPackageImpl extends EPackageImpl implements CupidoPackage
 
     initEClass(timeStampEClass, TimeStamp.class, "TimeStamp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTimeStamp_Val(), ecorePackage.getEInt(), "val", null, 0, 1, TimeStamp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTimeStamp_EventReference(), ecorePackage.getEString(), "eventReference", null, 0, 1, TimeStamp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTimeStamp_EventReference(), this.getEvent(), null, "eventReference", null, 0, 1, TimeStamp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTimeStamp_Shift(), ecorePackage.getEInt(), "shift", null, 0, 1, TimeStamp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eExprEClass, EExpr.class, "EExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

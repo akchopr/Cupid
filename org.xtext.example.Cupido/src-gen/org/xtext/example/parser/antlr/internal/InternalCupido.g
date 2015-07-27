@@ -1184,19 +1184,19 @@ ruleTimeStamp returns [EObject current=null]
 )
     |((
 (
-		lv_eventReference_1_0=RULE_ID
-		{
-			newLeafNode(lv_eventReference_1_0, grammarAccess.getTimeStampAccess().getEventReferenceIDTerminalRuleCall_1_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getTimeStampAccess().getEventReferenceEventParserRuleCall_1_0_0()); 
+	    }
+		lv_eventReference_1_0=ruleEvent		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTimeStampRule());
+	            $current = createModelElementForParent(grammarAccess.getTimeStampRule());
 	        }
-       		setWithLastConsumed(
+       		set(
        			$current, 
        			"eventReference",
         		lv_eventReference_1_0, 
-        		"ID");
+        		"Event");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )

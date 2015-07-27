@@ -53,7 +53,7 @@ Event:
 
 TimeStamp:
   val = INT |
-  (eventReference = ID) (PLUS (shift = INT))?; 
+  (eventReference = Event) (PLUS (shift = INT))?; 
 
 //TODO: Found INT in common Terminals but not NUMBER 
 //Number: // TODO: I didn't find a way to use the Xtext Number that some examples use

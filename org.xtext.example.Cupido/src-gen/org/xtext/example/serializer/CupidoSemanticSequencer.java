@@ -196,7 +196,7 @@ public class CupidoSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (val=INT | (eventReference=ID shift=INT?))
+	 *     (val=INT | (eventReference=Event shift=INT?))
 	 */
 	protected void sequence_TimeStamp(EObject context, TimeStamp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

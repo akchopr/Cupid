@@ -3498,8 +3498,8 @@ rule__TimeStamp__EventReferenceAssignment_1_0
     }
 :
 (
-{ before(grammarAccess.getTimeStampAccess().getEventReferenceIDTerminalRuleCall_1_0_0()); }
-	RULE_ID{ after(grammarAccess.getTimeStampAccess().getEventReferenceIDTerminalRuleCall_1_0_0()); }
+{ before(grammarAccess.getTimeStampAccess().getEventReferenceEventParserRuleCall_1_0_0()); }
+	ruleEvent{ after(grammarAccess.getTimeStampAccess().getEventReferenceEventParserRuleCall_1_0_0()); }
 )
 
 ;

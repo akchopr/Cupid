@@ -389,7 +389,7 @@ public interface CupidoPackage extends EPackage
   int TIME_STAMP__VAL = 0;
 
   /**
-   * The feature id for the '<em><b>Event Reference</b></em>' attribute.
+   * The feature id for the '<em><b>Event Reference</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -984,15 +984,15 @@ public interface CupidoPackage extends EPackage
   EAttribute getTimeStamp_Val();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.cupido.TimeStamp#getEventReference <em>Event Reference</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.cupido.TimeStamp#getEventReference <em>Event Reference</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Event Reference</em>'.
+   * @return the meta object for the containment reference '<em>Event Reference</em>'.
    * @see org.xtext.example.cupido.TimeStamp#getEventReference()
    * @see #getTimeStamp()
    * @generated
    */
-  EAttribute getTimeStamp_EventReference();
+  EReference getTimeStamp_EventReference();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.example.cupido.TimeStamp#getShift <em>Shift</em>}'.
@@ -1361,12 +1361,12 @@ public interface CupidoPackage extends EPackage
     EAttribute TIME_STAMP__VAL = eINSTANCE.getTimeStamp_Val();
 
     /**
-     * The meta object literal for the '<em><b>Event Reference</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Event Reference</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TIME_STAMP__EVENT_REFERENCE = eINSTANCE.getTimeStamp_EventReference();
+    EReference TIME_STAMP__EVENT_REFERENCE = eINSTANCE.getTimeStamp_EventReference();
 
     /**
      * The meta object literal for the '<em><b>Shift</b></em>' attribute feature.

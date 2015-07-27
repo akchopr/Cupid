@@ -51,30 +51,30 @@ public interface TimeStamp extends EObject
   void setVal(int value);
 
   /**
-   * Returns the value of the '<em><b>Event Reference</b></em>' attribute.
+   * Returns the value of the '<em><b>Event Reference</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Event Reference</em>' attribute isn't clear,
+   * If the meaning of the '<em>Event Reference</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Event Reference</em>' attribute.
-   * @see #setEventReference(String)
+   * @return the value of the '<em>Event Reference</em>' containment reference.
+   * @see #setEventReference(Event)
    * @see org.xtext.example.cupido.CupidoPackage#getTimeStamp_EventReference()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getEventReference();
+  Event getEventReference();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.cupido.TimeStamp#getEventReference <em>Event Reference</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.cupido.TimeStamp#getEventReference <em>Event Reference</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Event Reference</em>' attribute.
+   * @param value the new value of the '<em>Event Reference</em>' containment reference.
    * @see #getEventReference()
    * @generated
    */
-  void setEventReference(String value);
+  void setEventReference(Event value);
 
   /**
    * Returns the value of the '<em><b>Shift</b></em>' attribute.

@@ -42,7 +42,7 @@
     </genClasses>
     <genClasses ecoreClass="Cupido.ecore#//TimeStamp">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//TimeStamp/val"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//TimeStamp/eventReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Cupido.ecore#//TimeStamp/eventReference"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Cupido.ecore#//TimeStamp/shift"/>
     </genClasses>
     <genClasses ecoreClass="Cupido.ecore#//EExpr">

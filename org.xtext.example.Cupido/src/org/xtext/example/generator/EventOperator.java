@@ -23,6 +23,8 @@ public static final EventOperator SINGLETON = new EventOperator("singleton");
   static EventOperator PROJECT = new EventOperator("project");
   static EventOperator RENAME = new EventOperator("rename");
   static EventOperator THETAJOIN = new EventOperator("join");
+  static EventOperator TIMESINGLETON = new EventOperator("timesingleton");
+  static EventOperator LEFTOUTERJOIN = new EventOperator("leftouterjoin"); 
 
   private EventOperator (String _op) {
     opName = _op;

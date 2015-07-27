@@ -2693,29 +2693,30 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeStamp"
-    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1162:1: ruleTimeStamp returns [EObject current=null] : ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= RULE_ID ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) ;
+    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1162:1: ruleTimeStamp returns [EObject current=null] : ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) ;
     public final EObject ruleTimeStamp() throws RecognitionException {
         EObject current = null;
 
         Token lv_val_0_0=null;
-        Token lv_eventReference_1_0=null;
         Token this_PLUS_2=null;
         Token lv_shift_3_0=null;
+        EObject lv_eventReference_1_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1165:28: ( ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= RULE_ID ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= RULE_ID ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1165:28: ( ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
             {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= RULE_ID ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
             if ( (LA15_0==RULE_INT) ) {
                 alt15=1;
             }
-            else if ( (LA15_0==RULE_ID) ) {
+            else if ( (LA15_0==RULE_ID||(LA15_0>=RULE_CREATED && LA15_0<=RULE_VIOLATED)) ) {
                 alt15=2;
             }
             else {
@@ -2758,30 +2759,35 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:6: ( ( (lv_eventReference_1_0= RULE_ID ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:6: ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? )
                     {
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:6: ( ( (lv_eventReference_1_0= RULE_ID ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? )
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:7: ( (lv_eventReference_1_0= RULE_ID ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )?
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:6: ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:7: ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )?
                     {
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:7: ( (lv_eventReference_1_0= RULE_ID ) )
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1186:1: (lv_eventReference_1_0= RULE_ID )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1185:7: ( (lv_eventReference_1_0= ruleEvent ) )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1186:1: (lv_eventReference_1_0= ruleEvent )
                     {
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1186:1: (lv_eventReference_1_0= RULE_ID )
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1187:3: lv_eventReference_1_0= RULE_ID
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1186:1: (lv_eventReference_1_0= ruleEvent )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1187:3: lv_eventReference_1_0= ruleEvent
                     {
-                    lv_eventReference_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTimeStamp2304); 
+                     
+                    	        newCompositeNode(grammarAccess.getTimeStampAccess().getEventReferenceEventParserRuleCall_1_0_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleEvent_in_ruleTimeStamp2308);
+                    lv_eventReference_1_0=ruleEvent();
 
-                    			newLeafNode(lv_eventReference_1_0, grammarAccess.getTimeStampAccess().getEventReferenceIDTerminalRuleCall_1_0_0()); 
-                    		
+                    state._fsp--;
+
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getTimeStampRule());
+                    	            current = createModelElementForParent(grammarAccess.getTimeStampRule());
                     	        }
-                           		setWithLastConsumed(
+                           		set(
                            			current, 
                            			"eventReference",
                             		lv_eventReference_1_0, 
-                            		"ID");
+                            		"Event");
+                    	        afterParserOrEnumRuleCall();
                     	    
 
                     }
@@ -2800,7 +2806,7 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1203:3: this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) )
                             {
-                            this_PLUS_2=(Token)match(input,RULE_PLUS,FOLLOW_RULE_PLUS_in_ruleTimeStamp2321); 
+                            this_PLUS_2=(Token)match(input,RULE_PLUS,FOLLOW_RULE_PLUS_in_ruleTimeStamp2320); 
                              
                                 newLeafNode(this_PLUS_2, grammarAccess.getTimeStampAccess().getPLUSTerminalRuleCall_1_1_0()); 
                                 
@@ -2810,7 +2816,7 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
                             // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1208:1: (lv_shift_3_0= RULE_INT )
                             // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1209:3: lv_shift_3_0= RULE_INT
                             {
-                            lv_shift_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimeStamp2337); 
+                            lv_shift_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimeStamp2336); 
 
                             			newLeafNode(lv_shift_3_0, grammarAccess.getTimeStampAccess().getShiftINTTerminalRuleCall_1_1_1_0()); 
                             		
@@ -2866,19 +2872,19 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\24\uffff";
+        "\32\uffff";
     static final String DFA11_eofS =
-        "\1\uffff\1\10\7\uffff\1\10\12\uffff";
+        "\1\uffff\1\10\7\uffff\1\10\20\uffff";
     static final String DFA11_minS =
-        "\1\12\1\7\5\12\1\6\1\uffff\1\7\1\12\2\6\2\uffff\1\12\1\34\2\uffff"+
-        "\1\6";
+        "\1\12\1\7\5\12\1\6\1\uffff\1\7\1\12\2\6\5\12\2\uffff\1\12\1\34"+
+        "\1\6\2\uffff\1\6";
     static final String DFA11_maxS =
-        "\1\33\1\25\5\12\1\34\1\uffff\1\25\1\34\1\6\1\35\2\uffff\2\34\2"+
-        "\uffff\1\6";
+        "\1\33\1\25\5\12\1\34\1\uffff\1\25\1\34\1\6\1\35\5\12\2\uffff\2"+
+        "\34\1\35\2\uffff\1\6";
     static final String DFA11_acceptS =
-        "\10\uffff\1\1\4\uffff\1\3\1\5\2\uffff\1\4\1\2\1\uffff";
+        "\10\uffff\1\1\11\uffff\1\3\1\5\3\uffff\1\4\1\2\1\uffff";
     static final String DFA11_specialS =
-        "\24\uffff}>";
+        "\32\uffff}>";
     static final String[] DFA11_transitionS = {
             "\1\1\14\uffff\1\2\1\3\1\4\1\5\1\6",
             "\1\10\3\uffff\1\10\2\uffff\6\10\1\uffff\1\7",
@@ -2887,19 +2893,25 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
             "\1\11",
             "\1\11",
             "\1\11",
-            "\1\12\3\uffff\1\14\21\uffff\1\13",
+            "\1\12\3\uffff\1\14\14\uffff\1\15\1\16\1\17\1\20\1\21\1\13",
             "",
             "\1\10\3\uffff\1\10\2\uffff\6\10\1\uffff\1\7",
-            "\1\15\13\uffff\1\16\5\uffff\1\15",
-            "\1\17",
-            "\1\17\26\uffff\1\20",
+            "\1\22\13\uffff\1\23\6\22",
+            "\1\24",
+            "\1\24\26\uffff\1\25",
+            "\1\26",
+            "\1\26",
+            "\1\26",
+            "\1\26",
+            "\1\26",
             "",
             "",
-            "\1\22\13\uffff\1\21\5\uffff\1\22",
-            "\1\23",
+            "\1\30\13\uffff\1\27\6\30",
+            "\1\31",
+            "\1\24\26\uffff\1\25",
             "",
             "",
-            "\1\17"
+            "\1\24"
     };
 
     static final short[] DFA11_eot = DFA.unpackEncodedString(DFA11_eotS);
@@ -3005,18 +3017,18 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleInterval1591 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1637 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1665 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1676 = new BitSet(new long[]{0x0000000010000400L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1676 = new BitSet(new long[]{0x000000001F800400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1696 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1707 = new BitSet(new long[]{0x0000000010000400L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1707 = new BitSet(new long[]{0x000000001F800400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1727 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_RULE_RBRACKET_in_ruleInterval1738 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1766 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1777 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1787 = new BitSet(new long[]{0x0000000010000400L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1787 = new BitSet(new long[]{0x000000001F800400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1807 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_RULE_RBRACKET_in_ruleInterval1818 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1846 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1857 = new BitSet(new long[]{0x0000000010000400L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1857 = new BitSet(new long[]{0x000000001F800400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1877 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1888 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_RULE_RBRACKET_in_ruleInterval1898 = new BitSet(new long[]{0x0000000000000002L});
@@ -3036,8 +3048,8 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleTimeStamp_in_entryRuleTimeStamp2223 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTimeStamp2233 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleTimeStamp2275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTimeStamp2304 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_RULE_PLUS_in_ruleTimeStamp2321 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleTimeStamp2337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_ruleTimeStamp2308 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_RULE_PLUS_in_ruleTimeStamp2320 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleTimeStamp2336 = new BitSet(new long[]{0x0000000000000002L});
 
 }

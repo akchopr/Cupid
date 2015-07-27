@@ -34,6 +34,7 @@ public class Parser {
 	private static final String OR = "or";
 	private static final String EXCEPT = "except";
 	private static final String WHERE = "where";
+	private static final String AS = "AS";
 
 	private static final String CREATED = "created";
 	private static final String DETACHED = "detached";
@@ -78,16 +79,16 @@ public class Parser {
 
 		for (Param p : eRelation.getParams()) {
 			sb.append(p.getName());
-			sb.append(Parser.SPACE + Parser.SPACE + VARCHAR_10 + Parser.COMMA + Parser.SPACE);
+			sb.append(Parser.SPACE + Parser.SPACE + Parser.VARCHAR_10 + Parser.COMMA + Parser.SPACE);
 		}
 		
 		sb.append(Parser.NEWLINE);
 		sb.append(Parser.SPACE + Parser.SPACE);
 		sb.append(eRelation.getTimeParam().getName());
-		sb.append(Parser.SPACE + Parser.SPACE + DATETIME + Parser.COMMA + Parser.SPACE);
+		sb.append(Parser.SPACE + Parser.SPACE + Parser.DATETIME + Parser.COMMA + Parser.SPACE);
 		
 		sb.append(Parser.NEWLINE);
-		sb.append(Parser.SPACE + Parser.SPACE + PRIMARY_KEY + Parser.LPAREN);
+		sb.append(Parser.SPACE + Parser.SPACE + Parser.PRIMARY_KEY + Parser.LPAREN);
 		
 		Iterator<Param> paramIterator = eRelation.getKeyParams().iterator();
 		sb.append(paramIterator.next().getName());
@@ -105,8 +106,23 @@ public class Parser {
 		return sb.toString();
 	}
 
-	private EventRelation findEventRelation(String eName) {
-		return attrs.get(eName);
+	/**
+	 * AKC: Key assumption about ordering of commitments.
+	 * @param event
+	 * @return
+	 */
+	private RelationalExpr compileEvent(Event event) {
+		if(null != event.getName())
+			return new RelationalExpr(attrs.get(event.getName()));
+		else {
+			//If event is of nested type. Assumption is that any such event would have been compiled earlier.
+			//Therefore, important to specify commitments in an order such that if any expression in a commitment 
+			//refers to a lifestate, then the expression corresponding to that lifestate must appear earlier in the order (could be in the same commitment). 
+			//This can potentially be relaxed but some lookup implementation (get commitment given label) will be required in that case. 
+			RelationalExpr nested = getLifeExpr(event.getLifeState(),event.getLabel());
+			return nested;
+		}
+			
 	}
 	
 	private RelationalExpr getLifeExpr(String lifeState, String label) {
@@ -198,31 +214,51 @@ public class Parser {
 			this.storeLifeExpr(Parser.VIOLATED, c.getLabel(), violateExpr);
 			return violateExpr;
 		}
-	  }
-		  
-	public RelationalExpr compileAND(RelationalExpr left, RelationalExpr right) {	
-		RelationalExpr lRename = left.getRenameTime();
-		RelationalExpr rLaterThanL = this.getLeftLaterThanRight(right, lRename);
+	}
+	
+	public RelationalExpr getANDCROSS(RelationalExpr left, RelationalExpr right) {	
+		RelationalExpr rRename = right.getRenameTime();
+		RelationalExpr lLaterThanR = this.getLeftLaterThanRightCross(left, rRename);
 
+		RelationalExpr lRename = left.getRenameTime();
+		RelationalExpr rLaterThanL = this.getLeftLaterThanRightCross(right, lRename);
+		
+		return this.getUnion(lLaterThanR, rLaterThanL);
+	}
+
+
+	public RelationalExpr compileAND(RelationalExpr left, RelationalExpr right) {
 		RelationalExpr rRename = right.getRenameTime();
 		RelationalExpr lLaterThanR = this.getLeftLaterThanRight(left, rRename);
 
+		RelationalExpr lRename = left.getRenameTime();
+		RelationalExpr rLaterThanL = this.getLeftLaterThanRight(right, lRename);
+		
 	  	return this.getUnion(lLaterThanR, rLaterThanL);
 	}
 
 	public RelationalExpr compileOR(RelationalExpr left, RelationalExpr right) {		
-		RelationalExpr lRename = left.getRenameTime();
-		RelationalExpr rLaterThanL = this.getLeftEarlierThanRight(right, lRename);
-
 		RelationalExpr rRename = right.getRenameTime();
 		RelationalExpr lLaterThanR = this.getLeftEarlierThanRight(left, rRename);
+
+		RelationalExpr lRename = left.getRenameTime();
+		RelationalExpr rLaterThanL = this.getLeftEarlierThanRight(right, lRename);
 
 	  	return this.getUnion(lLaterThanR, rLaterThanL);
 	}
 
-	public RelationalExpr compileExcept(EExpr e) {
-		//System.out.println("In CompileExcept: " + e.toString());
-		return new RelationalExpr(); // TODO
+	public RelationalExpr compileEXCEPT(RelationalExpr left, Event ev, TimeStamp lTime, TimeStamp rTime) {
+		//compute R
+		RelationalExpr R = computeR(left, ev, lTime);
+		RelationalExpr S = computeS(left, ev, rTime);
+		RelationalExpr T = computeT(left.getTimeColumn(), rTime);
+		
+		if(null == rTime.getEventReference()) {
+			RelationalExpr andC = getANDCROSS(S,T);
+			return getUnion(R,projectToLeft(andC, S));
+		}
+		else
+			return null; //TODO
 	}
 	
 	public RelationalExpr compileWHERE(RelationalExpr left, String cond){
@@ -239,10 +275,12 @@ public class Parser {
 			return compileAND(compileExpr(e.getLeft()),compileExpr(((AExpr)e).getRight()));
 		else if (e instanceof OExpr)
 			return compileOR(compileExpr(e.getLeft()),compileExpr(((OExpr)e).getRight()));
-		else {//Except
-			Event ev = ((EExpr)e).getRight().getEvent();
-			if(null != ev) //Not a complex expression on the right
-				return compileExcept((EExpr)e);
+		else {//e instanceof EExpr
+			if(null != ((EExpr)e).getRight().getEvent()) //Not a complex expression on the right
+				return compileEXCEPT(compileExpr(e.getLeft()),
+						((EExpr)e).getRight().getEvent(),
+						((EExpr)e).getRight().getLTime(),
+						((EExpr)e).getRight().getRTime());
 			else { 
 				// Complex expression on the right, so reduce
 				System.out.println("Reduced: " + exprToString(e));
@@ -256,40 +294,34 @@ public class Parser {
 	 }
 	
 	private Expr reduceExcept(EExpr e) {
-		if(null != e.getRight().getEvent()) //Nothing to reduce
-			return e;
-		else {
 			if(e.getRight() instanceof AExpr) {
 				// A except (B and C) = (A except B) or (A except C)
 				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
 				EExpr newRight = constructEExpr(e.getLeft(), ((AExpr)e.getRight()).getRight());
-				OExpr combined = constructOExpr(reduceExcept(newLeft),reduceExcept(newRight));
-				//RelationalExpr left = compileExpr(newLeft);
-				//RelationalExpr right = compileExpr(newRight);			
+				OExpr combined = constructOExpr(newLeft,newRight);
 				return combined;
 			}
 			else if(e.getRight() instanceof OExpr) {
 				// A except (B or C) = (A except B) and (A except C)
 				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
 				EExpr newRight = constructEExpr(e.getLeft(),((OExpr)e.getRight()).getRight());
-				AExpr combined = constructAExpr(reduceExcept(newLeft),reduceExcept(newRight));			
+				AExpr combined = constructAExpr(newLeft,newRight);			
 				return combined;
 			}
-			else {
+			else { //e.getRight instanceof of EExpr
 				// A except (B except C) = (A except B) or (A and C)
 				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
 				AExpr newRight = constructAExpr(e.getLeft(),((EExpr)e.getRight()).getRight());
-				OExpr combined = constructOExpr(reduceExcept(newLeft),newRight);			
+				OExpr combined = constructOExpr(newLeft,newRight);			
 				return combined;
 			}
-		}
 	}
 	
 	private EExpr constructEExpr(Expr left, Expr right) {
 		CustomEExpr e = new CustomEExpr();
 		e.setLeft(left);
 		e.setRight(right);
-		//Set everything else to null
+		//Set everything else to null (just to be sure)
 		e.setEvent(null);
 		e.setLTime(null);
 		e.setRTime(null);
@@ -300,7 +332,7 @@ public class Parser {
 		CustomAExpr e = new CustomAExpr();
 		e.setLeft(left);
 		e.setRight(right);
-		//Set everything else to null
+		//Set everything else to null (just to be sure)
 		e.setEvent(null);
 		e.setLTime(null);
 		e.setRTime(null);
@@ -311,7 +343,7 @@ public class Parser {
 		CustomOExpr e = new CustomOExpr();
 		e.setLeft(left);
 		e.setRight(right);
-		//Set everything else to null
+		//Set everything else to null (just to be sure)
 		e.setEvent(null);
 		e.setLTime(null);
 		e.setRTime(null);
@@ -319,6 +351,37 @@ public class Parser {
 	}
 	
 	
+	
+	private RelationalExpr computeR(RelationalExpr x, Event ev, TimeStamp lTime){
+		RelationalExpr rExpr = compileAND(x,compileInterval(ev, null, lTime)); 
+		return projectToLeft(rExpr,x);
+	}
+	
+	private RelationalExpr computeS(RelationalExpr x, Event ev, TimeStamp rTime){
+		RelationalExpr right = compileInterval(ev,null,rTime).getRenameTime();
+		return antiJoin(x,right);
+	}
+	
+	private RelationalExpr computeT(Column stamp, TimeStamp ts) {
+		if(null == ts.getEventReference()) {
+			//Enable constructing SELECT ts.getVal AS stamp;
+			RelationalExpr singleton = new RelationalExpr();
+			singleton.setTimeColumn(stamp);
+			singleton.setSubscript(ts.getVal() + Parser.SPACE + Parser.AS + Parser.SPACE + stamp);
+			singleton.setOperator(EventOperator.TIMESINGLETON);
+			return singleton;
+		}
+		else {
+			//Enable constructing SELECT all columns, stamp + ts.getShift FROM ts.getEventReference
+			RelationalExpr addedTime  = new RelationalExpr();
+			//TODO: not complete
+			return addedTime;
+		}
+	}
+	
+	/*
+	 * Used for computing OR
+	 */
 	private RelationalExpr getLeftEarlierThanRight (RelationalExpr left, RelationalExpr right) {
 		Column lTime = left.getTimeColumn();
 		Column rTime = right.getTimeColumn();
@@ -327,11 +390,33 @@ public class Parser {
 				+ SelectExpr.OR + Parser.LPAREN + rTime.getFullName() + SelectExpr.IS 
 				+ SelectExpr.NULL + Parser.RPAREN + Parser.RPAREN;
 		
-		RelationalExpr theJoin = this.getLeftOuterJoin(left, right); 
+		RelationalExpr theJoin = this.getDirectLeftOuterJoin(left, right); 
 		return this.getSelect(theJoin, lEarlierR);
 	}
+	
+	private RelationalExpr getDirectLeftOuterJoin(RelationalExpr left, RelationalExpr right){
+		RelationalExpr rExpr = new RelationalExpr();
+		rExpr.setLeft(left);
+		rExpr.setRight(right);
+		rExpr.setOperator(EventOperator.LEFTOUTERJOIN);
+		
+		rExpr.initializeColumns(); 
+		rExpr.insertColumns(left.getColumns());
+		rExpr.insertColumns(right.getColumns());
 
-	private RelationalExpr getLeftLaterThanRight (RelationalExpr left, RelationalExpr right) {
+		rExpr.initializeKeyColumns(); 
+		rExpr.insertKeyColumns(left.getKeyColumns());
+		rExpr.insertKeyColumns(right.getKeyColumns());
+
+		// TODO: Verify: the left timestamp is the one we always want
+		rExpr.setTimeColumn(left.getTimeColumn()); 
+		
+		return rExpr;
+
+	}
+	
+	
+	private RelationalExpr getLeftLaterThanRight(RelationalExpr left, RelationalExpr right) {
 		Column lTime = left.getTimeColumn();
 		Column rTime = right.getTimeColumn();
 		String lLaterR = Parser.LPAREN + lTime.getFullName() + Parser.SPACE + SelectExpr.GEQ
@@ -340,6 +425,17 @@ public class Parser {
 		RelationalExpr theJoin = this.getJoin(left, right); 
 		return this.getSelect(theJoin, lLaterR);
 	}
+	
+	private RelationalExpr getLeftLaterThanRightCross(RelationalExpr left, RelationalExpr right) {
+		Column lTime = left.getTimeColumn();
+		Column rTime = right.getTimeColumn();
+		String lLaterR = Parser.LPAREN + lTime.getFullName() + Parser.SPACE + SelectExpr.GEQ
+				+ Parser.SPACE + rTime.getFullName() + Parser.RPAREN;
+		
+		RelationalExpr theCross = this.getCross(left, right); 
+		return this.getSelect(theCross, lLaterR);
+	}
+	
 
 	private RelationalExpr compileInterval (Event e, TimeStamp l, TimeStamp r) {
 		TimeStamp lTime = (l != null) ? l: MINTIME;
@@ -347,17 +443,16 @@ public class Parser {
 		if ((lTime == MINTIME) && (rTime == MAXTIME)) {	
 			return this.compileEvent(e);
 		} else {
-			EventRelation eRelation = this.findEventRelation(e.getName());
-			RelationalExpr iExpr = new RelationalExpr(eRelation);
-
+			
+			RelationalExpr iExpr = compileEvent(e);
+			
 			if ((lTime.getEventReference() == null) && (rTime.getEventReference() == null)) {
 				String lCond = String.valueOf(lTime.getVal()) + SelectExpr.LEQ + iExpr.getTimeColumn().getFullName();
 				String rCond = iExpr.getTimeColumn().getFullName() + SelectExpr.LT + String.valueOf(rTime.getVal());
 				String cond = lCond + " AND " + rCond;
 				return this.getSelect(iExpr, cond);
 			} else if ((lTime.getEventReference() != null) && (rTime.getEventReference() == null)) {
-				EventRelation lRelation = findEventRelation(lTime.getEventReference());
-				RelationalExpr lExpr = new RelationalExpr(lRelation).getRenameTime();
+				RelationalExpr lExpr = compileEvent(lTime.getEventReference()).getRenameTime();
 				RelationalExpr theExpr = this.getLeftSemiJoin(iExpr, lExpr);
 
 				String lCond = lExpr.getTimeColumn().getFullName() + Parser.PLUS + String.valueOf(lTime.getShift())
@@ -366,8 +461,7 @@ public class Parser {
 				String cond = lCond + " AND " + rCond;
 				return this.getSelect(theExpr, cond);
 			}  else if ((lTime.getEventReference() == null) && (rTime.getEventReference() != null)) {
-				EventRelation rRelation = findEventRelation(rTime.getEventReference());
-				RelationalExpr rExpr = new RelationalExpr(rRelation).getRenameTime();
+				RelationalExpr rExpr = compileEvent(rTime.getEventReference()).getRenameTime();
 				RelationalExpr theExpr = this.getLeftSemiJoin(iExpr, rExpr);
 
 				String lCond = String.valueOf(lTime.getVal()) + SelectExpr.LEQ + iExpr.getTimeColumn().getFullName();
@@ -376,14 +470,12 @@ public class Parser {
 				String cond = lCond + " AND " + rCond;
 				return this.getSelect(theExpr, cond);
 			} else {
-				EventRelation lRelation = findEventRelation(lTime.getEventReference());
-				RelationalExpr lExpr = new RelationalExpr(lRelation).getRenameTime();
+				RelationalExpr lExpr = compileEvent(lTime.getEventReference()).getRenameTime();
 				String lCond = lExpr.getTimeColumn().getFullName() + Parser.PLUS + String.valueOf(lTime.getShift()) 
 						+ SelectExpr.LEQ + iExpr.getTimeColumn().getFullName();
 				RelationalExpr leftExpr = this.getSelect(this.getLeftSemiJoin(iExpr, lExpr), lCond);
 				
-				EventRelation rRelation = findEventRelation(rTime.getEventReference());
-				RelationalExpr rExpr = new RelationalExpr(rRelation).getRenameTime();
+				RelationalExpr rExpr = compileEvent(rTime.getEventReference()).getRenameTime();
 				String rCond = iExpr.getTimeColumn().getFullName() + SelectExpr.LT 
 						+ rExpr.getTimeColumn().getFullName() + Parser.PLUS + String.valueOf(rTime.getShift());
 				RelationalExpr rightExpr = this.getSelect(this.getLeftSemiJoin(iExpr, rExpr), rCond);
@@ -391,21 +483,6 @@ public class Parser {
 				return this.getJoin(leftExpr, rightExpr);				
 			}
 		}    
-	}
-
-	private RelationalExpr compileEvent(Event event) {
-		if (event.getName() != null) {
-			EventRelation eRelation = this.findEventRelation(event.getName());
-
-			assert (eRelation != null);
-		
-			RelationalExpr rExpr = new RelationalExpr(eRelation);
-			return rExpr;
-		} else {
-			assert (event.getLifeState() != null);
-			RelationalExpr lExpr = this.getLifeExpr(event.getLifeState(), event.getLabel());
-			return lExpr;
-		}
 	}
 
 	private RelationalExpr getSelect (RelationalExpr operand, String subscript) {
@@ -473,16 +550,6 @@ public class Parser {
 		return anti;
     }
 	
-	private RelationalExpr getLeftOuterJoin(RelationalExpr left, RelationalExpr right) {
-		RelationalExpr thetaJoin = this.getJoin(left, right);
-		
-		RelationalExpr anti = this.projectToLeft(left, right);
-		RelationalExpr singleton = this.getSingleton(left, right);
-		RelationalExpr cross = this.getCross(anti, singleton);
-		
-		RelationalExpr union = this.getUnion(thetaJoin, cross);
-		return union;
-	}
 
 	private RelationalExpr getCross(RelationalExpr left, RelationalExpr right) {
 		RelationalExpr crossExpr = new RelationalExpr(EventOperator.CROSS);
@@ -500,26 +567,6 @@ public class Parser {
 		crossExpr.setTimeColumn(left.getTimeColumn());
 		
 		return crossExpr;
-	}
-
-	private RelationalExpr getSingleton(RelationalExpr left, RelationalExpr right) {
-		//TODO: Should create a table of name Singleton_X with these columns and should
-		// output a statement of the form 
-		// \sql_exec{INSERT INTO Singleton_X VALUES('NULL', ...)
-		// for the correct number of columns
-
-		RelationalExpr singleton = new RelationalExpr(EventOperator.SINGLETON); 
-		singleton.initializeColumns();
-		singleton.insertColumns(right.getColumns());
-		singleton.removeColumns(left.getColumns());
-
-		singleton.initializeKeyColumns();
-		singleton.insertKeyColumns(right.getKeyColumns());
-		singleton.removeKeyColumns(left.getKeyColumns());
-		
-		singleton.setTimeColumn(right.getTimeColumn());
-		
-		return singleton;
 	}
 
 	private RelationalExpr getDiff(RelationalExpr left, RelationalExpr semi) {
@@ -582,5 +629,5 @@ public class Parser {
 		b.append(Parser.RPAREN);
 		return b.toString();
 	}
-
+	
 }

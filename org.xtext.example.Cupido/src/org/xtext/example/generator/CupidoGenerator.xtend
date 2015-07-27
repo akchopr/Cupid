@@ -16,8 +16,8 @@ import org.xtext.example.cupido.EventRelation
 class CupidoGenerator implements IGenerator {
 
   override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-  fsa.generateFile('schema.sql', resource.generateRelations)
-  fsa.generateFile('commitments.algebra', resource.generateCommitments)
+  		fsa.generateFile('schema.sql', resource.generateRelations)
+  		fsa.generateFile('commitments.algebra', resource.generateCommitments)
   }
   
   def CharSequence generateCommitments(Resource resource) {
@@ -46,7 +46,7 @@ class CupidoGenerator implements IGenerator {
   }
 
   def CharSequence compileAll(Commitment c) { 
-    return compileViolated(c).toString; 
+    return compileCreated(c).toString; 
 //     + compileExpired(c).toString 
 //     + compileDischarged(c).toString 
 //     + compileViolated(c).toString
@@ -66,6 +66,7 @@ class CupidoGenerator implements IGenerator {
   	val RelationalExpr expr = Parser.getParser().compileExpired(c) 
     return "\nEXPIRED: " + expr.toRelationalAlgebra + ";" //+
   }
+  
   def CharSequence compileDischarged(Commitment c) {
   	val RelationalExpr expr = Parser.getParser().compileDischarged(c) 
     return "\nDISCHARGED: " + expr.toRelationalAlgebra + ";" //+

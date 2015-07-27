@@ -3,13 +3,16 @@
 package org.xtext.example.cupido.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.example.cupido.CupidoPackage;
+import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.TimeStamp;
 
 /**
@@ -50,24 +53,14 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
   protected int val = VAL_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getEventReference() <em>Event Reference</em>}' attribute.
+   * The cached value of the '{@link #getEventReference() <em>Event Reference</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getEventReference()
    * @generated
    * @ordered
    */
-  protected static final String EVENT_REFERENCE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getEventReference() <em>Event Reference</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEventReference()
-   * @generated
-   * @ordered
-   */
-  protected String eventReference = EVENT_REFERENCE_EDEFAULT;
+  protected Event eventReference;
 
   /**
    * The default value of the '{@link #getShift() <em>Shift</em>}' attribute.
@@ -138,7 +131,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getEventReference()
+  public Event getEventReference()
   {
     return eventReference;
   }
@@ -148,12 +141,37 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEventReference(String newEventReference)
+  public NotificationChain basicSetEventReference(Event newEventReference, NotificationChain msgs)
   {
-    String oldEventReference = eventReference;
+    Event oldEventReference = eventReference;
     eventReference = newEventReference;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.TIME_STAMP__EVENT_REFERENCE, oldEventReference, eventReference));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CupidoPackage.TIME_STAMP__EVENT_REFERENCE, oldEventReference, newEventReference);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEventReference(Event newEventReference)
+  {
+    if (newEventReference != eventReference)
+    {
+      NotificationChain msgs = null;
+      if (eventReference != null)
+        msgs = ((InternalEObject)eventReference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.TIME_STAMP__EVENT_REFERENCE, null, msgs);
+      if (newEventReference != null)
+        msgs = ((InternalEObject)newEventReference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CupidoPackage.TIME_STAMP__EVENT_REFERENCE, null, msgs);
+      msgs = basicSetEventReference(newEventReference, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.TIME_STAMP__EVENT_REFERENCE, newEventReference, newEventReference));
   }
 
   /**
@@ -177,6 +195,22 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
     shift = newShift;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.TIME_STAMP__SHIFT, oldShift, shift));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CupidoPackage.TIME_STAMP__EVENT_REFERENCE:
+        return basicSetEventReference(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -213,7 +247,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
         setVal((Integer)newValue);
         return;
       case CupidoPackage.TIME_STAMP__EVENT_REFERENCE:
-        setEventReference((String)newValue);
+        setEventReference((Event)newValue);
         return;
       case CupidoPackage.TIME_STAMP__SHIFT:
         setShift((Integer)newValue);
@@ -236,7 +270,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
         setVal(VAL_EDEFAULT);
         return;
       case CupidoPackage.TIME_STAMP__EVENT_REFERENCE:
-        setEventReference(EVENT_REFERENCE_EDEFAULT);
+        setEventReference((Event)null);
         return;
       case CupidoPackage.TIME_STAMP__SHIFT:
         setShift(SHIFT_EDEFAULT);
@@ -258,7 +292,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
       case CupidoPackage.TIME_STAMP__VAL:
         return val != VAL_EDEFAULT;
       case CupidoPackage.TIME_STAMP__EVENT_REFERENCE:
-        return EVENT_REFERENCE_EDEFAULT == null ? eventReference != null : !EVENT_REFERENCE_EDEFAULT.equals(eventReference);
+        return eventReference != null;
       case CupidoPackage.TIME_STAMP__SHIFT:
         return shift != SHIFT_EDEFAULT;
     }
@@ -278,8 +312,6 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (val: ");
     result.append(val);
-    result.append(", eventReference: ");
-    result.append(eventReference);
     result.append(", shift: ");
     result.append(shift);
     result.append(')');
