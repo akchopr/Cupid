@@ -18,7 +18,24 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 	private RelationalExpr leftExpr;
 	private String subscript;
 	private Event event; 
-	//TODO: This is shaping up to be a bad design
+	
+	private static int tableCounter = 0;
+	
+	
+	
+	public static final String SQLFROM = "FROM";
+	public static final String SQLAS = "AS";
+	public static final String SQLTABLE = "TABLE";
+	
+	public static final String SQLINTERSECTION = "";
+	public static final String SQLUNION = "UNION";
+	public static final String SQLNOTIN = "NOT IN"; // FOR diff
+	public static final String SQLCROSSJOIN = "CROSS JOIN";
+	public static final String SQLWHERE = "WHERE";
+	public static final String SQLSELECT = "SELECT";
+	public static final String SQLSELECTSTAR = "SELECT *";
+	public static final String SQLJOIN = "NATURAL JOIN";
+	public static final String SQLLEFTOUTERJOIN = "LEFT OUTER JOIN";
 
 	public String toString() {
 		return indentedString(0);
@@ -63,24 +80,33 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 		return sb.toString();
 	}
 	
+	private static String getNewTable(){
+		return SQLTABLE + tableCounter++;
+	}
+	
 	public String toSQL() {
 		StringBuffer sb = new StringBuffer();
 		sb.append(Parser.LPAREN);
 		
-		if (operator == EventOperator.SELECT) {
-			sb.append("SELECT * FROM " + leftExpr.toSQL() + " WHERE " + subscript) ;			
-		} else if (operator == EventOperator.PROJECT) {
-			sb.append("SELECT " + subscript + " FROM " + leftExpr.toSQL() + " AS TABLE_X");			
-		} else if (operator == EventOperator.RENAME) {
-			sb.append("SELECT " + subscript + " FROM " + leftExpr.toSQL() + " AS TABLE_X");
-		} else if ((operator == EventOperator.THETAJOIN) || (operator == EventOperator.UNION) || (operator == EventOperator.INTERSECTION) || (operator == EventOperator.DIFF)) {
+		if (operator == EventOperator.SELECT) 
+			sb.append(SQLSELECTSTAR + Parser.SPACE + 
+					SQLFROM + Parser.SPACE + leftExpr.toSQL() + Parser.SPACE + 
+					SQLAS + Parser.SPACE + getNewTable() + Parser.SPACE + 
+					SQLWHERE + Parser.SPACE + subscript) ;			
+		else if ((operator == EventOperator.PROJECT) || (operator == EventOperator.RENAME)) 
+			sb.append(SQLSELECT + Parser.SPACE  + subscript + Parser.SPACE + 
+					SQLFROM + Parser.SPACE + leftExpr.toSQL() + Parser.SPACE + 
+					SQLAS + Parser.SPACE + getNewTable());			
+		else if ((operator == EventOperator.THETAJOIN) || (operator == EventOperator.UNION) || 
+				(operator == EventOperator.INTERSECTION) || (operator == EventOperator.DIFF) ||
+				(operator == EventOperator.CROSS)) 
 			sb.append(leftExpr.toSQL() + Parser.SPACE + operator.toString() + Parser.SPACE + rightExpr.toSQL());
-		} else if (event != null) {
-			sb.append("SELECT * FROM " + event.getName() + " AS TABLE_X");
-		}
-		sb.append(Parser.RPAREN);
+		else if (operator == EventOperator.TIMESINGLETON) 
+			sb.append(SQLSELECT + Parser.SPACE + subscript);
+		else if (event != null) 
+			sb.append(SQLSELECTSTAR + Parser.SPACE + SQLFROM + Parser.SPACE + event.getName());
 		
-
+		sb.append(Parser.RPAREN);
 		return sb.toString();
 	}
 	

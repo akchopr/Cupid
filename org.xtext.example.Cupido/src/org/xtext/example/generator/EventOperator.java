@@ -13,11 +13,9 @@ public class EventOperator {
 
   final static EventOperator ID = EventOperator.instantiateOp("id"); // Base case
 
-public static final EventOperator SINGLETON = new EventOperator("singleton");
   static EventOperator INTERSECTION = new EventOperator("intersect");
   static EventOperator UNION = new EventOperator("union");
   static EventOperator DIFF = new EventOperator("diff");
-  static EventOperator NATJOIN = new EventOperator("join");
   static EventOperator CROSS = new EventOperator("cross"); 
   static EventOperator SELECT = new EventOperator("select");
   static EventOperator PROJECT = new EventOperator("project");

@@ -46,10 +46,8 @@ class CupidoGenerator implements IGenerator {
   }
 
   def CharSequence compileAll(Commitment c) { 
-    return compileCreated(c).toString; 
-//     + compileExpired(c).toString 
-//     + compileDischarged(c).toString 
-//     + compileViolated(c).toString
+    return compileExpired(c).toString();
+    //+ compileViolated(c).toString;
   }
   
   def CharSequence compileDetached(Commitment c) {
@@ -64,16 +62,16 @@ class CupidoGenerator implements IGenerator {
   
   def CharSequence compileExpired(Commitment c) {
   	val RelationalExpr expr = Parser.getParser().compileExpired(c) 
-    return "\nEXPIRED: " + expr.toRelationalAlgebra + ";" //+
+    return "\nEXPIRED: " + expr.toSQL + ";" //+
   }
   
   def CharSequence compileDischarged(Commitment c) {
   	val RelationalExpr expr = Parser.getParser().compileDischarged(c) 
-    return "\nDISCHARGED: " + expr.toRelationalAlgebra + ";" //+
+    return "\nDISCHARGED: " + expr.toSQL + ";" //+
   }
   def CharSequence compileViolated(Commitment c) {
   	val RelationalExpr expr = Parser.getParser().compileViolated(c) 
-    return "\nVIOLATED: " + expr.toRelationalAlgebra + ";" //+
+    return "\nVIOLATED: " + expr.toSQL + ";" //+
   }
   
 }

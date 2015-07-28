@@ -21,8 +21,6 @@ public class Parser {
 	private static final String DATETIME = "DATETIME";
 	private static final String VARCHAR_10 = "VARCHAR(10)";
 	private static final String CREATE_TABLE = "CREATE TABLE";
-	private static final TimeStamp MAXTIME = null; // max DATETIME of SQL
-	private static final TimeStamp MINTIME = null;
 	public static final String SPACE = " ";
 	public static final String UNDERSCORE = "_";
 	public static final String LPAREN = "(";
@@ -248,6 +246,8 @@ public class Parser {
 	}
 
 	public RelationalExpr compileEXCEPT(RelationalExpr left, Event ev, TimeStamp lTime, TimeStamp rTime) {
+		if(null == rTime)
+			return new RelationalExpr();
 		//compute R
 		RelationalExpr R = computeR(left, ev, lTime);
 		RelationalExpr S = computeS(left, ev, rTime);
@@ -276,44 +276,45 @@ public class Parser {
 		else if (e instanceof OExpr)
 			return compileOR(compileExpr(e.getLeft()),compileExpr(((OExpr)e).getRight()));
 		else {//e instanceof EExpr
-			if(null != ((EExpr)e).getRight().getEvent()) //Not a complex expression on the right
+			if(null != ((EExpr)e).getRight().getEvent()) //Not a "complex" expression on the right
 				return compileEXCEPT(compileExpr(e.getLeft()),
 						((EExpr)e).getRight().getEvent(),
 						((EExpr)e).getRight().getLTime(),
 						((EExpr)e).getRight().getRTime());
-			else { 
-				// Complex expression on the right, so reduce
-				System.out.println("Reduced: " + exprToString(e));
-				Expr reduced = reduceExcept((EExpr)e);
-				System.out.println("To: " + exprToString(reduced));
-				return compileExpr(reduced);
+			else 
+				return reduceExcept((EExpr)e);	
 			}
-				
-		}
-			
 	 }
 	
-	private Expr reduceExcept(EExpr e) {
+	private RelationalExpr reduceExcept(EExpr e) {
 			if(e.getRight() instanceof AExpr) {
 				// A except (B and C) = (A except B) or (A except C)
 				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
 				EExpr newRight = constructEExpr(e.getLeft(), ((AExpr)e.getRight()).getRight());
 				OExpr combined = constructOExpr(newLeft,newRight);
-				return combined;
+				return compileExpr(combined);
 			}
 			else if(e.getRight() instanceof OExpr) {
 				// A except (B or C) = (A except B) and (A except C)
 				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
 				EExpr newRight = constructEExpr(e.getLeft(),((OExpr)e.getRight()).getRight());
 				AExpr combined = constructAExpr(newLeft,newRight);			
-				return combined;
+				return compileExpr(combined);
+			}
+			else if(e.getRight() instanceof WExpr) {
+				//A except (B where p) = (A except B) antijoin (A and (B where p))
+				//But is the above formulation the simplest possible?
+				EExpr ajLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
+				AExpr ajRight = constructAExpr(e.getLeft(),e.getRight());
+				return this.antiJoin(compileExpr(ajLeft), compileExpr(ajRight));
 			}
 			else { //e.getRight instanceof of EExpr
+				assert(e.getRight() instanceof EExpr);
 				// A except (B except C) = (A except B) or (A and C)
 				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
 				AExpr newRight = constructAExpr(e.getLeft(),((EExpr)e.getRight()).getRight());
 				OExpr combined = constructOExpr(newLeft,newRight);			
-				return combined;
+				return compileExpr(combined);
 			}
 	}
 	
@@ -353,12 +354,12 @@ public class Parser {
 	
 	
 	private RelationalExpr computeR(RelationalExpr x, Event ev, TimeStamp lTime){
-		RelationalExpr rExpr = compileAND(x,compileInterval(ev, null, lTime)); 
+		RelationalExpr rExpr = compileAND(x,compileInterval(ev, CustomTimeStamp.getMinTimeStamp(), lTime)); 
 		return projectToLeft(rExpr,x);
 	}
 	
 	private RelationalExpr computeS(RelationalExpr x, Event ev, TimeStamp rTime){
-		RelationalExpr right = compileInterval(ev,null,rTime).getRenameTime();
+		RelationalExpr right = compileInterval(ev,CustomTimeStamp.getMinTimeStamp(),rTime).getRenameTime();
 		return antiJoin(x,right);
 	}
 	
@@ -367,8 +368,10 @@ public class Parser {
 			//Enable constructing SELECT ts.getVal AS stamp;
 			RelationalExpr singleton = new RelationalExpr();
 			singleton.setTimeColumn(stamp);
-			singleton.setSubscript(ts.getVal() + Parser.SPACE + Parser.AS + Parser.SPACE + stamp);
+			singleton.setSubscript(ts.getVal() + Parser.SPACE + Parser.AS + Parser.SPACE + stamp.getFullName());
 			singleton.setOperator(EventOperator.TIMESINGLETON);
+			singleton.initializeColumns();
+			singleton.initializeKeyColumns();
 			return singleton;
 		}
 		else {
@@ -438,9 +441,9 @@ public class Parser {
 	
 
 	private RelationalExpr compileInterval (Event e, TimeStamp l, TimeStamp r) {
-		TimeStamp lTime = (l != null) ? l: MINTIME;
-		TimeStamp rTime = (r != null) ? r: MAXTIME; 
-		if ((lTime == MINTIME) && (rTime == MAXTIME)) {	
+		TimeStamp lTime = (l != null) ? l: CustomTimeStamp.getMinTimeStamp();
+		TimeStamp rTime = (r != null) ? r: CustomTimeStamp.getMaxTimeStamp(); 
+		if ((lTime == CustomTimeStamp.getMinTimeStamp()) && (rTime == CustomTimeStamp.getMaxTimeStamp())) {	
 			return this.compileEvent(e);
 		} else {
 			
