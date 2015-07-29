@@ -247,7 +247,9 @@ public class Parser {
 
 	public RelationalExpr compileEXCEPT(RelationalExpr left, Event ev, TimeStamp lTime, TimeStamp rTime) {
 		if(null == rTime)
-			return new RelationalExpr();
+			rTime = CustomTimeStamp.getMaxTimeStamp();
+		if(null == lTime)
+			lTime = CustomTimeStamp.getMinTimeStamp();
 		//compute R
 		RelationalExpr R = computeR(left, ev, lTime);
 		RelationalExpr S = computeS(left, ev, rTime);
@@ -276,7 +278,8 @@ public class Parser {
 		else if (e instanceof OExpr)
 			return compileOR(compileExpr(e.getLeft()),compileExpr(((OExpr)e).getRight()));
 		else {//e instanceof EExpr
-			if(null != ((EExpr)e).getRight().getEvent()) //Not a "complex" expression on the right
+			if(null != ((EExpr)e).getRight().getEvent()) 
+				//Not a "complex" expression on the right and has a deadline
 				return compileEXCEPT(compileExpr(e.getLeft()),
 						((EExpr)e).getRight().getEvent(),
 						((EExpr)e).getRight().getLTime(),

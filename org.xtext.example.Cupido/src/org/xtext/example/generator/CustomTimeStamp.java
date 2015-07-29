@@ -5,9 +5,14 @@ import org.xtext.example.cupido.impl.TimeStampImpl;
 
 public class CustomTimeStamp extends TimeStampImpl {
 	
-	private static final CustomTimeStamp min = new CustomTimeStamp();
-	private static final CustomTimeStamp max = new CustomTimeStamp();
+	private static final int minTime = 0; //This has to be SQL datetime values
+	private static final int maxTime = 1000000; //This has to be SQL datetime values
+	private static final CustomTimeStamp min = new CustomTimeStamp(minTime);
+	private static final CustomTimeStamp max = new CustomTimeStamp(maxTime);
 	
+	private CustomTimeStamp(int value){
+		val = value;
+	}
 	public void setVal(int value){
 		val = value;
 	}
@@ -21,12 +26,10 @@ public class CustomTimeStamp extends TimeStampImpl {
 	}
 		
 	public static CustomTimeStamp getMinTimeStamp(){
-		min.setVal(0);
 		return min;
 	}
 
 	public static CustomTimeStamp getMaxTimeStamp(){
-		max.setVal(50000);
 		return max;
 	}
 }

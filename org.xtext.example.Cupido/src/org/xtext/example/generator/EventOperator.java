@@ -13,7 +13,7 @@ public class EventOperator {
 
   final static EventOperator ID = EventOperator.instantiateOp("id"); // Base case
 
-  static EventOperator INTERSECTION = new EventOperator("intersect");
+  //All these operators will have to be translated to the appropriate execution language
   static EventOperator UNION = new EventOperator("union");
   static EventOperator DIFF = new EventOperator("diff");
   static EventOperator CROSS = new EventOperator("cross"); 

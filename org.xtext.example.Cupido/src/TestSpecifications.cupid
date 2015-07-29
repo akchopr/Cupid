@@ -14,6 +14,6 @@ schema
 
 
 commitment DiscountQuoteTrivial mID to cID 
-  create Quote
-  detach Shipment[0,100]
-  discharge Payment
+  create Quote where "itemID=bat"
+  detach POrder[0,100] where "qty>50"
+  discharge Shipment and Payment
