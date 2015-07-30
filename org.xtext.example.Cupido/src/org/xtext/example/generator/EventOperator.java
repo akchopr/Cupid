@@ -20,9 +20,9 @@ public class EventOperator {
   static EventOperator SELECT = new EventOperator("select");
   static EventOperator PROJECT = new EventOperator("project");
   static EventOperator RENAME = new EventOperator("rename");
-  static EventOperator THETAJOIN = new EventOperator("join");
+  static EventOperator THETAJOIN = new EventOperator("naturaljoin");
   static EventOperator TIMESINGLETON = new EventOperator("timesingleton");
-  static EventOperator LEFTOUTERJOIN = new EventOperator("leftouterjoin"); 
+  static EventOperator LEFTOUTERJOIN = new EventOperator("naturalleftouterjoin"); 
 
   private EventOperator (String _op) {
     opName = _op;

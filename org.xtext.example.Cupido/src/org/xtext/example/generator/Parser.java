@@ -173,7 +173,7 @@ public class Parser {
 			RelationalExpr triggerExpr = this.compileExpr(c.getTrigger());
 			RelationalExpr antecedentExpr = this.compileExpr(c.getAntecedent());
 			RelationalExpr consequentExpr = this.compileExpr(c.getConsequent());
-			RelationalExpr dischargeExpr = this.compileOR(this.compileAND(triggerExpr, consequentExpr),
+			RelationalExpr dischargeExpr = this.compileOR(this.compileAND(triggerExpr, antecedentExpr),
 						     			this.compileAND(antecedentExpr, consequentExpr));
 			this.storeLifeExpr(Parser.DISCHARGED, c.getLabel(), dischargeExpr);
 			return dischargeExpr; 
@@ -215,34 +215,71 @@ public class Parser {
 	}
 	
 	public RelationalExpr getANDCROSS(RelationalExpr left, RelationalExpr right) {	
-		RelationalExpr rRename = right.getRenameTime();
-		RelationalExpr lLaterThanR = this.getLeftLaterThanRightCross(left, rRename);
-
-		RelationalExpr lRename = left.getRenameTime();
-		RelationalExpr rLaterThanL = this.getLeftLaterThanRightCross(right, lRename);
 		
-		return this.getUnion(lLaterThanR, rLaterThanL);
+		RelationalExpr renamed = right.getRenameTime();
+		RelationalExpr theJoin = getCross(left,renamed);
+		theJoin.setTimeColumn(left.getTimeColumn());
+		String selectStr = Parser.LPAREN + left.getTimeColumn().getFullName() + Parser.SPACE + SelectExpr.GEQ
+				+ Parser.SPACE + renamed.getTimeColumn().getFullName() + Parser.RPAREN;
+		RelationalExpr lExpr = getSelect(theJoin, selectStr);
+		
+		renamed = left.getRenameTime();
+		theJoin = getCross(renamed,right);
+		theJoin.setTimeColumn(right.getTimeColumn());
+		selectStr = Parser.LPAREN + right.getTimeColumn().getFullName() + Parser.SPACE + SelectExpr.GEQ
+				+ Parser.SPACE + renamed.getTimeColumn().getFullName() + Parser.RPAREN;
+		RelationalExpr rExpr = getSelect(theJoin, selectStr);
+
+		return this.getUnion(lExpr, rExpr);
+
 	}
 
 
 	public RelationalExpr compileAND(RelationalExpr left, RelationalExpr right) {
-		RelationalExpr rRename = right.getRenameTime();
-		RelationalExpr lLaterThanR = this.getLeftLaterThanRight(left, rRename);
+		/*We must preserve the ordering of the columns produced by the left and right computations of an AND
+		 * Otherwise, UNION and such set operations which assume the same column ordering for both operands
+		 * will throw up at execution time
+		 */
 
-		RelationalExpr lRename = left.getRenameTime();
-		RelationalExpr rLaterThanL = this.getLeftLaterThanRight(right, lRename);
+		RelationalExpr renamed = right.getRenameTime();
+		RelationalExpr theJoin = getJoin(left,renamed);
+		theJoin.setTimeColumn(left.getTimeColumn());
+		String selectStr = Parser.LPAREN + left.getTimeColumn().getFullName() + Parser.SPACE + SelectExpr.GEQ
+				+ Parser.SPACE + renamed.getTimeColumn().getFullName() + Parser.RPAREN;
+		RelationalExpr lExpr = getSelect(theJoin, selectStr);
 		
-	  	return this.getUnion(lLaterThanR, rLaterThanL);
+		renamed = left.getRenameTime();
+		theJoin = getJoin(renamed,right);
+		theJoin.setTimeColumn(right.getTimeColumn());
+		selectStr = Parser.LPAREN + right.getTimeColumn().getFullName() + Parser.SPACE + SelectExpr.GEQ
+				+ Parser.SPACE + renamed.getTimeColumn().getFullName() + Parser.RPAREN;
+		RelationalExpr rExpr = getSelect(theJoin, selectStr);
+
+		return this.getUnion(lExpr, rExpr);
 	}
 
-	public RelationalExpr compileOR(RelationalExpr left, RelationalExpr right) {		
-		RelationalExpr rRename = right.getRenameTime();
-		RelationalExpr lLaterThanR = this.getLeftEarlierThanRight(left, rRename);
-
-		RelationalExpr lRename = left.getRenameTime();
-		RelationalExpr rLaterThanL = this.getLeftEarlierThanRight(right, lRename);
-
-	  	return this.getUnion(lLaterThanR, rLaterThanL);
+	public RelationalExpr compileOR(RelationalExpr left, RelationalExpr right) {
+		
+		RelationalExpr renamed = right.getRenameTime();
+		RelationalExpr theJoin = getLeftOuterJoin(left,renamed);
+		theJoin.setTimeColumn(left.getTimeColumn());
+		String selectStr = Parser.LPAREN + Parser.LPAREN + left.getTimeColumn().getFullName() + Parser.SPACE 
+				+ SelectExpr.LEQ + Parser.SPACE + renamed.getTimeColumn().getFullName() + Parser.RPAREN 
+				+ SelectExpr.OR + Parser.LPAREN + renamed.getTimeColumn().getFullName() + SelectExpr.IS 
+				+ SelectExpr.NULL + Parser.RPAREN + Parser.RPAREN;
+		RelationalExpr lExpr = getSelect(theJoin, selectStr);
+		
+		renamed = left.getRenameTime();
+		theJoin = getLeftOuterJoin(renamed,right);
+		theJoin.setTimeColumn(right.getTimeColumn());
+		selectStr = Parser.LPAREN + Parser.LPAREN + right.getTimeColumn().getFullName() + Parser.SPACE 
+				+ SelectExpr.LEQ + Parser.SPACE + renamed.getTimeColumn().getFullName() + Parser.RPAREN 
+				+ SelectExpr.OR + Parser.LPAREN + renamed.getTimeColumn().getFullName() + SelectExpr.IS 
+				+ SelectExpr.NULL + Parser.RPAREN + Parser.RPAREN;
+		RelationalExpr rExpr = getSelect(theJoin, selectStr);
+		
+	
+	  	return this.getUnion(lExpr, rExpr);
 	}
 
 	public RelationalExpr compileEXCEPT(RelationalExpr left, Event ev, TimeStamp lTime, TimeStamp rTime) {
@@ -385,22 +422,9 @@ public class Parser {
 		}
 	}
 	
-	/*
-	 * Used for computing OR
-	 */
-	private RelationalExpr getLeftEarlierThanRight (RelationalExpr left, RelationalExpr right) {
-		Column lTime = left.getTimeColumn();
-		Column rTime = right.getTimeColumn();
-		String lEarlierR = Parser.LPAREN + Parser.LPAREN + lTime.getFullName() + Parser.SPACE 
-				+ SelectExpr.LEQ + Parser.SPACE + rTime.getFullName() + Parser.RPAREN 
-				+ SelectExpr.OR + Parser.LPAREN + rTime.getFullName() + SelectExpr.IS 
-				+ SelectExpr.NULL + Parser.RPAREN + Parser.RPAREN;
-		
-		RelationalExpr theJoin = this.getDirectLeftOuterJoin(left, right); 
-		return this.getSelect(theJoin, lEarlierR);
-	}
 	
-	private RelationalExpr getDirectLeftOuterJoin(RelationalExpr left, RelationalExpr right){
+	
+	private RelationalExpr getLeftOuterJoin(RelationalExpr left, RelationalExpr right){
 		RelationalExpr rExpr = new RelationalExpr();
 		rExpr.setLeft(left);
 		rExpr.setRight(right);
@@ -420,28 +444,6 @@ public class Parser {
 		return rExpr;
 
 	}
-	
-	
-	private RelationalExpr getLeftLaterThanRight(RelationalExpr left, RelationalExpr right) {
-		Column lTime = left.getTimeColumn();
-		Column rTime = right.getTimeColumn();
-		String lLaterR = Parser.LPAREN + lTime.getFullName() + Parser.SPACE + SelectExpr.GEQ
-				+ Parser.SPACE + rTime.getFullName() + Parser.RPAREN;
-		
-		RelationalExpr theJoin = this.getJoin(left, right); 
-		return this.getSelect(theJoin, lLaterR);
-	}
-	
-	private RelationalExpr getLeftLaterThanRightCross(RelationalExpr left, RelationalExpr right) {
-		Column lTime = left.getTimeColumn();
-		Column rTime = right.getTimeColumn();
-		String lLaterR = Parser.LPAREN + lTime.getFullName() + Parser.SPACE + SelectExpr.GEQ
-				+ Parser.SPACE + rTime.getFullName() + Parser.RPAREN;
-		
-		RelationalExpr theCross = this.getCross(left, right); 
-		return this.getSelect(theCross, lLaterR);
-	}
-	
 
 	private RelationalExpr compileInterval (Event e, TimeStamp l, TimeStamp r) {
 		TimeStamp lTime = (l != null) ? l: CustomTimeStamp.getMinTimeStamp();
@@ -486,7 +488,9 @@ public class Parser {
 						+ rExpr.getTimeColumn().getFullName() + Parser.PLUS + String.valueOf(rTime.getShift());
 				RelationalExpr rightExpr = this.getSelect(this.getLeftSemiJoin(iExpr, rExpr), rCond);
 
-				return this.getJoin(leftExpr, rightExpr);				
+				RelationalExpr theJoin = this.getJoin(leftExpr, rightExpr);
+				theJoin.setTimeColumn(leftExpr.getTimeColumn());
+				return theJoin;
 			}
 		}    
 	}
@@ -518,13 +522,16 @@ public class Parser {
 		rExpr.insertKeyColumns(right.getKeyColumns());
 
 		// TODO: Verify: the left timestamp is the one we always want
-		rExpr.setTimeColumn(left.getTimeColumn()); 
+		//Not possible to tell from within which is the timestamp, so commented out. 
+		//Timestamp must be set in the caller
+		//rExpr.setTimeColumn(left.getTimeColumn()); 
 		
 		return rExpr;
 	}
 
 	private RelationalExpr getLeftSemiJoin(RelationalExpr left, RelationalExpr right) {
 		RelationalExpr lrJoin = this.getJoin(left, right);
+		lrJoin.setTimeColumn(left.getTimeColumn());
 		RelationalExpr semi = this.projectToLeft(lrJoin, left);
 		return semi;
 	}
@@ -570,7 +577,8 @@ public class Parser {
 		crossExpr.insertKeyColumns(left.getKeyColumns());
 		crossExpr.insertKeyColumns(right.getKeyColumns());
 		
-		crossExpr.setTimeColumn(left.getTimeColumn());
+		//Not possible to tell the timestamp. Must be set by the caller. 
+		//crossExpr.setTimeColumn(left.getTimeColumn());
 		
 		return crossExpr;
 	}

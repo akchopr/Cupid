@@ -34,8 +34,8 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 	public static final String SQLWHERE = "WHERE";
 	public static final String SQLSELECT = "SELECT";
 	//public static final String SQLSELECTSTAR = "SELECT *";
-	public static final String SQLJOIN = "JOIN";
-	public static final String SQLLEFTOUTERJOIN = "LEFT OUTER JOIN";
+	public static final String SQLJOIN = "NATURAL JOIN";
+	public static final String SQLLEFTOUTERJOIN = "NATURAL LEFT OUTER JOIN";
 	public static final String SQLUSING = "USING";
 
 	public String toString() {
@@ -106,34 +106,63 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 
 		}
 		else if (operator == EventOperator.THETAJOIN) {
-			Set<Column> joinKeys = getCommonCols(leftExpr,rightExpr);
-			int num = joinKeys.size();
-			if(0 == num) 
+			Set<Column> joinKeys = getCommonKeys(leftExpr,rightExpr);
+			if(0 == joinKeys.size()) 
 				throw new MalformedSchemaException("Attempting operation " + this.getOperator() + " without any common columns between " + this.getLeft() + " and " + this.getRight());
 			else {
-				sb.append(Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
-						SQLJOIN + Parser.SPACE + 
-						Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE +
-						SQLUSING + Parser.SPACE + Parser.LPAREN);
-				int i = 1;
-				for(Column c: joinKeys){
-					sb.append(c.getFullName());
-					if(i != num) {
-						sb.append(Parser.COMMA);
-						i++;
-					}
+				sb.append(SQLSELECT + Parser.SPACE);
+				for (Column p: this.getColumns()) {
+					sb.append(p.getFullName());	
+					sb.append(Parser.COMMA);
 				}
-				sb.append(Parser.RPAREN);
+				sb.append(this.getTimeColumn().getFullName());
+				sb.append(Parser.SPACE);
+
+				sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+						SQLJOIN + Parser.SPACE + 
+						Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+						SQLAS + Parser.SPACE + getNewTable());
 			}
+		}
+		else if (operator == EventOperator.LEFTOUTERJOIN){
+			Set<Column> joinKeys = getCommonKeys(leftExpr,rightExpr);
+			if(0 == joinKeys.size()) 
+				throw new MalformedSchemaException("Attempting operation " + this.getOperator() + " without any common columns between " + this.getLeft() + " and " + this.getRight());
+			else {
+				sb.append(SQLSELECT + Parser.SPACE);
+				for (Column p: this.getColumns()) {
+					sb.append(p.getFullName());	
+					sb.append(Parser.COMMA);
+				}
+				sb.append(this.getTimeColumn().getFullName());
+				sb.append(Parser.SPACE);
+				sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+						SQLLEFTOUTERJOIN + Parser.SPACE + 
+						Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+						SQLAS + Parser.SPACE + getNewTable());
+				
+			}
+		}
+		else if (operator == EventOperator.CROSS)  {
+			//A cross (cartesian product) does not require common keys, so no need to check
+			sb.append(SQLSELECT + Parser.SPACE);
+			for (Column p: this.getColumns()) {
+				sb.append(p.getFullName());	
+				sb.append(Parser.COMMA);
+			}
+			sb.append(this.getTimeColumn().getFullName());
+			sb.append(Parser.SPACE);
+			sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+					SQLCROSSJOIN + Parser.SPACE + 
+					Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+					SQLAS + Parser.SPACE + getNewTable());
+			
 		}
 		else if (operator == EventOperator.UNION)  
 			sb.append(Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
 					SQLUNION + Parser.SPACE + 
 					Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN);
-		else if (operator == EventOperator.CROSS)  
-			sb.append(Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
-					SQLCROSSJOIN + Parser.SPACE + 
-					Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN);
+		
 		else if (operator == EventOperator.DIFF) {
 			//Unfortunately, SQL implementations do not support a difference operator, so we must construct it using "NOT IN"
 			//A diff B = (Select list of A's columns from A) where (list of A's columns) NOT IN (Select list of A's columns from B)
@@ -181,29 +210,10 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			sb.append(Parser.RPAREN);
 
 		}
-		else if (operator == EventOperator.LEFTOUTERJOIN){
-			Set<Column> joinKeys = getCommonCols(leftExpr,rightExpr);
-			int num = joinKeys.size();
-			if(0 == num) 
-				throw new MalformedSchemaException("Attempting operation " + this.getOperator() + " without any common columns between " + this.getLeft() + " and " + this.getRight());
-			else {
-				sb.append(Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
-						SQLLEFTOUTERJOIN + Parser.SPACE + 
-						Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE +
-						SQLUSING + Parser.SPACE + Parser.LPAREN);
-				int i = 1;
-				for(Column c: joinKeys){
-					sb.append(c.getFullName());
-					if(i != num) {
-						sb.append(Parser.COMMA);
-						i++;
-					}
-				}
-				sb.append(Parser.RPAREN);
-			}
-		}
+		
 		else if (operator == EventOperator.TIMESINGLETON) 
-			sb.append(SQLSELECT + Parser.SPACE + subscript);
+			sb.append(SQLSELECT + Parser.SPACE + subscript +
+					Parser.SPACE + SQLAS + Parser.SPACE + getNewTable());
 		else if (event != null) { // no operator, just a solitary event
 			//Never do Select * in an SQL query as column ordering returned is not reliable 
 			//Instead, always do Select followed by an explicit list of columns 
@@ -215,6 +225,8 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			sb.append(this.getTimeColumn().getFullName());
 			sb.append(Parser.SPACE);
 			sb.append(SQLFROM + Parser.SPACE + event.getName());
+			sb.append(Parser.SPACE + 
+					SQLAS + Parser.SPACE + getNewTable());
 		}
 		else {
 			System.out.println("Not handled " + this.getOperator().toString() + " in conversion from relational expression to SQL");
@@ -375,12 +387,18 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 		event = value;
 	}
 
-	public static Set<Column> getCommonCols(RelationalExpr left, RelationalExpr right){
+	public static Set<Column> getCommonKeys(RelationalExpr left, RelationalExpr right){
 		Set<Column> common = new LinkedHashSet<Column>();
-		for(Column lCol: left.getColumns())
+		//If left key appears in right, add it
+		for(Column lKey: left.getKeyColumns())
 			for(Column rCol: right.getColumns())
-				if(lCol.getFullName().equalsIgnoreCase(rCol.getFullName()))
-					common.add(lCol);
+				if(lKey.getFullName().equalsIgnoreCase(rCol.getFullName()))
+					common.add(lKey);
+		//If right key appears in left, add it
+		for(Column rKey: right.getKeyColumns())
+			for(Column lCol: left.getColumns())
+				if(rKey.getFullName().equalsIgnoreCase(lCol.getFullName()))
+					common.add(rKey);
 		return common;
 	}
 
