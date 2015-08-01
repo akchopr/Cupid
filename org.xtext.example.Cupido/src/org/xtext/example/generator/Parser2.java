@@ -295,11 +295,15 @@ public class Parser2 {
 			if ((lTime.getEventReference() == null) && (rTime.getEventReference() == null)) {
 				IntervalNoEventReferenceQuery q = new IntervalNoEventReferenceQuery(evQ, lTime, rTime);
 				return q;
-			} else {//if ((lTime.getEventReference() != null) && (rTime.getEventReference() == null)) {
+			} else if ((lTime.getEventReference() != null) && (rTime.getEventReference() == null)) {
 				Query lRef = compileEvent(lTime.getEventReference());
 				IntervalLeftEventReferenceQuery q = new IntervalLeftEventReferenceQuery(evQ, lRef, lTime, rTime);
 				return q;			
-			} 
+			} else {//else if ((lTime.getEventReference() == null) && (rTime.getEventReference() != null)) {
+				Query rRef = compileEvent(rTime.getEventReference());
+				IntervalRightEventReferenceQuery q = new IntervalRightEventReferenceQuery(evQ, rRef, lTime, rTime);
+				return q;
+			}
 		}
 	}
 			/*private Query compileInterval (Event e, TimeStamp l, TimeStamp r) {
