@@ -77,13 +77,14 @@ public class Parser {
 
 		for (Param p : eRelation.getParams()) {
 			sb.append(p.getName());
-			sb.append(Parser.SPACE + Parser.SPACE + Parser.VARCHAR_10 + Parser.COMMA + Parser.SPACE);
+			if(p.getName().equalsIgnoreCase(eRelation.getTimeParam().getName())) {
+				sb.append(Parser.SPACE + Parser.SPACE + Parser.DATETIME + Parser.COMMA + Parser.SPACE);
+			}
+			else{		
+				sb.append(Parser.SPACE + Parser.SPACE + Parser.VARCHAR_10 + Parser.COMMA + Parser.SPACE);
+			}
 		}
 		
-		sb.append(Parser.NEWLINE);
-		sb.append(Parser.SPACE + Parser.SPACE);
-		sb.append(eRelation.getTimeParam().getName());
-		sb.append(Parser.SPACE + Parser.SPACE + Parser.DATETIME + Parser.COMMA + Parser.SPACE);
 		
 		sb.append(Parser.NEWLINE);
 		sb.append(Parser.SPACE + Parser.SPACE + Parser.PRIMARY_KEY + Parser.LPAREN);
@@ -494,6 +495,9 @@ public class Parser {
 			}
 		}    
 	}
+	
+	
+	
 
 	private RelationalExpr getSelect (RelationalExpr operand, String subscript) {
 		RelationalExpr ee = new RelationalExpr(EventOperator.SELECT);
@@ -516,7 +520,7 @@ public class Parser {
 		rExpr.initializeColumns(); 
 		rExpr.insertColumns(left.getColumns());
 		rExpr.insertColumns(right.getColumns());
-
+		
 		rExpr.initializeKeyColumns(); 
 		rExpr.insertKeyColumns(left.getKeyColumns());
 		rExpr.insertKeyColumns(right.getKeyColumns());

@@ -74,12 +74,15 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			 */
 
 			sb.append(SQLSELECT + Parser.SPACE);
-
+			int i = 1; 
 			for (Column p: this.getColumns()) {
-				sb.append(p.getFullName());	
-				sb.append(Parser.COMMA);
+				sb.append(p.getFullName());
+				if(i < this.getColumns().size()) {
+					sb.append(Parser.COMMA);
+					i++;
+				}
+				
 			}
-			sb.append(this.getTimeColumn().getFullName());
 			sb.append(Parser.SPACE);
 			sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
 					SQLAS + Parser.SPACE + getNewTable() + Parser.SPACE + 
@@ -89,7 +92,6 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			/* Project is SQL's "select". Two operands, the set from which to project (left)
 			 * and the columns to project (subscript) 
 			 */
-
 			sb.append(SQLSELECT + Parser.SPACE  + subscript + Parser.SPACE + 
 					SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
 					SQLAS + Parser.SPACE + getNewTable());
@@ -111,16 +113,20 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 				throw new MalformedSchemaException("Attempting operation " + this.getOperator() + " without any common columns between " + this.getLeft() + " and " + this.getRight());
 			else {
 				sb.append(SQLSELECT + Parser.SPACE);
+				int i = 1; 
 				for (Column p: this.getColumns()) {
-					sb.append(p.getFullName());	
-					sb.append(Parser.COMMA);
+					sb.append(p.getFullName());
+					if(i < this.getColumns().size()) {
+						sb.append(Parser.COMMA);
+						i++;
+					}
+					
 				}
-				sb.append(this.getTimeColumn().getFullName());
+				
 				sb.append(Parser.SPACE);
 
-				sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
-						SQLJOIN + Parser.SPACE + 
-						Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+				sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.SPACE + 
+						SQLJOIN + Parser.SPACE  + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
 						SQLAS + Parser.SPACE + getNewTable());
 			}
 		}
@@ -130,15 +136,19 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 				throw new MalformedSchemaException("Attempting operation " + this.getOperator() + " without any common columns between " + this.getLeft() + " and " + this.getRight());
 			else {
 				sb.append(SQLSELECT + Parser.SPACE);
+				int i = 1; 
 				for (Column p: this.getColumns()) {
-					sb.append(p.getFullName());	
-					sb.append(Parser.COMMA);
+					sb.append(p.getFullName());
+					if(i < this.getColumns().size()) {
+						sb.append(Parser.COMMA);
+						i++;
+					}
+					
 				}
-				sb.append(this.getTimeColumn().getFullName());
 				sb.append(Parser.SPACE);
-				sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+				sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL()  + Parser.SPACE + 
 						SQLLEFTOUTERJOIN + Parser.SPACE + 
-						Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+						rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
 						SQLAS + Parser.SPACE + getNewTable());
 				
 			}
@@ -146,22 +156,26 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 		else if (operator == EventOperator.CROSS)  {
 			//A cross (cartesian product) does not require common keys, so no need to check
 			sb.append(SQLSELECT + Parser.SPACE);
+			int i = 1; 
 			for (Column p: this.getColumns()) {
-				sb.append(p.getFullName());	
-				sb.append(Parser.COMMA);
+				sb.append(p.getFullName());
+				if(i < this.getColumns().size()) {
+					sb.append(Parser.COMMA);
+					i++;
+				}
+				
 			}
-			sb.append(this.getTimeColumn().getFullName());
 			sb.append(Parser.SPACE);
-			sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+			sb.append(SQLFROM + Parser.SPACE + Parser.LPAREN + leftExpr.toSQL() + Parser.SPACE + 
 					SQLCROSSJOIN + Parser.SPACE + 
-					Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+					rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
 					SQLAS + Parser.SPACE + getNewTable());
 			
 		}
 		else if (operator == EventOperator.UNION)  
-			sb.append(Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
+			sb.append(Parser.LPAREN + leftExpr.toSQL()  + Parser.SPACE + 
 					SQLUNION + Parser.SPACE + 
-					Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN);
+					rightExpr.toSQL() + Parser.RPAREN);
 		
 		else if (operator == EventOperator.DIFF) {
 			//Unfortunately, SQL implementations do not support a difference operator, so we must construct it using "NOT IN"
@@ -169,11 +183,14 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			//We always select A's columns because diff only works with sets that have the same columns
 			//Prepare the left of the difference
 			sb.append(SQLSELECT + Parser.SPACE);
+			int i = 1; 
 			for (Column p: this.getColumns()) {
-				sb.append(p.getFullName());	
-				sb.append(Parser.COMMA);
+				sb.append(p.getFullName());
+				if(i < this.getColumns().size()) {
+					sb.append(Parser.COMMA);
+					i++;
+				}	
 			}
-			sb.append(this.getTimeColumn().getFullName());
 			sb.append(Parser.SPACE);
 			sb.append(SQLFROM + Parser.SPACE + 
 					Parser.LPAREN + leftExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
@@ -184,30 +201,35 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			sb.append(Parser.SPACE);
 			sb.append(SQLWHERE);
 			sb.append(Parser.SPACE + Parser.LPAREN);
+			sb.append(SQLSELECT + Parser.SPACE);
+			i = 1; 
 			for (Column p: this.getColumns()) {
-				sb.append(p.getFullName());	
-				sb.append(Parser.COMMA);
+				sb.append(p.getFullName());
+				if(i < this.getColumns().size()) {
+					sb.append(Parser.COMMA);
+					i++;
+				}
+				
 			}
-			sb.append(this.getTimeColumn().getFullName());
 			sb.append(Parser.RPAREN + Parser.SPACE);
 			sb.append(SQLNOTIN);
 			sb.append(Parser.SPACE);
 
 			//Prepare the right of the difference
-			sb.append(Parser.LPAREN);
 			sb.append(SQLSELECT + Parser.SPACE);
+			i = 1; 
 			for (Column p: this.getColumns()) {
-				sb.append(p.getFullName());	
-				sb.append(Parser.COMMA);
+				sb.append(p.getFullName());
+				if(i < this.getColumns().size()) {
+					sb.append(Parser.COMMA);
+					i++;
+				}
+				
 			}
-			sb.append(this.getTimeColumn().getFullName());
-			sb.append(Parser.SPACE);
-
 			sb.append(Parser.SPACE);
 			sb.append(SQLFROM + Parser.SPACE + 
 					Parser.LPAREN + rightExpr.toSQL() + Parser.RPAREN + Parser.SPACE + 
 					SQLAS + Parser.SPACE + getNewTable());
-			sb.append(Parser.RPAREN);
 
 		}
 		
@@ -218,15 +240,17 @@ public class RelationalExpr //extends GeneralExprImpl// implements EventRelation
 			//Never do Select * in an SQL query as column ordering returned is not reliable 
 			//Instead, always do Select followed by an explicit list of columns 
 			sb.append(SQLSELECT + Parser.SPACE);
+			int i = 1; 
 			for (Column p: this.getColumns()) {
-				sb.append(p.getFullName());	
-				sb.append(Parser.COMMA);
+				sb.append(p.getFullName());
+				if(i < this.getColumns().size()) {
+					sb.append(Parser.COMMA);
+					i++;
+				}	
 			}
-			sb.append(this.getTimeColumn().getFullName());
 			sb.append(Parser.SPACE);
 			sb.append(SQLFROM + Parser.SPACE + event.getName());
-			sb.append(Parser.SPACE + 
-					SQLAS + Parser.SPACE + getNewTable());
+			sb.append(Parser.SPACE + SQLAS + Parser.SPACE + getNewTable());
 		}
 		else {
 			System.out.println("Not handled " + this.getOperator().toString() + " in conversion from relational expression to SQL");

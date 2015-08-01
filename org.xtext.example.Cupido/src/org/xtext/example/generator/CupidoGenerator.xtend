@@ -41,44 +41,34 @@ class CupidoGenerator implements IGenerator {
   }  
 
   def CharSequence generateRelation (EventRelation s) {
-	Parser.getParser().storeEventRelation(s)
-    return Parser.getParser().toSQL(s)
+	Parser2.getParser().storeEventRelation(s)
+    return Parser2.getParser().toSQL(s)
   }
 
   def CharSequence compileAll(Commitment c) { 
     return compileCreated(c).toString +
     compileDetached(c).toString +
-    compileExpired(c).toString +
-    compileDischarged(c).toString +
-    compileViolated(c).toString ;
+    compileDischarged(c).toString;
   }
   
 //  def CharSequence compileAll(Commitment c) { 
 //    return compileDetached(c).toString;
 //  }
 //  
+  
   def CharSequence compileDetached(Commitment c) {
-  	val RelationalExpr expr = Parser.getParser().compileDetached(c) 
+  	val Query expr = Parser2.getParser().compileDetached(c) 
     return "\nDETACHED: " + expr.toSQL + ";" //+
   }
   
   def CharSequence compileCreated(Commitment c) {
-  	val RelationalExpr expr = Parser.getParser().compileCreated(c) 
+  	val Query expr = Parser2.getParser().compileCreated(c) 
     return "\nCREATED: " + expr.toSQL + ";" //+
   }
   
-  def CharSequence compileExpired(Commitment c) {
-  	val RelationalExpr expr = Parser.getParser().compileExpired(c) 
-    return "\nEXPIRED: " + expr.toSQL + ";" //+
-  }
-  
-  def CharSequence compileDischarged(Commitment c) {
-  	val RelationalExpr expr = Parser.getParser().compileDischarged(c) 
+   def CharSequence compileDischarged(Commitment c) {
+  	val Query expr = Parser2.getParser().compileDischarged(c) 
     return "\nDISCHARGED: " + expr.toSQL + ";" //+
-  }
-  def CharSequence compileViolated(Commitment c) {
-  	val RelationalExpr expr = Parser.getParser().compileViolated(c) 
-    return "\nVIOLATED: " + expr.toSQL + ";" //+
   }
   
 }
