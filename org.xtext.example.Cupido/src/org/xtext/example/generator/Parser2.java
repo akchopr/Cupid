@@ -14,6 +14,15 @@ import org.xtext.example.cupido.Param;
 import org.xtext.example.cupido.TimeStamp;
 import org.xtext.example.cupido.WExpr;
 import org.xtext.example.generator.CustomEExpr;
+import org.xtext.example.generator.query.AndQuery;
+import org.xtext.example.generator.query.BaseEventQuery;
+import org.xtext.example.generator.query.IntervalLeftEventReferenceQuery;
+import org.xtext.example.generator.query.IntervalLeftRightEventReferenceQuery;
+import org.xtext.example.generator.query.IntervalNoEventReferenceQuery;
+import org.xtext.example.generator.query.IntervalRightEventReferenceQuery;
+import org.xtext.example.generator.query.OrQuery;
+import org.xtext.example.generator.query.Query;
+import org.xtext.example.generator.query.WhereQuery;
 
 public class Parser2 {
 
@@ -299,9 +308,14 @@ public class Parser2 {
 				Query lRef = compileEvent(lTime.getEventReference());
 				IntervalLeftEventReferenceQuery q = new IntervalLeftEventReferenceQuery(evQ, lRef, lTime, rTime);
 				return q;			
-			} else {//else if ((lTime.getEventReference() == null) && (rTime.getEventReference() != null)) {
+			} else if ((lTime.getEventReference() == null) && (rTime.getEventReference() != null)) {
 				Query rRef = compileEvent(rTime.getEventReference());
 				IntervalRightEventReferenceQuery q = new IntervalRightEventReferenceQuery(evQ, rRef, lTime, rTime);
+				return q;
+			} else {
+				Query lRef = compileEvent(lTime.getEventReference());
+				Query rRef = compileEvent(rTime.getEventReference());
+				Query q = new IntervalLeftRightEventReferenceQuery(evQ, lRef, rRef, lTime, rTime);
 				return q;
 			}
 		}

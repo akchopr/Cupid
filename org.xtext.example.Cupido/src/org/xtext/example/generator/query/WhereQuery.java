@@ -1,4 +1,4 @@
-package org.xtext.example.generator;
+package org.xtext.example.generator.query;
 
 public class WhereQuery extends Query {
 	

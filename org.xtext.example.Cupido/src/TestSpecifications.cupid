@@ -14,7 +14,7 @@ schema
 
 
 commitment DiscountQuoteTrivial mID to cID 
-  create Quote[, POrder+50]
+  create Quote[Shipment+5, POrder+50]
   detach POrder where "qty=5"
   discharge Shipment
   

@@ -1,4 +1,4 @@
-package org.xtext.example.generator;
+package org.xtext.example.generator.query;
 
 import org.xtext.example.cupido.TimeStamp;
 

@@ -1,9 +1,9 @@
-package org.xtext.example.generator;
+package org.xtext.example.generator.query;
 
 import org.xtext.example.cupido.TimeStamp;
 
-public class IntervalLeftEventReferenceQuery extends IntervalQuery {
-
+public class IntervalRightEventReferenceQuery extends IntervalQuery {
+	
 	private Query evRef;
 
 	public Query getEvRef() {
@@ -14,7 +14,7 @@ public class IntervalLeftEventReferenceQuery extends IntervalQuery {
 		this.evRef = evRef;
 	}
 
-	public IntervalLeftEventReferenceQuery(Query ev, Query evRef, TimeStamp l, TimeStamp r) {
+	public IntervalRightEventReferenceQuery(Query ev, Query evRef, TimeStamp l, TimeStamp r) {
 		super(ev, l, r);
 		this.setEvRef(evRef); 
 	}
@@ -40,9 +40,9 @@ public class IntervalLeftEventReferenceQuery extends IntervalQuery {
 		
 		//Finally the where part
 		sql.append(SQLSPACE + SQLWHERE + SQLSPACE);
-		String lCond = this.getEvRef().getFullTimeStampName() + SQLPLUS + String.valueOf(this.getlT().getShift())
-		+ SQLLEQ + this.getLeft().getFullTimeStampName();
-		String rCond = this.getLeft().getFullTimeStampName() + SQLLT + String.valueOf(this.getrT().getVal());
+		String lCond = String.valueOf(this.getlT().getVal()) + SQLLEQ + this.getLeft().getFullTimeStampName();
+		String rCond = this.getLeft().getFullTimeStampName() + SQLLT + this.getEvRef().getFullTimeStampName() +
+				SQLPLUS + String.valueOf(this.getrT().getShift());
 		String cond = lCond + SQLSPACE + SQLAND + SQLSPACE + rCond;
 		sql.append(cond);
 

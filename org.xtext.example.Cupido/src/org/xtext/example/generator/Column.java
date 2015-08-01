@@ -42,7 +42,7 @@ public class Column {
 		return ++counter;
 	}
 
-	String getFullName() {
+	public String getFullName() {
 		return name;
 	}
 

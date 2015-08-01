@@ -1,11 +1,10 @@
-package org.xtext.example.generator;
+package org.xtext.example.generator.query;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
-
-import org.xtext.example.cupido.Event;
 import org.xtext.example.cupido.Param;
+import org.xtext.example.generator.Column;
 
 public abstract class Query implements SQLInterface{
 	

@@ -8,6 +8,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess
 import org.eclipse.xtext.generator.IGenerator
 import org.xtext.example.cupido.Commitment
 import org.xtext.example.cupido.EventRelation
+import org.xtext.example.generator.query.Query
 
 /**
  * Generates code from your model files on save.

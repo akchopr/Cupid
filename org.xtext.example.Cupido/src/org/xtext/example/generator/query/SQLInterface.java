@@ -1,6 +1,4 @@
-package org.xtext.example.generator;
-
-import java.util.Set;
+package org.xtext.example.generator.query;
 
 public interface SQLInterface {
 	public static final String SQLFROM = "FROM";
