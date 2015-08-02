@@ -12,11 +12,10 @@ public class OrQuery extends Query {
 		
 		this.initializeColumns();
 		this.insertColumns(leftQ.getAllColumns());
-		this.addNewColumns(rightQ.getAllColumns());
+		this.insertColumns(rightQ.getAllColumns());
 		
 		this.initializeKeyColumns();
-		//Should not matter whether left or right because keys must be identical for an OR to work correctly
-		this.insertKeyColumns(leftQ.getKeyColumns());
+		this.insertKeyColumns(leftQ.getCommonKeysWith(rightQ));
 		
 		//Should not matter whether left or right
 		this.setTimeColumn(leftQ.getTimeColumn());
@@ -24,24 +23,16 @@ public class OrQuery extends Query {
 	
 	@Override
 	public String toSQL() {
+		//First rename right, then get left NLOJ renamed and left NROJ renamed. Finally take their union
+		Query renamedRight = new RenameTimeStampQuery(this.getRight());
+		Query loj = new LeftOuterJoinQuery(this.getLeft(),renamedRight);
+		Query roj = new RightOuterJoinQuery(this.getLeft(),renamedRight);
+		
+		
 		StringBuffer sql = new StringBuffer();
-		//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln,  rightcol1, rightcol2,..., rightcolm,
-		sql.append(SQLSELECT + SQLSPACE);
-		sql.append(this.getColumnsAsString());
-		//Timestamp still needs to be appended
-		sql.append(SQLCOMMA + SQLSPACE);
-		//Construct timestamp part of the select clause: "LEAST(left.timestamp, right.timestamp) as timestamp"
-		sql.append(SQLLEAST + SQLLPAREN + 
-				SQLCOALESCE + SQLLPAREN + this.getLeft().getFullTimeStampName() + SQLCOMMA + this.getRight().getFullTimeStampName() + SQLRPAREN + SQLCOMMA +
-				SQLCOALESCE + SQLLPAREN + this.getRight().getFullTimeStampName() + SQLCOMMA + this.getLeft().getFullTimeStampName() + SQLRPAREN + SQLRPAREN +
-				SQLSPACE + SQLAS + SQLSPACE + this.getTimeColumn().getFullName());
-		//Now create the from part
-		//Now create the from part
-				sql.append(SQLSPACE);
-				sql.append(SQLFROM + SQLSPACE + 
-						SQLLPAREN + this.getLeft().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getLeft().getName() +  
-						SQLSPACE + SQLLEFTOUTERJOIN + SQLSPACE +
-						SQLLPAREN + this.getRight().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getRight().getName());
+		sql.append(loj.toSQL());
+		sql.append(SQLSPACE + SQLUNION +SQLSPACE);
+		sql.append(roj.toSQL());
 		
 		return sql.toString();
 	}

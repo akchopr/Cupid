@@ -3483,8 +3483,8 @@ rule__TimeStamp__ValAssignment_0
     }
 :
 (
-{ before(grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); }
-	RULE_INT{ after(grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); }
+{ before(grammarAccess.getTimeStampAccess().getValSTRINGTerminalRuleCall_0_0()); }
+	RULE_STRING{ after(grammarAccess.getTimeStampAccess().getValSTRINGTerminalRuleCall_0_0()); }
 )
 
 ;

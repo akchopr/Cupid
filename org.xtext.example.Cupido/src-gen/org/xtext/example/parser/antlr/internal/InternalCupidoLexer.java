@@ -22,7 +22,7 @@ public class InternalCupidoLexer extends Lexer {
     public static final int RULE_SL_COMMENT=31;
     public static final int RULE_CREATE=13;
     public static final int RULE_TIME=9;
-    public static final int RULE_PLUS=29;
+    public static final int RULE_PLUS=28;
     public static final int RULE_OR=17;
     public static final int EOF=-1;
     public static final int RULE_ID=10;
@@ -35,7 +35,7 @@ public class InternalCupidoLexer extends Lexer {
     public static final int RULE_ANY_OTHER=33;
     public static final int RULE_RPAREN=7;
     public static final int RULE_DISCHARGED=25;
-    public static final int RULE_INT=28;
+    public static final int RULE_INT=29;
     public static final int RULE_EXCEPT=16;
     public static final int RULE_VIOLATED=27;
     public static final int RULE_ML_COMMENT=30;

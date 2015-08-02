@@ -1,6 +1,9 @@
 package org.xtext.example.generator.query;
 
+import java.util.Set;
+
 import org.xtext.example.cupido.TimeStamp;
+import org.xtext.example.generator.Column;
 
 public class IntervalLeftEventReferenceQuery extends IntervalQuery {
 
@@ -22,8 +25,12 @@ public class IntervalLeftEventReferenceQuery extends IntervalQuery {
 	@Override
 	public String toSQL() {
 		//Construct SQL here
+		Query renamed = new RenameTimeStampQuery(this.getEvRef());
+		Query joinQ = new JoinQuery(this.getLeft(),renamed);
+		
 		StringBuffer sql = new StringBuffer();
-		//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln,
+		sql.append(joinQ.toSQL());
+		/*//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln
 		sql.append(SQLSELECT + SQLSPACE);
 		String colStr = this.getColumnsAsString();
 		sql.append(colStr);
@@ -37,12 +44,16 @@ public class IntervalLeftEventReferenceQuery extends IntervalQuery {
 				SQLLPAREN + this.getLeft().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getLeft().getName() +  
 				SQLSPACE + SQLJOIN + SQLSPACE +
 				SQLLPAREN + this.getEvRef().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getEvRef().getName());
+		*/
+		/*Set<Column> common = this.getLeft().getCommonColumns(this.getEvRef().getAllColumns());
+		String usingCols = getColumnsAsString(common);
+		sql.append(SQLSPACE + SQLUSING + SQLSPACE + SQLLPAREN + usingCols + SQLRPAREN);*/
 		
 		//Finally the where part
 		sql.append(SQLSPACE + SQLWHERE + SQLSPACE);
-		String lCond = this.getEvRef().getFullTimeStampName() + SQLPLUS + String.valueOf(this.getlT().getShift())
+		String lCond = renamed.getFullTimeStampName() + SQLPLUS + toDateTime(this.getlT().getShift())
 		+ SQLLEQ + this.getLeft().getFullTimeStampName();
-		String rCond = this.getLeft().getFullTimeStampName() + SQLLT + String.valueOf(this.getrT().getVal());
+		String rCond = this.getLeft().getFullTimeStampName() + SQLLT + toDateTime(this.getrT().getVal());
 		String cond = lCond + SQLSPACE + SQLAND + SQLSPACE + rCond;
 		sql.append(cond);
 

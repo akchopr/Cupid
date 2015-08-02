@@ -40,9 +40,13 @@ public class IntervalLeftRightEventReferenceQuery extends IntervalQuery {
 		IntervalRightEventReferenceQuery rQuery = 
 				new IntervalRightEventReferenceQuery(this.getLeft(),this.getrEvRef(),
 						CustomTimeStamp.getMinTimeStamp(),this.getrT());
-	
-		StringBuffer sql = new StringBuffer();
-		sql.append(SQLSELECT + SQLSPACE);
+		
+		Query renamed = new RenameTimeStampQuery(rQuery);
+		Query q = new JoinQuery(lQuery,renamed);
+		StringBuffer sql = new StringBuffer(q.toSQL());
+		
+		
+		/*sql.append(SQLSELECT + SQLSPACE);
 		String colStr = this.getColumnsAsString();
 		sql.append(colStr);
 		//Timestamp still needs to be appended
@@ -53,7 +57,7 @@ public class IntervalLeftRightEventReferenceQuery extends IntervalQuery {
 		sql.append(SQLFROM + SQLSPACE + 
 				SQLLPAREN + lQuery.toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + lQuery.getName() +  
 				SQLSPACE + SQLJOIN + SQLSPACE +
-				SQLLPAREN + rQuery.toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + rQuery.getName());
+				SQLLPAREN + rQuery.toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + rQuery.getName());*/
 		return sql.toString();
 	}
 }

@@ -1165,9 +1165,9 @@ ruleTimeStamp returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_val_0_0=RULE_INT
+		lv_val_0_0=RULE_STRING
 		{
-			newLeafNode(lv_val_0_0, grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); 
+			newLeafNode(lv_val_0_0, grammarAccess.getTimeStampAccess().getValSTRINGTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -1177,7 +1177,7 @@ ruleTimeStamp returns [EObject current=null]
        			$current, 
        			"val",
         		lv_val_0_0, 
-        		"INT");
+        		"STRING");
 	    }
 
 )

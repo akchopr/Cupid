@@ -40,7 +40,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
    * @generated
    * @ordered
    */
-  protected static final int VAL_EDEFAULT = 0;
+  protected static final String VAL_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getVal() <em>Val</em>}' attribute.
@@ -50,7 +50,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
    * @generated
    * @ordered
    */
-  protected int val = VAL_EDEFAULT;
+  protected String val = VAL_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getEventReference() <em>Event Reference</em>}' containment reference.
@@ -108,7 +108,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getVal()
+  public String getVal()
   {
     return val;
   }
@@ -118,9 +118,9 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVal(int newVal)
+  public void setVal(String newVal)
   {
-    int oldVal = val;
+    String oldVal = val;
     val = newVal;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CupidoPackage.TIME_STAMP__VAL, oldVal, val));
@@ -244,7 +244,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
     switch (featureID)
     {
       case CupidoPackage.TIME_STAMP__VAL:
-        setVal((Integer)newValue);
+        setVal((String)newValue);
         return;
       case CupidoPackage.TIME_STAMP__EVENT_REFERENCE:
         setEventReference((Event)newValue);
@@ -290,7 +290,7 @@ public class TimeStampImpl extends MinimalEObjectImpl.Container implements TimeS
     switch (featureID)
     {
       case CupidoPackage.TIME_STAMP__VAL:
-        return val != VAL_EDEFAULT;
+        return VAL_EDEFAULT == null ? val != null : !VAL_EDEFAULT.equals(val);
       case CupidoPackage.TIME_STAMP__EVENT_REFERENCE:
         return eventReference != null;
       case CupidoPackage.TIME_STAMP__SHIFT:

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SCHEMA", "RULE_LPAREN", "RULE_COMMA", "RULE_RPAREN", "RULE_KEY", "RULE_TIME", "RULE_ID", "RULE_COMMIT", "RULE_TO", "RULE_CREATE", "RULE_DETACH", "RULE_DISCHARGE", "RULE_EXCEPT", "RULE_OR", "RULE_AND", "RULE_WHERE", "RULE_STRING", "RULE_LBRACKET", "RULE_RBRACKET", "RULE_CREATED", "RULE_DETACHED", "RULE_DISCHARGED", "RULE_EXPIRED", "RULE_VIOLATED", "RULE_INT", "RULE_PLUS", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_SCHEMA", "RULE_LPAREN", "RULE_COMMA", "RULE_RPAREN", "RULE_KEY", "RULE_TIME", "RULE_ID", "RULE_COMMIT", "RULE_TO", "RULE_CREATE", "RULE_DETACH", "RULE_DISCHARGE", "RULE_EXCEPT", "RULE_OR", "RULE_AND", "RULE_WHERE", "RULE_STRING", "RULE_LBRACKET", "RULE_RBRACKET", "RULE_CREATED", "RULE_DETACHED", "RULE_DISCHARGED", "RULE_EXPIRED", "RULE_VIOLATED", "RULE_PLUS", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
     public static final int RULE_LBRACKET=21;
     public static final int RULE_TO=12;
@@ -33,7 +33,7 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final int RULE_SL_COMMENT=31;
     public static final int RULE_CREATE=13;
     public static final int RULE_TIME=9;
-    public static final int RULE_PLUS=29;
+    public static final int RULE_PLUS=28;
     public static final int RULE_OR=17;
     public static final int EOF=-1;
     public static final int RULE_ID=10;
@@ -46,7 +46,7 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=33;
     public static final int RULE_RPAREN=7;
     public static final int RULE_DISCHARGED=25;
-    public static final int RULE_INT=28;
+    public static final int RULE_INT=29;
     public static final int RULE_EXCEPT=16;
     public static final int RULE_VIOLATED=27;
     public static final int RULE_ML_COMMENT=30;
@@ -2693,7 +2693,7 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeStamp"
-    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1162:1: ruleTimeStamp returns [EObject current=null] : ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) ;
+    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1162:1: ruleTimeStamp returns [EObject current=null] : ( ( (lv_val_0_0= RULE_STRING ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) ;
     public final EObject ruleTimeStamp() throws RecognitionException {
         EObject current = null;
 
@@ -2706,14 +2706,14 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1165:28: ( ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) )
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1165:28: ( ( ( (lv_val_0_0= RULE_STRING ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) ) )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_STRING ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
             {
-            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_INT ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
+            // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:1: ( ( (lv_val_0_0= RULE_STRING ) ) | ( ( (lv_eventReference_1_0= ruleEvent ) ) (this_PLUS_2= RULE_PLUS ( (lv_shift_3_0= RULE_INT ) ) )? ) )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
-            if ( (LA15_0==RULE_INT) ) {
+            if ( (LA15_0==RULE_STRING) ) {
                 alt15=1;
             }
             else if ( (LA15_0==RULE_ID||(LA15_0>=RULE_CREATED && LA15_0<=RULE_VIOLATED)) ) {
@@ -2727,17 +2727,17 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
             }
             switch (alt15) {
                 case 1 :
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:2: ( (lv_val_0_0= RULE_INT ) )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:2: ( (lv_val_0_0= RULE_STRING ) )
                     {
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:2: ( (lv_val_0_0= RULE_INT ) )
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1167:1: (lv_val_0_0= RULE_INT )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1166:2: ( (lv_val_0_0= RULE_STRING ) )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1167:1: (lv_val_0_0= RULE_STRING )
                     {
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1167:1: (lv_val_0_0= RULE_INT )
-                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1168:3: lv_val_0_0= RULE_INT
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1167:1: (lv_val_0_0= RULE_STRING )
+                    // ../org.xtext.example.Cupido/src-gen/org/xtext/example/parser/antlr/internal/InternalCupido.g:1168:3: lv_val_0_0= RULE_STRING
                     {
-                    lv_val_0_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleTimeStamp2275); 
+                    lv_val_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTimeStamp2275); 
 
-                    			newLeafNode(lv_val_0_0, grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); 
+                    			newLeafNode(lv_val_0_0, grammarAccess.getTimeStampAccess().getValSTRINGTerminalRuleCall_0_0()); 
                     		
 
                     	        if (current==null) {
@@ -2747,7 +2747,7 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
                            			current, 
                            			"val",
                             		lv_val_0_0, 
-                            		"INT");
+                            		"STRING");
                     	    
 
                     }
@@ -2876,11 +2876,11 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     static final String DFA11_eofS =
         "\1\uffff\1\10\7\uffff\1\10\20\uffff";
     static final String DFA11_minS =
-        "\1\12\1\7\5\12\1\6\1\uffff\1\7\1\12\2\6\5\12\2\uffff\1\12\1\34"+
+        "\1\12\1\7\5\12\1\6\1\uffff\1\7\1\12\2\6\5\12\2\uffff\1\12\1\35"+
         "\1\6\2\uffff\1\6";
     static final String DFA11_maxS =
-        "\1\33\1\25\5\12\1\34\1\uffff\1\25\1\34\1\6\1\35\5\12\2\uffff\2"+
-        "\34\1\35\2\uffff\1\6";
+        "\1\33\1\25\5\12\1\33\1\uffff\1\25\1\33\1\6\1\34\5\12\2\uffff\1"+
+        "\33\1\35\1\34\2\uffff\1\6";
     static final String DFA11_acceptS =
         "\10\uffff\1\1\11\uffff\1\3\1\5\3\uffff\1\4\1\2\1\uffff";
     static final String DFA11_specialS =
@@ -2893,12 +2893,13 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
             "\1\11",
             "\1\11",
             "\1\11",
-            "\1\12\3\uffff\1\14\14\uffff\1\15\1\16\1\17\1\20\1\21\1\13",
+            "\1\12\3\uffff\1\14\11\uffff\1\13\2\uffff\1\15\1\16\1\17\1"+
+            "\20\1\21",
             "",
             "\1\10\3\uffff\1\10\2\uffff\6\10\1\uffff\1\7",
-            "\1\22\13\uffff\1\23\6\22",
+            "\1\22\11\uffff\1\22\1\uffff\1\23\5\22",
             "\1\24",
-            "\1\24\26\uffff\1\25",
+            "\1\24\25\uffff\1\25",
             "\1\26",
             "\1\26",
             "\1\26",
@@ -2906,9 +2907,9 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
             "\1\26",
             "",
             "",
-            "\1\30\13\uffff\1\27\6\30",
+            "\1\30\11\uffff\1\30\1\uffff\1\27\5\30",
             "\1\31",
-            "\1\24\26\uffff\1\25",
+            "\1\24\25\uffff\1\25",
             "",
             "",
             "\1\24"
@@ -3017,18 +3018,18 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleInterval1591 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1637 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1665 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1676 = new BitSet(new long[]{0x000000001F800400L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1676 = new BitSet(new long[]{0x000000000F900400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1696 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1707 = new BitSet(new long[]{0x000000001F800400L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1707 = new BitSet(new long[]{0x000000000F900400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1727 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_RULE_RBRACKET_in_ruleInterval1738 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1766 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1777 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1787 = new BitSet(new long[]{0x000000001F800400L});
+    public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1787 = new BitSet(new long[]{0x000000000F900400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1807 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_RULE_RBRACKET_in_ruleInterval1818 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_ruleInterval1846 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1857 = new BitSet(new long[]{0x000000001F800400L});
+    public static final BitSet FOLLOW_RULE_LBRACKET_in_ruleInterval1857 = new BitSet(new long[]{0x000000000F900400L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_ruleInterval1877 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_RULE_COMMA_in_ruleInterval1888 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_RULE_RBRACKET_in_ruleInterval1898 = new BitSet(new long[]{0x0000000000000002L});
@@ -3047,9 +3048,9 @@ public class InternalCupidoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_ID_in_ruleEvent2181 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTimeStamp_in_entryRuleTimeStamp2223 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTimeStamp2233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleTimeStamp2275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_ruleTimeStamp2308 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_RULE_PLUS_in_ruleTimeStamp2320 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTimeStamp2275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_ruleTimeStamp2308 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_RULE_PLUS_in_ruleTimeStamp2320 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_RULE_INT_in_ruleTimeStamp2336 = new BitSet(new long[]{0x0000000000000002L});
 
 }

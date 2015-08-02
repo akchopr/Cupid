@@ -21,7 +21,14 @@ public class IntervalRightEventReferenceQuery extends IntervalQuery {
 
 	@Override
 	public String toSQL() {
-		//Construct SQL here
+		
+		Query renamed = new RenameTimeStampQuery(this.getEvRef());
+		Query joinQ = new JoinQuery(this.getLeft(),renamed);
+		
+		StringBuffer sql = new StringBuffer();
+		sql.append(joinQ.toSQL());
+		
+		/*//Construct SQL here
 		StringBuffer sql = new StringBuffer();
 		//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln,
 		sql.append(SQLSELECT + SQLSPACE);
@@ -37,12 +44,12 @@ public class IntervalRightEventReferenceQuery extends IntervalQuery {
 				SQLLPAREN + this.getLeft().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getLeft().getName() +  
 				SQLSPACE + SQLJOIN + SQLSPACE +
 				SQLLPAREN + this.getEvRef().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getEvRef().getName());
-		
+		*/
 		//Finally the where part
 		sql.append(SQLSPACE + SQLWHERE + SQLSPACE);
-		String lCond = String.valueOf(this.getlT().getVal()) + SQLLEQ + this.getLeft().getFullTimeStampName();
-		String rCond = this.getLeft().getFullTimeStampName() + SQLLT + this.getEvRef().getFullTimeStampName() +
-				SQLPLUS + String.valueOf(this.getrT().getShift());
+		String lCond = toDateTime(this.getlT().getVal()) + SQLLEQ + this.getLeft().getFullTimeStampName();
+		String rCond = this.getLeft().getFullTimeStampName() + SQLLT + renamed.getFullTimeStampName() +
+				SQLPLUS + toDateTime(this.getrT().getShift());
 		String cond = lCond + SQLSPACE + SQLAND + SQLSPACE + rCond;
 		sql.append(cond);
 

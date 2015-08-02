@@ -40,6 +40,7 @@ public class BaseEventQuery extends Query {
 		//Now create the from part
 		sql.append(SQLSPACE);
 		sql.append(SQLFROM + SQLSPACE + eventName);
+		//sql.append(SQLSPACE + SQLAS + SQLSPACE + this.getName());
 		return sql.toString();
 
 		

@@ -6,7 +6,7 @@ public class AndQuery extends Query {
 		
 		this.initializeColumns();
 		this.insertColumns(leftQ.getAllColumns());
-		this.addNewColumns(rightQ.getAllColumns());
+		this.insertColumns(rightQ.getAllColumns());
 		
 		this.initializeKeyColumns();
 		this.insertKeyColumns(leftQ.getKeyColumns());
@@ -23,22 +23,32 @@ public class AndQuery extends Query {
 	}
 	@Override
 	public String toSQL() {
+		
+		Query renamed = new RenameTimeStampQuery(this.getRight());
+		Query joinQ =  new JoinQuery(this.getLeft(),renamed);
 		StringBuffer sql = new StringBuffer();
-		//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln,  rightcol1, rightcol2,..., rightcolm,
+		sql.append(joinQ.toSQL());
+		/*//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln,  rightcol1, rightcol2,..., rightcolm,
 		sql.append(SQLSELECT + SQLSPACE);
 		String colStr = this.getColumnsAsString();
 		sql.append(colStr);
 		//Timestamp still needs to be appended
 		sql.append(SQLCOMMA + SQLSPACE);
-		//Construct timestamp part of the select clause: "LEAST(left.timestamp, right.timestamp) as timestamp"
-		sql.append(SQLGREATEST + SQLLPAREN + this.getLeft().getFullTimeStampName() + SQLCOMMA + this.getRight().getFullTimeStampName() + SQLRPAREN + 
+		//Construct timestamp part of the select clause: "GREATEST(left.timestamp, right.timestamp) as timestamp"
+		sql.append(SQLGREATEST + SQLLPAREN + this.getLeft().getFullTimeStampName() + SQLCOMMA + 
+				renamed.getFullTimeStampName() + SQLRPAREN + 
 				SQLSPACE + SQLAS + SQLSPACE + this.getTimeColumn().getFullName());
 		//Now create the from part
 		sql.append(SQLSPACE);
+		
 		sql.append(SQLFROM + SQLSPACE + 
 				SQLLPAREN + this.getLeft().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getLeft().getName() +  
 				SQLSPACE + SQLJOIN + SQLSPACE +
-				SQLLPAREN + this.getRight().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getRight().getName());
+				SQLLPAREN + renamed.toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + renamed.getName());
+		*/
+		/*Set<Column> common = this.getLeft().getCommonColumns(this.getRight().getAllColumns());
+		String usingCols = getColumnsAsString(common);
+		sql.append(SQLSPACE + SQLUSING + SQLSPACE + SQLLPAREN + usingCols + SQLRPAREN);*/
 		
 		return sql.toString();
 	}

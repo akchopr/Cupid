@@ -1,20 +1,20 @@
 schema
- Quote(mID, cID, qID, itemID, uPrice)
-  key qID time stamp
- POrder(mID, cID, oID, qID, qty, addr)
-  key oID time stamp
- Payment(mID, cID, pID, oID, pPrice)
-  key pID time stamp
- Shipment(mID, cID, sID, oID, addr)
-  key sID time stamp
- Refund(mID, cID, rID, pID, rAmount)
-  key rID time stamp
- Coupon(mID, cID, uID, oID, rebate)
-  key uID time stamp
+ Quote(mID, cID, tID, itemID, uPrice)
+  key tID time stamp
+ POrder(mID, cID, tID, qty, addr)
+  key tID time stamp
+ Payment(mID, cID, tID, pPrice)
+  key tID time stamp
+ Shipment(mID, cID, tID, addr)
+  key tID time stamp
+ Refund(mID, cID, tID, rAmount)
+  key tID time stamp
+ Coupon(mID, cID, tID, rebate)
+  key tID time stamp
 
 
 commitment DiscountQuoteTrivial mID to cID 
-  create Quote[Shipment+5, POrder+50]
-  detach POrder where "qty=5"
+  create Quote
+  detach POrder[Quote+5, Quote+10]
   discharge Shipment
   

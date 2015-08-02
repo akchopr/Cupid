@@ -652,7 +652,7 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TimeStamp");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cValAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cValINTTerminalRuleCall_0_0 = (RuleCall)cValAssignment_0.eContents().get(0);
+		private final RuleCall cValSTRINGTerminalRuleCall_0_0 = (RuleCall)cValAssignment_0.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Assignment cEventReferenceAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
 		private final RuleCall cEventReferenceEventParserRuleCall_1_0_0 = (RuleCall)cEventReferenceAssignment_1_0.eContents().get(0);
@@ -662,17 +662,17 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cShiftINTTerminalRuleCall_1_1_1_0 = (RuleCall)cShiftAssignment_1_1_1.eContents().get(0);
 		
 		//TimeStamp:
-		//	val=INT | eventReference=Event (PLUS shift=INT)?;
+		//	val=STRING | eventReference=Event (PLUS shift=INT)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//val=INT | eventReference=Event (PLUS shift=INT)?
+		//val=STRING | eventReference=Event (PLUS shift=INT)?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//val=INT
+		//val=STRING
 		public Assignment getValAssignment_0() { return cValAssignment_0; }
 
-		//INT
-		public RuleCall getValINTTerminalRuleCall_0_0() { return cValINTTerminalRuleCall_0_0; }
+		//STRING
+		public RuleCall getValSTRINGTerminalRuleCall_0_0() { return cValSTRINGTerminalRuleCall_0_0; }
 
 		//eventReference=Event (PLUS shift=INT)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -933,7 +933,7 @@ public class CupidoGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TimeStamp:
-	//	val=INT | eventReference=Event (PLUS shift=INT)?;
+	//	val=STRING | eventReference=Event (PLUS shift=INT)?;
 	public TimeStampElements getTimeStampAccess() {
 		return pTimeStamp;
 	}

@@ -33,12 +33,12 @@ public interface TimeStamp extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Val</em>' attribute.
-   * @see #setVal(int)
+   * @see #setVal(String)
    * @see org.xtext.example.cupido.CupidoPackage#getTimeStamp_Val()
    * @model
    * @generated
    */
-  int getVal();
+  String getVal();
 
   /**
    * Sets the value of the '{@link org.xtext.example.cupido.TimeStamp#getVal <em>Val</em>}' attribute.
@@ -48,7 +48,7 @@ public interface TimeStamp extends EObject
    * @see #getVal()
    * @generated
    */
-  void setVal(int value);
+  void setVal(String value);
 
   /**
    * Returns the value of the '<em><b>Event Reference</b></em>' containment reference.

@@ -5,6 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import org.xtext.example.cupido.Param;
 import org.xtext.example.generator.Column;
+import org.xtext.example.generator.RelationalExpr;
 
 public abstract class Query implements SQLInterface{
 	
@@ -146,11 +147,80 @@ public abstract class Query implements SQLInterface{
 		return b.toString();
 	}
 	
+	public String getKeysAsString() {
+		StringBuffer b = new StringBuffer();
+		int i=1;
+		for(Column k: this.keyColumns){
+			b.append(k.getFullName());
+			if(i<keyColumns.size()){
+				b.append(SQLCOMMA + SQLSPACE);
+				i++;
+			}
+		}
+		return b.toString();
+	}
+	
 	public String getFullTimeStampName() {
 		StringBuffer b = new StringBuffer();
 		b.append(getName() + SQLDOT + getTimeColumn().getFullName());
 		return b.toString();
 	}
 	
+	public String getFullTimeStampName(String colName) {
+		StringBuffer b = new StringBuffer();
+		b.append(getName() + SQLDOT + colName);
+		return b.toString();
+	}
+	
+	public Set<Column> getCommonColumns(Set<Column> with){
+		Set<Column> common = new LinkedHashSet<Column>();
+		//For each col in this, see if it is present in with
+		for(Column c: this.allColumns){
+			for(Column w: with){
+				if(c.getFullName().equalsIgnoreCase(w.getFullName()))
+					common.add(w);
+			}
+		}
+		return common;
+	}
+	
+	public static String getColumnsAsString(Set<Column> cols){
+		StringBuffer b = new StringBuffer();
+		int i=1;
+		for(Column c: cols){
+			b.append(c.getFullName());
+			if(i<cols.size()){
+				b.append(SQLCOMMA + SQLSPACE);
+				i++;
+			}
+		}
+		return b.toString();
+		
+	}
+	public static Set<Column> getCommonKeys(Query left, Query right){
+		Set<Column> common = new LinkedHashSet<Column>();
+		//If left key appears in right, add it
+		for(Column lKey: left.getKeyColumns())
+			for(Column rCol: right.getAllColumns())
+				if(lKey.getFullName().equalsIgnoreCase(rCol.getFullName()))
+					common.add(lKey);
+		//If right key appears in left, add it
+		for(Column rKey: right.getKeyColumns())
+			for(Column lCol: left.getAllColumns())
+				if(rKey.getFullName().equalsIgnoreCase(lCol.getFullName()))
+					common.add(rKey);
+		return common;
+	}
+	
+	public Set<Column> getCommonKeysWith(Query with) {
+		Set<Column> withCols = with.getAllColumns();
+		Set<Column> thisCols = this.getAllColumns();
+		Set<Column> common = new LinkedHashSet<Column>();
+		for(Column c: thisCols)
+			if(withCols.contains(c))
+				common.add(c);
+		return common;
+	}
+
 	
 }

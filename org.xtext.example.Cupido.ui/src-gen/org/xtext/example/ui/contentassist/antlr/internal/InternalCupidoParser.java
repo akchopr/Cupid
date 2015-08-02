@@ -1569,7 +1569,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             int alt5=2;
             int LA5_0 = input.LA(1);
 
-            if ( (LA5_0==RULE_INT) ) {
+            if ( (LA5_0==RULE_STRING) ) {
                 alt5=1;
             }
             else if ( ((LA5_0>=RULE_CREATED && LA5_0<=RULE_VIOLATED)||LA5_0==RULE_ID) ) {
@@ -9304,21 +9304,21 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeStamp__ValAssignment_0"
-    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3480:1: rule__TimeStamp__ValAssignment_0 : ( RULE_INT ) ;
+    // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3480:1: rule__TimeStamp__ValAssignment_0 : ( RULE_STRING ) ;
     public final void rule__TimeStamp__ValAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3484:1: ( ( RULE_INT ) )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_INT )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3484:1: ( ( RULE_STRING ) )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_STRING )
             {
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_INT )
-            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3486:1: RULE_INT
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3485:1: ( RULE_STRING )
+            // ../org.xtext.example.Cupido.ui/src-gen/org/xtext/example/ui/contentassist/antlr/internal/InternalCupido.g:3486:1: RULE_STRING
             {
-             before(grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__TimeStamp__ValAssignment_06995); 
-             after(grammarAccess.getTimeStampAccess().getValINTTerminalRuleCall_0_0()); 
+             before(grammarAccess.getTimeStampAccess().getValSTRINGTerminalRuleCall_0_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TimeStamp__ValAssignment_06995); 
+             after(grammarAccess.getTimeStampAccess().getValSTRINGTerminalRuleCall_0_0()); 
 
             }
 
@@ -9429,8 +9429,8 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
         "\1\4\1\13\5\33\1\4\1\uffff\1\13\1\4\2\16\5\33\2\uffff\1\4\1\35"+
         "\1\16\2\uffff\1\16";
     static final String DFA2_maxS =
-        "\1\33\1\30\5\33\1\35\1\uffff\1\30\1\35\1\16\1\32\5\33\2\uffff\2"+
-        "\35\1\32\2\uffff\1\16";
+        "\1\33\1\30\5\33\1\34\1\uffff\1\30\1\34\1\16\1\32\5\33\2\uffff\1"+
+        "\34\1\35\1\32\2\uffff\1\16";
     static final String DFA2_acceptS =
         "\10\uffff\1\1\11\uffff\1\5\1\3\3\uffff\1\2\1\4\1\uffff";
     static final String DFA2_specialS =
@@ -9443,11 +9443,10 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             "\1\11",
             "\1\11",
             "\1\11",
-            "\1\15\1\16\1\17\1\20\1\21\5\uffff\1\12\14\uffff\1\14\1\uffff"+
-            "\1\13",
+            "\1\15\1\16\1\17\1\20\1\21\5\uffff\1\12\14\uffff\1\14\1\13",
             "",
             "\1\10\3\uffff\1\10\2\uffff\6\10\1\7",
-            "\5\23\20\uffff\1\22\1\uffff\1\23\1\uffff\1\23",
+            "\5\23\20\uffff\1\22\1\uffff\2\23",
             "\1\24",
             "\1\24\13\uffff\1\25",
             "\1\26",
@@ -9457,7 +9456,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
             "\1\26",
             "",
             "",
-            "\5\27\20\uffff\1\30\1\uffff\1\27\1\uffff\1\27",
+            "\5\27\20\uffff\1\30\1\uffff\2\27",
             "\1\31",
             "\1\24\13\uffff\1\25",
             "",
@@ -9698,13 +9697,13 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Interval__Group_1__0__Impl_in_rule__Interval__Group_1__04448 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_rule__Interval__Group_1__1_in_rule__Interval__Group_1__04451 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Interval__EventAssignment_1_0_in_rule__Interval__Group_1__0__Impl4478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__1__Impl_in_rule__Interval__Group_1__14508 = new BitSet(new long[]{0x00000000280001F0L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__1__Impl_in_rule__Interval__Group_1__14508 = new BitSet(new long[]{0x00000000180001F0L});
     public static final BitSet FOLLOW_rule__Interval__Group_1__2_in_rule__Interval__Group_1__14511 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_1__1__Impl4538 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Interval__Group_1__2__Impl_in_rule__Interval__Group_1__24567 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_rule__Interval__Group_1__3_in_rule__Interval__Group_1__24570 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Interval__LTimeAssignment_1_2_in_rule__Interval__Group_1__2__Impl4597 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_1__3__Impl_in_rule__Interval__Group_1__34627 = new BitSet(new long[]{0x00000000280001F0L});
+    public static final BitSet FOLLOW_rule__Interval__Group_1__3__Impl_in_rule__Interval__Group_1__34627 = new BitSet(new long[]{0x00000000180001F0L});
     public static final BitSet FOLLOW_rule__Interval__Group_1__4_in_rule__Interval__Group_1__34630 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_1__3__Impl4657 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Interval__Group_1__4__Impl_in_rule__Interval__Group_1__44686 = new BitSet(new long[]{0x0000000002000000L});
@@ -9718,7 +9717,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Interval__Group_2__1__Impl_in_rule__Interval__Group_2__14874 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_rule__Interval__Group_2__2_in_rule__Interval__Group_2__14877 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_2__1__Impl4904 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_2__2__Impl_in_rule__Interval__Group_2__24933 = new BitSet(new long[]{0x00000000280001F0L});
+    public static final BitSet FOLLOW_rule__Interval__Group_2__2__Impl_in_rule__Interval__Group_2__24933 = new BitSet(new long[]{0x00000000180001F0L});
     public static final BitSet FOLLOW_rule__Interval__Group_2__3_in_rule__Interval__Group_2__24936 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_COMMA_in_rule__Interval__Group_2__2__Impl4963 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Interval__Group_2__3__Impl_in_rule__Interval__Group_2__34992 = new BitSet(new long[]{0x0000000002000000L});
@@ -9729,7 +9728,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__Interval__Group_3__0__Impl_in_rule__Interval__Group_3__05118 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_rule__Interval__Group_3__1_in_rule__Interval__Group_3__05121 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Interval__EventAssignment_3_0_in_rule__Interval__Group_3__0__Impl5148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Interval__Group_3__1__Impl_in_rule__Interval__Group_3__15178 = new BitSet(new long[]{0x00000000280001F0L});
+    public static final BitSet FOLLOW_rule__Interval__Group_3__1__Impl_in_rule__Interval__Group_3__15178 = new BitSet(new long[]{0x00000000180001F0L});
     public static final BitSet FOLLOW_rule__Interval__Group_3__2_in_rule__Interval__Group_3__15181 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LBRACKET_in_rule__Interval__Group_3__1__Impl5208 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Interval__Group_3__2__Impl_in_rule__Interval__Group_3__25237 = new BitSet(new long[]{0x0000000000004000L});
@@ -9797,7 +9796,7 @@ public class InternalCupidoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_RULE_ID_in_rule__Event__NameAssignment_06900 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Event__LifeStateAlternatives_1_0_0_in_rule__Event__LifeStateAssignment_1_06931 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Event__LabelAssignment_1_16964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__TimeStamp__ValAssignment_06995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TimeStamp__ValAssignment_06995 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEvent_in_rule__TimeStamp__EventReferenceAssignment_1_07026 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_INT_in_rule__TimeStamp__ShiftAssignment_1_1_17057 = new BitSet(new long[]{0x0000000000000002L});
 

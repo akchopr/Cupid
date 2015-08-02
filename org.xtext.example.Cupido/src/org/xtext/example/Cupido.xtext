@@ -52,7 +52,7 @@ Event:
   (lifeState = (CREATED | DETACHED | DISCHARGED | EXPIRED | VIOLATED)) (label = ID);  // Require labels instead of nesting
 
 TimeStamp:
-  val = INT |
+  val = STRING |
   (eventReference = Event) (PLUS (shift = INT))?; 
 
 //TODO: Found INT in common Terminals but not NUMBER 

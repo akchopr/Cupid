@@ -38,6 +38,15 @@ public abstract class IntervalQuery extends Query  {
 		
 		this.setlT(l);
 		this.setrT(r);		
-	}	
+	}
+	
+	public static String toDateTime(String dateTime){
+		return SQLInterface.SQLSINGLEQUOTE + dateTime + SQLInterface.SQLSINGLEQUOTE; 
+	}
+	
+	public static String toDateTime(int shift){
+		return SQLInterface.SQLINTERVAL + 
+				SQLInterface.SQLSPACE + SQLInterface.SQLPLUS + shift + SQLInterface.SQLSPACE + SQLInterface.SQLDAY;
+	}
 
 }

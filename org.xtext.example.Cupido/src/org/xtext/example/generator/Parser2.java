@@ -185,7 +185,7 @@ public class Parser2 {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
 			Query antecedentExpr = this.compileExpr(c.getAntecedent());
 			Query consequentExpr = this.compileExpr(c.getConsequent());
-			Query dischargeExpr = this.compileOR(this.compileAND(triggerExpr, antecedentExpr),
+			Query dischargeExpr = this.compileOR(this.compileAND(triggerExpr, consequentExpr),
 						     			this.compileAND(antecedentExpr, consequentExpr));
 			this.storeLifeExpr(Parser2.DISCHARGED, c.getLabel(), dischargeExpr);
 			return dischargeExpr; 
