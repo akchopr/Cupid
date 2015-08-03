@@ -17,6 +17,7 @@ import org.xtext.example.generator.CustomEExpr;
 import org.xtext.example.generator.query.AndQuery;
 import org.xtext.example.generator.query.AntijoinQuery;
 import org.xtext.example.generator.query.BaseEventQuery;
+import org.xtext.example.generator.query.CurrentTimeQuery;
 import org.xtext.example.generator.query.ExceptQuery;
 import org.xtext.example.generator.query.IntervalLeftEventReferenceQuery;
 import org.xtext.example.generator.query.IntervalLeftRightEventReferenceQuery;
@@ -160,7 +161,7 @@ public class Parser2 {
 		if (oldCreateExpr != null) {
 			return oldCreateExpr;
 		} else {
-			Query createExpr = compileExpr(c.getTrigger());
+			Query createExpr = new CurrentTimeQuery(compileExpr(c.getTrigger()));
 			this.storeLifeExpr(Parser2.CREATED, c.getLabel(), createExpr);
 			return createExpr;
 		}
@@ -173,7 +174,7 @@ public class Parser2 {
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
 			Query antecedentExpr = this.compileExpr(c.getAntecedent());
-			Query detachExpr = this.compileAND(triggerExpr, antecedentExpr);
+			Query detachExpr = new CurrentTimeQuery(this.compileAND(triggerExpr, antecedentExpr));
 			this.storeLifeExpr(Parser2.DETACHED, c.getLabel(), detachExpr);
 			return detachExpr;
 		}
@@ -186,7 +187,7 @@ public class Parser2 {
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
 			Query consequentExpr = this.compileExpr(c.getConsequent());
-			Query dischargeExpr = this.compileAND(triggerExpr, consequentExpr);
+			Query dischargeExpr = new CurrentTimeQuery(this.compileAND(triggerExpr, consequentExpr));
 			this.storeLifeExpr(Parser2.DISCHARGED, c.getLabel(), dischargeExpr);
 			return dischargeExpr; 
 		}
@@ -205,7 +206,7 @@ public class Parser2 {
 			//Construct the expression 'trigger except antecedent' and compile it
 			Expr e = constructEExpr(c.getTrigger(),c.getAntecedent());
 			System.out.println(exprToString(e));
-			Query expireExpr = compileExpr(e);
+			Query expireExpr = new CurrentTimeQuery(compileExpr(e));
 			this.storeLifeExpr(Parser2.EXPIRED, c.getLabel(), expireExpr);
 			return expireExpr;
 		}
@@ -220,7 +221,7 @@ public class Parser2 {
 			Expr aExpr = constructAExpr(c.getTrigger(),c.getAntecedent());
 			Expr eExpr = constructEExpr(aExpr,c.getConsequent());
 			System.out.println(exprToString(eExpr));
-			Query violateExpr = this.compileExpr(eExpr);
+			Query violateExpr = new CurrentTimeQuery(compileExpr(eExpr));
 			this.storeLifeExpr(Parser2.VIOLATED, c.getLabel(), violateExpr);
 			return violateExpr;
 		}
