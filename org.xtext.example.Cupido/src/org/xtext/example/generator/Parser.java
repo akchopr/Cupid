@@ -27,7 +27,7 @@ import org.xtext.example.generator.query.OrQuery;
 import org.xtext.example.generator.query.Query;
 import org.xtext.example.generator.query.WhereQuery;
 
-public class Parser2 {
+public class Parser {
 
 	private static final String PRIMARY_KEY = "PRIMARY KEY";
 	private static final String DATETIME = "DATETIME";
@@ -44,31 +44,29 @@ public class Parser2 {
 	private static final String OR = "or";
 	private static final String EXCEPT = "except";
 	private static final String WHERE = "where";
-	private static final String AS = "AS";
 
 	private static final String CREATED = "created";
 	private static final String DETACHED = "detached";
 	private static final String DISCHARGED = "discharged";
 	private static final String EXPIRED = "expired";
 	private static final String VIOLATED = "violated";
-	private static final String PLUS = "+";
 	private static final String SEMICOLON = ";";
 	private static final Object NEWLINE = "\n";
 
-	static Parser2 theParser = null;
+	static Parser theParser = null;
 	
 	HashMap<CharSequence, EventRelation> attrs = null; 
 
 	HashMap<String, HashMap<String, Query>> lifeExprs = null; 
 
-	private Parser2() {
+	private Parser() {
 		attrs = new HashMap<CharSequence, EventRelation>();
 		lifeExprs = new HashMap<String, HashMap<String, Query>>();
 	}
 	
-	public static Parser2 getParser() {
+	public static Parser getParser() {
 		if (theParser == null) {
-			theParser = new Parser2();			
+			theParser = new Parser();			
 		}
 		return theParser;
 	}
@@ -80,38 +78,38 @@ public class Parser2 {
 	public String toSQL (EventRelation eRelation) {
 		StringBuffer sb = new StringBuffer();
 		
-		sb.append(CREATE_TABLE + Parser2.SPACE);
+		sb.append(CREATE_TABLE + Parser.SPACE);
 		sb.append(eRelation.getEvent().getName());
-		sb.append(Parser2.SPACE + Parser2.LPAREN);
+		sb.append(Parser.SPACE + Parser.LPAREN);
 
-		sb.append(Parser2.NEWLINE);
-		sb.append(Parser2.SPACE + Parser2.SPACE);
+		sb.append(Parser.NEWLINE);
+		sb.append(Parser.SPACE + Parser.SPACE);
 
 		for (Param p : eRelation.getParams()) {
 			sb.append(p.getName());
-			sb.append(Parser2.SPACE + Parser2.SPACE + Parser2.VARCHAR_10 + Parser2.COMMA + Parser2.SPACE);
+			sb.append(Parser.SPACE + Parser.SPACE + Parser.VARCHAR_10 + Parser.COMMA + Parser.SPACE);
 		}
 		
-		sb.append(Parser2.NEWLINE);
-		sb.append(Parser2.SPACE + Parser2.SPACE);
+		sb.append(Parser.NEWLINE);
+		sb.append(Parser.SPACE + Parser.SPACE);
 		sb.append(eRelation.getTimeParam().getName());
-		sb.append(Parser2.SPACE + Parser2.SPACE + Parser2.DATETIME + Parser2.COMMA + Parser2.SPACE);
+		sb.append(Parser.SPACE + Parser.SPACE + Parser.DATETIME + Parser.COMMA + Parser.SPACE);
 		
-		sb.append(Parser2.NEWLINE);
-		sb.append(Parser2.SPACE + Parser2.SPACE + Parser2.PRIMARY_KEY + Parser2.LPAREN);
+		sb.append(Parser.NEWLINE);
+		sb.append(Parser.SPACE + Parser.SPACE + Parser.PRIMARY_KEY + Parser.LPAREN);
 		
 		Iterator<Param> paramIterator = eRelation.getKeyParams().iterator();
 		sb.append(paramIterator.next().getName());
 		while (paramIterator.hasNext()) {
-			sb.append(Parser2.COMMA + Parser2.SPACE);
+			sb.append(Parser.COMMA + Parser.SPACE);
 			sb.append(paramIterator.next().getName());
 		}
 		
-		sb.append(Parser2.RPAREN);
-		sb.append(Parser2.NEWLINE);
-		sb.append(Parser2.RPAREN + Parser2.SEMICOLON);
-		sb.append(Parser2.NEWLINE);
-		sb.append(Parser2.NEWLINE);
+		sb.append(Parser.RPAREN);
+		sb.append(Parser.NEWLINE);
+		sb.append(Parser.RPAREN + Parser.SEMICOLON);
+		sb.append(Parser.NEWLINE);
+		sb.append(Parser.NEWLINE);
 
 		return sb.toString();
 	}
@@ -157,38 +155,38 @@ public class Parser2 {
 	}
 
 	public Query compileCreated (Commitment c) {
-		Query oldCreateExpr = this.getLifeExpr(Parser2.CREATED, c.getLabel());
+		Query oldCreateExpr = this.getLifeExpr(Parser.CREATED, c.getLabel());
 		if (oldCreateExpr != null) {
 			return oldCreateExpr;
 		} else {
 			Query createExpr = new CurrentTimeQuery(compileExpr(c.getTrigger()));
-			this.storeLifeExpr(Parser2.CREATED, c.getLabel(), createExpr);
+			this.storeLifeExpr(Parser.CREATED, c.getLabel(), createExpr);
 			return createExpr;
 		}
 	}
 	
 	public Query compileDetached (Commitment c) {
-		Query oldDetachExpr = this.getLifeExpr(Parser2.DETACHED, c.getLabel());
+		Query oldDetachExpr = this.getLifeExpr(Parser.DETACHED, c.getLabel());
 		if (oldDetachExpr != null) {
 			return oldDetachExpr;
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
 			Query antecedentExpr = this.compileExpr(c.getAntecedent());
 			Query detachExpr = new CurrentTimeQuery(this.compileAND(triggerExpr, antecedentExpr));
-			this.storeLifeExpr(Parser2.DETACHED, c.getLabel(), detachExpr);
+			this.storeLifeExpr(Parser.DETACHED, c.getLabel(), detachExpr);
 			return detachExpr;
 		}
 	}
 	
 	public Query compileDischarged (Commitment c) {
-		Query oldDischargeExpr = this.getLifeExpr(Parser2.DISCHARGED, c.getLabel());
+		Query oldDischargeExpr = this.getLifeExpr(Parser.DISCHARGED, c.getLabel());
 		if (oldDischargeExpr != null) {
 			return oldDischargeExpr;
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
 			Query consequentExpr = this.compileExpr(c.getConsequent());
 			Query dischargeExpr = new CurrentTimeQuery(this.compileAND(triggerExpr, consequentExpr));
-			this.storeLifeExpr(Parser2.DISCHARGED, c.getLabel(), dischargeExpr);
+			this.storeLifeExpr(Parser.DISCHARGED, c.getLabel(), dischargeExpr);
 			return dischargeExpr; 
 		}
      }
@@ -199,7 +197,7 @@ public class Parser2 {
 	 * separately for each component, as for created, detached, and discharged, won't help.
 	 */
 	public Query compileExpired (Commitment c) {
-		Query oldExpireExpr = this.getLifeExpr(Parser2.EXPIRED, c.getLabel());
+		Query oldExpireExpr = this.getLifeExpr(Parser.EXPIRED, c.getLabel());
 		if (oldExpireExpr != null) {
 			return oldExpireExpr;
 		} else {
@@ -207,13 +205,13 @@ public class Parser2 {
 			Expr e = constructEExpr(c.getTrigger(),c.getAntecedent());
 			System.out.println(exprToString(e));
 			Query expireExpr = new CurrentTimeQuery(compileExpr(e));
-			this.storeLifeExpr(Parser2.EXPIRED, c.getLabel(), expireExpr);
+			this.storeLifeExpr(Parser.EXPIRED, c.getLabel(), expireExpr);
 			return expireExpr;
 		}
 	}
 
 	public Query compileViolated (Commitment c) {
-		Query oldViolateExpr = this.getLifeExpr(Parser2.VIOLATED, c.getLabel());
+		Query oldViolateExpr = this.getLifeExpr(Parser.VIOLATED, c.getLabel());
 		if (oldViolateExpr != null) {
 			return oldViolateExpr;
 		} else {
@@ -222,7 +220,7 @@ public class Parser2 {
 			Expr eExpr = constructEExpr(aExpr,c.getConsequent());
 			System.out.println(exprToString(eExpr));
 			Query violateExpr = new CurrentTimeQuery(compileExpr(eExpr));
-			this.storeLifeExpr(Parser2.VIOLATED, c.getLabel(), violateExpr);
+			this.storeLifeExpr(Parser.VIOLATED, c.getLabel(), violateExpr);
 			return violateExpr;
 		}
 	}
@@ -385,32 +383,32 @@ public class Parser2 {
 	 */
 	public static String exprToString(Expr e){
 		StringBuffer b = new StringBuffer();
-		b.append(Parser2.LPAREN);
+		b.append(Parser.LPAREN);
 		if(null != e.getEvent()){
 			b.append(e.getEvent().getName());//Ignoring timestamps
 		}
 		else if(e instanceof WExpr) {
 			b.append(exprToString(e.getLeft()));
-			b.append(Parser2.SPACE + Parser2.WHERE + Parser2.SPACE);
+			b.append(Parser.SPACE + Parser.WHERE + Parser.SPACE);
 			b.append(((WExpr)e).getRight());
 		}
 		else if (e instanceof AExpr) {
 			b.append(exprToString(e.getLeft()));
-			b.append(Parser2.SPACE + Parser2.AND + Parser2.SPACE);
+			b.append(Parser.SPACE + Parser.AND + Parser.SPACE);
 			b.append(exprToString(((AExpr)e).getRight()));
 		}
 		else if (e instanceof OExpr) {
 			b.append(exprToString(e.getLeft()));
-			b.append(Parser2.SPACE + Parser2.OR + Parser2.SPACE);
+			b.append(Parser.SPACE + Parser.OR + Parser.SPACE);
 			b.append(exprToString(((OExpr)e).getRight()));
 		}
 		else {//Except
 			b.append(exprToString(e.getLeft()));
-			b.append(Parser2.SPACE + Parser2.EXCEPT + Parser2.SPACE);
+			b.append(Parser.SPACE + Parser.EXCEPT + Parser.SPACE);
 			b.append(exprToString(((EExpr)e).getRight()));
 		}
 		
-		b.append(Parser2.RPAREN);
+		b.append(Parser.RPAREN);
 		return b.toString();
 	}
 	
