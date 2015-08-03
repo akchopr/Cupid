@@ -46,7 +46,7 @@ public abstract class IntervalQuery extends Query  {
 	
 	public static String toDateTime(int shift){
 		return SQLInterface.SQLINTERVAL + 
-				SQLInterface.SQLSPACE + SQLInterface.SQLPLUS + shift + SQLInterface.SQLSPACE + SQLInterface.SQLDAY;
+				SQLInterface.SQLSPACE + shift + SQLInterface.SQLSPACE + SQLInterface.SQLDAY;
 	}
 
 }

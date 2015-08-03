@@ -1,10 +1,8 @@
 package org.xtext.example.generator.query;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.xtext.example.generator.Column;
-import org.xtext.example.generator.RelationalExpr;
 
 public class AntijoinQuery extends Query {
 	
@@ -26,13 +24,30 @@ public class AntijoinQuery extends Query {
 
 	@Override
 	public String toSQL() {
-		Set<Column> cKeys = Query.getCommonKeys(this.getLeft(), this.getRight());
-		
+		Set<Column> common = this.getCommonColumnsWith(this.getRight());
 		StringBuffer sql = new StringBuffer();
+		
+		sql.append(SQLSELECT + SQLSPACE);
+		//Out the desired columns
+		String colStr = this.getColumnsAsString();
+		sql.append(colStr);
+		//Append timestamp
+		sql.append(SQLCOMMA + SQLSPACE);
+		sql.append(this.getTimeColumn().getFullName());
+		//Construct FROM
+		sql.append(SQLSPACE + SQLFROM + SQLSPACE + SQLLPAREN + this.getLeft().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getName());
+		//Add WHERE
+		sql.append(SQLSPACE + SQLWHERE + SQLSPACE);
+		//now add all common columns
+		sql.append(SQLLPAREN + getColumnsAsString(common) + SQLRPAREN);
+		sql.append(SQLSPACE + SQLNOTIN + SQLSPACE);
+		//Now add the second argument
+		sql.append(SQLLPAREN + SQLSELECT + SQLSPACE + getColumnsAsString(common) + SQLSPACE + 
+				SQLFROM + SQLSPACE + SQLLPAREN + this.getRight().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + this.getRight().getName() + SQLRPAREN);
 		
 		
 		// TODO Auto-generated method stub
-		return null;
+		return sql.toString();
 	}
 	
 	

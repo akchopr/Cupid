@@ -25,8 +25,7 @@ public class ShiftedByTimeValue extends Query {
 		
 		this.setLeft(toShift);
 		
-		this.setShiftBy(shiftBy);
-		
+		this.setShiftBy(shiftBy);		
 	}
 
 	@Override

@@ -44,5 +44,7 @@ public interface SQLInterface {
 	public static final String SQLINTERVAL = "Interval";
 	public static final String SQLDAY = "day";
 	
+	public static final String SQLCAST = "CAST";
+	
 	public String toSQL();
 }

@@ -15,7 +15,9 @@ import org.xtext.example.cupido.TimeStamp;
 import org.xtext.example.cupido.WExpr;
 import org.xtext.example.generator.CustomEExpr;
 import org.xtext.example.generator.query.AndQuery;
+import org.xtext.example.generator.query.AntijoinQuery;
 import org.xtext.example.generator.query.BaseEventQuery;
+import org.xtext.example.generator.query.ExceptQuery;
 import org.xtext.example.generator.query.IntervalLeftEventReferenceQuery;
 import org.xtext.example.generator.query.IntervalLeftRightEventReferenceQuery;
 import org.xtext.example.generator.query.IntervalNoEventReferenceQuery;
@@ -183,14 +185,47 @@ public class Parser2 {
 			return oldDischargeExpr;
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
-			Query antecedentExpr = this.compileExpr(c.getAntecedent());
 			Query consequentExpr = this.compileExpr(c.getConsequent());
-			Query dischargeExpr = this.compileOR(this.compileAND(triggerExpr, consequentExpr),
-						     			this.compileAND(antecedentExpr, consequentExpr));
+			Query dischargeExpr = this.compileAND(triggerExpr, consequentExpr);
 			this.storeLifeExpr(Parser2.DISCHARGED, c.getLabel(), dischargeExpr);
 			return dischargeExpr; 
 		}
      }
+	
+	/*
+	 * Expired and Violated have to be treated in a special manner as they involve constructing
+	 * a suitable EXCEPT expression and compiling it as a whole -- getting relationalExprs 
+	 * separately for each component, as for created, detached, and discharged, won't help.
+	 */
+	public Query compileExpired (Commitment c) {
+		Query oldExpireExpr = this.getLifeExpr(Parser2.EXPIRED, c.getLabel());
+		if (oldExpireExpr != null) {
+			return oldExpireExpr;
+		} else {
+			//Construct the expression 'trigger except antecedent' and compile it
+			Expr e = constructEExpr(c.getTrigger(),c.getAntecedent());
+			System.out.println(exprToString(e));
+			Query expireExpr = compileExpr(e);
+			this.storeLifeExpr(Parser2.EXPIRED, c.getLabel(), expireExpr);
+			return expireExpr;
+		}
+	}
+
+	public Query compileViolated (Commitment c) {
+		Query oldViolateExpr = this.getLifeExpr(Parser2.VIOLATED, c.getLabel());
+		if (oldViolateExpr != null) {
+			return oldViolateExpr;
+		} else {
+			//Construct (trigger and antecedent) except consequent
+			Expr aExpr = constructAExpr(c.getTrigger(),c.getAntecedent());
+			Expr eExpr = constructEExpr(aExpr,c.getConsequent());
+			System.out.println(exprToString(eExpr));
+			Query violateExpr = this.compileExpr(eExpr);
+			this.storeLifeExpr(Parser2.VIOLATED, c.getLabel(), violateExpr);
+			return violateExpr;
+		}
+	}
+	
 
 	public Query compileAND(Query left, Query right) {
 		AndQuery aQuery = new AndQuery(left,right);
@@ -206,6 +241,25 @@ public class Parser2 {
 		WhereQuery whereQuery = new WhereQuery(left,cond);
 		return whereQuery;
 	}
+	
+	public Query compileEXCEPT(Query left, Event ev, TimeStamp lTime, TimeStamp rTime) {
+		if(null == rTime)
+			rTime = CustomTimeStamp.getMaxTimeStamp();
+		if(null == lTime)
+			lTime = CustomTimeStamp.getMinTimeStamp();
+		
+		String leftEvName = null;
+		String rightEvName = null;
+		if(null != lTime.getEventReference())
+			leftEvName = lTime.getEventReference().getName(); 
+		if(null != rTime.getEventReference())
+			rightEvName = rTime.getEventReference().getName();
+		
+		Query exceptQ = new ExceptQuery(left, attrs.get(ev.getName()), 
+				attrs.get(leftEvName),lTime, 
+				attrs.get(rightEvName),rTime);
+		return exceptQ;
+	}
 
 	public Query compileExpr (Expr e) {
 		//
@@ -215,9 +269,9 @@ public class Parser2 {
 			return compileWHERE(compileExpr(e.getLeft()),((WExpr)e).getRight());
 		else if (e instanceof AExpr)
 			return compileAND(compileExpr(e.getLeft()),compileExpr(((AExpr)e).getRight()));
-		else // (e instanceof OExpr)
+		else if(e instanceof OExpr)
 			return compileOR(compileExpr(e.getLeft()),compileExpr(((OExpr)e).getRight()));
-		/*else {//e instanceof EExpr
+		else {//e instanceof EExpr
 			if(null != ((EExpr)e).getRight().getEvent()) 
 				//Not a "complex" expression on the right and has a deadline
 				return compileEXCEPT(compileExpr(e.getLeft()),
@@ -226,10 +280,10 @@ public class Parser2 {
 						((EExpr)e).getRight().getRTime());
 			else 
 				return reduceExcept((EExpr)e);	
-			}*/
-	 }
+			}
+	}
 	
-	/*private Query reduceExcept(EExpr e) {
+	private Query reduceExcept(EExpr e) {
 			if(e.getRight() instanceof AExpr) {
 				// A except (B and C) = (A except B) or (A except C)
 				EExpr newLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
@@ -249,7 +303,8 @@ public class Parser2 {
 				//But is the above formulation the simplest possible?
 				EExpr ajLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
 				AExpr ajRight = constructAExpr(e.getLeft(),e.getRight());
-				return this.antiJoin(compileExpr(ajLeft), compileExpr(ajRight));
+				Query antiJoin = new AntijoinQuery(compileExpr(ajLeft),compileExpr(ajRight));
+				return antiJoin;
 			}
 			else { //e.getRight instanceof of EExpr
 				assert(e.getRight() instanceof EExpr);
@@ -259,7 +314,7 @@ public class Parser2 {
 				OExpr combined = constructOExpr(newLeft,newRight);			
 				return compileExpr(combined);
 			}
-	}*/
+	}
 	
 	private EExpr constructEExpr(Expr left, Expr right) {
 		CustomEExpr e = new CustomEExpr();
@@ -320,60 +375,6 @@ public class Parser2 {
 			}
 		}
 	}
-			/*private Query compileInterval (Event e, TimeStamp l, TimeStamp r) {
-		return this.compileEvent(e);
-	}*/
-	
-	
-	/*private Query compileInterval (Event e, TimeStamp l, TimeStamp r) {
-		TimeStamp lTime = (l != null) ? l: CustomTimeStamp.getMinTimeStamp();
-		TimeStamp rTime = (r != null) ? r: CustomTimeStamp.getMaxTimeStamp(); 
-		if ((lTime == CustomTimeStamp.getMinTimeStamp()) && (rTime == CustomTimeStamp.getMaxTimeStamp())) {	
-			return this.compileEvent(e);
-		} else {
-			
-			Query iExpr = compileEvent(e);
-			if ((lTime.getEventReference() == null) && (rTime.getEventReference() == null)) {
-				String lCond = String.valueOf(lTime.getVal()) + SelectExpr.LEQ + iExpr.getTimeColumn().getFullName();
-				String rCond = iExpr.getTimeColumn().getFullName() + SelectExpr.LT + String.valueOf(rTime.getVal());
-				String cond = lCond + " AND " + rCond;
-				return this.getSelect(iExpr, cond);
-			} else if ((lTime.getEventReference() != null) && (rTime.getEventReference() == null)) {
-				Query lExpr = compileEvent(lTime.getEventReference()).getRenameTime();
-				Query theExpr = this.getLeftSemiJoin(iExpr, lExpr);
-
-				String lCond = lExpr.getTimeColumn().getFullName() + Parser2.PLUS + String.valueOf(lTime.getShift())
-						+ SelectExpr.LEQ + iExpr.getTimeColumn().getFullName();
-				String rCond = iExpr.getTimeColumn().getFullName() + SelectExpr.LT + String.valueOf(rTime.getVal());
-				String cond = lCond + " AND " + rCond;
-				return this.getSelect(theExpr, cond);
-			}  else if ((lTime.getEventReference() == null) && (rTime.getEventReference() != null)) {
-				Query rExpr = compileEvent(rTime.getEventReference()).getRenameTime();
-				Query theExpr = this.getLeftSemiJoin(iExpr, rExpr);
-
-				String lCond = String.valueOf(lTime.getVal()) + SelectExpr.LEQ + iExpr.getTimeColumn().getFullName();
-				String rCond = iExpr.getTimeColumn().getFullName() + SelectExpr.LT 
-						+ rExpr.getTimeColumn().getFullName() + Parser2.PLUS + String.valueOf(rTime.getShift());
-				String cond = lCond + " AND " + rCond;
-				return this.getSelect(theExpr, cond);
-			} else {
-				Query lExpr = compileEvent(lTime.getEventReference()).getRenameTime();
-				String lCond = lExpr.getTimeColumn().getFullName() + Parser2.PLUS + String.valueOf(lTime.getShift()) 
-						+ SelectExpr.LEQ + iExpr.getTimeColumn().getFullName();
-				Query leftExpr = this.getSelect(this.getLeftSemiJoin(iExpr, lExpr), lCond);
-				
-				Query rExpr = compileEvent(rTime.getEventReference()).getRenameTime();
-				String rCond = iExpr.getTimeColumn().getFullName() + SelectExpr.LT 
-						+ rExpr.getTimeColumn().getFullName() + Parser2.PLUS + String.valueOf(rTime.getShift());
-				Query rightExpr = this.getSelect(this.getLeftSemiJoin(iExpr, rExpr), rCond);
-
-				Query theJoin = this.getJoin(leftExpr, rightExpr);
-				theJoin.setTimeColumn(leftExpr.getTimeColumn());
-				return theJoin;
-			}
-		}    
-	}*/
-	
 
 	/**
 	 * Can be used to test generated expressions and for checking precedence and associativity

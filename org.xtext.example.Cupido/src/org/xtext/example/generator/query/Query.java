@@ -5,7 +5,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 import org.xtext.example.cupido.Param;
 import org.xtext.example.generator.Column;
-import org.xtext.example.generator.RelationalExpr;
 
 public abstract class Query implements SQLInterface{
 	
@@ -172,15 +171,13 @@ public abstract class Query implements SQLInterface{
 		return b.toString();
 	}
 	
-	public Set<Column> getCommonColumns(Set<Column> with){
+	public Set<Column> getCommonColumnsWith(Query with){
+		
 		Set<Column> common = new LinkedHashSet<Column>();
 		//For each col in this, see if it is present in with
-		for(Column c: this.allColumns){
-			for(Column w: with){
-				if(c.getFullName().equalsIgnoreCase(w.getFullName()))
+		for(Column w: with.getAllColumns())
+			if(this.getAllColumns().contains(w))
 					common.add(w);
-			}
-		}
 		return common;
 	}
 	

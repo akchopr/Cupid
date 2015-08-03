@@ -1,9 +1,6 @@
 package org.xtext.example.generator.query;
 
-import java.util.Set;
-
 import org.xtext.example.cupido.TimeStamp;
-import org.xtext.example.generator.Column;
 
 public class IntervalLeftEventReferenceQuery extends IntervalQuery {
 

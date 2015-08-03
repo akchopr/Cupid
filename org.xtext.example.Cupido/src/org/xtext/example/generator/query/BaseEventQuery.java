@@ -35,7 +35,6 @@ public class BaseEventQuery extends Query {
 		sql.append(colStr);
 		//Timestamp still needs to be appended
 		sql.append(SQLCOMMA + SQLSPACE);
-		//Construct timestamp part of the select clause: "LEAST(left.timestamp, right.timestamp) as timestamp"
 		sql.append(this.getTimeColumn().getFullName());
 		//Now create the from part
 		sql.append(SQLSPACE);
