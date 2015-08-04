@@ -8,6 +8,7 @@ public class ProjectToLeftQuery extends Query {
 		this.initializeColumns();
 		//This is the "project to left"
 		this.insertColumns(q.getLeft().getAllColumns());
+		
 		this.initializeKeyColumns();
 		this.insertKeyColumns(q.getKeyColumns());
 		

@@ -15,14 +15,16 @@ public class RightOuterJoinQuery extends Query {
 		//Right will have been renamed. Must be left
 		this.setTimeColumn(leftQ.getTimeColumn());
 		
-		//We don't care about keys
+		//What will the keys be?  Our assumption is that disjuncts will have the same key
+		this.initializeKeyColumns();
+		this.insertKeyColumns(leftQ.getKeyColumns());
 		
 	}
 	@Override
 	public String toSQL() {
 		
 		StringBuffer sql = new StringBuffer();
-		//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln,  rightcol1, rightcol2,..., rightcolm,
+		
 		sql.append(SQLSELECT + SQLSPACE);
 		String colStr = this.getColumnsAsString();
 		sql.append(colStr);

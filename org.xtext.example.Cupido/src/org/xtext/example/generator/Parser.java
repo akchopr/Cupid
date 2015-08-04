@@ -24,7 +24,10 @@ import org.xtext.example.generator.query.IntervalLeftRightEventReferenceQuery;
 import org.xtext.example.generator.query.IntervalNoEventReferenceQuery;
 import org.xtext.example.generator.query.IntervalRightEventReferenceQuery;
 import org.xtext.example.generator.query.OrQuery;
+import org.xtext.example.generator.query.ProjectToLeftQuery;
 import org.xtext.example.generator.query.Query;
+import org.xtext.example.generator.query.SQLInterface;
+import org.xtext.example.generator.query.UnionQuery;
 import org.xtext.example.generator.query.WhereQuery;
 
 public class Parser {
@@ -298,12 +301,18 @@ public class Parser {
 				return compileExpr(combined);
 			}
 			else if(e.getRight() instanceof WExpr) {
-				//A except (B where p) = (A except B) antijoin (A and (B where p))
+				//A except (B where p) = (A except B)  union (A and (B where NOT p))
 				//But is the above formulation the simplest possible?
-				EExpr ajLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());
-				AExpr ajRight = constructAExpr(e.getLeft(),e.getRight());
-				Query antiJoin = new AntijoinQuery(compileExpr(ajLeft),compileExpr(ajRight));
-				return antiJoin;
+				EExpr ajLeft = constructEExpr(e.getLeft(),e.getRight().getLeft());//
+				//We need to negate the where expression, that is, (left and right) where NOT (cond)
+				String wCond = ((WExpr)e.getRight()).getRight();
+				Expr wLeft = ((WExpr)e.getRight()).getLeft();
+				String newWCond = SQLInterface.SQLNOT + SQLInterface.SQLLPAREN + wCond + SQLInterface.SQLRPAREN;
+				Expr newWExpr = constructWExpr(wLeft,newWCond); 
+				AExpr ajRight = constructAExpr(e.getLeft(),newWExpr);
+				Query ptl = new ProjectToLeftQuery(compileExpr(ajRight));
+				Query union = new UnionQuery(compileExpr(ajLeft),ptl);
+				return union;
 			}
 			else { //e.getRight instanceof of EExpr
 				assert(e.getRight() instanceof EExpr);
@@ -313,6 +322,17 @@ public class Parser {
 				OExpr combined = constructOExpr(newLeft,newRight);			
 				return compileExpr(combined);
 			}
+	}
+	
+	private WExpr constructWExpr(Expr left, String right) {
+		CustomWExpr e = new CustomWExpr();
+		e.setLeft(left);
+		e.setRight(right);
+		//Set everything else to null (just to be sure)
+		e.setEvent(null);
+		e.setLTime(null);
+		e.setRTime(null);
+		return e;
 	}
 	
 	private EExpr constructEExpr(Expr left, Expr right) {

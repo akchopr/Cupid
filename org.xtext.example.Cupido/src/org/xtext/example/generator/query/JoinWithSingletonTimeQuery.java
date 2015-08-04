@@ -22,10 +22,10 @@ public class JoinWithSingletonTimeQuery extends Query {
 		this.setName(getNewQueryName());
 		
 		this.initializeColumns();
-		this.setAllColumns(left.getAllColumns());
+		this.insertColumns(left.getAllColumns());
 		
 		this.initializeKeyColumns();
-		this.insertColumns(left.getKeyColumns());
+		this.insertKeyColumns(left.getKeyColumns());
 		
 		this.setTimeColumn(left.getTimeColumn());
 		

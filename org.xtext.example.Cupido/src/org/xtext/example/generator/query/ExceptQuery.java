@@ -35,31 +35,41 @@ public class ExceptQuery extends Query {
 	@Override
 	public String toSQL() {
 		Query evQ = new BaseEventQuery(ev); 
-		if(null == this.rightEvRef){
-			
-			//meaning Singleton type query
-			if(null == this.leftEvRef) {
-				//Compute R
-				Query uptoLeftQuery = new IntervalNoEventReferenceQuery(evQ, CustomTimeStamp.getMinTimeStamp(),leftT);
-				Query andQ = new AndQuery(this.getLeft(),uptoLeftQuery);
-				Query projQ = new ProjectToLeftQuery(andQ);
-				//Compute S
-				Query uptoRightQuery = new IntervalNoEventReferenceQuery(evQ, CustomTimeStamp.getMinTimeStamp(),rightT);
-				Query renamed = new RenameTimeStampQuery(uptoRightQuery);
-				Query antiJoin = new AntijoinQuery(this.getLeft(),renamed);
-				Query joinSingleton = new JoinWithSingletonTimeQuery(antiJoin,rightT.getVal());
-				
-				StringBuffer sql = new StringBuffer();
-				sql.append(projQ.toSQL());
-				sql.append(SQLSPACE + SQLUNION +SQLSPACE);
-				sql.append(joinSingleton.toSQL());
-				
-				return sql.toString();
-			}
-			System.out.println("Should not be here!!!!!!");
-			return null;
+		Query uptoLeftQuery;
+		//meaning Singleton type query
+		if(null == this.leftEvRef) {
+			//Compute R
+			uptoLeftQuery = new IntervalNoEventReferenceQuery(evQ, CustomTimeStamp.getMinTimeStamp(),leftT);
 		}
-		System.out.println("Should not be here!!!!!!!!!!!!!!!!!!!!");
-		return null;
+		else {
+			Query leftEvRefQ = new BaseEventQuery(leftEvRef);
+			uptoLeftQuery = new IntervalLeftEventReferenceQuery(evQ, leftEvRefQ,CustomTimeStamp.getMinTimeStamp(),leftT);
+		}
+		Query andQ = new AndQuery(this.getLeft(),uptoLeftQuery);
+		//projQ is R
+		Query projQ = new ProjectToLeftQuery(andQ);
+		
+		Query theJoin; 
+		if(null == this.rightEvRef){
+			Query uptoRightQuery = new IntervalNoEventReferenceQuery(evQ, CustomTimeStamp.getMinTimeStamp(),rightT);
+			//Query renamed = new RenameTimeStampQuery(uptoRightQuery);
+			//The S in the paper is this antijoin
+			Query antiJoin = new AntijoinQuery(this.getLeft(),uptoRightQuery);
+			theJoin = new JoinWithSingletonTimeQuery(antiJoin,rightT.getVal());
+		}
+		else {
+			Query rightEvRefQ = new BaseEventQuery(rightEvRef);
+			Query uptoRightQuery = new IntervalRightEventReferenceQuery(evQ, rightEvRefQ, CustomTimeStamp.getMinTimeStamp(),rightT);
+			//Query renamed = new RenameTimeStampQuery(uptoRightQuery);
+			// S is the antijoin (no need to rename before antijoin because timestamp will never be among the common columns computed)
+			Query antiJoin = new AntijoinQuery(this.getLeft(),uptoRightQuery);
+			Query copyShifted = new ShiftTimeStampQuery(rightEvRefQ, rightT.getShift());
+			//Join copyshifted with S
+			Query renamedCopy = new RenameTimeStampQuery(copyShifted);
+			theJoin = new JoinQuery(antiJoin,renamedCopy);
+		}
+		Query union = new UnionQuery(projQ,theJoin);
+		return union.toSQL();
 	}
+
 }

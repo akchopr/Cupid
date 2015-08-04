@@ -15,6 +15,6 @@ schema
 
 commitment DiscountQuoteTrivial mID to cID 
   create Quote
-  detach POrder[, "2015-8-1"] where "addr = 'Manc.'"
-  discharge Shipment
+  detach POrder[, Quote+10] where "addr = 'Manc.'"
+  discharge Shipment[,POrder+10]
   

@@ -4,11 +4,15 @@ public class CurrentTimeQuery extends Query {
 
 	public CurrentTimeQuery(Query q) {
 		this.setName(getNewQueryName());
+		
 		this.initializeColumns();
 		this.insertColumns(q.getAllColumns());
+		
 		this.initializeKeyColumns();
 		this.insertKeyColumns(q.getKeyColumns());
+		
 		this.setTimeColumn(q.getTimeColumn());
+		
 		this.setLeft(q);
 		
 	}

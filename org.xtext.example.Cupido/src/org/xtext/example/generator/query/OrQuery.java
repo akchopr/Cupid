@@ -14,10 +14,11 @@ public class OrQuery extends Query {
 		this.insertColumns(leftQ.getAllColumns());
 		this.insertColumns(rightQ.getAllColumns());
 		
+		//Our assumption for OR is that left and right will have an identical key
 		this.initializeKeyColumns();
 		this.insertKeyColumns(leftQ.getCommonKeysWith(rightQ));
 		
-		//Should not matter whether left or right
+		//Should not matter whether left or right? By convention always take left. Always rename only right if needed
 		this.setTimeColumn(leftQ.getTimeColumn());
 	}
 	
@@ -27,14 +28,9 @@ public class OrQuery extends Query {
 		Query renamedRight = new RenameTimeStampQuery(this.getRight());
 		Query loj = new LeftOuterJoinQuery(this.getLeft(),renamedRight);
 		Query roj = new RightOuterJoinQuery(this.getLeft(),renamedRight);
+		Query union = new UnionQuery(loj,roj);
 		
-		
-		StringBuffer sql = new StringBuffer();
-		sql.append(loj.toSQL());
-		sql.append(SQLSPACE + SQLUNION +SQLSPACE);
-		sql.append(roj.toSQL());
-		
-		return sql.toString();
+		return union.toSQL();
 	}
 
 }

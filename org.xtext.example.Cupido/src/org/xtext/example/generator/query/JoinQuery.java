@@ -14,6 +14,9 @@ public class JoinQuery extends Query {
 		//Right will have been renamed. Must be left
 		this.setTimeColumn(leftQ.getTimeColumn());
 		//No need to worry about keys because this is internal processing
+		this.initializeKeyColumns();
+		this.insertKeyColumns(leftQ.getKeyColumns());
+		this.insertKeyColumns(rightQ.getKeyColumns());
 	}
 	
 	
@@ -21,7 +24,6 @@ public class JoinQuery extends Query {
 	public String toSQL() {
 		
 		StringBuffer sql = new StringBuffer();
-		//Construct select cols part: Select leftcol1, leftcol2,..., leftcoln,  rightcol1, rightcol2,..., rightcolm,
 		sql.append(SQLSELECT + SQLSPACE);
 		String colStr = this.getColumnsAsString();
 		sql.append(colStr);

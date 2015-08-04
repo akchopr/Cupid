@@ -6,9 +6,9 @@ public class RenameTimeStampQuery extends Query {
 		this.setName(getNewQueryName());
 		
 		this.initializeColumns();
-		this.setAllColumns(toRename.getAllColumns());
+		this.insertColumns(toRename.getAllColumns());
 		this.initializeKeyColumns();
-		this.setKeyColumns(toRename.getKeyColumns());
+		this.insertKeyColumns(toRename.getKeyColumns());
 		this.setTimeColumn(toRename.getTimeColumn().generateColumn());
 		
 		this.setLeft(toRename);

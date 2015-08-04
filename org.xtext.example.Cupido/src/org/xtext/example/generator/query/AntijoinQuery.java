@@ -6,15 +6,21 @@ import org.xtext.example.generator.Column;
 
 public class AntijoinQuery extends Query {
 	
+	/*
+	 * Left antijoin right
+	 */
 	public AntijoinQuery(Query leftQ, Query rightQ){
 		this.setName(getNewQueryName());
 
+		//Antijoin's columns are left's
 		this.initializeColumns();
-		this.setAllColumns(leftQ.getAllColumns());
+		this.insertColumns(leftQ.getAllColumns());
 		
+		//Keys are left's
 		this.initializeKeyColumns();
-		this.setKeyColumns(leftQ.getKeyColumns());
+		this.insertKeyColumns(leftQ.getKeyColumns());
 		
+		//Timestamp is left's
 		this.setTimeColumn(leftQ.getTimeColumn());
 		
 		this.setLeft(leftQ);
@@ -24,6 +30,12 @@ public class AntijoinQuery extends Query {
 
 	@Override
 	public String toSQL() {
+		/*
+		 * Algorithm: Construct a query of the form
+		 * Select left's columns from left 
+		 * where (columns common to left and right) 
+		 * 		not in (select (common columns) from right)   
+		 */
 		Set<Column> common = this.getCommonColumnsWith(this.getRight());
 		StringBuffer sql = new StringBuffer();
 		

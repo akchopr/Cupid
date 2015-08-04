@@ -43,21 +43,6 @@ public class IntervalLeftRightEventReferenceQuery extends IntervalQuery {
 		
 		Query renamed = new RenameTimeStampQuery(rQuery);
 		Query q = new JoinQuery(lQuery,renamed);
-		StringBuffer sql = new StringBuffer(q.toSQL());
-		
-		
-		/*sql.append(SQLSELECT + SQLSPACE);
-		String colStr = this.getColumnsAsString();
-		sql.append(colStr);
-		//Timestamp still needs to be appended
-		sql.append(SQLCOMMA + SQLSPACE);
-		sql.append(this.getTimeColumn().getFullName());
-		//Now create the from part
-		sql.append(SQLSPACE);
-		sql.append(SQLFROM + SQLSPACE + 
-				SQLLPAREN + lQuery.toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + lQuery.getName() +  
-				SQLSPACE + SQLJOIN + SQLSPACE +
-				SQLLPAREN + rQuery.toSQL() + SQLRPAREN + SQLSPACE + SQLAS + SQLSPACE + rQuery.getName());*/
-		return sql.toString();
+		return q.toSQL();
 	}
 }

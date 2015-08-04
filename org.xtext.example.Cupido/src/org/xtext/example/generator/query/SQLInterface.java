@@ -11,6 +11,7 @@ public interface SQLInterface {
 	public static final String SQLCROSSJOIN = "CROSS JOIN";
 	public static final String SQLWHERE = "WHERE";
 	public static final String SQLSELECT = "SELECT";
+	public static final String SQLNOT = "NOT";
 	
 	public static final String SQLJOIN = "NATURAL JOIN";
 	public static final String SQLLEFTOUTERJOIN = "NATURAL LEFT OUTER JOIN";
