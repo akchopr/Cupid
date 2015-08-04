@@ -55,10 +55,6 @@ TimeStamp:
   val = STRING |
   (eventReference = Event) (PLUS (shift = INT))?; 
 
-//TODO: Found INT in common Terminals but not NUMBER 
-//Number: // TODO: I didn't find a way to use the Xtext Number that some examples use
-//  name = ID;
-
 terminal SCHEMA: 'schema';
 terminal KEY: 'key';
 terminal TIME: 'time';

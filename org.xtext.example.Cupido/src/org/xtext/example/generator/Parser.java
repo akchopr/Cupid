@@ -15,7 +15,6 @@ import org.xtext.example.cupido.TimeStamp;
 import org.xtext.example.cupido.WExpr;
 import org.xtext.example.generator.CustomEExpr;
 import org.xtext.example.generator.query.AndQuery;
-import org.xtext.example.generator.query.AntijoinQuery;
 import org.xtext.example.generator.query.BaseEventQuery;
 import org.xtext.example.generator.query.CurrentTimeQuery;
 import org.xtext.example.generator.query.ExceptQuery;
@@ -162,9 +161,9 @@ public class Parser {
 		if (oldCreateExpr != null) {
 			return oldCreateExpr;
 		} else {
-			Query createExpr = new CurrentTimeQuery(compileExpr(c.getTrigger()));
-			this.storeLifeExpr(Parser.CREATED, c.getLabel(), createExpr);
-			return createExpr;
+			Query createExpr = compileExpr(c.getTrigger());
+			this.storeLifeExpr(Parser.CREATED, c.getLabel(), createExpr);			
+			return new CurrentTimeQuery(createExpr);
 		}
 	}
 	
@@ -175,9 +174,9 @@ public class Parser {
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
 			Query antecedentExpr = this.compileExpr(c.getAntecedent());
-			Query detachExpr = new CurrentTimeQuery(this.compileAND(triggerExpr, antecedentExpr));
+			Query detachExpr = this.compileAND(triggerExpr, antecedentExpr);
 			this.storeLifeExpr(Parser.DETACHED, c.getLabel(), detachExpr);
-			return detachExpr;
+			return new CurrentTimeQuery(detachExpr);
 		}
 	}
 	
@@ -188,9 +187,9 @@ public class Parser {
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
 			Query consequentExpr = this.compileExpr(c.getConsequent());
-			Query dischargeExpr = new CurrentTimeQuery(this.compileAND(triggerExpr, consequentExpr));
+			Query dischargeExpr = this.compileAND(triggerExpr, consequentExpr);
 			this.storeLifeExpr(Parser.DISCHARGED, c.getLabel(), dischargeExpr);
-			return dischargeExpr; 
+			return new CurrentTimeQuery(dischargeExpr); 
 		}
      }
 	
@@ -206,10 +205,9 @@ public class Parser {
 		} else {
 			//Construct the expression 'trigger except antecedent' and compile it
 			Expr e = constructEExpr(c.getTrigger(),c.getAntecedent());
-			System.out.println(exprToString(e));
-			Query expireExpr = new CurrentTimeQuery(compileExpr(e));
+			Query expireExpr = compileExpr(e);
 			this.storeLifeExpr(Parser.EXPIRED, c.getLabel(), expireExpr);
-			return expireExpr;
+			return new CurrentTimeQuery(expireExpr);
 		}
 	}
 
@@ -221,10 +219,9 @@ public class Parser {
 			//Construct (trigger and antecedent) except consequent
 			Expr aExpr = constructAExpr(c.getTrigger(),c.getAntecedent());
 			Expr eExpr = constructEExpr(aExpr,c.getConsequent());
-			System.out.println(exprToString(eExpr));
-			Query violateExpr = new CurrentTimeQuery(compileExpr(eExpr));
+			Query violateExpr = compileExpr(eExpr);
 			this.storeLifeExpr(Parser.VIOLATED, c.getLabel(), violateExpr);
-			return violateExpr;
+			return new CurrentTimeQuery(violateExpr);
 		}
 	}
 	
@@ -250,16 +247,21 @@ public class Parser {
 		if(null == lTime)
 			lTime = CustomTimeStamp.getMinTimeStamp();
 		
-		String leftEvName = null;
-		String rightEvName = null;
+		Query leftTimeStampEventQ=null, rightTimeStampEventQ=null;
+		Query eventQ = compileEvent(ev);
 		if(null != lTime.getEventReference())
-			leftEvName = lTime.getEventReference().getName(); 
+			//leftEvName = lTime.getEventReference().getName();
+			leftTimeStampEventQ = compileEvent(lTime.getEventReference());
 		if(null != rTime.getEventReference())
-			rightEvName = rTime.getEventReference().getName();
+			//rightEvName = rTime.getEventReference().getName();
+			rightTimeStampEventQ = compileEvent(rTime.getEventReference());
 		
-		Query exceptQ = new ExceptQuery(left, attrs.get(ev.getName()), 
+		/*Query exceptQ = new ExceptQuery(left, attrs.get(ev.getName()), 
 				attrs.get(leftEvName),lTime, 
-				attrs.get(rightEvName),rTime);
+				attrs.get(rightEvName),rTime);*/
+		Query exceptQ = new ExceptQuery(left, eventQ, 
+				leftTimeStampEventQ,lTime, 
+				rightTimeStampEventQ,rTime);
 		return exceptQ;
 	}
 

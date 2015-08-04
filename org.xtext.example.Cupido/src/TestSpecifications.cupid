@@ -13,8 +13,12 @@ schema
   key tID time stamp
 
 
-commitment DiscountQuoteTrivial mID to cID 
+commitment DiscountQuote mID to cID 
   create Quote
   detach POrder[, Quote+1]
   discharge Shipment[,POrder+1]
   
+commitment Refund mID to cID
+  create violated DiscountQuote
+  detach violated DiscountQuote
+  discharge Refund[, violated DiscountQuote + 1]
