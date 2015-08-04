@@ -38,7 +38,7 @@ public class ShiftTimeStampQuery extends Query {
 		sql.append(this.getColumnsAsString());
 		sql.append(SQLSPACE + SQLCOMMA);
 		
-		sql.append(this.getTimeColumn().getFullName() + SQLPLUS + IntervalQuery.toDateTime(this.getShift()) + SQLSPACE + SQLAS + this.getTimeColumn().getFullName());
+		sql.append(this.getTimeColumn().getFullName() + SQLPLUS + IntervalQuery.toDateTime(this.getShift()) + SQLSPACE + SQLAS + SQLSPACE + this.getTimeColumn().getFullName());
 	
 		sql.append(SQLSPACE + SQLFROM + SQLSPACE + SQLLPAREN + this.getLeft().toSQL() + SQLRPAREN + SQLSPACE + SQLAS + this.getLeft().getName());
 		// TODO Auto-generated method stub

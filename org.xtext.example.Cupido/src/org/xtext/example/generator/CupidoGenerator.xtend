@@ -24,8 +24,8 @@ class CupidoGenerator implements IGenerator {
   def CharSequence generateCommitments(Resource resource) {
   	var result = ""
   	for (comm: resource.allContents.toIterable.filter(Commitment)) {
-	  result += "==========\n"
-  	  result += '''For «comm.label», we obtain these queries:'''
+	  //result += "==========\n"
+  	  result += '''/*For «comm.label», we obtain these queries:*/'''
 	  result += comm.compileAll
 	  result += "\n\n"
 	}
