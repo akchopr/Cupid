@@ -20,5 +20,4 @@ commitment DiscountQuote mID to cID
   
 commitment Refund mID to cID
   create violated DiscountQuote
-  detach violated DiscountQuote
   discharge Refund[, violated DiscountQuote + 1]

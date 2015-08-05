@@ -18,7 +18,7 @@ class CupidoGenerator implements IGenerator {
 
   override void doGenerate(Resource resource, IFileSystemAccess fsa) {
   		fsa.generateFile('schema.sql', resource.generateRelations)
-  		fsa.generateFile('commitments.algebra', resource.generateCommitments)
+  		fsa.generateFile('commitments.algebra', resource.generateCommitments)		 		
   }
   
   def CharSequence generateCommitments(Resource resource) {

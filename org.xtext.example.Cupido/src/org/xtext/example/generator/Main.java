@@ -4,6 +4,7 @@
 package org.xtext.example.generator;
 
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -19,7 +20,19 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Provider;
 
-public class Main {
+import javafx.application.Application;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.TreeItem;
+import javafx.scene.control.TreeView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+
+public class Main extends Application {
+	
+	
 	
 	public static void main(String[] args) {
 		if (args.length==0) {
@@ -42,6 +55,7 @@ public class Main {
 	
 	@Inject 
 	private JavaIoFileSystemAccess fileAccess;
+	
 
 	protected void runGenerator(String string) {
 		// load the resource
@@ -62,5 +76,46 @@ public class Main {
 		generator.doGenerate(resource, fileAccess);
 		
 		System.out.println("Code generation finished.");
+		
+			
+		//String[] args = {"Hello"};
+		//launch(args);
 	}
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Parser parser = Parser.getParser();
+		Set<String> labels = parser.getCommitmentLabels();
+		
+		// TODO Auto-generated method stub
+		primaryStage.setTitle("Tree View Sample");        
+        
+        TreeItem<String> rootItem = new TreeItem<String> ("Commitments",null);
+        rootItem.setExpanded(true);
+        for (String label:labels) {
+            TreeItem<String> item = new TreeItem<String> (label);
+            TreeItem<String> created = new TreeItem<String>(Parser.CREATED);
+            
+            
+            TreeItem<String> detached = new TreeItem<String>(Parser.DETACHED);
+            TreeItem<String> expired = new TreeItem<String>(Parser.EXPIRED);
+            TreeItem<String> discharged = new TreeItem<String>(Parser.DISCHARGED);
+            TreeItem<String> violated = new TreeItem<String>(Parser.VIOLATED);
+           
+            item.getChildren().add(created);
+            item.getChildren().add(detached);
+            item.getChildren().add(expired);
+            item.getChildren().add(discharged);
+            item.getChildren().add(violated);
+      
+            rootItem.getChildren().add(item);
+        }        
+        TreeView<String> tree = new TreeView<String> (rootItem);        
+            StackPane root = new StackPane();
+        root.getChildren().add(tree);
+        primaryStage.setScene(new Scene(root, 300, 250));
+        primaryStage.show();
+		
+	}
+	
 }

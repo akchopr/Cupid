@@ -2,6 +2,7 @@ package org.xtext.example.generator;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 import org.xtext.example.cupido.AExpr;
 import org.xtext.example.cupido.Commitment;
@@ -47,11 +48,11 @@ public class Parser {
 	private static final String EXCEPT = "except";
 	private static final String WHERE = "where";
 
-	private static final String CREATED = "created";
-	private static final String DETACHED = "detached";
-	private static final String DISCHARGED = "discharged";
-	private static final String EXPIRED = "expired";
-	private static final String VIOLATED = "violated";
+	public static final String CREATED = "created";
+	public static final String DETACHED = "detached";
+	public static final String DISCHARGED = "discharged";
+	public static final String EXPIRED = "expired";
+	public static final String VIOLATED = "violated";
 	private static final String SEMICOLON = ";";
 	private static final Object NEWLINE = "\n";
 
@@ -138,12 +139,18 @@ public class Parser {
 			
 	}
 	
-	private Query getLifeExpr(String lifeState, String label) {
+	public Query getLifeExpr(String lifeState, String label) {
 	  HashMap<String, Query> labelExprs = lifeExprs.get(label);
 
 	  return ((labelExprs == null)
 			  ? null
 			  : lifeExprs.get(label).get(lifeState)); 
+	}
+	
+	public Set<String> getCommitmentLabels() {
+		return ((lifeExprs == null)
+				  ? null
+				  : lifeExprs.keySet());
 	}
 
 	private void storeLifeExpr(String lifeState, String label, Query expr) {
@@ -173,7 +180,11 @@ public class Parser {
 			return oldDetachExpr;
 		} else {
 			Query triggerExpr = this.compileExpr(c.getTrigger());
-			Query antecedentExpr = this.compileExpr(c.getAntecedent());
+			Query antecedentExpr;
+			if(null == c.getAntecedent()) //Meaning unconditional commitment
+				antecedentExpr = this.compileExpr(c.getTrigger());
+			else
+				antecedentExpr = this.compileExpr(c.getAntecedent());
 			Query detachExpr = this.compileAND(triggerExpr, antecedentExpr);
 			this.storeLifeExpr(Parser.DETACHED, c.getLabel(), detachExpr);
 			return new CurrentTimeQuery(detachExpr);
@@ -204,7 +215,7 @@ public class Parser {
 			return oldExpireExpr;
 		} else {
 			//Construct the expression 'trigger except antecedent' and compile it
-			Expr e = constructEExpr(c.getTrigger(),c.getAntecedent());
+			Expr e = constructEExpr(c.getTrigger(),(null==c.getAntecedent())?c.getTrigger():c.getAntecedent());
 			Query expireExpr = compileExpr(e);
 			this.storeLifeExpr(Parser.EXPIRED, c.getLabel(), expireExpr);
 			return new CurrentTimeQuery(expireExpr);
@@ -217,7 +228,7 @@ public class Parser {
 			return oldViolateExpr;
 		} else {
 			//Construct (trigger and antecedent) except consequent
-			Expr aExpr = constructAExpr(c.getTrigger(),c.getAntecedent());
+			Expr aExpr = constructAExpr(c.getTrigger(),(null==c.getAntecedent())?c.getTrigger():c.getAntecedent());
 			Expr eExpr = constructEExpr(aExpr,c.getConsequent());
 			Query violateExpr = compileExpr(eExpr);
 			this.storeLifeExpr(Parser.VIOLATED, c.getLabel(), violateExpr);
