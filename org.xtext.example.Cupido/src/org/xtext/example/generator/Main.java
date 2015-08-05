@@ -20,17 +20,7 @@ import com.google.inject.Inject;
 import com.google.inject.Injector;
 import com.google.inject.Provider;
 
-import javafx.application.Application;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-
-
-public class Main extends Application {
+public class Main {
 	
 	
 	
@@ -82,7 +72,7 @@ public class Main extends Application {
 		//launch(args);
 	}
 
-	@Override
+	/*@Override
 	public void start(Stage primaryStage) throws Exception {
 		Parser parser = Parser.getParser();
 		Set<String> labels = parser.getCommitmentLabels();
@@ -116,6 +106,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 300, 250));
         primaryStage.show();
 		
-	}
+	}*/
 	
 }
