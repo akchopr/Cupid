@@ -15,5 +15,10 @@ schema
 
 commitment Simple mID to cID 
   create Quote
-  detach POrder[, Quote+1]
-  discharge Shipment[,POrder+5]
+  detach POrder and Payment[, Quote + 4]
+  discharge Shipment[, POrder + 5]
+  
+commitment Nested cID to mID
+  create Quote
+  detach violated Simple
+  discharge Refund
